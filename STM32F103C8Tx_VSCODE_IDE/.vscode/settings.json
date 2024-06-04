@@ -1,0 +1,21 @@
+{
+    "files.associations": {
+        "stm32f10x_it.h": "c",
+        "stm32f10x.h": "c",
+        "stm32f10x_rcc.h": "c",
+        "main.h": "c",
+        "bsp.h": "c",
+        "unity.h": "c",
+        "stdio.h": "c",
+        "unity_internals.h": "c",
+        "bsp_swo.h": "c",
+        "system_stm32f10x.h": "c",
+        "stm32f10x_conf.h": "c",
+        "stm32f10x_gpio.h": "c",
+        "guifont.h": "c",
+        "gui.h": "c",
+        "cstdarg": "c",
+        "wk1000.h": "c"
+    },
+    "cortex-debug.variableUseNaturalFormat": false
+}

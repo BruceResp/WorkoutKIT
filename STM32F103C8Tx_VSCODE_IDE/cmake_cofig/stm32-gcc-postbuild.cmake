@@ -1,0 +1,12 @@
+set(BIN_TARGET ${CMAKE_SOURCE_DIR}/application/bin/${PROJECT_NAME}.bin)
+set(HEX_TARGET ${CMAKE_SOURCE_DIR}/application/bin/${PROJECT_NAME}.hex)
+set(MAP_TARGET ${CMAKE_SOURCE_DIR}/application/bin/${PROJECT_NAME}.map)
+set(LSS_TARGET ${CMAKE_SOURCE_DIR}/application/bin/${PROJECT_NAME}.lss)
+
+add_custom_command(TARGET ${PROJECT_NAME}.elf POST_BUILD
+        COMMAND ${CMAKE_OBJCOPY} -Oihex $<TARGET_FILE:${PROJECT_NAME}.elf> ${HEX_TARGET}
+        COMMAND ${CMAKE_OBJCOPY} -Obinary $<TARGET_FILE:${PROJECT_NAME}.elf> ${BIN_TARGET}
+        COMMAND ${CMAKE_OBJDUMP} -S $<TARGET_FILE:${PROJECT_NAME}.elf> > ${LSS_TARGET}
+        COMMAND ${CMAKE_SIZE} -B $<TARGET_FILE:${PROJECT_NAME}.elf>
+        COMMENT "Generating ${HEX_TARGET}, ${BIN_TARGET}"
+        )

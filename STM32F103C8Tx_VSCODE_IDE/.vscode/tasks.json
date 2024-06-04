@@ -1,0 +1,69 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "-j"
+            ],
+            "group": "build"
+        },
+        {
+            "label": "clean",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "clean"
+            ],
+            "group": "build"
+        },
+        {
+            "label": "download",
+            "type": "shell",
+            "command": "opencd",
+            "args": [
+                "-f",
+                "cmsis-dap.cfg",
+                "-f",
+                "stm32f1x.cfg",
+                "-c",
+                "program build/module.Prj.elf verify reset exit"
+            ],
+            "group": "build"
+        },
+        {
+            "label": "rm_build_file",
+            "type": "shell",
+            "command": "./clean.bat",
+            "group": "build"
+        },
+        {
+            "label": "build_bat",
+            "type": "shell",
+            "command": "./build.bat",
+            "group": "build"
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: arm-none-eabi-gcc.exe 生成活动文件",
+            "command": "D:\\TOOL\\Complier_Toolchain\\gcc-arm-none-eabi-10-2020-q4-major-win32\\gcc-arm-none-eabi-10-2020-q4-major\\bin\\arm-none-eabi-gcc.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+            "detail": "调试器生成的任务。"
+        }
+    ]
+}
