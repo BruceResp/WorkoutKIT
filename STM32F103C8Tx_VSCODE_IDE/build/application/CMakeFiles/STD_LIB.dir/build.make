@@ -53,10 +53,10 @@ RM = D:/TOOL/CMake/bin/cmake.exe -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:/Projects/STM32F103C8Tx_VSCODE_IDE
+CMAKE_SOURCE_DIR = D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:/Projects/STM32F103C8Tx_VSCODE_IDE/build
+CMAKE_BINARY_DIR = D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build
 
 # Include any dependencies generated for this target.
 include application/CMakeFiles/STD_LIB.dir/depend.make
@@ -70,326 +70,326 @@ include application/CMakeFiles/STD_LIB.dir/progress.make
 include application/CMakeFiles/STD_LIB.dir/flags.make
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/misc.c.obj: application/CMakeFiles/STD_LIB.dir/flags.make
-application/CMakeFiles/STD_LIB.dir/__/drivers/misc.c.obj: D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/misc.c
+application/CMakeFiles/STD_LIB.dir/__/drivers/misc.c.obj: D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/misc.c
 application/CMakeFiles/STD_LIB.dir/__/drivers/misc.c.obj: application/CMakeFiles/STD_LIB.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object application/CMakeFiles/STD_LIB.dir/__/drivers/misc.c.obj"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/STD_LIB.dir/__/drivers/misc.c.obj -MF CMakeFiles/STD_LIB.dir/__/drivers/misc.c.obj.d -o CMakeFiles/STD_LIB.dir/__/drivers/misc.c.obj -c D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/misc.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object application/CMakeFiles/STD_LIB.dir/__/drivers/misc.c.obj"
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/STD_LIB.dir/__/drivers/misc.c.obj -MF CMakeFiles/STD_LIB.dir/__/drivers/misc.c.obj.d -o CMakeFiles/STD_LIB.dir/__/drivers/misc.c.obj -c D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/misc.c
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/misc.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/STD_LIB.dir/__/drivers/misc.c.i"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/misc.c > CMakeFiles/STD_LIB.dir/__/drivers/misc.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/misc.c > CMakeFiles/STD_LIB.dir/__/drivers/misc.c.i
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/misc.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/STD_LIB.dir/__/drivers/misc.c.s"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/misc.c -o CMakeFiles/STD_LIB.dir/__/drivers/misc.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/misc.c -o CMakeFiles/STD_LIB.dir/__/drivers/misc.c.s
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_adc.c.obj: application/CMakeFiles/STD_LIB.dir/flags.make
-application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_adc.c.obj: D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_adc.c
+application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_adc.c.obj: D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_adc.c
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_adc.c.obj: application/CMakeFiles/STD_LIB.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_adc.c.obj"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_adc.c.obj -MF CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_adc.c.obj.d -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_adc.c.obj -c D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_adc.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_adc.c.obj"
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_adc.c.obj -MF CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_adc.c.obj.d -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_adc.c.obj -c D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_adc.c
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_adc.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_adc.c.i"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_adc.c > CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_adc.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_adc.c > CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_adc.c.i
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_adc.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_adc.c.s"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_adc.c -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_adc.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_adc.c -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_adc.c.s
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_bkp.c.obj: application/CMakeFiles/STD_LIB.dir/flags.make
-application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_bkp.c.obj: D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_bkp.c
+application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_bkp.c.obj: D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_bkp.c
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_bkp.c.obj: application/CMakeFiles/STD_LIB.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_bkp.c.obj"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_bkp.c.obj -MF CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_bkp.c.obj.d -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_bkp.c.obj -c D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_bkp.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_bkp.c.obj"
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_bkp.c.obj -MF CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_bkp.c.obj.d -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_bkp.c.obj -c D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_bkp.c
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_bkp.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_bkp.c.i"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_bkp.c > CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_bkp.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_bkp.c > CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_bkp.c.i
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_bkp.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_bkp.c.s"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_bkp.c -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_bkp.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_bkp.c -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_bkp.c.s
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_can.c.obj: application/CMakeFiles/STD_LIB.dir/flags.make
-application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_can.c.obj: D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_can.c
+application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_can.c.obj: D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_can.c
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_can.c.obj: application/CMakeFiles/STD_LIB.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_can.c.obj"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_can.c.obj -MF CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_can.c.obj.d -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_can.c.obj -c D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_can.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_can.c.obj"
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_can.c.obj -MF CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_can.c.obj.d -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_can.c.obj -c D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_can.c
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_can.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_can.c.i"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_can.c > CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_can.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_can.c > CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_can.c.i
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_can.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_can.c.s"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_can.c -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_can.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_can.c -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_can.c.s
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_cec.c.obj: application/CMakeFiles/STD_LIB.dir/flags.make
-application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_cec.c.obj: D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_cec.c
+application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_cec.c.obj: D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_cec.c
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_cec.c.obj: application/CMakeFiles/STD_LIB.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_cec.c.obj"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_cec.c.obj -MF CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_cec.c.obj.d -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_cec.c.obj -c D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_cec.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_cec.c.obj"
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_cec.c.obj -MF CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_cec.c.obj.d -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_cec.c.obj -c D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_cec.c
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_cec.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_cec.c.i"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_cec.c > CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_cec.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_cec.c > CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_cec.c.i
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_cec.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_cec.c.s"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_cec.c -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_cec.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_cec.c -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_cec.c.s
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_crc.c.obj: application/CMakeFiles/STD_LIB.dir/flags.make
-application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_crc.c.obj: D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_crc.c
+application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_crc.c.obj: D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_crc.c
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_crc.c.obj: application/CMakeFiles/STD_LIB.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_crc.c.obj"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_crc.c.obj -MF CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_crc.c.obj.d -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_crc.c.obj -c D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_crc.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_crc.c.obj"
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_crc.c.obj -MF CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_crc.c.obj.d -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_crc.c.obj -c D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_crc.c
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_crc.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_crc.c.i"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_crc.c > CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_crc.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_crc.c > CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_crc.c.i
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_crc.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_crc.c.s"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_crc.c -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_crc.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_crc.c -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_crc.c.s
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dac.c.obj: application/CMakeFiles/STD_LIB.dir/flags.make
-application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dac.c.obj: D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_dac.c
+application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dac.c.obj: D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_dac.c
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dac.c.obj: application/CMakeFiles/STD_LIB.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dac.c.obj"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dac.c.obj -MF CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dac.c.obj.d -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dac.c.obj -c D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_dac.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dac.c.obj"
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dac.c.obj -MF CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dac.c.obj.d -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dac.c.obj -c D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_dac.c
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dac.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dac.c.i"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_dac.c > CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dac.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_dac.c > CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dac.c.i
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dac.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dac.c.s"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_dac.c -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dac.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_dac.c -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dac.c.s
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dbgmcu.c.obj: application/CMakeFiles/STD_LIB.dir/flags.make
-application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dbgmcu.c.obj: D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_dbgmcu.c
+application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dbgmcu.c.obj: D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_dbgmcu.c
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dbgmcu.c.obj: application/CMakeFiles/STD_LIB.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dbgmcu.c.obj"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dbgmcu.c.obj -MF CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dbgmcu.c.obj.d -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dbgmcu.c.obj -c D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_dbgmcu.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dbgmcu.c.obj"
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dbgmcu.c.obj -MF CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dbgmcu.c.obj.d -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dbgmcu.c.obj -c D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_dbgmcu.c
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dbgmcu.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dbgmcu.c.i"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_dbgmcu.c > CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dbgmcu.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_dbgmcu.c > CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dbgmcu.c.i
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dbgmcu.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dbgmcu.c.s"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_dbgmcu.c -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dbgmcu.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_dbgmcu.c -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dbgmcu.c.s
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dma.c.obj: application/CMakeFiles/STD_LIB.dir/flags.make
-application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dma.c.obj: D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_dma.c
+application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dma.c.obj: D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_dma.c
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dma.c.obj: application/CMakeFiles/STD_LIB.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dma.c.obj"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dma.c.obj -MF CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dma.c.obj.d -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dma.c.obj -c D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_dma.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dma.c.obj"
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dma.c.obj -MF CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dma.c.obj.d -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dma.c.obj -c D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_dma.c
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dma.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dma.c.i"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_dma.c > CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dma.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_dma.c > CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dma.c.i
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dma.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dma.c.s"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_dma.c -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dma.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_dma.c -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dma.c.s
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_exti.c.obj: application/CMakeFiles/STD_LIB.dir/flags.make
-application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_exti.c.obj: D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_exti.c
+application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_exti.c.obj: D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_exti.c
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_exti.c.obj: application/CMakeFiles/STD_LIB.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_exti.c.obj"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_exti.c.obj -MF CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_exti.c.obj.d -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_exti.c.obj -c D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_exti.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_exti.c.obj"
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_exti.c.obj -MF CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_exti.c.obj.d -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_exti.c.obj -c D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_exti.c
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_exti.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_exti.c.i"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_exti.c > CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_exti.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_exti.c > CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_exti.c.i
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_exti.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_exti.c.s"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_exti.c -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_exti.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_exti.c -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_exti.c.s
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_flash.c.obj: application/CMakeFiles/STD_LIB.dir/flags.make
-application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_flash.c.obj: D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_flash.c
+application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_flash.c.obj: D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_flash.c
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_flash.c.obj: application/CMakeFiles/STD_LIB.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_flash.c.obj"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_flash.c.obj -MF CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_flash.c.obj.d -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_flash.c.obj -c D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_flash.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_flash.c.obj"
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_flash.c.obj -MF CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_flash.c.obj.d -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_flash.c.obj -c D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_flash.c
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_flash.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_flash.c.i"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_flash.c > CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_flash.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_flash.c > CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_flash.c.i
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_flash.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_flash.c.s"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_flash.c -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_flash.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_flash.c -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_flash.c.s
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_fsmc.c.obj: application/CMakeFiles/STD_LIB.dir/flags.make
-application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_fsmc.c.obj: D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_fsmc.c
+application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_fsmc.c.obj: D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_fsmc.c
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_fsmc.c.obj: application/CMakeFiles/STD_LIB.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_fsmc.c.obj"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_fsmc.c.obj -MF CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_fsmc.c.obj.d -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_fsmc.c.obj -c D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_fsmc.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_fsmc.c.obj"
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_fsmc.c.obj -MF CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_fsmc.c.obj.d -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_fsmc.c.obj -c D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_fsmc.c
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_fsmc.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_fsmc.c.i"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_fsmc.c > CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_fsmc.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_fsmc.c > CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_fsmc.c.i
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_fsmc.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_fsmc.c.s"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_fsmc.c -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_fsmc.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_fsmc.c -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_fsmc.c.s
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_gpio.c.obj: application/CMakeFiles/STD_LIB.dir/flags.make
-application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_gpio.c.obj: D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_gpio.c
+application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_gpio.c.obj: D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_gpio.c
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_gpio.c.obj: application/CMakeFiles/STD_LIB.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_gpio.c.obj"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_gpio.c.obj -MF CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_gpio.c.obj.d -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_gpio.c.obj -c D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_gpio.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_gpio.c.obj"
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_gpio.c.obj -MF CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_gpio.c.obj.d -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_gpio.c.obj -c D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_gpio.c
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_gpio.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_gpio.c.i"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_gpio.c > CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_gpio.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_gpio.c > CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_gpio.c.i
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_gpio.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_gpio.c.s"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_gpio.c -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_gpio.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_gpio.c -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_gpio.c.s
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_i2c.c.obj: application/CMakeFiles/STD_LIB.dir/flags.make
-application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_i2c.c.obj: D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_i2c.c
+application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_i2c.c.obj: D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_i2c.c
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_i2c.c.obj: application/CMakeFiles/STD_LIB.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_i2c.c.obj"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_i2c.c.obj -MF CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_i2c.c.obj.d -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_i2c.c.obj -c D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_i2c.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_i2c.c.obj"
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_i2c.c.obj -MF CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_i2c.c.obj.d -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_i2c.c.obj -c D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_i2c.c
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_i2c.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_i2c.c.i"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_i2c.c > CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_i2c.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_i2c.c > CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_i2c.c.i
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_i2c.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_i2c.c.s"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_i2c.c -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_i2c.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_i2c.c -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_i2c.c.s
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_iwdg.c.obj: application/CMakeFiles/STD_LIB.dir/flags.make
-application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_iwdg.c.obj: D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_iwdg.c
+application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_iwdg.c.obj: D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_iwdg.c
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_iwdg.c.obj: application/CMakeFiles/STD_LIB.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_iwdg.c.obj"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_iwdg.c.obj -MF CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_iwdg.c.obj.d -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_iwdg.c.obj -c D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_iwdg.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_iwdg.c.obj"
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_iwdg.c.obj -MF CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_iwdg.c.obj.d -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_iwdg.c.obj -c D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_iwdg.c
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_iwdg.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_iwdg.c.i"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_iwdg.c > CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_iwdg.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_iwdg.c > CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_iwdg.c.i
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_iwdg.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_iwdg.c.s"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_iwdg.c -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_iwdg.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_iwdg.c -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_iwdg.c.s
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_pwr.c.obj: application/CMakeFiles/STD_LIB.dir/flags.make
-application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_pwr.c.obj: D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_pwr.c
+application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_pwr.c.obj: D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_pwr.c
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_pwr.c.obj: application/CMakeFiles/STD_LIB.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_pwr.c.obj"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_pwr.c.obj -MF CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_pwr.c.obj.d -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_pwr.c.obj -c D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_pwr.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_pwr.c.obj"
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_pwr.c.obj -MF CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_pwr.c.obj.d -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_pwr.c.obj -c D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_pwr.c
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_pwr.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_pwr.c.i"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_pwr.c > CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_pwr.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_pwr.c > CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_pwr.c.i
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_pwr.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_pwr.c.s"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_pwr.c -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_pwr.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_pwr.c -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_pwr.c.s
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rcc.c.obj: application/CMakeFiles/STD_LIB.dir/flags.make
-application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rcc.c.obj: D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_rcc.c
+application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rcc.c.obj: D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_rcc.c
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rcc.c.obj: application/CMakeFiles/STD_LIB.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rcc.c.obj"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rcc.c.obj -MF CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rcc.c.obj.d -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rcc.c.obj -c D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_rcc.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rcc.c.obj"
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rcc.c.obj -MF CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rcc.c.obj.d -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rcc.c.obj -c D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_rcc.c
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rcc.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rcc.c.i"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_rcc.c > CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rcc.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_rcc.c > CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rcc.c.i
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rcc.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rcc.c.s"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_rcc.c -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rcc.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_rcc.c -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rcc.c.s
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rtc.c.obj: application/CMakeFiles/STD_LIB.dir/flags.make
-application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rtc.c.obj: D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_rtc.c
+application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rtc.c.obj: D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_rtc.c
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rtc.c.obj: application/CMakeFiles/STD_LIB.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rtc.c.obj"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rtc.c.obj -MF CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rtc.c.obj.d -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rtc.c.obj -c D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_rtc.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rtc.c.obj"
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rtc.c.obj -MF CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rtc.c.obj.d -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rtc.c.obj -c D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_rtc.c
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rtc.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rtc.c.i"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_rtc.c > CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rtc.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_rtc.c > CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rtc.c.i
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rtc.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rtc.c.s"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_rtc.c -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rtc.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_rtc.c -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rtc.c.s
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_sdio.c.obj: application/CMakeFiles/STD_LIB.dir/flags.make
-application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_sdio.c.obj: D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_sdio.c
+application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_sdio.c.obj: D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_sdio.c
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_sdio.c.obj: application/CMakeFiles/STD_LIB.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_sdio.c.obj"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_sdio.c.obj -MF CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_sdio.c.obj.d -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_sdio.c.obj -c D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_sdio.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_sdio.c.obj"
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_sdio.c.obj -MF CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_sdio.c.obj.d -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_sdio.c.obj -c D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_sdio.c
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_sdio.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_sdio.c.i"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_sdio.c > CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_sdio.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_sdio.c > CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_sdio.c.i
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_sdio.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_sdio.c.s"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_sdio.c -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_sdio.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_sdio.c -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_sdio.c.s
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_spi.c.obj: application/CMakeFiles/STD_LIB.dir/flags.make
-application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_spi.c.obj: D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_spi.c
+application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_spi.c.obj: D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_spi.c
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_spi.c.obj: application/CMakeFiles/STD_LIB.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_spi.c.obj"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_spi.c.obj -MF CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_spi.c.obj.d -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_spi.c.obj -c D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_spi.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_spi.c.obj"
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_spi.c.obj -MF CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_spi.c.obj.d -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_spi.c.obj -c D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_spi.c
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_spi.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_spi.c.i"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_spi.c > CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_spi.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_spi.c > CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_spi.c.i
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_spi.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_spi.c.s"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_spi.c -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_spi.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_spi.c -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_spi.c.s
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_tim.c.obj: application/CMakeFiles/STD_LIB.dir/flags.make
-application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_tim.c.obj: D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_tim.c
+application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_tim.c.obj: D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_tim.c
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_tim.c.obj: application/CMakeFiles/STD_LIB.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_tim.c.obj"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_tim.c.obj -MF CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_tim.c.obj.d -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_tim.c.obj -c D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_tim.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_tim.c.obj"
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_tim.c.obj -MF CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_tim.c.obj.d -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_tim.c.obj -c D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_tim.c
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_tim.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_tim.c.i"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_tim.c > CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_tim.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_tim.c > CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_tim.c.i
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_tim.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_tim.c.s"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_tim.c -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_tim.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_tim.c -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_tim.c.s
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_usart.c.obj: application/CMakeFiles/STD_LIB.dir/flags.make
-application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_usart.c.obj: D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_usart.c
+application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_usart.c.obj: D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_usart.c
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_usart.c.obj: application/CMakeFiles/STD_LIB.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_usart.c.obj"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_usart.c.obj -MF CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_usart.c.obj.d -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_usart.c.obj -c D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_usart.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_usart.c.obj"
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_usart.c.obj -MF CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_usart.c.obj.d -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_usart.c.obj -c D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_usart.c
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_usart.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_usart.c.i"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_usart.c > CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_usart.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_usart.c > CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_usart.c.i
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_usart.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_usart.c.s"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_usart.c -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_usart.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_usart.c -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_usart.c.s
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_wwdg.c.obj: application/CMakeFiles/STD_LIB.dir/flags.make
-application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_wwdg.c.obj: D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_wwdg.c
+application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_wwdg.c.obj: D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_wwdg.c
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_wwdg.c.obj: application/CMakeFiles/STD_LIB.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_wwdg.c.obj"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_wwdg.c.obj -MF CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_wwdg.c.obj.d -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_wwdg.c.obj -c D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_wwdg.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_wwdg.c.obj"
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_wwdg.c.obj -MF CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_wwdg.c.obj.d -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_wwdg.c.obj -c D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_wwdg.c
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_wwdg.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_wwdg.c.i"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_wwdg.c > CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_wwdg.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_wwdg.c > CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_wwdg.c.i
 
 application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_wwdg.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_wwdg.c.s"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Projects/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_wwdg.c -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_wwdg.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/stm32f10x_wwdg.c -o CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_wwdg.c.s
 
 # Object files for target STD_LIB
 STD_LIB_OBJECTS = \
@@ -445,19 +445,19 @@ application/libSTD_LIB.a: application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10
 application/libSTD_LIB.a: application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_wwdg.c.obj
 application/libSTD_LIB.a: application/CMakeFiles/STD_LIB.dir/build.make
 application/libSTD_LIB.a: application/CMakeFiles/STD_LIB.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Linking C static library libSTD_LIB.a"
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && $(CMAKE_COMMAND) -P CMakeFiles/STD_LIB.dir/cmake_clean_target.cmake
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/STD_LIB.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Linking C static library libSTD_LIB.a"
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && $(CMAKE_COMMAND) -P CMakeFiles/STD_LIB.dir/cmake_clean_target.cmake
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/STD_LIB.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 application/CMakeFiles/STD_LIB.dir/build: application/libSTD_LIB.a
 .PHONY : application/CMakeFiles/STD_LIB.dir/build
 
 application/CMakeFiles/STD_LIB.dir/clean:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application && $(CMAKE_COMMAND) -P CMakeFiles/STD_LIB.dir/cmake_clean.cmake
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && $(CMAKE_COMMAND) -P CMakeFiles/STD_LIB.dir/cmake_clean.cmake
 .PHONY : application/CMakeFiles/STD_LIB.dir/clean
 
 application/CMakeFiles/STD_LIB.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" D:/Projects/STM32F103C8Tx_VSCODE_IDE D:/Projects/STM32F103C8Tx_VSCODE_IDE/application D:/Projects/STM32F103C8Tx_VSCODE_IDE/build D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application/CMakeFiles/STD_LIB.dir/DependInfo.cmake "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application/CMakeFiles/STD_LIB.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : application/CMakeFiles/STD_LIB.dir/depend
 

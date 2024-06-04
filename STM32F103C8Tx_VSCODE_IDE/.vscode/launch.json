@@ -10,7 +10,7 @@
             "showDevDebugOutput": "raw",
             "servertype": "pyocd",
             "targetId": "STM32F103C8",
-            "svdFile": "D:/Projects/STM32F103C8Tx_VSCODE_IDE/STM32F103.svd",
+            "svdFile": "${workspaceRoot}/STM32F103C8Tx_VSCODE_IDE/STM32F103.svd",
             "serverpath": "D:/Python/Python310/Scripts/pyocd.exe",
             "preLaunchTask": "build_bat",
             "armToolchainPath": "D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin",
@@ -38,7 +38,7 @@
             "executable": "${workspaceRoot}/application/bin/application.elf",
             "request": "launch",
             "type": "cortex-debug",
-            "svdFile": "D:/Projects/STM32F103C8Tx_VSCODE_IDE/STM32F103.svd",
+            "svdFile": "${workspaceRoot}/STM32F103C8Tx_VSCODE_IDE/STM32F103.svd",
             "runToEntryPoint": "main",
             
             "servertype": "openocd",

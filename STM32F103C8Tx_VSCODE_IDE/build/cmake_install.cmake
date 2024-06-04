@@ -1,4 +1,4 @@
-# Install script for directory: D:/Projects/STM32F103C8Tx_VSCODE_IDE
+# Install script for directory: D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application/cmake_install.cmake")
+  include("D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application/cmake_install.cmake")
 
 endif()
 
@@ -51,5 +51,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

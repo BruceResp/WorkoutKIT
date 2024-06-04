@@ -57,10 +57,10 @@ RM = D:/TOOL/CMake/bin/cmake.exe -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:/Projects/STM32F103C8Tx_VSCODE_IDE
+CMAKE_SOURCE_DIR = D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:/Projects/STM32F103C8Tx_VSCODE_IDE/build
+CMAKE_BINARY_DIR = D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles D:/Projects/STM32F103C8Tx_VSCODE_IDE/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

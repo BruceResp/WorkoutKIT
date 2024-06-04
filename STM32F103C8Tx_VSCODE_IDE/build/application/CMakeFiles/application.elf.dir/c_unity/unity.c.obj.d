@@ -1,7 +1,7 @@
 application/CMakeFiles/application.elf.dir/c_unity/unity.c.obj: \
- D\:/Projects/STM32F103C8Tx_VSCODE_IDE/application/c_unity/unity.c \
- d\:\projects\stm32f103c8tx_vscode_ide\application\c_unity\inc\unity.h \
- d\:\projects\stm32f103c8tx_vscode_ide\application\c_unity\inc\unity_internals.h \
+ D\:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/c_unity/unity.c \
+ d\:\git_repository\stm32f103c8tx_vscode_ide\application\c_unity\inc\unity.h \
+ d\:\git_repository\stm32f103c8tx_vscode_ide\application\c_unity\inc\unity_internals.h \
  d\:\tool\complier_toolchain\gcc-arm-none-eabi-10-2020-q4-major-win32\gcc-arm-none-eabi-10-2020-q4-major\arm-none-eabi\include\setjmp.h \
  d\:\tool\complier_toolchain\gcc-arm-none-eabi-10-2020-q4-major-win32\gcc-arm-none-eabi-10-2020-q4-major\arm-none-eabi\include\_ansi.h \
  d\:\tool\complier_toolchain\gcc-arm-none-eabi-10-2020-q4-major-win32\gcc-arm-none-eabi-10-2020-q4-major\arm-none-eabi\include\newlib.h \

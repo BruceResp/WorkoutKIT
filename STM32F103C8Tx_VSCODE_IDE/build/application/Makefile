@@ -57,10 +57,10 @@ RM = D:/TOOL/CMake/bin/cmake.exe -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:/Projects/STM32F103C8Tx_VSCODE_IDE
+CMAKE_SOURCE_DIR = D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:/Projects/STM32F103C8Tx_VSCODE_IDE/build
+CMAKE_BINARY_DIR = D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(CMAKE_COMMAND) -E cmake_progress_start D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/application//CMakeFiles/progress.marks
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 application/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:/Projects/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles 0
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(CMAKE_COMMAND) -E cmake_progress_start D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application//CMakeFiles/progress.marks
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 application/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 application/clean
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 application/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 application/preinstall
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 application/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 application/preinstall
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 application/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 application/CMakeFiles/STD_LIB.dir/rule:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 application/CMakeFiles/STD_LIB.dir/rule
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 application/CMakeFiles/STD_LIB.dir/rule
 .PHONY : application/CMakeFiles/STD_LIB.dir/rule
 
 # Convenience name for target.
@@ -127,12 +127,12 @@ STD_LIB: application/CMakeFiles/STD_LIB.dir/rule
 
 # fast build rule for target.
 STD_LIB/fast:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/build
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/build
 .PHONY : STD_LIB/fast
 
 # Convenience name for target.
 application/CMakeFiles/BSP_LIB.dir/rule:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 application/CMakeFiles/BSP_LIB.dir/rule
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 application/CMakeFiles/BSP_LIB.dir/rule
 .PHONY : application/CMakeFiles/BSP_LIB.dir/rule
 
 # Convenience name for target.
@@ -141,12 +141,12 @@ BSP_LIB: application/CMakeFiles/BSP_LIB.dir/rule
 
 # fast build rule for target.
 BSP_LIB/fast:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/BSP_LIB.dir/build.make application/CMakeFiles/BSP_LIB.dir/build
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/BSP_LIB.dir/build.make application/CMakeFiles/BSP_LIB.dir/build
 .PHONY : BSP_LIB/fast
 
 # Convenience name for target.
 application/CMakeFiles/application.elf.dir/rule:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 application/CMakeFiles/application.elf.dir/rule
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 application/CMakeFiles/application.elf.dir/rule
 .PHONY : application/CMakeFiles/application.elf.dir/rule
 
 # Convenience name for target.
@@ -155,7 +155,7 @@ application.elf: application/CMakeFiles/application.elf.dir/rule
 
 # fast build rule for target.
 application.elf/fast:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/build
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/build
 .PHONY : application.elf/fast
 
 __/devices/core_cm3.obj: __/devices/core_cm3.c.obj
@@ -163,7 +163,7 @@ __/devices/core_cm3.obj: __/devices/core_cm3.c.obj
 
 # target to build an object file
 __/devices/core_cm3.c.obj:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/__/devices/core_cm3.c.obj
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/__/devices/core_cm3.c.obj
 .PHONY : __/devices/core_cm3.c.obj
 
 __/devices/core_cm3.i: __/devices/core_cm3.c.i
@@ -171,7 +171,7 @@ __/devices/core_cm3.i: __/devices/core_cm3.c.i
 
 # target to preprocess a source file
 __/devices/core_cm3.c.i:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/__/devices/core_cm3.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/__/devices/core_cm3.c.i
 .PHONY : __/devices/core_cm3.c.i
 
 __/devices/core_cm3.s: __/devices/core_cm3.c.s
@@ -179,7 +179,7 @@ __/devices/core_cm3.s: __/devices/core_cm3.c.s
 
 # target to generate assembly for a file
 __/devices/core_cm3.c.s:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/__/devices/core_cm3.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/__/devices/core_cm3.c.s
 .PHONY : __/devices/core_cm3.c.s
 
 __/devices/system_stm32f10x.obj: __/devices/system_stm32f10x.c.obj
@@ -187,7 +187,7 @@ __/devices/system_stm32f10x.obj: __/devices/system_stm32f10x.c.obj
 
 # target to build an object file
 __/devices/system_stm32f10x.c.obj:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.obj
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.obj
 .PHONY : __/devices/system_stm32f10x.c.obj
 
 __/devices/system_stm32f10x.i: __/devices/system_stm32f10x.c.i
@@ -195,7 +195,7 @@ __/devices/system_stm32f10x.i: __/devices/system_stm32f10x.c.i
 
 # target to preprocess a source file
 __/devices/system_stm32f10x.c.i:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.i
 .PHONY : __/devices/system_stm32f10x.c.i
 
 __/devices/system_stm32f10x.s: __/devices/system_stm32f10x.c.s
@@ -203,7 +203,7 @@ __/devices/system_stm32f10x.s: __/devices/system_stm32f10x.c.s
 
 # target to generate assembly for a file
 __/devices/system_stm32f10x.c.s:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.s
 .PHONY : __/devices/system_stm32f10x.c.s
 
 __/drivers/misc.obj: __/drivers/misc.c.obj
@@ -211,7 +211,7 @@ __/drivers/misc.obj: __/drivers/misc.c.obj
 
 # target to build an object file
 __/drivers/misc.c.obj:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/misc.c.obj
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/misc.c.obj
 .PHONY : __/drivers/misc.c.obj
 
 __/drivers/misc.i: __/drivers/misc.c.i
@@ -219,7 +219,7 @@ __/drivers/misc.i: __/drivers/misc.c.i
 
 # target to preprocess a source file
 __/drivers/misc.c.i:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/misc.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/misc.c.i
 .PHONY : __/drivers/misc.c.i
 
 __/drivers/misc.s: __/drivers/misc.c.s
@@ -227,7 +227,7 @@ __/drivers/misc.s: __/drivers/misc.c.s
 
 # target to generate assembly for a file
 __/drivers/misc.c.s:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/misc.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/misc.c.s
 .PHONY : __/drivers/misc.c.s
 
 __/drivers/stm32f10x_adc.obj: __/drivers/stm32f10x_adc.c.obj
@@ -235,7 +235,7 @@ __/drivers/stm32f10x_adc.obj: __/drivers/stm32f10x_adc.c.obj
 
 # target to build an object file
 __/drivers/stm32f10x_adc.c.obj:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_adc.c.obj
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_adc.c.obj
 .PHONY : __/drivers/stm32f10x_adc.c.obj
 
 __/drivers/stm32f10x_adc.i: __/drivers/stm32f10x_adc.c.i
@@ -243,7 +243,7 @@ __/drivers/stm32f10x_adc.i: __/drivers/stm32f10x_adc.c.i
 
 # target to preprocess a source file
 __/drivers/stm32f10x_adc.c.i:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_adc.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_adc.c.i
 .PHONY : __/drivers/stm32f10x_adc.c.i
 
 __/drivers/stm32f10x_adc.s: __/drivers/stm32f10x_adc.c.s
@@ -251,7 +251,7 @@ __/drivers/stm32f10x_adc.s: __/drivers/stm32f10x_adc.c.s
 
 # target to generate assembly for a file
 __/drivers/stm32f10x_adc.c.s:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_adc.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_adc.c.s
 .PHONY : __/drivers/stm32f10x_adc.c.s
 
 __/drivers/stm32f10x_bkp.obj: __/drivers/stm32f10x_bkp.c.obj
@@ -259,7 +259,7 @@ __/drivers/stm32f10x_bkp.obj: __/drivers/stm32f10x_bkp.c.obj
 
 # target to build an object file
 __/drivers/stm32f10x_bkp.c.obj:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_bkp.c.obj
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_bkp.c.obj
 .PHONY : __/drivers/stm32f10x_bkp.c.obj
 
 __/drivers/stm32f10x_bkp.i: __/drivers/stm32f10x_bkp.c.i
@@ -267,7 +267,7 @@ __/drivers/stm32f10x_bkp.i: __/drivers/stm32f10x_bkp.c.i
 
 # target to preprocess a source file
 __/drivers/stm32f10x_bkp.c.i:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_bkp.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_bkp.c.i
 .PHONY : __/drivers/stm32f10x_bkp.c.i
 
 __/drivers/stm32f10x_bkp.s: __/drivers/stm32f10x_bkp.c.s
@@ -275,7 +275,7 @@ __/drivers/stm32f10x_bkp.s: __/drivers/stm32f10x_bkp.c.s
 
 # target to generate assembly for a file
 __/drivers/stm32f10x_bkp.c.s:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_bkp.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_bkp.c.s
 .PHONY : __/drivers/stm32f10x_bkp.c.s
 
 __/drivers/stm32f10x_can.obj: __/drivers/stm32f10x_can.c.obj
@@ -283,7 +283,7 @@ __/drivers/stm32f10x_can.obj: __/drivers/stm32f10x_can.c.obj
 
 # target to build an object file
 __/drivers/stm32f10x_can.c.obj:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_can.c.obj
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_can.c.obj
 .PHONY : __/drivers/stm32f10x_can.c.obj
 
 __/drivers/stm32f10x_can.i: __/drivers/stm32f10x_can.c.i
@@ -291,7 +291,7 @@ __/drivers/stm32f10x_can.i: __/drivers/stm32f10x_can.c.i
 
 # target to preprocess a source file
 __/drivers/stm32f10x_can.c.i:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_can.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_can.c.i
 .PHONY : __/drivers/stm32f10x_can.c.i
 
 __/drivers/stm32f10x_can.s: __/drivers/stm32f10x_can.c.s
@@ -299,7 +299,7 @@ __/drivers/stm32f10x_can.s: __/drivers/stm32f10x_can.c.s
 
 # target to generate assembly for a file
 __/drivers/stm32f10x_can.c.s:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_can.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_can.c.s
 .PHONY : __/drivers/stm32f10x_can.c.s
 
 __/drivers/stm32f10x_cec.obj: __/drivers/stm32f10x_cec.c.obj
@@ -307,7 +307,7 @@ __/drivers/stm32f10x_cec.obj: __/drivers/stm32f10x_cec.c.obj
 
 # target to build an object file
 __/drivers/stm32f10x_cec.c.obj:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_cec.c.obj
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_cec.c.obj
 .PHONY : __/drivers/stm32f10x_cec.c.obj
 
 __/drivers/stm32f10x_cec.i: __/drivers/stm32f10x_cec.c.i
@@ -315,7 +315,7 @@ __/drivers/stm32f10x_cec.i: __/drivers/stm32f10x_cec.c.i
 
 # target to preprocess a source file
 __/drivers/stm32f10x_cec.c.i:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_cec.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_cec.c.i
 .PHONY : __/drivers/stm32f10x_cec.c.i
 
 __/drivers/stm32f10x_cec.s: __/drivers/stm32f10x_cec.c.s
@@ -323,7 +323,7 @@ __/drivers/stm32f10x_cec.s: __/drivers/stm32f10x_cec.c.s
 
 # target to generate assembly for a file
 __/drivers/stm32f10x_cec.c.s:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_cec.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_cec.c.s
 .PHONY : __/drivers/stm32f10x_cec.c.s
 
 __/drivers/stm32f10x_crc.obj: __/drivers/stm32f10x_crc.c.obj
@@ -331,7 +331,7 @@ __/drivers/stm32f10x_crc.obj: __/drivers/stm32f10x_crc.c.obj
 
 # target to build an object file
 __/drivers/stm32f10x_crc.c.obj:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_crc.c.obj
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_crc.c.obj
 .PHONY : __/drivers/stm32f10x_crc.c.obj
 
 __/drivers/stm32f10x_crc.i: __/drivers/stm32f10x_crc.c.i
@@ -339,7 +339,7 @@ __/drivers/stm32f10x_crc.i: __/drivers/stm32f10x_crc.c.i
 
 # target to preprocess a source file
 __/drivers/stm32f10x_crc.c.i:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_crc.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_crc.c.i
 .PHONY : __/drivers/stm32f10x_crc.c.i
 
 __/drivers/stm32f10x_crc.s: __/drivers/stm32f10x_crc.c.s
@@ -347,7 +347,7 @@ __/drivers/stm32f10x_crc.s: __/drivers/stm32f10x_crc.c.s
 
 # target to generate assembly for a file
 __/drivers/stm32f10x_crc.c.s:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_crc.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_crc.c.s
 .PHONY : __/drivers/stm32f10x_crc.c.s
 
 __/drivers/stm32f10x_dac.obj: __/drivers/stm32f10x_dac.c.obj
@@ -355,7 +355,7 @@ __/drivers/stm32f10x_dac.obj: __/drivers/stm32f10x_dac.c.obj
 
 # target to build an object file
 __/drivers/stm32f10x_dac.c.obj:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dac.c.obj
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dac.c.obj
 .PHONY : __/drivers/stm32f10x_dac.c.obj
 
 __/drivers/stm32f10x_dac.i: __/drivers/stm32f10x_dac.c.i
@@ -363,7 +363,7 @@ __/drivers/stm32f10x_dac.i: __/drivers/stm32f10x_dac.c.i
 
 # target to preprocess a source file
 __/drivers/stm32f10x_dac.c.i:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dac.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dac.c.i
 .PHONY : __/drivers/stm32f10x_dac.c.i
 
 __/drivers/stm32f10x_dac.s: __/drivers/stm32f10x_dac.c.s
@@ -371,7 +371,7 @@ __/drivers/stm32f10x_dac.s: __/drivers/stm32f10x_dac.c.s
 
 # target to generate assembly for a file
 __/drivers/stm32f10x_dac.c.s:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dac.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dac.c.s
 .PHONY : __/drivers/stm32f10x_dac.c.s
 
 __/drivers/stm32f10x_dbgmcu.obj: __/drivers/stm32f10x_dbgmcu.c.obj
@@ -379,7 +379,7 @@ __/drivers/stm32f10x_dbgmcu.obj: __/drivers/stm32f10x_dbgmcu.c.obj
 
 # target to build an object file
 __/drivers/stm32f10x_dbgmcu.c.obj:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dbgmcu.c.obj
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dbgmcu.c.obj
 .PHONY : __/drivers/stm32f10x_dbgmcu.c.obj
 
 __/drivers/stm32f10x_dbgmcu.i: __/drivers/stm32f10x_dbgmcu.c.i
@@ -387,7 +387,7 @@ __/drivers/stm32f10x_dbgmcu.i: __/drivers/stm32f10x_dbgmcu.c.i
 
 # target to preprocess a source file
 __/drivers/stm32f10x_dbgmcu.c.i:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dbgmcu.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dbgmcu.c.i
 .PHONY : __/drivers/stm32f10x_dbgmcu.c.i
 
 __/drivers/stm32f10x_dbgmcu.s: __/drivers/stm32f10x_dbgmcu.c.s
@@ -395,7 +395,7 @@ __/drivers/stm32f10x_dbgmcu.s: __/drivers/stm32f10x_dbgmcu.c.s
 
 # target to generate assembly for a file
 __/drivers/stm32f10x_dbgmcu.c.s:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dbgmcu.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dbgmcu.c.s
 .PHONY : __/drivers/stm32f10x_dbgmcu.c.s
 
 __/drivers/stm32f10x_dma.obj: __/drivers/stm32f10x_dma.c.obj
@@ -403,7 +403,7 @@ __/drivers/stm32f10x_dma.obj: __/drivers/stm32f10x_dma.c.obj
 
 # target to build an object file
 __/drivers/stm32f10x_dma.c.obj:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dma.c.obj
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dma.c.obj
 .PHONY : __/drivers/stm32f10x_dma.c.obj
 
 __/drivers/stm32f10x_dma.i: __/drivers/stm32f10x_dma.c.i
@@ -411,7 +411,7 @@ __/drivers/stm32f10x_dma.i: __/drivers/stm32f10x_dma.c.i
 
 # target to preprocess a source file
 __/drivers/stm32f10x_dma.c.i:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dma.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dma.c.i
 .PHONY : __/drivers/stm32f10x_dma.c.i
 
 __/drivers/stm32f10x_dma.s: __/drivers/stm32f10x_dma.c.s
@@ -419,7 +419,7 @@ __/drivers/stm32f10x_dma.s: __/drivers/stm32f10x_dma.c.s
 
 # target to generate assembly for a file
 __/drivers/stm32f10x_dma.c.s:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dma.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_dma.c.s
 .PHONY : __/drivers/stm32f10x_dma.c.s
 
 __/drivers/stm32f10x_exti.obj: __/drivers/stm32f10x_exti.c.obj
@@ -427,7 +427,7 @@ __/drivers/stm32f10x_exti.obj: __/drivers/stm32f10x_exti.c.obj
 
 # target to build an object file
 __/drivers/stm32f10x_exti.c.obj:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_exti.c.obj
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_exti.c.obj
 .PHONY : __/drivers/stm32f10x_exti.c.obj
 
 __/drivers/stm32f10x_exti.i: __/drivers/stm32f10x_exti.c.i
@@ -435,7 +435,7 @@ __/drivers/stm32f10x_exti.i: __/drivers/stm32f10x_exti.c.i
 
 # target to preprocess a source file
 __/drivers/stm32f10x_exti.c.i:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_exti.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_exti.c.i
 .PHONY : __/drivers/stm32f10x_exti.c.i
 
 __/drivers/stm32f10x_exti.s: __/drivers/stm32f10x_exti.c.s
@@ -443,7 +443,7 @@ __/drivers/stm32f10x_exti.s: __/drivers/stm32f10x_exti.c.s
 
 # target to generate assembly for a file
 __/drivers/stm32f10x_exti.c.s:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_exti.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_exti.c.s
 .PHONY : __/drivers/stm32f10x_exti.c.s
 
 __/drivers/stm32f10x_flash.obj: __/drivers/stm32f10x_flash.c.obj
@@ -451,7 +451,7 @@ __/drivers/stm32f10x_flash.obj: __/drivers/stm32f10x_flash.c.obj
 
 # target to build an object file
 __/drivers/stm32f10x_flash.c.obj:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_flash.c.obj
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_flash.c.obj
 .PHONY : __/drivers/stm32f10x_flash.c.obj
 
 __/drivers/stm32f10x_flash.i: __/drivers/stm32f10x_flash.c.i
@@ -459,7 +459,7 @@ __/drivers/stm32f10x_flash.i: __/drivers/stm32f10x_flash.c.i
 
 # target to preprocess a source file
 __/drivers/stm32f10x_flash.c.i:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_flash.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_flash.c.i
 .PHONY : __/drivers/stm32f10x_flash.c.i
 
 __/drivers/stm32f10x_flash.s: __/drivers/stm32f10x_flash.c.s
@@ -467,7 +467,7 @@ __/drivers/stm32f10x_flash.s: __/drivers/stm32f10x_flash.c.s
 
 # target to generate assembly for a file
 __/drivers/stm32f10x_flash.c.s:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_flash.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_flash.c.s
 .PHONY : __/drivers/stm32f10x_flash.c.s
 
 __/drivers/stm32f10x_fsmc.obj: __/drivers/stm32f10x_fsmc.c.obj
@@ -475,7 +475,7 @@ __/drivers/stm32f10x_fsmc.obj: __/drivers/stm32f10x_fsmc.c.obj
 
 # target to build an object file
 __/drivers/stm32f10x_fsmc.c.obj:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_fsmc.c.obj
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_fsmc.c.obj
 .PHONY : __/drivers/stm32f10x_fsmc.c.obj
 
 __/drivers/stm32f10x_fsmc.i: __/drivers/stm32f10x_fsmc.c.i
@@ -483,7 +483,7 @@ __/drivers/stm32f10x_fsmc.i: __/drivers/stm32f10x_fsmc.c.i
 
 # target to preprocess a source file
 __/drivers/stm32f10x_fsmc.c.i:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_fsmc.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_fsmc.c.i
 .PHONY : __/drivers/stm32f10x_fsmc.c.i
 
 __/drivers/stm32f10x_fsmc.s: __/drivers/stm32f10x_fsmc.c.s
@@ -491,7 +491,7 @@ __/drivers/stm32f10x_fsmc.s: __/drivers/stm32f10x_fsmc.c.s
 
 # target to generate assembly for a file
 __/drivers/stm32f10x_fsmc.c.s:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_fsmc.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_fsmc.c.s
 .PHONY : __/drivers/stm32f10x_fsmc.c.s
 
 __/drivers/stm32f10x_gpio.obj: __/drivers/stm32f10x_gpio.c.obj
@@ -499,7 +499,7 @@ __/drivers/stm32f10x_gpio.obj: __/drivers/stm32f10x_gpio.c.obj
 
 # target to build an object file
 __/drivers/stm32f10x_gpio.c.obj:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_gpio.c.obj
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_gpio.c.obj
 .PHONY : __/drivers/stm32f10x_gpio.c.obj
 
 __/drivers/stm32f10x_gpio.i: __/drivers/stm32f10x_gpio.c.i
@@ -507,7 +507,7 @@ __/drivers/stm32f10x_gpio.i: __/drivers/stm32f10x_gpio.c.i
 
 # target to preprocess a source file
 __/drivers/stm32f10x_gpio.c.i:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_gpio.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_gpio.c.i
 .PHONY : __/drivers/stm32f10x_gpio.c.i
 
 __/drivers/stm32f10x_gpio.s: __/drivers/stm32f10x_gpio.c.s
@@ -515,7 +515,7 @@ __/drivers/stm32f10x_gpio.s: __/drivers/stm32f10x_gpio.c.s
 
 # target to generate assembly for a file
 __/drivers/stm32f10x_gpio.c.s:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_gpio.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_gpio.c.s
 .PHONY : __/drivers/stm32f10x_gpio.c.s
 
 __/drivers/stm32f10x_i2c.obj: __/drivers/stm32f10x_i2c.c.obj
@@ -523,7 +523,7 @@ __/drivers/stm32f10x_i2c.obj: __/drivers/stm32f10x_i2c.c.obj
 
 # target to build an object file
 __/drivers/stm32f10x_i2c.c.obj:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_i2c.c.obj
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_i2c.c.obj
 .PHONY : __/drivers/stm32f10x_i2c.c.obj
 
 __/drivers/stm32f10x_i2c.i: __/drivers/stm32f10x_i2c.c.i
@@ -531,7 +531,7 @@ __/drivers/stm32f10x_i2c.i: __/drivers/stm32f10x_i2c.c.i
 
 # target to preprocess a source file
 __/drivers/stm32f10x_i2c.c.i:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_i2c.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_i2c.c.i
 .PHONY : __/drivers/stm32f10x_i2c.c.i
 
 __/drivers/stm32f10x_i2c.s: __/drivers/stm32f10x_i2c.c.s
@@ -539,7 +539,7 @@ __/drivers/stm32f10x_i2c.s: __/drivers/stm32f10x_i2c.c.s
 
 # target to generate assembly for a file
 __/drivers/stm32f10x_i2c.c.s:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_i2c.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_i2c.c.s
 .PHONY : __/drivers/stm32f10x_i2c.c.s
 
 __/drivers/stm32f10x_iwdg.obj: __/drivers/stm32f10x_iwdg.c.obj
@@ -547,7 +547,7 @@ __/drivers/stm32f10x_iwdg.obj: __/drivers/stm32f10x_iwdg.c.obj
 
 # target to build an object file
 __/drivers/stm32f10x_iwdg.c.obj:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_iwdg.c.obj
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_iwdg.c.obj
 .PHONY : __/drivers/stm32f10x_iwdg.c.obj
 
 __/drivers/stm32f10x_iwdg.i: __/drivers/stm32f10x_iwdg.c.i
@@ -555,7 +555,7 @@ __/drivers/stm32f10x_iwdg.i: __/drivers/stm32f10x_iwdg.c.i
 
 # target to preprocess a source file
 __/drivers/stm32f10x_iwdg.c.i:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_iwdg.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_iwdg.c.i
 .PHONY : __/drivers/stm32f10x_iwdg.c.i
 
 __/drivers/stm32f10x_iwdg.s: __/drivers/stm32f10x_iwdg.c.s
@@ -563,7 +563,7 @@ __/drivers/stm32f10x_iwdg.s: __/drivers/stm32f10x_iwdg.c.s
 
 # target to generate assembly for a file
 __/drivers/stm32f10x_iwdg.c.s:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_iwdg.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_iwdg.c.s
 .PHONY : __/drivers/stm32f10x_iwdg.c.s
 
 __/drivers/stm32f10x_pwr.obj: __/drivers/stm32f10x_pwr.c.obj
@@ -571,7 +571,7 @@ __/drivers/stm32f10x_pwr.obj: __/drivers/stm32f10x_pwr.c.obj
 
 # target to build an object file
 __/drivers/stm32f10x_pwr.c.obj:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_pwr.c.obj
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_pwr.c.obj
 .PHONY : __/drivers/stm32f10x_pwr.c.obj
 
 __/drivers/stm32f10x_pwr.i: __/drivers/stm32f10x_pwr.c.i
@@ -579,7 +579,7 @@ __/drivers/stm32f10x_pwr.i: __/drivers/stm32f10x_pwr.c.i
 
 # target to preprocess a source file
 __/drivers/stm32f10x_pwr.c.i:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_pwr.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_pwr.c.i
 .PHONY : __/drivers/stm32f10x_pwr.c.i
 
 __/drivers/stm32f10x_pwr.s: __/drivers/stm32f10x_pwr.c.s
@@ -587,7 +587,7 @@ __/drivers/stm32f10x_pwr.s: __/drivers/stm32f10x_pwr.c.s
 
 # target to generate assembly for a file
 __/drivers/stm32f10x_pwr.c.s:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_pwr.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_pwr.c.s
 .PHONY : __/drivers/stm32f10x_pwr.c.s
 
 __/drivers/stm32f10x_rcc.obj: __/drivers/stm32f10x_rcc.c.obj
@@ -595,7 +595,7 @@ __/drivers/stm32f10x_rcc.obj: __/drivers/stm32f10x_rcc.c.obj
 
 # target to build an object file
 __/drivers/stm32f10x_rcc.c.obj:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rcc.c.obj
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rcc.c.obj
 .PHONY : __/drivers/stm32f10x_rcc.c.obj
 
 __/drivers/stm32f10x_rcc.i: __/drivers/stm32f10x_rcc.c.i
@@ -603,7 +603,7 @@ __/drivers/stm32f10x_rcc.i: __/drivers/stm32f10x_rcc.c.i
 
 # target to preprocess a source file
 __/drivers/stm32f10x_rcc.c.i:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rcc.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rcc.c.i
 .PHONY : __/drivers/stm32f10x_rcc.c.i
 
 __/drivers/stm32f10x_rcc.s: __/drivers/stm32f10x_rcc.c.s
@@ -611,7 +611,7 @@ __/drivers/stm32f10x_rcc.s: __/drivers/stm32f10x_rcc.c.s
 
 # target to generate assembly for a file
 __/drivers/stm32f10x_rcc.c.s:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rcc.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rcc.c.s
 .PHONY : __/drivers/stm32f10x_rcc.c.s
 
 __/drivers/stm32f10x_rtc.obj: __/drivers/stm32f10x_rtc.c.obj
@@ -619,7 +619,7 @@ __/drivers/stm32f10x_rtc.obj: __/drivers/stm32f10x_rtc.c.obj
 
 # target to build an object file
 __/drivers/stm32f10x_rtc.c.obj:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rtc.c.obj
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rtc.c.obj
 .PHONY : __/drivers/stm32f10x_rtc.c.obj
 
 __/drivers/stm32f10x_rtc.i: __/drivers/stm32f10x_rtc.c.i
@@ -627,7 +627,7 @@ __/drivers/stm32f10x_rtc.i: __/drivers/stm32f10x_rtc.c.i
 
 # target to preprocess a source file
 __/drivers/stm32f10x_rtc.c.i:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rtc.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rtc.c.i
 .PHONY : __/drivers/stm32f10x_rtc.c.i
 
 __/drivers/stm32f10x_rtc.s: __/drivers/stm32f10x_rtc.c.s
@@ -635,7 +635,7 @@ __/drivers/stm32f10x_rtc.s: __/drivers/stm32f10x_rtc.c.s
 
 # target to generate assembly for a file
 __/drivers/stm32f10x_rtc.c.s:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rtc.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_rtc.c.s
 .PHONY : __/drivers/stm32f10x_rtc.c.s
 
 __/drivers/stm32f10x_sdio.obj: __/drivers/stm32f10x_sdio.c.obj
@@ -643,7 +643,7 @@ __/drivers/stm32f10x_sdio.obj: __/drivers/stm32f10x_sdio.c.obj
 
 # target to build an object file
 __/drivers/stm32f10x_sdio.c.obj:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_sdio.c.obj
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_sdio.c.obj
 .PHONY : __/drivers/stm32f10x_sdio.c.obj
 
 __/drivers/stm32f10x_sdio.i: __/drivers/stm32f10x_sdio.c.i
@@ -651,7 +651,7 @@ __/drivers/stm32f10x_sdio.i: __/drivers/stm32f10x_sdio.c.i
 
 # target to preprocess a source file
 __/drivers/stm32f10x_sdio.c.i:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_sdio.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_sdio.c.i
 .PHONY : __/drivers/stm32f10x_sdio.c.i
 
 __/drivers/stm32f10x_sdio.s: __/drivers/stm32f10x_sdio.c.s
@@ -659,7 +659,7 @@ __/drivers/stm32f10x_sdio.s: __/drivers/stm32f10x_sdio.c.s
 
 # target to generate assembly for a file
 __/drivers/stm32f10x_sdio.c.s:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_sdio.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_sdio.c.s
 .PHONY : __/drivers/stm32f10x_sdio.c.s
 
 __/drivers/stm32f10x_spi.obj: __/drivers/stm32f10x_spi.c.obj
@@ -667,7 +667,7 @@ __/drivers/stm32f10x_spi.obj: __/drivers/stm32f10x_spi.c.obj
 
 # target to build an object file
 __/drivers/stm32f10x_spi.c.obj:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_spi.c.obj
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_spi.c.obj
 .PHONY : __/drivers/stm32f10x_spi.c.obj
 
 __/drivers/stm32f10x_spi.i: __/drivers/stm32f10x_spi.c.i
@@ -675,7 +675,7 @@ __/drivers/stm32f10x_spi.i: __/drivers/stm32f10x_spi.c.i
 
 # target to preprocess a source file
 __/drivers/stm32f10x_spi.c.i:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_spi.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_spi.c.i
 .PHONY : __/drivers/stm32f10x_spi.c.i
 
 __/drivers/stm32f10x_spi.s: __/drivers/stm32f10x_spi.c.s
@@ -683,7 +683,7 @@ __/drivers/stm32f10x_spi.s: __/drivers/stm32f10x_spi.c.s
 
 # target to generate assembly for a file
 __/drivers/stm32f10x_spi.c.s:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_spi.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_spi.c.s
 .PHONY : __/drivers/stm32f10x_spi.c.s
 
 __/drivers/stm32f10x_tim.obj: __/drivers/stm32f10x_tim.c.obj
@@ -691,7 +691,7 @@ __/drivers/stm32f10x_tim.obj: __/drivers/stm32f10x_tim.c.obj
 
 # target to build an object file
 __/drivers/stm32f10x_tim.c.obj:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_tim.c.obj
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_tim.c.obj
 .PHONY : __/drivers/stm32f10x_tim.c.obj
 
 __/drivers/stm32f10x_tim.i: __/drivers/stm32f10x_tim.c.i
@@ -699,7 +699,7 @@ __/drivers/stm32f10x_tim.i: __/drivers/stm32f10x_tim.c.i
 
 # target to preprocess a source file
 __/drivers/stm32f10x_tim.c.i:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_tim.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_tim.c.i
 .PHONY : __/drivers/stm32f10x_tim.c.i
 
 __/drivers/stm32f10x_tim.s: __/drivers/stm32f10x_tim.c.s
@@ -707,7 +707,7 @@ __/drivers/stm32f10x_tim.s: __/drivers/stm32f10x_tim.c.s
 
 # target to generate assembly for a file
 __/drivers/stm32f10x_tim.c.s:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_tim.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_tim.c.s
 .PHONY : __/drivers/stm32f10x_tim.c.s
 
 __/drivers/stm32f10x_usart.obj: __/drivers/stm32f10x_usart.c.obj
@@ -715,7 +715,7 @@ __/drivers/stm32f10x_usart.obj: __/drivers/stm32f10x_usart.c.obj
 
 # target to build an object file
 __/drivers/stm32f10x_usart.c.obj:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_usart.c.obj
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_usart.c.obj
 .PHONY : __/drivers/stm32f10x_usart.c.obj
 
 __/drivers/stm32f10x_usart.i: __/drivers/stm32f10x_usart.c.i
@@ -723,7 +723,7 @@ __/drivers/stm32f10x_usart.i: __/drivers/stm32f10x_usart.c.i
 
 # target to preprocess a source file
 __/drivers/stm32f10x_usart.c.i:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_usart.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_usart.c.i
 .PHONY : __/drivers/stm32f10x_usart.c.i
 
 __/drivers/stm32f10x_usart.s: __/drivers/stm32f10x_usart.c.s
@@ -731,7 +731,7 @@ __/drivers/stm32f10x_usart.s: __/drivers/stm32f10x_usart.c.s
 
 # target to generate assembly for a file
 __/drivers/stm32f10x_usart.c.s:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_usart.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_usart.c.s
 .PHONY : __/drivers/stm32f10x_usart.c.s
 
 __/drivers/stm32f10x_wwdg.obj: __/drivers/stm32f10x_wwdg.c.obj
@@ -739,7 +739,7 @@ __/drivers/stm32f10x_wwdg.obj: __/drivers/stm32f10x_wwdg.c.obj
 
 # target to build an object file
 __/drivers/stm32f10x_wwdg.c.obj:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_wwdg.c.obj
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_wwdg.c.obj
 .PHONY : __/drivers/stm32f10x_wwdg.c.obj
 
 __/drivers/stm32f10x_wwdg.i: __/drivers/stm32f10x_wwdg.c.i
@@ -747,7 +747,7 @@ __/drivers/stm32f10x_wwdg.i: __/drivers/stm32f10x_wwdg.c.i
 
 # target to preprocess a source file
 __/drivers/stm32f10x_wwdg.c.i:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_wwdg.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_wwdg.c.i
 .PHONY : __/drivers/stm32f10x_wwdg.c.i
 
 __/drivers/stm32f10x_wwdg.s: __/drivers/stm32f10x_wwdg.c.s
@@ -755,7 +755,7 @@ __/drivers/stm32f10x_wwdg.s: __/drivers/stm32f10x_wwdg.c.s
 
 # target to generate assembly for a file
 __/drivers/stm32f10x_wwdg.c.s:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_wwdg.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/STD_LIB.dir/build.make application/CMakeFiles/STD_LIB.dir/__/drivers/stm32f10x_wwdg.c.s
 .PHONY : __/drivers/stm32f10x_wwdg.c.s
 
 bsp/bsp.obj: bsp/bsp.c.obj
@@ -763,7 +763,7 @@ bsp/bsp.obj: bsp/bsp.c.obj
 
 # target to build an object file
 bsp/bsp.c.obj:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/BSP_LIB.dir/build.make application/CMakeFiles/BSP_LIB.dir/bsp/bsp.c.obj
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/BSP_LIB.dir/build.make application/CMakeFiles/BSP_LIB.dir/bsp/bsp.c.obj
 .PHONY : bsp/bsp.c.obj
 
 bsp/bsp.i: bsp/bsp.c.i
@@ -771,7 +771,7 @@ bsp/bsp.i: bsp/bsp.c.i
 
 # target to preprocess a source file
 bsp/bsp.c.i:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/BSP_LIB.dir/build.make application/CMakeFiles/BSP_LIB.dir/bsp/bsp.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/BSP_LIB.dir/build.make application/CMakeFiles/BSP_LIB.dir/bsp/bsp.c.i
 .PHONY : bsp/bsp.c.i
 
 bsp/bsp.s: bsp/bsp.c.s
@@ -779,7 +779,7 @@ bsp/bsp.s: bsp/bsp.c.s
 
 # target to generate assembly for a file
 bsp/bsp.c.s:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/BSP_LIB.dir/build.make application/CMakeFiles/BSP_LIB.dir/bsp/bsp.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/BSP_LIB.dir/build.make application/CMakeFiles/BSP_LIB.dir/bsp/bsp.c.s
 .PHONY : bsp/bsp.c.s
 
 bsp/bsp_dma.obj: bsp/bsp_dma.c.obj
@@ -787,7 +787,7 @@ bsp/bsp_dma.obj: bsp/bsp_dma.c.obj
 
 # target to build an object file
 bsp/bsp_dma.c.obj:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/BSP_LIB.dir/build.make application/CMakeFiles/BSP_LIB.dir/bsp/bsp_dma.c.obj
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/BSP_LIB.dir/build.make application/CMakeFiles/BSP_LIB.dir/bsp/bsp_dma.c.obj
 .PHONY : bsp/bsp_dma.c.obj
 
 bsp/bsp_dma.i: bsp/bsp_dma.c.i
@@ -795,7 +795,7 @@ bsp/bsp_dma.i: bsp/bsp_dma.c.i
 
 # target to preprocess a source file
 bsp/bsp_dma.c.i:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/BSP_LIB.dir/build.make application/CMakeFiles/BSP_LIB.dir/bsp/bsp_dma.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/BSP_LIB.dir/build.make application/CMakeFiles/BSP_LIB.dir/bsp/bsp_dma.c.i
 .PHONY : bsp/bsp_dma.c.i
 
 bsp/bsp_dma.s: bsp/bsp_dma.c.s
@@ -803,7 +803,7 @@ bsp/bsp_dma.s: bsp/bsp_dma.c.s
 
 # target to generate assembly for a file
 bsp/bsp_dma.c.s:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/BSP_LIB.dir/build.make application/CMakeFiles/BSP_LIB.dir/bsp/bsp_dma.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/BSP_LIB.dir/build.make application/CMakeFiles/BSP_LIB.dir/bsp/bsp_dma.c.s
 .PHONY : bsp/bsp_dma.c.s
 
 bsp/bsp_gpio.obj: bsp/bsp_gpio.c.obj
@@ -811,7 +811,7 @@ bsp/bsp_gpio.obj: bsp/bsp_gpio.c.obj
 
 # target to build an object file
 bsp/bsp_gpio.c.obj:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/BSP_LIB.dir/build.make application/CMakeFiles/BSP_LIB.dir/bsp/bsp_gpio.c.obj
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/BSP_LIB.dir/build.make application/CMakeFiles/BSP_LIB.dir/bsp/bsp_gpio.c.obj
 .PHONY : bsp/bsp_gpio.c.obj
 
 bsp/bsp_gpio.i: bsp/bsp_gpio.c.i
@@ -819,7 +819,7 @@ bsp/bsp_gpio.i: bsp/bsp_gpio.c.i
 
 # target to preprocess a source file
 bsp/bsp_gpio.c.i:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/BSP_LIB.dir/build.make application/CMakeFiles/BSP_LIB.dir/bsp/bsp_gpio.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/BSP_LIB.dir/build.make application/CMakeFiles/BSP_LIB.dir/bsp/bsp_gpio.c.i
 .PHONY : bsp/bsp_gpio.c.i
 
 bsp/bsp_gpio.s: bsp/bsp_gpio.c.s
@@ -827,7 +827,7 @@ bsp/bsp_gpio.s: bsp/bsp_gpio.c.s
 
 # target to generate assembly for a file
 bsp/bsp_gpio.c.s:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/BSP_LIB.dir/build.make application/CMakeFiles/BSP_LIB.dir/bsp/bsp_gpio.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/BSP_LIB.dir/build.make application/CMakeFiles/BSP_LIB.dir/bsp/bsp_gpio.c.s
 .PHONY : bsp/bsp_gpio.c.s
 
 bsp/bsp_i2c.obj: bsp/bsp_i2c.c.obj
@@ -835,7 +835,7 @@ bsp/bsp_i2c.obj: bsp/bsp_i2c.c.obj
 
 # target to build an object file
 bsp/bsp_i2c.c.obj:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/BSP_LIB.dir/build.make application/CMakeFiles/BSP_LIB.dir/bsp/bsp_i2c.c.obj
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/BSP_LIB.dir/build.make application/CMakeFiles/BSP_LIB.dir/bsp/bsp_i2c.c.obj
 .PHONY : bsp/bsp_i2c.c.obj
 
 bsp/bsp_i2c.i: bsp/bsp_i2c.c.i
@@ -843,7 +843,7 @@ bsp/bsp_i2c.i: bsp/bsp_i2c.c.i
 
 # target to preprocess a source file
 bsp/bsp_i2c.c.i:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/BSP_LIB.dir/build.make application/CMakeFiles/BSP_LIB.dir/bsp/bsp_i2c.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/BSP_LIB.dir/build.make application/CMakeFiles/BSP_LIB.dir/bsp/bsp_i2c.c.i
 .PHONY : bsp/bsp_i2c.c.i
 
 bsp/bsp_i2c.s: bsp/bsp_i2c.c.s
@@ -851,7 +851,7 @@ bsp/bsp_i2c.s: bsp/bsp_i2c.c.s
 
 # target to generate assembly for a file
 bsp/bsp_i2c.c.s:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/BSP_LIB.dir/build.make application/CMakeFiles/BSP_LIB.dir/bsp/bsp_i2c.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/BSP_LIB.dir/build.make application/CMakeFiles/BSP_LIB.dir/bsp/bsp_i2c.c.s
 .PHONY : bsp/bsp_i2c.c.s
 
 bsp/bsp_spi.obj: bsp/bsp_spi.c.obj
@@ -859,7 +859,7 @@ bsp/bsp_spi.obj: bsp/bsp_spi.c.obj
 
 # target to build an object file
 bsp/bsp_spi.c.obj:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/BSP_LIB.dir/build.make application/CMakeFiles/BSP_LIB.dir/bsp/bsp_spi.c.obj
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/BSP_LIB.dir/build.make application/CMakeFiles/BSP_LIB.dir/bsp/bsp_spi.c.obj
 .PHONY : bsp/bsp_spi.c.obj
 
 bsp/bsp_spi.i: bsp/bsp_spi.c.i
@@ -867,7 +867,7 @@ bsp/bsp_spi.i: bsp/bsp_spi.c.i
 
 # target to preprocess a source file
 bsp/bsp_spi.c.i:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/BSP_LIB.dir/build.make application/CMakeFiles/BSP_LIB.dir/bsp/bsp_spi.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/BSP_LIB.dir/build.make application/CMakeFiles/BSP_LIB.dir/bsp/bsp_spi.c.i
 .PHONY : bsp/bsp_spi.c.i
 
 bsp/bsp_spi.s: bsp/bsp_spi.c.s
@@ -875,7 +875,7 @@ bsp/bsp_spi.s: bsp/bsp_spi.c.s
 
 # target to generate assembly for a file
 bsp/bsp_spi.c.s:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/BSP_LIB.dir/build.make application/CMakeFiles/BSP_LIB.dir/bsp/bsp_spi.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/BSP_LIB.dir/build.make application/CMakeFiles/BSP_LIB.dir/bsp/bsp_spi.c.s
 .PHONY : bsp/bsp_spi.c.s
 
 c_unity/unity.obj: c_unity/unity.c.obj
@@ -883,7 +883,7 @@ c_unity/unity.obj: c_unity/unity.c.obj
 
 # target to build an object file
 c_unity/unity.c.obj:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/c_unity/unity.c.obj
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/c_unity/unity.c.obj
 .PHONY : c_unity/unity.c.obj
 
 c_unity/unity.i: c_unity/unity.c.i
@@ -891,7 +891,7 @@ c_unity/unity.i: c_unity/unity.c.i
 
 # target to preprocess a source file
 c_unity/unity.c.i:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/c_unity/unity.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/c_unity/unity.c.i
 .PHONY : c_unity/unity.c.i
 
 c_unity/unity.s: c_unity/unity.c.s
@@ -899,7 +899,7 @@ c_unity/unity.s: c_unity/unity.c.s
 
 # target to generate assembly for a file
 c_unity/unity.c.s:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/c_unity/unity.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/c_unity/unity.c.s
 .PHONY : c_unity/unity.c.s
 
 core/application/main.obj: core/application/main.c.obj
@@ -907,7 +907,7 @@ core/application/main.obj: core/application/main.c.obj
 
 # target to build an object file
 core/application/main.c.obj:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/core/application/main.c.obj
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/core/application/main.c.obj
 .PHONY : core/application/main.c.obj
 
 core/application/main.i: core/application/main.c.i
@@ -915,7 +915,7 @@ core/application/main.i: core/application/main.c.i
 
 # target to preprocess a source file
 core/application/main.c.i:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/core/application/main.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/core/application/main.c.i
 .PHONY : core/application/main.c.i
 
 core/application/main.s: core/application/main.c.s
@@ -923,7 +923,7 @@ core/application/main.s: core/application/main.c.s
 
 # target to generate assembly for a file
 core/application/main.c.s:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/core/application/main.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/core/application/main.c.s
 .PHONY : core/application/main.c.s
 
 core/application/stm32f10x_it.obj: core/application/stm32f10x_it.c.obj
@@ -931,7 +931,7 @@ core/application/stm32f10x_it.obj: core/application/stm32f10x_it.c.obj
 
 # target to build an object file
 core/application/stm32f10x_it.c.obj:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.obj
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.obj
 .PHONY : core/application/stm32f10x_it.c.obj
 
 core/application/stm32f10x_it.i: core/application/stm32f10x_it.c.i
@@ -939,7 +939,7 @@ core/application/stm32f10x_it.i: core/application/stm32f10x_it.c.i
 
 # target to preprocess a source file
 core/application/stm32f10x_it.c.i:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.i
 .PHONY : core/application/stm32f10x_it.c.i
 
 core/application/stm32f10x_it.s: core/application/stm32f10x_it.c.s
@@ -947,7 +947,7 @@ core/application/stm32f10x_it.s: core/application/stm32f10x_it.c.s
 
 # target to generate assembly for a file
 core/application/stm32f10x_it.c.s:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.s
 .PHONY : core/application/stm32f10x_it.c.s
 
 core/gui/gui.obj: core/gui/gui.c.obj
@@ -955,7 +955,7 @@ core/gui/gui.obj: core/gui/gui.c.obj
 
 # target to build an object file
 core/gui/gui.c.obj:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/core/gui/gui.c.obj
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/core/gui/gui.c.obj
 .PHONY : core/gui/gui.c.obj
 
 core/gui/gui.i: core/gui/gui.c.i
@@ -963,7 +963,7 @@ core/gui/gui.i: core/gui/gui.c.i
 
 # target to preprocess a source file
 core/gui/gui.c.i:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/core/gui/gui.c.i
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/core/gui/gui.c.i
 .PHONY : core/gui/gui.c.i
 
 core/gui/gui.s: core/gui/gui.c.s
@@ -971,7 +971,7 @@ core/gui/gui.s: core/gui/gui.c.s
 
 # target to generate assembly for a file
 core/gui/gui.c.s:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/core/gui/gui.c.s
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/core/gui/gui.c.s
 .PHONY : core/gui/gui.c.s
 
 startup/startup_stm32f103xb.obj: startup/startup_stm32f103xb.s.obj
@@ -979,7 +979,7 @@ startup/startup_stm32f103xb.obj: startup/startup_stm32f103xb.s.obj
 
 # target to build an object file
 startup/startup_stm32f103xb.s.obj:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/startup/startup_stm32f103xb.s.obj
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/startup/startup_stm32f103xb.s.obj
 .PHONY : startup/startup_stm32f103xb.s.obj
 
 # Help Target
@@ -1107,6 +1107,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd D:/Projects/STM32F103C8Tx_VSCODE_IDE/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

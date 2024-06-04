@@ -22,7 +22,7 @@ extern void GUI_ShowChar_FulCoord(uint8_t Line, uint8_t Column,char Char);
 extern void GUI_ShowString_FulCoord(uint8_t Line,uint8_t Column,char *string);
 
 extern void GUI_Draw_Point(uint8_t x,int y);
-extern void GUI_Draw_Line(int X1, int Y1,int X2, int Y2);
+extern void GUI_Draw_Line(uint8_t X1, uint8_t Y1,uint8_t X2, uint8_t Y2);
 extern void GUI_Show_Image(int16_t x, int16_t y,uint8_t Height,uint8_t Width, const uint8_t *image);
 extern void GUI_Reverse_Y(uint8_t y,uint8_t height);
 extern void GUI_Test(void);

@@ -388,30 +388,65 @@ void GUI_Show_Chinese(uint8_t Line, uint8_t Column,char *Chinese){
 	
 }
 
-void GUI_Draw_Line(int X1, int Y1,int X2, int Y2){
-	// if ((X > 128 || X < 0) || (Y < 0 || Y > 64))
-	// {
-	// 	return ;
-	// }
-	float X;
-	float Y;
-	X = X2 - X1;
-	Y = Y2 - Y1;
-
-	float slop = Y / X;
-	float B = Y1 - slop * X1;
-	u8 count = (X2 - X1)?(X2-X1):(X1-X2);
-	for (int i = 0; i < count; i++)
-	{	
-		if ((X1 + i) < 0 || ((slop * (X1 + i)) +B) < 0)
+void GUI_Draw_Line(uint8_t X1, uint8_t Y1,uint8_t X2, uint8_t Y2){
+	u8 flag = 0 ;
+	if (Y2-Y1 > X2 - X1)
+	{
+		int temp;
+		temp = Y1 ; Y1 = X1; X1 = temp;
+		temp = Y2 ; Y2 = X2; X2 = temp;
+		flag = 1;
+	}
+	else if (Y2 - Y1 < 0)
+	{
+		Y1 = -Y1; Y2 = -Y2;
+		if (Y2-Y1 > X2 - X1)
 		{
-			continue;
+			int temp;
+			temp = Y1 ; Y1 = X1; X1 = temp;
+			temp = Y2 ; Y2 = X2; X2 = temp;
+			flag = 3;
 		}
-		
-		GUI_Draw_Point((X1 + i),(slop * (X1 + i)) +B);
+		else{
+			flag = 2;
+		}
+	}
+
+	uint8_t dx = X2 - X1,dy = Y2 -Y1;	//
+	u8 base_part = 2 * dy - dx;
+	u8 inc = 2 * dy;
+	u8 inc_dbl = 2 * (dy -dx);
+	
+	uint8_t y = Y1;
+	switch (flag)
+	{
+	case 1:GUI_Draw_Point(Y1,X1);break;
+	case 2:GUI_Draw_Point(X1,-Y1);break;
+	case 3:GUI_Draw_Point(Y1,-X1);break;
+	default:GUI_Draw_Point(X1,Y1);
+		break;
+	}
+	GUI_Draw_Point(X1,Y1);
+
+	for (u8 x = X1+1; x < X2; x++)
+	{
+		if (base_part < 0)
+		{
+			base_part += inc;
+		}else{
+			base_part += inc_dbl;
+			y += 1;
+		}
+		switch (flag)
+		{
+		case 1:GUI_Draw_Point(y,x);break;
+		case 2:GUI_Draw_Point(x,-y);break;
+		case 3:GUI_Draw_Point(y,-x);break;
+		default:GUI_Draw_Point(x,y);
+			break;
+		}		
 	}
 	
-
 }
 
 /********************************I2C****************************************/

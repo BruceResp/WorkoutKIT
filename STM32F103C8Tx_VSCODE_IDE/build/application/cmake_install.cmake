@@ -1,4 +1,4 @@
-# Install script for directory: D:/Projects/STM32F103C8Tx_VSCODE_IDE/application
+# Install script for directory: D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

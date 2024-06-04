@@ -52,7 +52,7 @@ int main(void)
 			//GUI_ShowString_FulCoord(i,i,"abcd");
 			GUI_Test();
 			GUI_Reverse_Y(i,10);
-			GUI_Draw_Line(-2,-50,110,50);
+			GUI_Draw_Line(2,50,110,50);
 		 	GUI_Update_Screen();
 			//Bsp_DelayMS(10);
 			
