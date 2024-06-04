@@ -67,12 +67,10 @@ void GUI_Update_Screen(void){
 *参    数:'0<x<64,0<y<128' 
 *作    者: Danny 
 *----------------------------------------------------------------------------------------*/ 
-void GUI_Draw_Point(uint8_t x,int y){
+void GUI_Draw_Point(int x,int y){
 	if (x>=0 && x<=127 && y>=0 &&y <= 63)
 	{
-		uint8_t Y = (u8)y;
-		
-		GUI_DISPLAY_BUF[Y/8][x] |= 0x01 << (Y%8);
+		GUI_DISPLAY_BUF[y/8][x] |= 0x01 << (y%8);
 	}
 }
 
@@ -388,7 +386,7 @@ void GUI_Show_Chinese(uint8_t Line, uint8_t Column,char *Chinese){
 	
 }
 
-void GUI_Draw_Line(uint8_t X1, uint8_t Y1,uint8_t X2, uint8_t Y2){
+void GUI_Draw_Line(int X1, int Y1,int X2, int Y2){
 	u8 flag = 0 ;
 	if (Y2-Y1 > X2 - X1)
 	{
@@ -412,12 +410,12 @@ void GUI_Draw_Line(uint8_t X1, uint8_t Y1,uint8_t X2, uint8_t Y2){
 		}
 	}
 
-	uint8_t dx = X2 - X1,dy = Y2 -Y1;	//
-	u8 base_part = 2 * dy - dx;
-	u8 inc = 2 * dy;
-	u8 inc_dbl = 2 * (dy -dx);
+	int dx = X2 - X1,dy = Y2 -Y1;	//
+	int base_part = 2 * dy - dx;
+	int inc = 2 * dy;
+	int inc_dbl = 2 * (dy -dx);
 	
-	uint8_t y = Y1;
+	int y = Y1;
 	switch (flag)
 	{
 	case 1:GUI_Draw_Point(Y1,X1);break;
@@ -426,9 +424,9 @@ void GUI_Draw_Line(uint8_t X1, uint8_t Y1,uint8_t X2, uint8_t Y2){
 	default:GUI_Draw_Point(X1,Y1);
 		break;
 	}
-	GUI_Draw_Point(X1,Y1);
+	//GUI_Draw_Point(X1,Y1);
 
-	for (u8 x = X1+1; x < X2; x++)
+	for (int x = X1+1; x < X2; x++)
 	{
 		if (base_part < 0)
 		{
@@ -448,6 +446,7 @@ void GUI_Draw_Line(uint8_t X1, uint8_t Y1,uint8_t X2, uint8_t Y2){
 	}
 	
 }
+
 
 /********************************I2C****************************************/
 
