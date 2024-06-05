@@ -4,9 +4,9 @@
 
 
 /*------------------FUNCTION DEFINE AREAR-------------------------------*/
-//#define GUI_SPI_MODE_SUPPORT 
+#define GUI_SPI_MODE_SUPPORT 
 
-#define GUI_I2C_MODE_SUPPORT
+//#define GUI_I2C_MODE_SUPPORT
 // #define GUI_I2C_MODE_SUPPORT
 /*------------------PORT / PIN DEFINE AREAR-------------------------------*/
 /*                  SPI                 */

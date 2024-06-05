@@ -147,8 +147,8 @@ void Bsp_DelayS(uint32_t xs)
 *----------------------------------------------------------------------------------------*/ 
 void Bsp_Init(void){
 	Bsp_GPIO_Init();
-	//Bsp_SPI_Init();	
-	Bsp_I2C_Init();
+	Bsp_SPI_Init();	
+	//Bsp_I2C_Init();
     
 }
 

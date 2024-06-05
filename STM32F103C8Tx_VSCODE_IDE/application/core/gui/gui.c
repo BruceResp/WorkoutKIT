@@ -53,11 +53,12 @@ void GUI_Display_OFF(void)
 *作    者: Danny 
 *----------------------------------------------------------------------------------------*/ 
 void GUI_Update_Screen(void){
-	
-	for (size_t j = 0; j < 8; j++)
+	uint32_t linshi = &GUI_DISPLAY_BUF[0];
+	for (uint32_t j = 0; j < 8; j++)
 	{	
 		GUI_Set_Cursor(j,0);
-		Bsp_I2C_Write_Bytes(&GUI_DISPLAY_BUF[j],0);
+		Bsp_I2C_Write_Bytes(linshi+j*128,0); // 左移7为相当于 *2^7
+		 
 	}
 }
 
@@ -234,12 +235,7 @@ void GUI_Show_String(uint8_t Line,uint8_t Column,char *string){
 	{
 		GUI_Show_Char(Line,Column++,*string);
 		string++;
-	}
-	// for (uint8_t i = 0; string[i] != '\0'; i++)
-	// {
-	// 	GUI_Show_Char(Line,Column+i,string[i]);
-	// }
-	
+	}	
 }
 
 /*----------------------------------------------------------------------------------------- 
@@ -251,14 +247,17 @@ void GUI_Show_String(uint8_t Line,uint8_t Column,char *string){
 *作    者: Danny 
 *----------------------------------------------------------------------------------------*/ 
 void GUI_ShowChar_FulCoord(uint8_t Line, uint8_t Column,char Char){
-	
+	u8 shift = Line / 8;
+	u8 shift_1 = shift +1 ;
+	u8 shift_2 = shift +2 ;
+	u8 Index = Line%8 ;
 	for (uint8_t i = 0; i < 8; i++)
 	{
-		GUI_DISPLAY_BUF[Line / 8][Column+i] |= OLED_F8x16[Char - ' '][i]<<(Line%8);
-		GUI_DISPLAY_BUF[(Line / 8)+1][Column+i] |= OLED_F8x16[Char - ' '][i]>>(8-(Line%8));
+		GUI_DISPLAY_BUF[shift][Column+i] |= OLED_F8x16[Char - ' '][i]<<Index;
+		GUI_DISPLAY_BUF[shift_1][Column+i] |= OLED_F8x16[Char - ' '][i]>>(8-Index);
 	
-		GUI_DISPLAY_BUF[(Line / 8)+1][Column+i] |= OLED_F8x16[Char - ' '][8+i]<<(Line%8);
-		GUI_DISPLAY_BUF[(Line / 8)+2][Column+i] |= OLED_F8x16[Char - ' '][8+i]>>(8-(Line%8));
+		GUI_DISPLAY_BUF[shift_1][Column+i] |= OLED_F8x16[Char - ' '][8+i]<<Index;
+		GUI_DISPLAY_BUF[shift_2][Column+i] |= OLED_F8x16[Char - ' '][8+i]>>(8-Index);
 	}
 }
 
@@ -277,10 +276,6 @@ void GUI_ShowString_FulCoord(uint8_t Line,uint8_t Column,char *string){
 		Column+=8;
 		string++;
 	}
-	// for (uint8_t i = 0; string[i] != '\0'; i++)
-	// {
-	// 	GUI_Show_Char(Line,Column+i,string[i]);
-	// }
 }
 
 
@@ -336,12 +331,14 @@ void GUI_Show_Image(int16_t X, int16_t Y,uint8_t Height,uint8_t Width, const uin
 *作    者: Danny 
 *----------------------------------------------------------------------------------------*/ 
 void GUI_Reverse_Y(uint8_t y,uint8_t height){
-
-	for (uint8_t j = y; j < y+height; j++)
+	u8 across_page = y + height;
+	for (uint8_t j = y; j < across_page; j++)
 	{
+		u8 Page = j / 8;
+		u8 shift = j % 8;
 		for (uint8_t i = 0; i < 128; i++)
 		{
-			GUI_DISPLAY_BUF[j / 8][i] ^= 0x01 << (j % 8); //对行取反
+			GUI_DISPLAY_BUF[Page][i] ^= 0x01 << shift; //对行取反
 		}
 	}
 
@@ -401,7 +398,7 @@ void GUI_Draw_Line(int X1, int Y1,int X2, int Y2){
 		if (Y2-Y1 > X2 - X1)
 		{
 			int temp;
-			temp = Y1 ; Y1 = X1; X1 = temp;
+			temp = Y1 ; Y1 = X1; X1 = temp;  //根据象限来变化而不是 坐标点（x1，y1）
 			temp = Y2 ; Y2 = X2; X2 = temp;
 			flag = 3;
 		}
