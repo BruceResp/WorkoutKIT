@@ -125,10 +125,24 @@ application/CMakeFiles/BSP_LIB.dir/bsp/bsp_i2c.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/BSP_LIB.dir/bsp/bsp_i2c.c.s"
 	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/bsp/bsp_i2c.c -o CMakeFiles/BSP_LIB.dir/bsp/bsp_i2c.c.s
 
+application/CMakeFiles/BSP_LIB.dir/bsp/bsp_key.c.obj: application/CMakeFiles/BSP_LIB.dir/flags.make
+application/CMakeFiles/BSP_LIB.dir/bsp/bsp_key.c.obj: D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/bsp/bsp_key.c
+application/CMakeFiles/BSP_LIB.dir/bsp/bsp_key.c.obj: application/CMakeFiles/BSP_LIB.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object application/CMakeFiles/BSP_LIB.dir/bsp/bsp_key.c.obj"
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/BSP_LIB.dir/bsp/bsp_key.c.obj -MF CMakeFiles/BSP_LIB.dir/bsp/bsp_key.c.obj.d -o CMakeFiles/BSP_LIB.dir/bsp/bsp_key.c.obj -c D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/bsp/bsp_key.c
+
+application/CMakeFiles/BSP_LIB.dir/bsp/bsp_key.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/BSP_LIB.dir/bsp/bsp_key.c.i"
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/bsp/bsp_key.c > CMakeFiles/BSP_LIB.dir/bsp/bsp_key.c.i
+
+application/CMakeFiles/BSP_LIB.dir/bsp/bsp_key.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/BSP_LIB.dir/bsp/bsp_key.c.s"
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/bsp/bsp_key.c -o CMakeFiles/BSP_LIB.dir/bsp/bsp_key.c.s
+
 application/CMakeFiles/BSP_LIB.dir/bsp/bsp_spi.c.obj: application/CMakeFiles/BSP_LIB.dir/flags.make
 application/CMakeFiles/BSP_LIB.dir/bsp/bsp_spi.c.obj: D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/bsp/bsp_spi.c
 application/CMakeFiles/BSP_LIB.dir/bsp/bsp_spi.c.obj: application/CMakeFiles/BSP_LIB.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object application/CMakeFiles/BSP_LIB.dir/bsp/bsp_spi.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object application/CMakeFiles/BSP_LIB.dir/bsp/bsp_spi.c.obj"
 	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/BSP_LIB.dir/bsp/bsp_spi.c.obj -MF CMakeFiles/BSP_LIB.dir/bsp/bsp_spi.c.obj.d -o CMakeFiles/BSP_LIB.dir/bsp/bsp_spi.c.obj -c D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/bsp/bsp_spi.c
 
 application/CMakeFiles/BSP_LIB.dir/bsp/bsp_spi.c.i: cmake_force
@@ -145,6 +159,7 @@ BSP_LIB_OBJECTS = \
 "CMakeFiles/BSP_LIB.dir/bsp/bsp_dma.c.obj" \
 "CMakeFiles/BSP_LIB.dir/bsp/bsp_gpio.c.obj" \
 "CMakeFiles/BSP_LIB.dir/bsp/bsp_i2c.c.obj" \
+"CMakeFiles/BSP_LIB.dir/bsp/bsp_key.c.obj" \
 "CMakeFiles/BSP_LIB.dir/bsp/bsp_spi.c.obj"
 
 # External object files for target BSP_LIB
@@ -154,10 +169,11 @@ application/libBSP_LIB.a: application/CMakeFiles/BSP_LIB.dir/bsp/bsp.c.obj
 application/libBSP_LIB.a: application/CMakeFiles/BSP_LIB.dir/bsp/bsp_dma.c.obj
 application/libBSP_LIB.a: application/CMakeFiles/BSP_LIB.dir/bsp/bsp_gpio.c.obj
 application/libBSP_LIB.a: application/CMakeFiles/BSP_LIB.dir/bsp/bsp_i2c.c.obj
+application/libBSP_LIB.a: application/CMakeFiles/BSP_LIB.dir/bsp/bsp_key.c.obj
 application/libBSP_LIB.a: application/CMakeFiles/BSP_LIB.dir/bsp/bsp_spi.c.obj
 application/libBSP_LIB.a: application/CMakeFiles/BSP_LIB.dir/build.make
 application/libBSP_LIB.a: application/CMakeFiles/BSP_LIB.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C static library libBSP_LIB.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C static library libBSP_LIB.a"
 	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && $(CMAKE_COMMAND) -P CMakeFiles/BSP_LIB.dir/cmake_clean_target.cmake
 	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/BSP_LIB.dir/link.txt --verbose=$(VERBOSE)
 

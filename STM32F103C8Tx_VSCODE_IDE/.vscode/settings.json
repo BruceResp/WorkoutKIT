@@ -15,7 +15,8 @@
         "guifont.h": "c",
         "gui.h": "c",
         "cstdarg": "c",
-        "wk1000.h": "c"
+        "wk1000.h": "c",
+        "key.h": "c"
     },
     "cortex-debug.variableUseNaturalFormat": false
 }

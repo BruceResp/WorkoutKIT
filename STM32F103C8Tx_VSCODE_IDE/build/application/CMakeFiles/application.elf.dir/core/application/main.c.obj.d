@@ -65,6 +65,7 @@ application/CMakeFiles/application.elf.dir/core/application/main.c.obj: \
  d\:\git_repository\stm32f103c8tx_vscode_ide\product\wk1000.h \
  d\:\git_repository\stm32f103c8tx_vscode_ide\application\core\application\inc\stm32f10x_it.h \
  d\:\git_repository\stm32f103c8tx_vscode_ide\application\core\gui\inc\gui.h \
+ d\:\git_repository\stm32f103c8tx_vscode_ide\application\core\key\inc\key.h \
  d\:\git_repository\stm32f103c8tx_vscode_ide\application\c_unity\inc\unity.h \
  d\:\git_repository\stm32f103c8tx_vscode_ide\application\c_unity\inc\unity_internals.h \
  d\:\tool\complier_toolchain\gcc-arm-none-eabi-10-2020-q4-major-win32\gcc-arm-none-eabi-10-2020-q4-major\arm-none-eabi\include\setjmp.h \

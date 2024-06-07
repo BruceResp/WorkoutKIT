@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/BSP_LIB.dir/bsp/bsp_gpio.c.obj.d"
   "CMakeFiles/BSP_LIB.dir/bsp/bsp_i2c.c.obj"
   "CMakeFiles/BSP_LIB.dir/bsp/bsp_i2c.c.obj.d"
+  "CMakeFiles/BSP_LIB.dir/bsp/bsp_key.c.obj"
+  "CMakeFiles/BSP_LIB.dir/bsp/bsp_key.c.obj.d"
   "CMakeFiles/BSP_LIB.dir/bsp/bsp_spi.c.obj"
   "CMakeFiles/BSP_LIB.dir/bsp/bsp_spi.c.obj.d"
   "libBSP_LIB.a"

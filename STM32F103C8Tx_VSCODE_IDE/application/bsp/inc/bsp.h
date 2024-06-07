@@ -34,5 +34,6 @@ extern void Bsp_I2C_DMA_Init(void);
 
 extern void Bsp_I2C_DMA_Ctrl(FunctionalState ctrl);
 
+extern uint8_t Bsp_KEY_Probe(u8 key);
 
 #endif

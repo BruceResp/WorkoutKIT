@@ -47,4 +47,21 @@
 
 #define OLED_SSD1306_SEND_CMD        ((uint8_t)0x00)
 #define OLED_SSD1306_SEND_DATA        ((uint8_t)0x40)
+
+/**********************KEYS RESOURCES******************************/
+#define KEY_Marix               
+
+#define KEY_UP_PIN                   GPIO_Pin_8
+#define KEY_UP_PORT                  GPIOA
+
+#define KEY_DOWN_PIN                GPIO_Pin_9
+#define KEY_DOWN_PORT                GPIOA
+
+#define KEY_SET_PIN                 GPIO_Pin_10
+#define KEY_SET_PORT                GPIOA
+
+#define KEY_COMFIRM_PIN             GPIO_Pin_5
+#define KEY_COMFIRM_PORT            GPIOB
+
+
 #endif

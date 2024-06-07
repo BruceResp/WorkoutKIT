@@ -854,6 +854,30 @@ bsp/bsp_i2c.c.s:
 	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/BSP_LIB.dir/build.make application/CMakeFiles/BSP_LIB.dir/bsp/bsp_i2c.c.s
 .PHONY : bsp/bsp_i2c.c.s
 
+bsp/bsp_key.obj: bsp/bsp_key.c.obj
+.PHONY : bsp/bsp_key.obj
+
+# target to build an object file
+bsp/bsp_key.c.obj:
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/BSP_LIB.dir/build.make application/CMakeFiles/BSP_LIB.dir/bsp/bsp_key.c.obj
+.PHONY : bsp/bsp_key.c.obj
+
+bsp/bsp_key.i: bsp/bsp_key.c.i
+.PHONY : bsp/bsp_key.i
+
+# target to preprocess a source file
+bsp/bsp_key.c.i:
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/BSP_LIB.dir/build.make application/CMakeFiles/BSP_LIB.dir/bsp/bsp_key.c.i
+.PHONY : bsp/bsp_key.c.i
+
+bsp/bsp_key.s: bsp/bsp_key.c.s
+.PHONY : bsp/bsp_key.s
+
+# target to generate assembly for a file
+bsp/bsp_key.c.s:
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/BSP_LIB.dir/build.make application/CMakeFiles/BSP_LIB.dir/bsp/bsp_key.c.s
+.PHONY : bsp/bsp_key.c.s
+
 bsp/bsp_spi.obj: bsp/bsp_spi.c.obj
 .PHONY : bsp/bsp_spi.obj
 
@@ -974,6 +998,30 @@ core/gui/gui.c.s:
 	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/core/gui/gui.c.s
 .PHONY : core/gui/gui.c.s
 
+core/key/key.obj: core/key/key.c.obj
+.PHONY : core/key/key.obj
+
+# target to build an object file
+core/key/key.c.obj:
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/core/key/key.c.obj
+.PHONY : core/key/key.c.obj
+
+core/key/key.i: core/key/key.c.i
+.PHONY : core/key/key.i
+
+# target to preprocess a source file
+core/key/key.c.i:
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/core/key/key.c.i
+.PHONY : core/key/key.c.i
+
+core/key/key.s: core/key/key.c.s
+.PHONY : core/key/key.s
+
+# target to generate assembly for a file
+core/key/key.c.s:
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/core/key/key.c.s
+.PHONY : core/key/key.c.s
+
 startup/startup_stm32f103xb.obj: startup/startup_stm32f103xb.s.obj
 .PHONY : startup/startup_stm32f103xb.obj
 
@@ -1080,6 +1128,9 @@ help:
 	@echo "... bsp/bsp_i2c.obj"
 	@echo "... bsp/bsp_i2c.i"
 	@echo "... bsp/bsp_i2c.s"
+	@echo "... bsp/bsp_key.obj"
+	@echo "... bsp/bsp_key.i"
+	@echo "... bsp/bsp_key.s"
 	@echo "... bsp/bsp_spi.obj"
 	@echo "... bsp/bsp_spi.i"
 	@echo "... bsp/bsp_spi.s"
@@ -1095,6 +1146,9 @@ help:
 	@echo "... core/gui/gui.obj"
 	@echo "... core/gui/gui.i"
 	@echo "... core/gui/gui.s"
+	@echo "... core/key/key.obj"
+	@echo "... core/key/key.i"
+	@echo "... core/key/key.s"
 	@echo "... startup/startup_stm32f103xb.obj"
 .PHONY : help
 
