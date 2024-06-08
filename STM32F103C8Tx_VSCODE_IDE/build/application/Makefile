@@ -1022,6 +1022,30 @@ core/key/key.c.s:
 	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/core/key/key.c.s
 .PHONY : core/key/key.c.s
 
+core/system/system.obj: core/system/system.c.obj
+.PHONY : core/system/system.obj
+
+# target to build an object file
+core/system/system.c.obj:
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/core/system/system.c.obj
+.PHONY : core/system/system.c.obj
+
+core/system/system.i: core/system/system.c.i
+.PHONY : core/system/system.i
+
+# target to preprocess a source file
+core/system/system.c.i:
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/core/system/system.c.i
+.PHONY : core/system/system.c.i
+
+core/system/system.s: core/system/system.c.s
+.PHONY : core/system/system.s
+
+# target to generate assembly for a file
+core/system/system.c.s:
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/core/system/system.c.s
+.PHONY : core/system/system.c.s
+
 startup/startup_stm32f103xb.obj: startup/startup_stm32f103xb.s.obj
 .PHONY : startup/startup_stm32f103xb.obj
 
@@ -1149,6 +1173,9 @@ help:
 	@echo "... core/key/key.obj"
 	@echo "... core/key/key.i"
 	@echo "... core/key/key.s"
+	@echo "... core/system/system.obj"
+	@echo "... core/system/system.i"
+	@echo "... core/system/system.s"
 	@echo "... startup/startup_stm32f103xb.obj"
 .PHONY : help
 

@@ -248,10 +248,6 @@ void Bsp_I2C_Write_Bytes(const uint32_t dat,uint8_t count){
     DMA1_Channel6->CMAR = (uint32_t)dat;
     DMA_Cmd(DMA1_Channel6,ENABLE);
 
-   
-    
-   
-  
     // for (uint8_t i = 0; i < count; i++)
     // {
         

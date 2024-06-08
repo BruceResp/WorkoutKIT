@@ -33,6 +33,7 @@ include_directories(
   ./c_unity/inc
   ./core/gui/inc 
   ./core/key/inc
+  ./core/system/inc
 )
 
 set_property(SOURCE STARTUP PROPERTY LANGUAGE C)
@@ -43,6 +44,7 @@ set(PROJ_SRC
     ./core/application/stm32f10x_it.c
     ./core/gui/gui.c
     ./core/key/key.c
+    ./core/system/system.c
 
     ../devices/core_cm3.c
     ../devices/system_stm32f10x.c

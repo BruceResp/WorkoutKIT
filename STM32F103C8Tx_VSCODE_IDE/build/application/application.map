@@ -598,6 +598,9 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/application.elf.dir/core/gui/gui.c.obj
  .data          0x00000000        0x0 CMakeFiles/application.elf.dir/core/gui/gui.c.obj
  .bss           0x00000000        0x0 CMakeFiles/application.elf.dir/core/gui/gui.c.obj
+ .rodata.F6X8   0x00000000      0x228 CMakeFiles/application.elf.dir/core/gui/gui.c.obj
+ .rodata.OLED_F8x16
+                0x00000000      0x5f0 CMakeFiles/application.elf.dir/core/gui/gui.c.obj
  .rodata.OLED_Test
                 0x00000000       0x42 CMakeFiles/application.elf.dir/core/gui/gui.c.obj
  .text.GUI_Display_ON
@@ -608,6 +611,8 @@ Discarded input sections
                 0x00000000       0x48 CMakeFiles/application.elf.dir/core/gui/gui.c.obj
  .text.GUI_Draw_Point
                 0x00000000       0x78 CMakeFiles/application.elf.dir/core/gui/gui.c.obj
+ .text.GUI_CLEAR_SCREEN
+                0x00000000       0x4c CMakeFiles/application.elf.dir/core/gui/gui.c.obj
  .text.GUI_Set_Cursor
                 0x00000000       0x46 CMakeFiles/application.elf.dir/core/gui/gui.c.obj
  .text.GUI_Init
@@ -628,6 +633,8 @@ Discarded input sections
                 0x00000000       0x1a CMakeFiles/application.elf.dir/core/gui/gui.c.obj
  .text.GUI_Draw_Line
                 0x00000000      0x188 CMakeFiles/application.elf.dir/core/gui/gui.c.obj
+ .text.GUI_SPI_Display_Char_ASCII
+                0x00000000       0xdc CMakeFiles/application.elf.dir/core/gui/gui.c.obj
  .text.GUI_SPI_Display_Graph
                 0x00000000      0x19c CMakeFiles/application.elf.dir/core/gui/gui.c.obj
  .text.GUI_SPI_Reverse_Y
@@ -760,6 +767,7 @@ Discarded input sections
  .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/key/key.c.obj
  .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/key/key.c.obj
  .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/key/key.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/key/key.c.obj
  .text          0x00000000        0x0 CMakeFiles/application.elf.dir/core/key/key.c.obj
  .data          0x00000000        0x0 CMakeFiles/application.elf.dir/core/key/key.c.obj
  .bss           0x00000000        0x0 CMakeFiles/application.elf.dir/core/key/key.c.obj
@@ -825,6 +833,131 @@ Discarded input sections
  .debug_macro   0x00000000      0x16f CMakeFiles/application.elf.dir/core/key/key.c.obj
  .debug_macro   0x00000000       0xb2 CMakeFiles/application.elf.dir/core/key/key.c.obj
  .debug_macro   0x00000000       0x10 CMakeFiles/application.elf.dir/core/key/key.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .group         0x00000000        0xc CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .text          0x00000000        0x0 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .data          0x00000000        0x0 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .bss           0x00000000        0x0 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000      0xa6c CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000       0x56 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000       0x22 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000       0x22 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000       0x8e CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000       0x51 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000      0x103 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000       0x6a CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000      0x1df CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000      0x69f CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000     0x7dbe CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000      0x2df CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000      0x144 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000      0x3cf CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000       0xc8 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000      0x17a CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000       0xac CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000      0x3ad CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000       0x9a CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000      0x2cf CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000      0x279 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000      0x2ac CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000      0x2b1 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000       0x64 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000       0x82 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000      0x3e2 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000       0x58 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000      0x341 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000      0x2c4 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000      0x711 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000      0x220 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000       0x34 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000       0x8b CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000       0x35 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000       0x64 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000       0x18 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000       0x35 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000       0x34 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000       0x16 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000       0x97 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000      0x356 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000       0xf6 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000       0x16 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000       0x43 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000       0x34 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000       0x58 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000      0x182 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000       0x1c CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000       0x52 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000       0x22 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000       0x10 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000       0x40 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000       0xd5 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000       0x1c CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000       0x3d CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000       0x16 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000      0x16f CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x00000000       0xb2 CMakeFiles/application.elf.dir/core/system/system.c.obj
  .group         0x00000000        0xc CMakeFiles/application.elf.dir/__/devices/core_cm3.c.obj
  .group         0x00000000        0xc CMakeFiles/application.elf.dir/__/devices/core_cm3.c.obj
  .group         0x00000000        0xc CMakeFiles/application.elf.dir/__/devices/core_cm3.c.obj
@@ -1659,7 +1792,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x16 libBSP_LIB.a(bsp_key.c.obj)
  .debug_macro   0x00000000      0x16f libBSP_LIB.a(bsp_key.c.obj)
  .debug_macro   0x00000000       0xb2 libBSP_LIB.a(bsp_key.c.obj)
- .debug_macro   0x00000000       0x10 libBSP_LIB.a(bsp_key.c.obj)
+ .debug_macro   0x00000000       0x70 libBSP_LIB.a(bsp_key.c.obj)
  .group         0x00000000        0xc libBSP_LIB.a(bsp_spi.c.obj)
  .group         0x00000000        0xc libBSP_LIB.a(bsp_spi.c.obj)
  .group         0x00000000        0xc libBSP_LIB.a(bsp_spi.c.obj)
@@ -2917,6 +3050,7 @@ LOAD CMakeFiles/application.elf.dir/c_unity/unity.c.obj
 LOAD CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.obj
 LOAD CMakeFiles/application.elf.dir/core/gui/gui.c.obj
 LOAD CMakeFiles/application.elf.dir/core/key/key.c.obj
+LOAD CMakeFiles/application.elf.dir/core/system/system.c.obj
 LOAD CMakeFiles/application.elf.dir/__/devices/core_cm3.c.obj
 LOAD CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.obj
 LOAD CMakeFiles/application.elf.dir/startup/startup_stm32f103xb.s.obj
@@ -2953,278 +3087,290 @@ LOAD d:/tool/complier_toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm
                 0x08000000                g_pfnVectors
                 0x0800010c                . = ALIGN (0x4)
 
-.text           0x0800010c     0x1154
+.text           0x0800010c     0x10cc
                 0x0800010c                . = ALIGN (0x4)
  *(.text)
  .text          0x0800010c       0x40 d:/tool/complier_toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7-m/nofp/crtbegin.o
  *(.text*)
- .text.main     0x0800014c       0x12 CMakeFiles/application.elf.dir/core/application/main.c.obj
+ .text.main     0x0800014c       0x16 CMakeFiles/application.elf.dir/core/application/main.c.obj
                 0x0800014c                main
  .text.NMI_Handler
-                0x0800015e        0xc CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.obj
-                0x0800015e                NMI_Handler
+                0x08000162        0xc CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.obj
+                0x08000162                NMI_Handler
  .text.HardFault_Handler
-                0x0800016a        0x6 CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.obj
-                0x0800016a                HardFault_Handler
+                0x0800016e        0x6 CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.obj
+                0x0800016e                HardFault_Handler
  .text.MemManage_Handler
-                0x08000170        0x6 CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.obj
-                0x08000170                MemManage_Handler
+                0x08000174        0x6 CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.obj
+                0x08000174                MemManage_Handler
  .text.BusFault_Handler
-                0x08000176        0x6 CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.obj
-                0x08000176                BusFault_Handler
+                0x0800017a        0x6 CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.obj
+                0x0800017a                BusFault_Handler
  .text.UsageFault_Handler
-                0x0800017c        0x6 CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.obj
-                0x0800017c                UsageFault_Handler
+                0x08000180        0x6 CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.obj
+                0x08000180                UsageFault_Handler
  .text.SVC_Handler
-                0x08000182        0xc CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.obj
-                0x08000182                SVC_Handler
+                0x08000186        0xc CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.obj
+                0x08000186                SVC_Handler
  .text.DebugMon_Handler
-                0x0800018e        0xc CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.obj
-                0x0800018e                DebugMon_Handler
+                0x08000192        0xc CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.obj
+                0x08000192                DebugMon_Handler
  .text.PendSV_Handler
-                0x0800019a        0xc CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.obj
-                0x0800019a                PendSV_Handler
+                0x0800019e        0xc CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.obj
+                0x0800019e                PendSV_Handler
  .text.SysTick_Handler
-                0x080001a6        0xc CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.obj
-                0x080001a6                SysTick_Handler
- *fill*         0x080001b2        0x2 
- .text.GUI_CLEAR_SCREEN
-                0x080001b4       0x4c CMakeFiles/application.elf.dir/core/gui/gui.c.obj
-                0x080001b4                GUI_CLEAR_SCREEN
+                0x080001aa        0xc CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.obj
+                0x080001aa                SysTick_Handler
  .text.GUI_SPI_Init
-                0x08000200       0x9e CMakeFiles/application.elf.dir/core/gui/gui.c.obj
-                0x08000200                GUI_SPI_Init
- *fill*         0x0800029e        0x2 
- .text.GUI_SPI_Display_Char_ASCII
-                0x080002a0       0xdc CMakeFiles/application.elf.dir/core/gui/gui.c.obj
-                0x080002a0                GUI_SPI_Display_Char_ASCII
+                0x080001b6       0x9e CMakeFiles/application.elf.dir/core/gui/gui.c.obj
+                0x080001b6                GUI_SPI_Init
+ .text.Key_Trig_Handler
+                0x08000254        0xc CMakeFiles/application.elf.dir/core/key/key.c.obj
+                0x08000254                Key_Trig_Handler
+ .text.Key_Mainpage_Process
+                0x08000260       0x7c CMakeFiles/application.elf.dir/core/key/key.c.obj
+                0x08000260                Key_Mainpage_Process
+ .text.Key_MenuSelect_Process
+                0x080002dc        0xc CMakeFiles/application.elf.dir/core/key/key.c.obj
+                0x080002dc                Key_MenuSelect_Process
+ .text.Key_MenuEdit_Process
+                0x080002e8        0xc CMakeFiles/application.elf.dir/core/key/key.c.obj
+                0x080002e8                Key_MenuEdit_Process
+ .text.Key_ConfigPage_Process
+                0x080002f4        0xc CMakeFiles/application.elf.dir/core/key/key.c.obj
+                0x080002f4                Key_ConfigPage_Process
+ .text.Key_release_Handler
+                0x08000300       0x48 CMakeFiles/application.elf.dir/core/key/key.c.obj
+                0x08000300                Key_release_Handler
  .text.Key_Process
-                0x0800037c      0x1f8 CMakeFiles/application.elf.dir/core/key/key.c.obj
-                0x0800037c                Key_Process
+                0x08000348      0x118 CMakeFiles/application.elf.dir/core/key/key.c.obj
+                0x08000348                Key_Process
+ .text.System_Page_Status_Read
+                0x08000460       0x14 CMakeFiles/application.elf.dir/core/system/system.c.obj
+                0x08000460                System_Page_Status_Read
+ .text.System_Page_Status_Write
+                0x08000474       0x20 CMakeFiles/application.elf.dir/core/system/system.c.obj
+                0x08000474                System_Page_Status_Write
+ .text.System_Poll
+                0x08000494       0x58 CMakeFiles/application.elf.dir/core/system/system.c.obj
+                0x08000494                System_Poll
  .text.SystemInit
-                0x08000574       0x68 CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.obj
-                0x08000574                SystemInit
+                0x080004ec       0x68 CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.obj
+                0x080004ec                SystemInit
  .text.SetSysClock
-                0x080005dc        0xc CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.obj
+                0x08000554        0xc CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.obj
  .text.SetSysClockTo72
-                0x080005e8      0x100 CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.obj
+                0x08000560      0x100 CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.obj
  .text.Reset_Handler
-                0x080006e8       0x48 CMakeFiles/application.elf.dir/startup/startup_stm32f103xb.s.obj
-                0x080006e8                Reset_Handler
+                0x08000660       0x48 CMakeFiles/application.elf.dir/startup/startup_stm32f103xb.s.obj
+                0x08000660                Reset_Handler
  .text.Default_Handler
-                0x08000730        0x2 CMakeFiles/application.elf.dir/startup/startup_stm32f103xb.s.obj
-                0x08000730                RTC_Alarm_IRQHandler
-                0x08000730                EXTI2_IRQHandler
-                0x08000730                TIM1_CC_IRQHandler
-                0x08000730                PVD_IRQHandler
-                0x08000730                EXTI3_IRQHandler
-                0x08000730                EXTI0_IRQHandler
-                0x08000730                I2C2_EV_IRQHandler
-                0x08000730                ADC1_2_IRQHandler
-                0x08000730                SPI1_IRQHandler
-                0x08000730                TAMPER_IRQHandler
-                0x08000730                DMA1_Channel4_IRQHandler
-                0x08000730                USART3_IRQHandler
-                0x08000730                RTC_IRQHandler
-                0x08000730                DMA1_Channel7_IRQHandler
-                0x08000730                CAN1_RX1_IRQHandler
-                0x08000730                TIM4_IRQHandler
-                0x08000730                I2C1_EV_IRQHandler
-                0x08000730                TIM3_IRQHandler
-                0x08000730                RCC_IRQHandler
-                0x08000730                TIM1_TRG_COM_IRQHandler
-                0x08000730                DMA1_Channel1_IRQHandler
-                0x08000730                Default_Handler
-                0x08000730                EXTI15_10_IRQHandler
-                0x08000730                EXTI9_5_IRQHandler
-                0x08000730                SPI2_IRQHandler
-                0x08000730                DMA1_Channel5_IRQHandler
-                0x08000730                EXTI4_IRQHandler
-                0x08000730                USB_LP_CAN1_RX0_IRQHandler
-                0x08000730                USB_HP_CAN1_TX_IRQHandler
-                0x08000730                DMA1_Channel3_IRQHandler
-                0x08000730                TIM1_UP_IRQHandler
-                0x08000730                WWDG_IRQHandler
-                0x08000730                TIM2_IRQHandler
-                0x08000730                TIM1_BRK_IRQHandler
-                0x08000730                EXTI1_IRQHandler
-                0x08000730                USART2_IRQHandler
-                0x08000730                I2C2_ER_IRQHandler
-                0x08000730                DMA1_Channel2_IRQHandler
-                0x08000730                CAN1_SCE_IRQHandler
-                0x08000730                FLASH_IRQHandler
-                0x08000730                USART1_IRQHandler
-                0x08000730                I2C1_ER_IRQHandler
-                0x08000730                USBWakeUp_IRQHandler
- *fill*         0x08000732        0x2 
+                0x080006a8        0x2 CMakeFiles/application.elf.dir/startup/startup_stm32f103xb.s.obj
+                0x080006a8                RTC_Alarm_IRQHandler
+                0x080006a8                EXTI2_IRQHandler
+                0x080006a8                TIM1_CC_IRQHandler
+                0x080006a8                PVD_IRQHandler
+                0x080006a8                EXTI3_IRQHandler
+                0x080006a8                EXTI0_IRQHandler
+                0x080006a8                I2C2_EV_IRQHandler
+                0x080006a8                ADC1_2_IRQHandler
+                0x080006a8                SPI1_IRQHandler
+                0x080006a8                TAMPER_IRQHandler
+                0x080006a8                DMA1_Channel4_IRQHandler
+                0x080006a8                USART3_IRQHandler
+                0x080006a8                RTC_IRQHandler
+                0x080006a8                DMA1_Channel7_IRQHandler
+                0x080006a8                CAN1_RX1_IRQHandler
+                0x080006a8                TIM4_IRQHandler
+                0x080006a8                I2C1_EV_IRQHandler
+                0x080006a8                TIM3_IRQHandler
+                0x080006a8                RCC_IRQHandler
+                0x080006a8                TIM1_TRG_COM_IRQHandler
+                0x080006a8                DMA1_Channel1_IRQHandler
+                0x080006a8                Default_Handler
+                0x080006a8                EXTI15_10_IRQHandler
+                0x080006a8                EXTI9_5_IRQHandler
+                0x080006a8                SPI2_IRQHandler
+                0x080006a8                DMA1_Channel5_IRQHandler
+                0x080006a8                EXTI4_IRQHandler
+                0x080006a8                USB_LP_CAN1_RX0_IRQHandler
+                0x080006a8                USB_HP_CAN1_TX_IRQHandler
+                0x080006a8                DMA1_Channel3_IRQHandler
+                0x080006a8                TIM1_UP_IRQHandler
+                0x080006a8                WWDG_IRQHandler
+                0x080006a8                TIM2_IRQHandler
+                0x080006a8                TIM1_BRK_IRQHandler
+                0x080006a8                EXTI1_IRQHandler
+                0x080006a8                USART2_IRQHandler
+                0x080006a8                I2C2_ER_IRQHandler
+                0x080006a8                DMA1_Channel2_IRQHandler
+                0x080006a8                CAN1_SCE_IRQHandler
+                0x080006a8                FLASH_IRQHandler
+                0x080006a8                USART1_IRQHandler
+                0x080006a8                I2C1_ER_IRQHandler
+                0x080006a8                USBWakeUp_IRQHandler
+ *fill*         0x080006aa        0x2 
  .text.Bsp_DelayUS
-                0x08000734       0x44 libBSP_LIB.a(bsp.c.obj)
-                0x08000734                Bsp_DelayUS
+                0x080006ac       0x44 libBSP_LIB.a(bsp.c.obj)
+                0x080006ac                Bsp_DelayUS
  .text.Bsp_DelayMS
-                0x08000778       0x26 libBSP_LIB.a(bsp.c.obj)
-                0x08000778                Bsp_DelayMS
+                0x080006f0       0x26 libBSP_LIB.a(bsp.c.obj)
+                0x080006f0                Bsp_DelayMS
  .text.Bsp_Init
-                0x0800079e       0x10 libBSP_LIB.a(bsp.c.obj)
-                0x0800079e                Bsp_Init
- *fill*         0x080007ae        0x2 
+                0x08000716       0x10 libBSP_LIB.a(bsp.c.obj)
+                0x08000716                Bsp_Init
+ *fill*         0x08000726        0x2 
  .text.Bsp_SPI_DMA_Init
-                0x080007b0       0x6c libBSP_LIB.a(bsp_dma.c.obj)
-                0x080007b0                Bsp_SPI_DMA_Init
+                0x08000728       0x6c libBSP_LIB.a(bsp_dma.c.obj)
+                0x08000728                Bsp_SPI_DMA_Init
  .text.DMA1_Channel6_IRQHandler
-                0x0800081c       0x44 libBSP_LIB.a(bsp_dma.c.obj)
-                0x0800081c                DMA1_Channel6_IRQHandler
+                0x08000794       0x44 libBSP_LIB.a(bsp_dma.c.obj)
+                0x08000794                DMA1_Channel6_IRQHandler
  .text.Bsp_GPIO_Init
-                0x08000860       0x8c libBSP_LIB.a(bsp_gpio.c.obj)
-                0x08000860                Bsp_GPIO_Init
+                0x080007d8       0x8c libBSP_LIB.a(bsp_gpio.c.obj)
+                0x080007d8                Bsp_GPIO_Init
  .text.Bsp_KEY_Probe
-                0x080008ec       0x98 libBSP_LIB.a(bsp_key.c.obj)
-                0x080008ec                Bsp_KEY_Probe
+                0x08000864       0x98 libBSP_LIB.a(bsp_key.c.obj)
+                0x08000864                Bsp_KEY_Probe
  .text.Bsp_SPI_Init
-                0x08000984       0x64 libBSP_LIB.a(bsp_spi.c.obj)
-                0x08000984                Bsp_SPI_Init
+                0x080008fc       0x64 libBSP_LIB.a(bsp_spi.c.obj)
+                0x080008fc                Bsp_SPI_Init
  .text.Bsp_SPI_Send_CMD
-                0x080009e8       0x64 libBSP_LIB.a(bsp_spi.c.obj)
-                0x080009e8                Bsp_SPI_Send_CMD
+                0x08000960       0x64 libBSP_LIB.a(bsp_spi.c.obj)
+                0x08000960                Bsp_SPI_Send_CMD
  .text.Bsp_SPI_RES_LOW
-                0x08000a4c       0x14 libBSP_LIB.a(bsp_spi.c.obj)
-                0x08000a4c                Bsp_SPI_RES_LOW
+                0x080009c4       0x14 libBSP_LIB.a(bsp_spi.c.obj)
+                0x080009c4                Bsp_SPI_RES_LOW
  .text.Bsp_SPI_RES_HIGH
-                0x08000a60       0x14 libBSP_LIB.a(bsp_spi.c.obj)
-                0x08000a60                Bsp_SPI_RES_HIGH
+                0x080009d8       0x14 libBSP_LIB.a(bsp_spi.c.obj)
+                0x080009d8                Bsp_SPI_RES_HIGH
  .text.DMA_DeInit
-                0x08000a74      0x178 libSTD_LIB.a(stm32f10x_dma.c.obj)
-                0x08000a74                DMA_DeInit
+                0x080009ec      0x178 libSTD_LIB.a(stm32f10x_dma.c.obj)
+                0x080009ec                DMA_DeInit
  .text.DMA_Init
-                0x08000bec       0x7c libSTD_LIB.a(stm32f10x_dma.c.obj)
-                0x08000bec                DMA_Init
- .text.DMA_Cmd  0x08000c68       0x38 libSTD_LIB.a(stm32f10x_dma.c.obj)
-                0x08000c68                DMA_Cmd
+                0x08000b64       0x7c libSTD_LIB.a(stm32f10x_dma.c.obj)
+                0x08000b64                DMA_Init
+ .text.DMA_Cmd  0x08000be0       0x38 libSTD_LIB.a(stm32f10x_dma.c.obj)
+                0x08000be0                DMA_Cmd
  .text.DMA_GetFlagStatus
-                0x08000ca0       0x50 libSTD_LIB.a(stm32f10x_dma.c.obj)
-                0x08000ca0                DMA_GetFlagStatus
+                0x08000c18       0x50 libSTD_LIB.a(stm32f10x_dma.c.obj)
+                0x08000c18                DMA_GetFlagStatus
  .text.DMA_ClearFlag
-                0x08000cf0       0x34 libSTD_LIB.a(stm32f10x_dma.c.obj)
-                0x08000cf0                DMA_ClearFlag
+                0x08000c68       0x34 libSTD_LIB.a(stm32f10x_dma.c.obj)
+                0x08000c68                DMA_ClearFlag
  .text.GPIO_Init
-                0x08000d24      0x178 libSTD_LIB.a(stm32f10x_gpio.c.obj)
-                0x08000d24                GPIO_Init
+                0x08000c9c      0x178 libSTD_LIB.a(stm32f10x_gpio.c.obj)
+                0x08000c9c                GPIO_Init
  .text.GPIO_ReadInputDataBit
-                0x08000e9c       0x32 libSTD_LIB.a(stm32f10x_gpio.c.obj)
-                0x08000e9c                GPIO_ReadInputDataBit
+                0x08000e14       0x32 libSTD_LIB.a(stm32f10x_gpio.c.obj)
+                0x08000e14                GPIO_ReadInputDataBit
  .text.GPIO_SetBits
-                0x08000ece       0x1c libSTD_LIB.a(stm32f10x_gpio.c.obj)
-                0x08000ece                GPIO_SetBits
+                0x08000e46       0x1c libSTD_LIB.a(stm32f10x_gpio.c.obj)
+                0x08000e46                GPIO_SetBits
  .text.GPIO_ResetBits
-                0x08000eea       0x1c libSTD_LIB.a(stm32f10x_gpio.c.obj)
-                0x08000eea                GPIO_ResetBits
+                0x08000e62       0x1c libSTD_LIB.a(stm32f10x_gpio.c.obj)
+                0x08000e62                GPIO_ResetBits
  .text.I2C_GenerateSTOP
-                0x08000f06       0x3e libSTD_LIB.a(stm32f10x_i2c.c.obj)
-                0x08000f06                I2C_GenerateSTOP
+                0x08000e7e       0x3e libSTD_LIB.a(stm32f10x_i2c.c.obj)
+                0x08000e7e                I2C_GenerateSTOP
  .text.I2C_AcknowledgeConfig
-                0x08000f44       0x3e libSTD_LIB.a(stm32f10x_i2c.c.obj)
-                0x08000f44                I2C_AcknowledgeConfig
- *fill*         0x08000f82        0x2 
+                0x08000ebc       0x3e libSTD_LIB.a(stm32f10x_i2c.c.obj)
+                0x08000ebc                I2C_AcknowledgeConfig
+ *fill*         0x08000efa        0x2 
  .text.RCC_AHBPeriphClockCmd
-                0x08000f84       0x3c libSTD_LIB.a(stm32f10x_rcc.c.obj)
-                0x08000f84                RCC_AHBPeriphClockCmd
+                0x08000efc       0x3c libSTD_LIB.a(stm32f10x_rcc.c.obj)
+                0x08000efc                RCC_AHBPeriphClockCmd
  .text.RCC_APB2PeriphClockCmd
-                0x08000fc0       0x3c libSTD_LIB.a(stm32f10x_rcc.c.obj)
-                0x08000fc0                RCC_APB2PeriphClockCmd
+                0x08000f38       0x3c libSTD_LIB.a(stm32f10x_rcc.c.obj)
+                0x08000f38                RCC_APB2PeriphClockCmd
  .text.RCC_APB2PeriphResetCmd
-                0x08000ffc       0x3c libSTD_LIB.a(stm32f10x_rcc.c.obj)
-                0x08000ffc                RCC_APB2PeriphResetCmd
+                0x08000f74       0x3c libSTD_LIB.a(stm32f10x_rcc.c.obj)
+                0x08000f74                RCC_APB2PeriphResetCmd
  .text.RCC_APB1PeriphResetCmd
-                0x08001038       0x3c libSTD_LIB.a(stm32f10x_rcc.c.obj)
-                0x08001038                RCC_APB1PeriphResetCmd
+                0x08000fb0       0x3c libSTD_LIB.a(stm32f10x_rcc.c.obj)
+                0x08000fb0                RCC_APB1PeriphResetCmd
  .text.SPI_I2S_DeInit
-                0x08001074       0x74 libSTD_LIB.a(stm32f10x_spi.c.obj)
-                0x08001074                SPI_I2S_DeInit
+                0x08000fec       0x74 libSTD_LIB.a(stm32f10x_spi.c.obj)
+                0x08000fec                SPI_I2S_DeInit
  .text.SPI_Init
-                0x080010e8       0x86 libSTD_LIB.a(stm32f10x_spi.c.obj)
-                0x080010e8                SPI_Init
- .text.SPI_Cmd  0x0800116e       0x3e libSTD_LIB.a(stm32f10x_spi.c.obj)
-                0x0800116e                SPI_Cmd
+                0x08001060       0x86 libSTD_LIB.a(stm32f10x_spi.c.obj)
+                0x08001060                SPI_Init
+ .text.SPI_Cmd  0x080010e6       0x3e libSTD_LIB.a(stm32f10x_spi.c.obj)
+                0x080010e6                SPI_Cmd
  .text.SPI_I2S_SendData
-                0x080011ac       0x1c libSTD_LIB.a(stm32f10x_spi.c.obj)
-                0x080011ac                SPI_I2S_SendData
+                0x08001124       0x1c libSTD_LIB.a(stm32f10x_spi.c.obj)
+                0x08001124                SPI_I2S_SendData
  .text.SPI_I2S_GetFlagStatus
-                0x080011c8       0x36 libSTD_LIB.a(stm32f10x_spi.c.obj)
-                0x080011c8                SPI_I2S_GetFlagStatus
- *fill*         0x080011fe        0x2 
+                0x08001140       0x36 libSTD_LIB.a(stm32f10x_spi.c.obj)
+                0x08001140                SPI_I2S_GetFlagStatus
+ *fill*         0x08001176        0x2 
  .text.__libc_init_array
-                0x08001200       0x48 d:/tool/complier_toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-init.o)
-                0x08001200                __libc_init_array
+                0x08001178       0x48 d:/tool/complier_toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-init.o)
+                0x08001178                __libc_init_array
  *(.glue_7)
- .glue_7        0x08001248        0x0 linker stubs
+ .glue_7        0x080011c0        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x08001248        0x0 linker stubs
+ .glue_7t       0x080011c0        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x08001248        0x0 d:/tool/complier_toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7-m/nofp/crtbegin.o
+ .eh_frame      0x080011c0        0x0 d:/tool/complier_toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7-m/nofp/crtbegin.o
  *(.init)
- .init          0x08001248        0x4 d:/tool/complier_toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7-m/nofp/crti.o
-                0x08001248                _init
- .init          0x0800124c        0x8 d:/tool/complier_toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7-m/nofp/crtn.o
+ .init          0x080011c0        0x4 d:/tool/complier_toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7-m/nofp/crti.o
+                0x080011c0                _init
+ .init          0x080011c4        0x8 d:/tool/complier_toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7-m/nofp/crtn.o
  *(.fini)
- .fini          0x08001254        0x4 d:/tool/complier_toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7-m/nofp/crti.o
-                0x08001254                _fini
- .fini          0x08001258        0x8 d:/tool/complier_toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7-m/nofp/crtn.o
-                0x08001260                . = ALIGN (0x4)
-                0x08001260                _etext = .
+ .fini          0x080011cc        0x4 d:/tool/complier_toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7-m/nofp/crti.o
+                0x080011cc                _fini
+ .fini          0x080011d0        0x8 d:/tool/complier_toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7-m/nofp/crtn.o
+                0x080011d8                . = ALIGN (0x4)
+                0x080011d8                _etext = .
 
-.vfp11_veneer   0x08001260        0x0
- .vfp11_veneer  0x08001260        0x0 linker stubs
+.vfp11_veneer   0x080011d8        0x0
+ .vfp11_veneer  0x080011d8        0x0 linker stubs
 
-.v4_bx          0x08001260        0x0
- .v4_bx         0x08001260        0x0 linker stubs
+.v4_bx          0x080011d8        0x0
+ .v4_bx         0x080011d8        0x0 linker stubs
 
-.iplt           0x08001260        0x0
- .iplt          0x08001260        0x0 d:/tool/complier_toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7-m/nofp/crtbegin.o
+.iplt           0x080011d8        0x0
+ .iplt          0x080011d8        0x0 d:/tool/complier_toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7-m/nofp/crtbegin.o
 
-.rodata         0x08001260      0x834
-                0x08001260                . = ALIGN (0x4)
+.rel.dyn        0x080011d8        0x0
+ .rel.iplt      0x080011d8        0x0 d:/tool/complier_toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7-m/nofp/crtbegin.o
+
+.rodata         0x080011d8        0x0
+                0x080011d8                . = ALIGN (0x4)
  *(.rodata)
- .rodata        0x08001260       0x1a CMakeFiles/application.elf.dir/core/key/key.c.obj
  *(.rodata*)
- *fill*         0x0800127a        0x2 
- .rodata.F6X8   0x0800127c      0x228 CMakeFiles/application.elf.dir/core/gui/gui.c.obj
-                0x0800127c                F6X8
- .rodata.OLED_F8x16
-                0x080014a4      0x5f0 CMakeFiles/application.elf.dir/core/gui/gui.c.obj
-                0x080014a4                OLED_F8x16
-                0x08001a94                . = ALIGN (0x4)
-
-.rel.dyn        0x08001a94        0x0
- .rel.iplt      0x08001a94        0x0 d:/tool/complier_toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7-m/nofp/crtbegin.o
+                0x080011d8                . = ALIGN (0x4)
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
-.ARM            0x08001a94        0x0
-                0x08001a94                __exidx_start = .
+.ARM            0x080011d8        0x0
+                0x080011d8                __exidx_start = .
  *(.ARM.exidx*)
-                0x08001a94                __exidx_end = .
+                0x080011d8                __exidx_end = .
 
-.preinit_array  0x08001a94        0x0
-                0x08001a94                PROVIDE (__preinit_array_start = .)
+.preinit_array  0x080011d8        0x0
+                0x080011d8                PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x08001a94                PROVIDE (__preinit_array_end = .)
+                0x080011d8                PROVIDE (__preinit_array_end = .)
 
-.init_array     0x08001a94        0x4
-                0x08001a94                PROVIDE (__init_array_start = .)
+.init_array     0x080011d8        0x4
+                0x080011d8                PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x08001a94        0x4 d:/tool/complier_toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7-m/nofp/crtbegin.o
-                0x08001a98                PROVIDE (__init_array_end = .)
+ .init_array    0x080011d8        0x4 d:/tool/complier_toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7-m/nofp/crtbegin.o
+                0x080011dc                PROVIDE (__init_array_end = .)
 
-.fini_array     0x08001a98        0x4
+.fini_array     0x080011dc        0x4
                 [!provide]                PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x08001a98        0x4 d:/tool/complier_toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7-m/nofp/crtbegin.o
+ .fini_array    0x080011dc        0x4 d:/tool/complier_toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7-m/nofp/crtbegin.o
                 [!provide]                PROVIDE (__fini_array_end = .)
-                0x08001a9c                _sidata = LOADADDR (.data)
+                0x080011e0                _sidata = LOADADDR (.data)
 
-.data           0x20000000        0x0 load address 0x08001a9c
+.data           0x20000000        0x0 load address 0x080011e0
                 0x20000000                . = ALIGN (0x4)
                 0x20000000                _sdata = .
  *(.data)
@@ -3232,11 +3378,11 @@ LOAD d:/tool/complier_toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm
                 0x20000000                . = ALIGN (0x4)
                 0x20000000                _edata = .
 
-.igot.plt       0x20000000        0x0 load address 0x08001a9c
+.igot.plt       0x20000000        0x0 load address 0x080011e0
  .igot.plt      0x20000000        0x0 d:/tool/complier_toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7-m/nofp/crtbegin.o
                 0x20000000                . = ALIGN (0x4)
 
-.bss            0x20000000      0x430 load address 0x08001a9c
+.bss            0x20000000      0x434 load address 0x080011e0
                 0x20000000                _sbss = .
                 0x20000000                __bss_start__ = _sbss
  *(.bss)
@@ -3246,33 +3392,38 @@ LOAD d:/tool/complier_toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm
                 0x2000001c                Key
  .bss.KeyCtrl   0x20000020        0x4 CMakeFiles/application.elf.dir/core/key/key.c.obj
                 0x20000020                KeyCtrl
+ .bss.SystemCtrl
+                0x20000024        0x2 CMakeFiles/application.elf.dir/core/system/system.c.obj
+                0x20000024                SystemCtrl
+ *fill*         0x20000026        0x2 
  .bss.GUI_DISPLAY_BUF
-                0x20000024      0x400 libBSP_LIB.a(bsp_dma.c.obj)
-                0x20000024                GUI_DISPLAY_BUF
+                0x20000028      0x400 libBSP_LIB.a(bsp_dma.c.obj)
+                0x20000028                GUI_DISPLAY_BUF
  .bss.GPIO_InitStruct_AF_PP
-                0x20000424        0x4 libBSP_LIB.a(bsp_gpio.c.obj)
-                0x20000424                GPIO_InitStruct_AF_PP
- .bss.GPIO_InitStruct_OUT_PP
                 0x20000428        0x4 libBSP_LIB.a(bsp_gpio.c.obj)
-                0x20000428                GPIO_InitStruct_OUT_PP
- .bss.GPIO_InitStruct_IN_UP
+                0x20000428                GPIO_InitStruct_AF_PP
+ .bss.GPIO_InitStruct_OUT_PP
                 0x2000042c        0x4 libBSP_LIB.a(bsp_gpio.c.obj)
-                0x2000042c                GPIO_InitStruct_IN_UP
+                0x2000042c                GPIO_InitStruct_OUT_PP
+ .bss.GPIO_InitStruct_IN_UP
+                0x20000430        0x4 libBSP_LIB.a(bsp_gpio.c.obj)
+                0x20000430                GPIO_InitStruct_IN_UP
  *(COMMON)
-                0x20000430                . = ALIGN (0x4)
-                0x20000430                _ebss = .
-                0x20000430                __bss_end__ = _ebss
+                0x20000434                . = ALIGN (0x4)
+                0x20000434                _ebss = .
+                0x20000434                __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x20000430      0x600 load address 0x08001a9c
-                0x20000430                . = ALIGN (0x8)
-                0x20000430                PROVIDE (end = .)
+                0x20000434      0x604 load address 0x080011e0
+                0x20000438                . = ALIGN (0x8)
+ *fill*         0x20000434        0x4 
+                0x20000438                PROVIDE (end = .)
                 [!provide]                PROVIDE (_end = .)
-                0x20000630                . = (. + _Min_Heap_Size)
- *fill*         0x20000430      0x200 
-                0x20000a30                . = (. + _Min_Stack_Size)
- *fill*         0x20000630      0x400 
-                0x20000a30                . = ALIGN (0x8)
+                0x20000638                . = (. + _Min_Heap_Size)
+ *fill*         0x20000438      0x200 
+                0x20000a38                . = (. + _Min_Stack_Size)
+ *fill*         0x20000638      0x400 
+                0x20000a38                . = ALIGN (0x8)
 
 /DISCARD/
  libc.a(*)
@@ -3295,93 +3446,98 @@ LOAD d:/tool/complier_toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm
  .ARM.attributes
                 0x000000d1       0x2d CMakeFiles/application.elf.dir/core/key/key.c.obj
  .ARM.attributes
-                0x000000fe       0x2d CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.obj
+                0x000000fe       0x2d CMakeFiles/application.elf.dir/core/system/system.c.obj
  .ARM.attributes
-                0x0000012b       0x21 CMakeFiles/application.elf.dir/startup/startup_stm32f103xb.s.obj
+                0x0000012b       0x2d CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.obj
  .ARM.attributes
-                0x0000014c       0x2d libBSP_LIB.a(bsp.c.obj)
+                0x00000158       0x21 CMakeFiles/application.elf.dir/startup/startup_stm32f103xb.s.obj
  .ARM.attributes
-                0x00000179       0x2d libBSP_LIB.a(bsp_dma.c.obj)
+                0x00000179       0x2d libBSP_LIB.a(bsp.c.obj)
  .ARM.attributes
-                0x000001a6       0x2d libBSP_LIB.a(bsp_gpio.c.obj)
+                0x000001a6       0x2d libBSP_LIB.a(bsp_dma.c.obj)
  .ARM.attributes
-                0x000001d3       0x2d libBSP_LIB.a(bsp_key.c.obj)
+                0x000001d3       0x2d libBSP_LIB.a(bsp_gpio.c.obj)
  .ARM.attributes
-                0x00000200       0x2d libBSP_LIB.a(bsp_spi.c.obj)
+                0x00000200       0x2d libBSP_LIB.a(bsp_key.c.obj)
  .ARM.attributes
-                0x0000022d       0x2d libSTD_LIB.a(stm32f10x_dma.c.obj)
+                0x0000022d       0x2d libBSP_LIB.a(bsp_spi.c.obj)
  .ARM.attributes
-                0x0000025a       0x2d libSTD_LIB.a(stm32f10x_gpio.c.obj)
+                0x0000025a       0x2d libSTD_LIB.a(stm32f10x_dma.c.obj)
  .ARM.attributes
-                0x00000287       0x2d libSTD_LIB.a(stm32f10x_i2c.c.obj)
+                0x00000287       0x2d libSTD_LIB.a(stm32f10x_gpio.c.obj)
  .ARM.attributes
-                0x000002b4       0x2d libSTD_LIB.a(stm32f10x_rcc.c.obj)
+                0x000002b4       0x2d libSTD_LIB.a(stm32f10x_i2c.c.obj)
  .ARM.attributes
-                0x000002e1       0x2d libSTD_LIB.a(stm32f10x_spi.c.obj)
+                0x000002e1       0x2d libSTD_LIB.a(stm32f10x_rcc.c.obj)
  .ARM.attributes
-                0x0000030e       0x2d d:/tool/complier_toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-init.o)
+                0x0000030e       0x2d libSTD_LIB.a(stm32f10x_spi.c.obj)
  .ARM.attributes
-                0x0000033b       0x1d d:/tool/complier_toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7-m/nofp/crtn.o
+                0x0000033b       0x2d d:/tool/complier_toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-init.o)
+ .ARM.attributes
+                0x00000368       0x1d d:/tool/complier_toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7-m/nofp/crtn.o
 OUTPUT(D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/bin/application.elf elf32-littlearm)
 LOAD linker stubs
 LOAD d:/tool/complier_toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a
 LOAD d:/tool/complier_toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libm.a
 LOAD d:/tool/complier_toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7-m/nofp\libgcc.a
 
-.debug_info     0x00000000     0x53ce
- .debug_info    0x00000000       0xa4 CMakeFiles/application.elf.dir/core/application/main.c.obj
- .debug_info    0x000000a4      0x143 CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.obj
- .debug_info    0x000001e7      0x974 CMakeFiles/application.elf.dir/core/gui/gui.c.obj
- .debug_info    0x00000b5b      0x1a9 CMakeFiles/application.elf.dir/core/key/key.c.obj
- .debug_info    0x00000d04      0x4de CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.obj
- .debug_info    0x000011e2       0x22 CMakeFiles/application.elf.dir/startup/startup_stm32f103xb.s.obj
- .debug_info    0x00001204      0x609 libBSP_LIB.a(bsp.c.obj)
- .debug_info    0x0000180d      0x6bb libBSP_LIB.a(bsp_dma.c.obj)
- .debug_info    0x00001ec8      0x272 libBSP_LIB.a(bsp_gpio.c.obj)
- .debug_info    0x0000213a      0x1b4 libBSP_LIB.a(bsp_key.c.obj)
- .debug_info    0x000022ee      0x3fb libBSP_LIB.a(bsp_spi.c.obj)
- .debug_info    0x000026e9      0x4f0 libSTD_LIB.a(stm32f10x_dma.c.obj)
- .debug_info    0x00002bd9      0x7ae libSTD_LIB.a(stm32f10x_gpio.c.obj)
- .debug_info    0x00003387      0xc6d libSTD_LIB.a(stm32f10x_i2c.c.obj)
- .debug_info    0x00003ff4      0x9b9 libSTD_LIB.a(stm32f10x_rcc.c.obj)
- .debug_info    0x000049ad      0xa21 libSTD_LIB.a(stm32f10x_spi.c.obj)
+.debug_info     0x00000000     0x5718
+ .debug_info    0x00000000       0xbf CMakeFiles/application.elf.dir/core/application/main.c.obj
+ .debug_info    0x000000bf      0x143 CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.obj
+ .debug_info    0x00000202      0x974 CMakeFiles/application.elf.dir/core/gui/gui.c.obj
+ .debug_info    0x00000b76      0x317 CMakeFiles/application.elf.dir/core/key/key.c.obj
+ .debug_info    0x00000e8d      0x1c1 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_info    0x0000104e      0x4de CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.obj
+ .debug_info    0x0000152c       0x22 CMakeFiles/application.elf.dir/startup/startup_stm32f103xb.s.obj
+ .debug_info    0x0000154e      0x609 libBSP_LIB.a(bsp.c.obj)
+ .debug_info    0x00001b57      0x6bb libBSP_LIB.a(bsp_dma.c.obj)
+ .debug_info    0x00002212      0x272 libBSP_LIB.a(bsp_gpio.c.obj)
+ .debug_info    0x00002484      0x1b4 libBSP_LIB.a(bsp_key.c.obj)
+ .debug_info    0x00002638      0x3fb libBSP_LIB.a(bsp_spi.c.obj)
+ .debug_info    0x00002a33      0x4f0 libSTD_LIB.a(stm32f10x_dma.c.obj)
+ .debug_info    0x00002f23      0x7ae libSTD_LIB.a(stm32f10x_gpio.c.obj)
+ .debug_info    0x000036d1      0xc6d libSTD_LIB.a(stm32f10x_i2c.c.obj)
+ .debug_info    0x0000433e      0x9b9 libSTD_LIB.a(stm32f10x_rcc.c.obj)
+ .debug_info    0x00004cf7      0xa21 libSTD_LIB.a(stm32f10x_spi.c.obj)
 
-.debug_abbrev   0x00000000     0x14aa
- .debug_abbrev  0x00000000       0x4b CMakeFiles/application.elf.dir/core/application/main.c.obj
- .debug_abbrev  0x0000004b       0x49 CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.obj
- .debug_abbrev  0x00000094      0x213 CMakeFiles/application.elf.dir/core/gui/gui.c.obj
- .debug_abbrev  0x000002a7      0x110 CMakeFiles/application.elf.dir/core/key/key.c.obj
- .debug_abbrev  0x000003b7      0x1b3 CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.obj
- .debug_abbrev  0x0000056a       0x12 CMakeFiles/application.elf.dir/startup/startup_stm32f103xb.s.obj
- .debug_abbrev  0x0000057c      0x1f8 libBSP_LIB.a(bsp.c.obj)
- .debug_abbrev  0x00000774      0x174 libBSP_LIB.a(bsp_dma.c.obj)
- .debug_abbrev  0x000008e8      0x101 libBSP_LIB.a(bsp_gpio.c.obj)
- .debug_abbrev  0x000009e9       0xdd libBSP_LIB.a(bsp_key.c.obj)
- .debug_abbrev  0x00000ac6      0x14b libBSP_LIB.a(bsp_spi.c.obj)
- .debug_abbrev  0x00000c11      0x187 libSTD_LIB.a(stm32f10x_dma.c.obj)
- .debug_abbrev  0x00000d98      0x1ee libSTD_LIB.a(stm32f10x_gpio.c.obj)
- .debug_abbrev  0x00000f86      0x198 libSTD_LIB.a(stm32f10x_i2c.c.obj)
- .debug_abbrev  0x0000111e      0x1d8 libSTD_LIB.a(stm32f10x_rcc.c.obj)
- .debug_abbrev  0x000012f6      0x1b4 libSTD_LIB.a(stm32f10x_spi.c.obj)
+.debug_abbrev   0x00000000     0x1613
+ .debug_abbrev  0x00000000       0x6c CMakeFiles/application.elf.dir/core/application/main.c.obj
+ .debug_abbrev  0x0000006c       0x49 CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.obj
+ .debug_abbrev  0x000000b5      0x213 CMakeFiles/application.elf.dir/core/gui/gui.c.obj
+ .debug_abbrev  0x000002c8      0x168 CMakeFiles/application.elf.dir/core/key/key.c.obj
+ .debug_abbrev  0x00000430       0xf0 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_abbrev  0x00000520      0x1b3 CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.obj
+ .debug_abbrev  0x000006d3       0x12 CMakeFiles/application.elf.dir/startup/startup_stm32f103xb.s.obj
+ .debug_abbrev  0x000006e5      0x1f8 libBSP_LIB.a(bsp.c.obj)
+ .debug_abbrev  0x000008dd      0x174 libBSP_LIB.a(bsp_dma.c.obj)
+ .debug_abbrev  0x00000a51      0x101 libBSP_LIB.a(bsp_gpio.c.obj)
+ .debug_abbrev  0x00000b52       0xdd libBSP_LIB.a(bsp_key.c.obj)
+ .debug_abbrev  0x00000c2f      0x14b libBSP_LIB.a(bsp_spi.c.obj)
+ .debug_abbrev  0x00000d7a      0x187 libSTD_LIB.a(stm32f10x_dma.c.obj)
+ .debug_abbrev  0x00000f01      0x1ee libSTD_LIB.a(stm32f10x_gpio.c.obj)
+ .debug_abbrev  0x000010ef      0x198 libSTD_LIB.a(stm32f10x_i2c.c.obj)
+ .debug_abbrev  0x00001287      0x1d8 libSTD_LIB.a(stm32f10x_rcc.c.obj)
+ .debug_abbrev  0x0000145f      0x1b4 libSTD_LIB.a(stm32f10x_spi.c.obj)
 
-.debug_loc      0x00000000     0x3824
+.debug_loc      0x00000000     0x3a94
  .debug_loc     0x00000000       0x2c CMakeFiles/application.elf.dir/core/application/main.c.obj
  .debug_loc     0x0000002c      0x204 CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.obj
  .debug_loc     0x00000230      0x66e CMakeFiles/application.elf.dir/core/gui/gui.c.obj
- .debug_loc     0x0000089e       0x50 CMakeFiles/application.elf.dir/core/key/key.c.obj
- .debug_loc     0x000008ee      0x110 CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.obj
- .debug_loc     0x000009fe      0x29a libBSP_LIB.a(bsp.c.obj)
- .debug_loc     0x00000c98       0xcc libBSP_LIB.a(bsp_dma.c.obj)
- .debug_loc     0x00000d64       0x2c libBSP_LIB.a(bsp_gpio.c.obj)
- .debug_loc     0x00000d90       0x50 libBSP_LIB.a(bsp_key.c.obj)
- .debug_loc     0x00000de0       0xf8 libBSP_LIB.a(bsp_spi.c.obj)
- .debug_loc     0x00000ed8      0x3f4 libSTD_LIB.a(stm32f10x_dma.c.obj)
- .debug_loc     0x000012cc      0x63c libSTD_LIB.a(stm32f10x_gpio.c.obj)
- .debug_loc     0x00001908      0xbc4 libSTD_LIB.a(stm32f10x_i2c.c.obj)
- .debug_loc     0x000024cc      0xb2c libSTD_LIB.a(stm32f10x_rcc.c.obj)
- .debug_loc     0x00002ff8      0x82c libSTD_LIB.a(stm32f10x_spi.c.obj)
+ .debug_loc     0x0000089e      0x1dc CMakeFiles/application.elf.dir/core/key/key.c.obj
+ .debug_loc     0x00000a7a       0xe4 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_loc     0x00000b5e      0x110 CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.obj
+ .debug_loc     0x00000c6e      0x29a libBSP_LIB.a(bsp.c.obj)
+ .debug_loc     0x00000f08       0xcc libBSP_LIB.a(bsp_dma.c.obj)
+ .debug_loc     0x00000fd4       0x2c libBSP_LIB.a(bsp_gpio.c.obj)
+ .debug_loc     0x00001000       0x50 libBSP_LIB.a(bsp_key.c.obj)
+ .debug_loc     0x00001050       0xf8 libBSP_LIB.a(bsp_spi.c.obj)
+ .debug_loc     0x00001148      0x3f4 libSTD_LIB.a(stm32f10x_dma.c.obj)
+ .debug_loc     0x0000153c      0x63c libSTD_LIB.a(stm32f10x_gpio.c.obj)
+ .debug_loc     0x00001b78      0xbc4 libSTD_LIB.a(stm32f10x_i2c.c.obj)
+ .debug_loc     0x0000273c      0xb2c libSTD_LIB.a(stm32f10x_rcc.c.obj)
+ .debug_loc     0x00003268      0x82c libSTD_LIB.a(stm32f10x_spi.c.obj)
 
-.debug_aranges  0x00000000      0x6e0
+.debug_aranges  0x00000000      0x740
  .debug_aranges
                 0x00000000       0x20 CMakeFiles/application.elf.dir/core/application/main.c.obj
  .debug_aranges
@@ -3389,51 +3545,54 @@ LOAD d:/tool/complier_toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm
  .debug_aranges
                 0x00000080       0xc0 CMakeFiles/application.elf.dir/core/gui/gui.c.obj
  .debug_aranges
-                0x00000140       0x20 CMakeFiles/application.elf.dir/core/key/key.c.obj
+                0x00000140       0x50 CMakeFiles/application.elf.dir/core/key/key.c.obj
  .debug_aranges
-                0x00000160       0x38 CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.obj
+                0x00000190       0x30 CMakeFiles/application.elf.dir/core/system/system.c.obj
  .debug_aranges
-                0x00000198       0x28 CMakeFiles/application.elf.dir/startup/startup_stm32f103xb.s.obj
+                0x000001c0       0x38 CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.obj
  .debug_aranges
-                0x000001c0       0x58 libBSP_LIB.a(bsp.c.obj)
+                0x000001f8       0x28 CMakeFiles/application.elf.dir/startup/startup_stm32f103xb.s.obj
  .debug_aranges
-                0x00000218       0x30 libBSP_LIB.a(bsp_dma.c.obj)
+                0x00000220       0x58 libBSP_LIB.a(bsp.c.obj)
  .debug_aranges
-                0x00000248       0x20 libBSP_LIB.a(bsp_gpio.c.obj)
+                0x00000278       0x30 libBSP_LIB.a(bsp_dma.c.obj)
  .debug_aranges
-                0x00000268       0x20 libBSP_LIB.a(bsp_key.c.obj)
+                0x000002a8       0x20 libBSP_LIB.a(bsp_gpio.c.obj)
  .debug_aranges
-                0x00000288       0x38 libBSP_LIB.a(bsp_spi.c.obj)
+                0x000002c8       0x20 libBSP_LIB.a(bsp_key.c.obj)
  .debug_aranges
-                0x000002c0       0x70 libSTD_LIB.a(stm32f10x_dma.c.obj)
+                0x000002e8       0x38 libBSP_LIB.a(bsp_spi.c.obj)
  .debug_aranges
-                0x00000330       0xa8 libSTD_LIB.a(stm32f10x_gpio.c.obj)
+                0x00000320       0x70 libSTD_LIB.a(stm32f10x_dma.c.obj)
  .debug_aranges
-                0x000003d8      0x120 libSTD_LIB.a(stm32f10x_i2c.c.obj)
+                0x00000390       0xa8 libSTD_LIB.a(stm32f10x_gpio.c.obj)
  .debug_aranges
-                0x000004f8      0x118 libSTD_LIB.a(stm32f10x_rcc.c.obj)
+                0x00000438      0x120 libSTD_LIB.a(stm32f10x_i2c.c.obj)
  .debug_aranges
-                0x00000610       0xd0 libSTD_LIB.a(stm32f10x_spi.c.obj)
+                0x00000558      0x118 libSTD_LIB.a(stm32f10x_rcc.c.obj)
+ .debug_aranges
+                0x00000670       0xd0 libSTD_LIB.a(stm32f10x_spi.c.obj)
 
-.debug_ranges   0x00000000      0x5e8
+.debug_ranges   0x00000000      0x638
  .debug_ranges  0x00000000       0x10 CMakeFiles/application.elf.dir/core/application/main.c.obj
  .debug_ranges  0x00000010       0x50 CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.obj
  .debug_ranges  0x00000060       0xb0 CMakeFiles/application.elf.dir/core/gui/gui.c.obj
- .debug_ranges  0x00000110       0x10 CMakeFiles/application.elf.dir/core/key/key.c.obj
- .debug_ranges  0x00000120       0x28 CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.obj
- .debug_ranges  0x00000148       0x20 CMakeFiles/application.elf.dir/startup/startup_stm32f103xb.s.obj
- .debug_ranges  0x00000168       0x48 libBSP_LIB.a(bsp.c.obj)
- .debug_ranges  0x000001b0       0x20 libBSP_LIB.a(bsp_dma.c.obj)
- .debug_ranges  0x000001d0       0x10 libBSP_LIB.a(bsp_gpio.c.obj)
- .debug_ranges  0x000001e0       0x10 libBSP_LIB.a(bsp_key.c.obj)
- .debug_ranges  0x000001f0       0x28 libBSP_LIB.a(bsp_spi.c.obj)
- .debug_ranges  0x00000218       0x60 libSTD_LIB.a(stm32f10x_dma.c.obj)
- .debug_ranges  0x00000278       0x98 libSTD_LIB.a(stm32f10x_gpio.c.obj)
- .debug_ranges  0x00000310      0x110 libSTD_LIB.a(stm32f10x_i2c.c.obj)
- .debug_ranges  0x00000420      0x108 libSTD_LIB.a(stm32f10x_rcc.c.obj)
- .debug_ranges  0x00000528       0xc0 libSTD_LIB.a(stm32f10x_spi.c.obj)
+ .debug_ranges  0x00000110       0x40 CMakeFiles/application.elf.dir/core/key/key.c.obj
+ .debug_ranges  0x00000150       0x20 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_ranges  0x00000170       0x28 CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.obj
+ .debug_ranges  0x00000198       0x20 CMakeFiles/application.elf.dir/startup/startup_stm32f103xb.s.obj
+ .debug_ranges  0x000001b8       0x48 libBSP_LIB.a(bsp.c.obj)
+ .debug_ranges  0x00000200       0x20 libBSP_LIB.a(bsp_dma.c.obj)
+ .debug_ranges  0x00000220       0x10 libBSP_LIB.a(bsp_gpio.c.obj)
+ .debug_ranges  0x00000230       0x10 libBSP_LIB.a(bsp_key.c.obj)
+ .debug_ranges  0x00000240       0x28 libBSP_LIB.a(bsp_spi.c.obj)
+ .debug_ranges  0x00000268       0x60 libSTD_LIB.a(stm32f10x_dma.c.obj)
+ .debug_ranges  0x000002c8       0x98 libSTD_LIB.a(stm32f10x_gpio.c.obj)
+ .debug_ranges  0x00000360      0x110 libSTD_LIB.a(stm32f10x_i2c.c.obj)
+ .debug_ranges  0x00000470      0x108 libSTD_LIB.a(stm32f10x_rcc.c.obj)
+ .debug_ranges  0x00000578       0xc0 libSTD_LIB.a(stm32f10x_spi.c.obj)
 
-.debug_macro    0x00000000    0x11cf5
+.debug_macro    0x00000000    0x120b9
  .debug_macro   0x00000000      0x396 CMakeFiles/application.elf.dir/core/application/main.c.obj
  .debug_macro   0x00000396      0xa6c CMakeFiles/application.elf.dir/core/application/main.c.obj
  .debug_macro   0x00000e02       0x56 CMakeFiles/application.elf.dir/core/application/main.c.obj
@@ -3498,88 +3657,93 @@ LOAD d:/tool/complier_toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm
  .debug_macro   0x0000d242       0xb2 CMakeFiles/application.elf.dir/core/application/main.c.obj
  .debug_macro   0x0000d2f4       0x10 CMakeFiles/application.elf.dir/core/application/main.c.obj
  .debug_macro   0x0000d304       0x10 CMakeFiles/application.elf.dir/core/application/main.c.obj
- .debug_macro   0x0000d314       0x10 CMakeFiles/application.elf.dir/core/application/main.c.obj
- .debug_macro   0x0000d324       0x28 CMakeFiles/application.elf.dir/core/application/main.c.obj
- .debug_macro   0x0000d34c      0x1a9 CMakeFiles/application.elf.dir/core/application/main.c.obj
- .debug_macro   0x0000d4f5       0x7c CMakeFiles/application.elf.dir/core/application/main.c.obj
- .debug_macro   0x0000d571       0x17 CMakeFiles/application.elf.dir/core/application/main.c.obj
- .debug_macro   0x0000d588      0x118 CMakeFiles/application.elf.dir/core/application/main.c.obj
- .debug_macro   0x0000d6a0      0x6c8 CMakeFiles/application.elf.dir/core/application/main.c.obj
- .debug_macro   0x0000dd68      0xce3 CMakeFiles/application.elf.dir/core/application/main.c.obj
- .debug_macro   0x0000ea4b      0x185 CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.obj
- .debug_macro   0x0000ebd0      0x306 CMakeFiles/application.elf.dir/core/gui/gui.c.obj
- .debug_macro   0x0000eed6      0x300 CMakeFiles/application.elf.dir/core/key/key.c.obj
- .debug_macro   0x0000f1d6      0x188 CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.obj
- .debug_macro   0x0000f35e      0x324 libBSP_LIB.a(bsp.c.obj)
- .debug_macro   0x0000f682       0x4c libBSP_LIB.a(bsp.c.obj)
- .debug_macro   0x0000f6ce       0x16 libBSP_LIB.a(bsp.c.obj)
- .debug_macro   0x0000f6e4       0x16 libBSP_LIB.a(bsp.c.obj)
- .debug_macro   0x0000f6fa       0x29 libBSP_LIB.a(bsp.c.obj)
- .debug_macro   0x0000f723      0x2e7 libBSP_LIB.a(bsp_dma.c.obj)
- .debug_macro   0x0000fa0a      0x2e7 libBSP_LIB.a(bsp_gpio.c.obj)
- .debug_macro   0x0000fcf1      0x2f0 libBSP_LIB.a(bsp_key.c.obj)
- .debug_macro   0x0000ffe1      0x2f3 libBSP_LIB.a(bsp_spi.c.obj)
- .debug_macro   0x000102d4      0x1d9 libSTD_LIB.a(stm32f10x_dma.c.obj)
- .debug_macro   0x000104ad      0x3a7 libSTD_LIB.a(stm32f10x_dma.c.obj)
- .debug_macro   0x00010854      0x1d3 libSTD_LIB.a(stm32f10x_gpio.c.obj)
- .debug_macro   0x00010a27      0x2a6 libSTD_LIB.a(stm32f10x_gpio.c.obj)
- .debug_macro   0x00010ccd      0x257 libSTD_LIB.a(stm32f10x_i2c.c.obj)
- .debug_macro   0x00010f24      0x2ab libSTD_LIB.a(stm32f10x_i2c.c.obj)
- .debug_macro   0x000111cf      0x2a1 libSTD_LIB.a(stm32f10x_rcc.c.obj)
- .debug_macro   0x00011470      0x3dc libSTD_LIB.a(stm32f10x_rcc.c.obj)
- .debug_macro   0x0001184c      0x1eb libSTD_LIB.a(stm32f10x_spi.c.obj)
- .debug_macro   0x00011a37      0x2be libSTD_LIB.a(stm32f10x_spi.c.obj)
+ .debug_macro   0x0000d314       0x70 CMakeFiles/application.elf.dir/core/application/main.c.obj
+ .debug_macro   0x0000d384       0x28 CMakeFiles/application.elf.dir/core/application/main.c.obj
+ .debug_macro   0x0000d3ac      0x1a9 CMakeFiles/application.elf.dir/core/application/main.c.obj
+ .debug_macro   0x0000d555       0x7c CMakeFiles/application.elf.dir/core/application/main.c.obj
+ .debug_macro   0x0000d5d1       0x17 CMakeFiles/application.elf.dir/core/application/main.c.obj
+ .debug_macro   0x0000d5e8      0x118 CMakeFiles/application.elf.dir/core/application/main.c.obj
+ .debug_macro   0x0000d700      0x6c8 CMakeFiles/application.elf.dir/core/application/main.c.obj
+ .debug_macro   0x0000ddc8      0xce3 CMakeFiles/application.elf.dir/core/application/main.c.obj
+ .debug_macro   0x0000eaab      0x185 CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.obj
+ .debug_macro   0x0000ec30      0x306 CMakeFiles/application.elf.dir/core/gui/gui.c.obj
+ .debug_macro   0x0000ef36      0x309 CMakeFiles/application.elf.dir/core/key/key.c.obj
+ .debug_macro   0x0000f23f       0x6a CMakeFiles/application.elf.dir/core/key/key.c.obj
+ .debug_macro   0x0000f2a9      0x2f1 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_macro   0x0000f59a      0x188 CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.obj
+ .debug_macro   0x0000f722      0x324 libBSP_LIB.a(bsp.c.obj)
+ .debug_macro   0x0000fa46       0x4c libBSP_LIB.a(bsp.c.obj)
+ .debug_macro   0x0000fa92       0x16 libBSP_LIB.a(bsp.c.obj)
+ .debug_macro   0x0000faa8       0x16 libBSP_LIB.a(bsp.c.obj)
+ .debug_macro   0x0000fabe       0x29 libBSP_LIB.a(bsp.c.obj)
+ .debug_macro   0x0000fae7      0x2e7 libBSP_LIB.a(bsp_dma.c.obj)
+ .debug_macro   0x0000fdce      0x2e7 libBSP_LIB.a(bsp_gpio.c.obj)
+ .debug_macro   0x000100b5      0x2f0 libBSP_LIB.a(bsp_key.c.obj)
+ .debug_macro   0x000103a5      0x2f3 libBSP_LIB.a(bsp_spi.c.obj)
+ .debug_macro   0x00010698      0x1d9 libSTD_LIB.a(stm32f10x_dma.c.obj)
+ .debug_macro   0x00010871      0x3a7 libSTD_LIB.a(stm32f10x_dma.c.obj)
+ .debug_macro   0x00010c18      0x1d3 libSTD_LIB.a(stm32f10x_gpio.c.obj)
+ .debug_macro   0x00010deb      0x2a6 libSTD_LIB.a(stm32f10x_gpio.c.obj)
+ .debug_macro   0x00011091      0x257 libSTD_LIB.a(stm32f10x_i2c.c.obj)
+ .debug_macro   0x000112e8      0x2ab libSTD_LIB.a(stm32f10x_i2c.c.obj)
+ .debug_macro   0x00011593      0x2a1 libSTD_LIB.a(stm32f10x_rcc.c.obj)
+ .debug_macro   0x00011834      0x3dc libSTD_LIB.a(stm32f10x_rcc.c.obj)
+ .debug_macro   0x00011c10      0x1eb libSTD_LIB.a(stm32f10x_spi.c.obj)
+ .debug_macro   0x00011dfb      0x2be libSTD_LIB.a(stm32f10x_spi.c.obj)
 
-.debug_line     0x00000000     0x8913
- .debug_line    0x00000000      0x96f CMakeFiles/application.elf.dir/core/application/main.c.obj
- .debug_line    0x0000096f      0x67c CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.obj
- .debug_line    0x00000feb      0xef0 CMakeFiles/application.elf.dir/core/gui/gui.c.obj
- .debug_line    0x00001edb      0x8be CMakeFiles/application.elf.dir/core/key/key.c.obj
- .debug_line    0x00002799      0x722 CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.obj
- .debug_line    0x00002ebb       0xb3 CMakeFiles/application.elf.dir/startup/startup_stm32f103xb.s.obj
- .debug_line    0x00002f6e      0x926 libBSP_LIB.a(bsp.c.obj)
- .debug_line    0x00003894      0x7f7 libBSP_LIB.a(bsp_dma.c.obj)
- .debug_line    0x0000408b      0x785 libBSP_LIB.a(bsp_gpio.c.obj)
- .debug_line    0x00004810      0x7c3 libBSP_LIB.a(bsp_key.c.obj)
- .debug_line    0x00004fd3      0x7e7 libBSP_LIB.a(bsp_spi.c.obj)
- .debug_line    0x000057ba      0x828 libSTD_LIB.a(stm32f10x_dma.c.obj)
- .debug_line    0x00005fe2      0x97d libSTD_LIB.a(stm32f10x_gpio.c.obj)
- .debug_line    0x0000695f      0xade libSTD_LIB.a(stm32f10x_i2c.c.obj)
- .debug_line    0x0000743d      0xb19 libSTD_LIB.a(stm32f10x_rcc.c.obj)
- .debug_line    0x00007f56      0x9bd libSTD_LIB.a(stm32f10x_spi.c.obj)
+.debug_line     0x00000000     0x9212
+ .debug_line    0x00000000      0x97b CMakeFiles/application.elf.dir/core/application/main.c.obj
+ .debug_line    0x0000097b      0x67c CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.obj
+ .debug_line    0x00000ff7      0xef0 CMakeFiles/application.elf.dir/core/gui/gui.c.obj
+ .debug_line    0x00001ee7      0x9b3 CMakeFiles/application.elf.dir/core/key/key.c.obj
+ .debug_line    0x0000289a      0x7fe CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_line    0x00003098      0x722 CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.obj
+ .debug_line    0x000037ba       0xb3 CMakeFiles/application.elf.dir/startup/startup_stm32f103xb.s.obj
+ .debug_line    0x0000386d      0x926 libBSP_LIB.a(bsp.c.obj)
+ .debug_line    0x00004193      0x7f7 libBSP_LIB.a(bsp_dma.c.obj)
+ .debug_line    0x0000498a      0x785 libBSP_LIB.a(bsp_gpio.c.obj)
+ .debug_line    0x0000510f      0x7c3 libBSP_LIB.a(bsp_key.c.obj)
+ .debug_line    0x000058d2      0x7e7 libBSP_LIB.a(bsp_spi.c.obj)
+ .debug_line    0x000060b9      0x828 libSTD_LIB.a(stm32f10x_dma.c.obj)
+ .debug_line    0x000068e1      0x97d libSTD_LIB.a(stm32f10x_gpio.c.obj)
+ .debug_line    0x0000725e      0xade libSTD_LIB.a(stm32f10x_i2c.c.obj)
+ .debug_line    0x00007d3c      0xb19 libSTD_LIB.a(stm32f10x_rcc.c.obj)
+ .debug_line    0x00008855      0x9bd libSTD_LIB.a(stm32f10x_spi.c.obj)
 
-.debug_str      0x00000000    0x702ae
- .debug_str     0x00000000    0x6cd1f CMakeFiles/application.elf.dir/core/application/main.c.obj
-                              0x6cf6c (size before relaxing)
- .debug_str     0x0006cd1f       0xe7 CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.obj
+.debug_str      0x00000000    0x708a1
+ .debug_str     0x00000000    0x6d023 CMakeFiles/application.elf.dir/core/application/main.c.obj
+                              0x6d270 (size before relaxing)
+ .debug_str     0x0006d023       0xe7 CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.obj
                               0x4d24b (size before relaxing)
- .debug_str     0x0006ce06      0x2b8 CMakeFiles/application.elf.dir/core/gui/gui.c.obj
+ .debug_str     0x0006d10a      0x2b2 CMakeFiles/application.elf.dir/core/gui/gui.c.obj
                               0x51220 (size before relaxing)
- .debug_str     0x0006d0be       0xb9 CMakeFiles/application.elf.dir/core/key/key.c.obj
-                              0x51015 (size before relaxing)
- .debug_str     0x0006d177      0x1a4 CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.obj
+ .debug_str     0x0006d3bc      0x331 CMakeFiles/application.elf.dir/core/key/key.c.obj
+                              0x5158c (size before relaxing)
+ .debug_str     0x0006d6ed       0x7d CMakeFiles/application.elf.dir/core/system/system.c.obj
+                              0x511a2 (size before relaxing)
+ .debug_str     0x0006d76a      0x1a4 CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.obj
                               0x4d343 (size before relaxing)
- .debug_str     0x0006d31b       0x63 CMakeFiles/application.elf.dir/startup/startup_stm32f103xb.s.obj
+ .debug_str     0x0006d90e       0x63 CMakeFiles/application.elf.dir/startup/startup_stm32f103xb.s.obj
                                  0xa0 (size before relaxing)
- .debug_str     0x0006d37e      0x335 libBSP_LIB.a(bsp.c.obj)
+ .debug_str     0x0006d971      0x335 libBSP_LIB.a(bsp.c.obj)
                               0x512d4 (size before relaxing)
- .debug_str     0x0006d6b3      0x53c libBSP_LIB.a(bsp_dma.c.obj)
+ .debug_str     0x0006dca6      0x53c libBSP_LIB.a(bsp_dma.c.obj)
                               0x514d8 (size before relaxing)
- .debug_str     0x0006dbef      0x1ca libBSP_LIB.a(bsp_gpio.c.obj)
+ .debug_str     0x0006e1e2      0x1ca libBSP_LIB.a(bsp_gpio.c.obj)
                               0x51112 (size before relaxing)
- .debug_str     0x0006ddb9       0x53 libBSP_LIB.a(bsp_key.c.obj)
-                              0x51000 (size before relaxing)
- .debug_str     0x0006de0c      0x185 libBSP_LIB.a(bsp_spi.c.obj)
+ .debug_str     0x0006e3ac       0x53 libBSP_LIB.a(bsp_key.c.obj)
+                              0x512f8 (size before relaxing)
+ .debug_str     0x0006e3ff      0x185 libBSP_LIB.a(bsp_spi.c.obj)
                               0x51184 (size before relaxing)
- .debug_str     0x0006df91      0x625 libSTD_LIB.a(stm32f10x_dma.c.obj)
+ .debug_str     0x0006e584      0x625 libSTD_LIB.a(stm32f10x_dma.c.obj)
                               0x4d8be (size before relaxing)
- .debug_str     0x0006e5b6      0x498 libSTD_LIB.a(stm32f10x_gpio.c.obj)
+ .debug_str     0x0006eba9      0x498 libSTD_LIB.a(stm32f10x_gpio.c.obj)
                               0x4d78e (size before relaxing)
- .debug_str     0x0006ea4e      0x8c1 libSTD_LIB.a(stm32f10x_i2c.c.obj)
+ .debug_str     0x0006f041      0x8c1 libSTD_LIB.a(stm32f10x_i2c.c.obj)
                               0x4db30 (size before relaxing)
- .debug_str     0x0006f30f      0xa93 libSTD_LIB.a(stm32f10x_rcc.c.obj)
+ .debug_str     0x0006f902      0xa93 libSTD_LIB.a(stm32f10x_rcc.c.obj)
                               0x4dd74 (size before relaxing)
- .debug_str     0x0006fda2      0x50c libSTD_LIB.a(stm32f10x_spi.c.obj)
+ .debug_str     0x00070395      0x50c libSTD_LIB.a(stm32f10x_spi.c.obj)
                               0x4d88e (size before relaxing)
 
 .comment        0x00000000       0x4d
@@ -3588,6 +3752,7 @@ LOAD d:/tool/complier_toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm
  .comment       0x0000004d       0x4e CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.obj
  .comment       0x0000004d       0x4e CMakeFiles/application.elf.dir/core/gui/gui.c.obj
  .comment       0x0000004d       0x4e CMakeFiles/application.elf.dir/core/key/key.c.obj
+ .comment       0x0000004d       0x4e CMakeFiles/application.elf.dir/core/system/system.c.obj
  .comment       0x0000004d       0x4e CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.obj
  .comment       0x0000004d       0x4e libBSP_LIB.a(bsp.c.obj)
  .comment       0x0000004d       0x4e libBSP_LIB.a(bsp_dma.c.obj)
@@ -3600,23 +3765,24 @@ LOAD d:/tool/complier_toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm
  .comment       0x0000004d       0x4e libSTD_LIB.a(stm32f10x_rcc.c.obj)
  .comment       0x0000004d       0x4e libSTD_LIB.a(stm32f10x_spi.c.obj)
 
-.debug_frame    0x00000000     0x1a54
+.debug_frame    0x00000000     0x1b8c
  .debug_frame   0x00000000       0x2c CMakeFiles/application.elf.dir/core/application/main.c.obj
  .debug_frame   0x0000002c      0x110 CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.obj
  .debug_frame   0x0000013c      0x318 CMakeFiles/application.elf.dir/core/gui/gui.c.obj
- .debug_frame   0x00000454       0x34 CMakeFiles/application.elf.dir/core/key/key.c.obj
- .debug_frame   0x00000488       0x98 CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.obj
- .debug_frame   0x00000520      0x148 libBSP_LIB.a(bsp.c.obj)
- .debug_frame   0x00000668       0x74 libBSP_LIB.a(bsp_dma.c.obj)
- .debug_frame   0x000006dc       0x2c libBSP_LIB.a(bsp_gpio.c.obj)
- .debug_frame   0x00000708       0x34 libBSP_LIB.a(bsp_key.c.obj)
- .debug_frame   0x0000073c       0x90 libBSP_LIB.a(bsp_spi.c.obj)
- .debug_frame   0x000007cc      0x1c8 libSTD_LIB.a(stm32f10x_dma.c.obj)
- .debug_frame   0x00000994      0x2d0 libSTD_LIB.a(stm32f10x_gpio.c.obj)
- .debug_frame   0x00000c64      0x530 libSTD_LIB.a(stm32f10x_i2c.c.obj)
- .debug_frame   0x00001194      0x4f4 libSTD_LIB.a(stm32f10x_rcc.c.obj)
- .debug_frame   0x00001688      0x3a0 libSTD_LIB.a(stm32f10x_spi.c.obj)
- .debug_frame   0x00001a28       0x2c d:/tool/complier_toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-init.o)
+ .debug_frame   0x00000454       0xf4 CMakeFiles/application.elf.dir/core/key/key.c.obj
+ .debug_frame   0x00000548       0x78 CMakeFiles/application.elf.dir/core/system/system.c.obj
+ .debug_frame   0x000005c0       0x98 CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.obj
+ .debug_frame   0x00000658      0x148 libBSP_LIB.a(bsp.c.obj)
+ .debug_frame   0x000007a0       0x74 libBSP_LIB.a(bsp_dma.c.obj)
+ .debug_frame   0x00000814       0x2c libBSP_LIB.a(bsp_gpio.c.obj)
+ .debug_frame   0x00000840       0x34 libBSP_LIB.a(bsp_key.c.obj)
+ .debug_frame   0x00000874       0x90 libBSP_LIB.a(bsp_spi.c.obj)
+ .debug_frame   0x00000904      0x1c8 libSTD_LIB.a(stm32f10x_dma.c.obj)
+ .debug_frame   0x00000acc      0x2d0 libSTD_LIB.a(stm32f10x_gpio.c.obj)
+ .debug_frame   0x00000d9c      0x530 libSTD_LIB.a(stm32f10x_i2c.c.obj)
+ .debug_frame   0x000012cc      0x4f4 libSTD_LIB.a(stm32f10x_rcc.c.obj)
+ .debug_frame   0x000017c0      0x3a0 libSTD_LIB.a(stm32f10x_spi.c.obj)
+ .debug_frame   0x00001b60       0x2c d:/tool/complier_toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-init.o)
 
 .stabstr        0x00000000      0x14d
  .stabstr       0x00000000      0x14d d:/tool/complier_toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libnosys.a(close.o)
@@ -3730,7 +3896,6 @@ GPIO_StructInit                                   libSTD_LIB.a(stm32f10x_gpio.c.
 GPIO_Write                                        libSTD_LIB.a(stm32f10x_gpio.c.obj)
 GPIO_WriteBit                                     libSTD_LIB.a(stm32f10x_gpio.c.obj)
 GUI_CLEAR_SCREEN                                  CMakeFiles/application.elf.dir/core/gui/gui.c.obj
-                                                  CMakeFiles/application.elf.dir/core/key/key.c.obj
 GUI_DISPLAY_BUF                                   libBSP_LIB.a(bsp_dma.c.obj)
                                                   CMakeFiles/application.elf.dir/core/gui/gui.c.obj
 GUI_Display_OFF                                   CMakeFiles/application.elf.dir/core/gui/gui.c.obj
@@ -3741,7 +3906,6 @@ GUI_Init                                          CMakeFiles/application.elf.dir
 GUI_Reverse_Y                                     CMakeFiles/application.elf.dir/core/gui/gui.c.obj
 GUI_SPI_CLEAR_SCREEN                              CMakeFiles/application.elf.dir/core/gui/gui.c.obj
 GUI_SPI_Display_Char_ASCII                        CMakeFiles/application.elf.dir/core/gui/gui.c.obj
-                                                  CMakeFiles/application.elf.dir/core/key/key.c.obj
 GUI_SPI_Display_Graph                             CMakeFiles/application.elf.dir/core/gui/gui.c.obj
 GUI_SPI_Init                                      CMakeFiles/application.elf.dir/core/gui/gui.c.obj
                                                   CMakeFiles/application.elf.dir/core/application/main.c.obj
@@ -3815,8 +3979,14 @@ I2S_Init                                          libSTD_LIB.a(stm32f10x_spi.c.o
 I2S_StructInit                                    libSTD_LIB.a(stm32f10x_spi.c.obj)
 Key                                               CMakeFiles/application.elf.dir/core/key/key.c.obj
 KeyCtrl                                           CMakeFiles/application.elf.dir/core/key/key.c.obj
+Key_ConfigPage_Process                            CMakeFiles/application.elf.dir/core/key/key.c.obj
+Key_Mainpage_Process                              CMakeFiles/application.elf.dir/core/key/key.c.obj
+Key_MenuEdit_Process                              CMakeFiles/application.elf.dir/core/key/key.c.obj
+Key_MenuSelect_Process                            CMakeFiles/application.elf.dir/core/key/key.c.obj
 Key_Process                                       CMakeFiles/application.elf.dir/core/key/key.c.obj
                                                   CMakeFiles/application.elf.dir/core/application/main.c.obj
+Key_Trig_Handler                                  CMakeFiles/application.elf.dir/core/key/key.c.obj
+Key_release_Handler                               CMakeFiles/application.elf.dir/core/key/key.c.obj
 MemManage_Handler                                 CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.obj
 NMI_Handler                                       CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.obj
 NVIC_Init                                         libSTD_LIB.a(misc.c.obj)
@@ -3907,8 +4077,16 @@ SysTick_CLKSourceConfig                           libSTD_LIB.a(misc.c.obj)
 SysTick_Handler                                   CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.obj
 SystemCoreClock                                   CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.obj
 SystemCoreClockUpdate                             CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.obj
+SystemCtrl                                        CMakeFiles/application.elf.dir/core/system/system.c.obj
+                                                  CMakeFiles/application.elf.dir/core/key/key.c.obj
 SystemInit                                        CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.obj
                                                   CMakeFiles/application.elf.dir/startup/startup_stm32f103xb.s.obj
+System_Page_Status_Read                           CMakeFiles/application.elf.dir/core/system/system.c.obj
+                                                  CMakeFiles/application.elf.dir/core/key/key.c.obj
+System_Page_Status_Write                          CMakeFiles/application.elf.dir/core/system/system.c.obj
+                                                  CMakeFiles/application.elf.dir/core/key/key.c.obj
+System_Poll                                       CMakeFiles/application.elf.dir/core/system/system.c.obj
+                                                  CMakeFiles/application.elf.dir/core/application/main.c.obj
 TAMPER_IRQHandler                                 CMakeFiles/application.elf.dir/startup/startup_stm32f103xb.s.obj
 TIM1_BRK_IRQHandler                               CMakeFiles/application.elf.dir/startup/startup_stm32f103xb.s.obj
 TIM1_CC_IRQHandler                                CMakeFiles/application.elf.dir/startup/startup_stm32f103xb.s.obj
