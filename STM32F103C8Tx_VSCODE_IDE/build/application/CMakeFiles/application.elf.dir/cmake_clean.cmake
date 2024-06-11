@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/application.elf.dir/core/application/main.c.obj.d"
   "CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.obj"
   "CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.obj.d"
+  "CMakeFiles/application.elf.dir/core/flash/flash.c.obj"
+  "CMakeFiles/application.elf.dir/core/flash/flash.c.obj.d"
   "CMakeFiles/application.elf.dir/core/gui/gui.c.obj"
   "CMakeFiles/application.elf.dir/core/gui/gui.c.obj.d"
   "CMakeFiles/application.elf.dir/core/key/key.c.obj"

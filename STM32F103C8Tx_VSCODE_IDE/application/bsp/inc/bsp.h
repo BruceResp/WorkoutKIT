@@ -36,4 +36,6 @@ extern void Bsp_I2C_DMA_Ctrl(FunctionalState ctrl);
 
 extern uint8_t Bsp_KEY_Probe(u8 key);
 
+extern void Bsp_Flash_Init(void);
+extern u8 Bsp_Flash_SPI_TransmitReceive(u8 TxData);
 #endif

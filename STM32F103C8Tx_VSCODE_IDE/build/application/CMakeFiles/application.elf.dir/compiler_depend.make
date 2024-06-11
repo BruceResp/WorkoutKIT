@@ -329,6 +329,69 @@ application/CMakeFiles/application.elf.dir/core/key/key.c.obj: D:/Git_Repository
   D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h \
   D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdint.h
 
+application/CMakeFiles/application.elf.dir/core/system/system.c.obj: D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/core/system/system.c \
+  D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/bsp/inc/bsp.h \
+  D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/core/application/inc/stm32f10x_conf.h \
+  D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/core/system/inc/system.h \
+  D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/devices/inc/core_cm3.h \
+  D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/devices/inc/stm32f10x.h \
+  D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/devices/inc/system_stm32f10x.h \
+  D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/inc/misc.h \
+  D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/inc/stm32f10x_adc.h \
+  D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/inc/stm32f10x_bkp.h \
+  D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/inc/stm32f10x_can.h \
+  D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/inc/stm32f10x_cec.h \
+  D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/inc/stm32f10x_crc.h \
+  D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/inc/stm32f10x_dac.h \
+  D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/inc/stm32f10x_dbgmcu.h \
+  D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/inc/stm32f10x_dma.h \
+  D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/inc/stm32f10x_exti.h \
+  D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/inc/stm32f10x_flash.h \
+  D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/inc/stm32f10x_fsmc.h \
+  D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/inc/stm32f10x_gpio.h \
+  D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/inc/stm32f10x_i2c.h \
+  D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/inc/stm32f10x_iwdg.h \
+  D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/inc/stm32f10x_pwr.h \
+  D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/inc/stm32f10x_rcc.h \
+  D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/inc/stm32f10x_rtc.h \
+  D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/inc/stm32f10x_sdio.h \
+  D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/inc/stm32f10x_spi.h \
+  D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/inc/stm32f10x_tim.h \
+  D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/inc/stm32f10x_usart.h \
+  D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/drivers/inc/stm32f10x_wwdg.h \
+  D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/product/WK1000.h \
+  D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/_ansi.h \
+  D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/_newlib_version.h \
+  D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/_default_types.h \
+  D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/_endian.h \
+  D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/_types.h \
+  D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/endian.h \
+  D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/ieeefp.h \
+  D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/types.h \
+  D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/newlib.h \
+  D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h \
+  D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdio.h \
+  D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_intsup.h \
+  D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_pthreadtypes.h \
+  D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_sigset.h \
+  D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_stdint.h \
+  D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_timespec.h \
+  D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_timeval.h \
+  D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_types.h \
+  D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h \
+  D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/config.h \
+  D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/features.h \
+  D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/lock.h \
+  D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h \
+  D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/sched.h \
+  D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/select.h \
+  D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/stdio.h \
+  D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/timespec.h \
+  D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/types.h \
+  D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdarg.h \
+  D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h \
+  D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdint.h
+
 
 D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdio.h:
 
@@ -493,3 +556,5 @@ D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/core/gui/gui.c:
 D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/core/gui/inc/guifont.h:
 
 D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/core/system/inc/system.h:
+
+D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/core/system/system.c:

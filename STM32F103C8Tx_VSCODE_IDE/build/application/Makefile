@@ -806,6 +806,30 @@ bsp/bsp_dma.c.s:
 	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/BSP_LIB.dir/build.make application/CMakeFiles/BSP_LIB.dir/bsp/bsp_dma.c.s
 .PHONY : bsp/bsp_dma.c.s
 
+bsp/bsp_flash.obj: bsp/bsp_flash.c.obj
+.PHONY : bsp/bsp_flash.obj
+
+# target to build an object file
+bsp/bsp_flash.c.obj:
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/BSP_LIB.dir/build.make application/CMakeFiles/BSP_LIB.dir/bsp/bsp_flash.c.obj
+.PHONY : bsp/bsp_flash.c.obj
+
+bsp/bsp_flash.i: bsp/bsp_flash.c.i
+.PHONY : bsp/bsp_flash.i
+
+# target to preprocess a source file
+bsp/bsp_flash.c.i:
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/BSP_LIB.dir/build.make application/CMakeFiles/BSP_LIB.dir/bsp/bsp_flash.c.i
+.PHONY : bsp/bsp_flash.c.i
+
+bsp/bsp_flash.s: bsp/bsp_flash.c.s
+.PHONY : bsp/bsp_flash.s
+
+# target to generate assembly for a file
+bsp/bsp_flash.c.s:
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/BSP_LIB.dir/build.make application/CMakeFiles/BSP_LIB.dir/bsp/bsp_flash.c.s
+.PHONY : bsp/bsp_flash.c.s
+
 bsp/bsp_gpio.obj: bsp/bsp_gpio.c.obj
 .PHONY : bsp/bsp_gpio.obj
 
@@ -973,6 +997,30 @@ core/application/stm32f10x_it.s: core/application/stm32f10x_it.c.s
 core/application/stm32f10x_it.c.s:
 	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.s
 .PHONY : core/application/stm32f10x_it.c.s
+
+core/flash/flash.obj: core/flash/flash.c.obj
+.PHONY : core/flash/flash.obj
+
+# target to build an object file
+core/flash/flash.c.obj:
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/core/flash/flash.c.obj
+.PHONY : core/flash/flash.c.obj
+
+core/flash/flash.i: core/flash/flash.c.i
+.PHONY : core/flash/flash.i
+
+# target to preprocess a source file
+core/flash/flash.c.i:
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/core/flash/flash.c.i
+.PHONY : core/flash/flash.c.i
+
+core/flash/flash.s: core/flash/flash.c.s
+.PHONY : core/flash/flash.s
+
+# target to generate assembly for a file
+core/flash/flash.c.s:
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/core/flash/flash.c.s
+.PHONY : core/flash/flash.c.s
 
 core/gui/gui.obj: core/gui/gui.c.obj
 .PHONY : core/gui/gui.obj
@@ -1146,6 +1194,9 @@ help:
 	@echo "... bsp/bsp_dma.obj"
 	@echo "... bsp/bsp_dma.i"
 	@echo "... bsp/bsp_dma.s"
+	@echo "... bsp/bsp_flash.obj"
+	@echo "... bsp/bsp_flash.i"
+	@echo "... bsp/bsp_flash.s"
 	@echo "... bsp/bsp_gpio.obj"
 	@echo "... bsp/bsp_gpio.i"
 	@echo "... bsp/bsp_gpio.s"
@@ -1167,6 +1218,9 @@ help:
 	@echo "... core/application/stm32f10x_it.obj"
 	@echo "... core/application/stm32f10x_it.i"
 	@echo "... core/application/stm32f10x_it.s"
+	@echo "... core/flash/flash.obj"
+	@echo "... core/flash/flash.i"
+	@echo "... core/flash/flash.s"
 	@echo "... core/gui/gui.obj"
 	@echo "... core/gui/gui.i"
 	@echo "... core/gui/gui.s"

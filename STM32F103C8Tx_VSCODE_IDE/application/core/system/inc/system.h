@@ -37,6 +37,7 @@ typedef struct
 
 }SystemCtrl_t;
 
+extern void System_Poll(void);
 extern uint8_t System_Page_Status_Read(void);
 extern void System_Page_Status_Write(uint8_t page_index);
 

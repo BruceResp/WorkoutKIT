@@ -30,6 +30,7 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/./core/gui/inc"
   "D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/./core/key/inc"
   "D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/./core/system/inc"
+  "D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/./core/flash/inc"
   "D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/core/application/inc"
   )
 
@@ -40,6 +41,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/c_unity/unity.c" "application/CMakeFiles/application.elf.dir/c_unity/unity.c.obj" "gcc" "application/CMakeFiles/application.elf.dir/c_unity/unity.c.obj.d"
   "D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/core/application/main.c" "application/CMakeFiles/application.elf.dir/core/application/main.c.obj" "gcc" "application/CMakeFiles/application.elf.dir/core/application/main.c.obj.d"
   "D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/core/application/stm32f10x_it.c" "application/CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.obj" "gcc" "application/CMakeFiles/application.elf.dir/core/application/stm32f10x_it.c.obj.d"
+  "D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/core/flash/flash.c" "application/CMakeFiles/application.elf.dir/core/flash/flash.c.obj" "gcc" "application/CMakeFiles/application.elf.dir/core/flash/flash.c.obj.d"
   "D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/core/gui/gui.c" "application/CMakeFiles/application.elf.dir/core/gui/gui.c.obj" "gcc" "application/CMakeFiles/application.elf.dir/core/gui/gui.c.obj.d"
   "D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/core/key/key.c" "application/CMakeFiles/application.elf.dir/core/key/key.c.obj" "gcc" "application/CMakeFiles/application.elf.dir/core/key/key.c.obj.d"
   "D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/core/system/system.c" "application/CMakeFiles/application.elf.dir/core/system/system.c.obj" "gcc" "application/CMakeFiles/application.elf.dir/core/system/system.c.obj.d"

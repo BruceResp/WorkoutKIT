@@ -2,6 +2,8 @@
 #include "gui.h"
 #include "key.h"
 #include "unity.h"
+#include "flash.h"
+#include "system.h"
 
 // void setUp(void) { }    统一放到uint_test文件夹
 // void tearDown(void) { }
@@ -22,7 +24,12 @@ int main(void)
 	// UNITY_END();  //在方法里才需要加 return
   	Bsp_Init();
  	GUI_SPI_Init(); //初始化测试下来要4s钟有点长
-	
+	u8 addr[3] = {0x00,0x00,0x00};
+	u8 data[3] = {0x01,0x02,0x03};
+	u8 Rxdata[3];
+	FLASH_Write_Data(addr,data,3);
+		
+	FLASH_Read_Data(addr,Rxdata,3);
 	//GUI_Show_Image(1,1);
 	// GUI_Draw_Point(3,3);
 	// GUI_Draw_Point(10,8);
@@ -32,10 +39,12 @@ int main(void)
 	// u8 page_Y = 50;
 	//GUI_Test();
 	while (1)
-	{
+	{	
+
 		//GUI_CLEAR_SCREEN();
 		Key_Process();
 		System_Poll();
+		
 		//Bsp_DelayS(10);
 	// OLED_Write(2,1,"B",0);
 	// OLED_Write(3,50,"C",0);

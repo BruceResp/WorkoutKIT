@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/BSP_LIB.dir/bsp/bsp.c.obj.d"
   "CMakeFiles/BSP_LIB.dir/bsp/bsp_dma.c.obj"
   "CMakeFiles/BSP_LIB.dir/bsp/bsp_dma.c.obj.d"
+  "CMakeFiles/BSP_LIB.dir/bsp/bsp_flash.c.obj"
+  "CMakeFiles/BSP_LIB.dir/bsp/bsp_flash.c.obj.d"
   "CMakeFiles/BSP_LIB.dir/bsp/bsp_gpio.c.obj"
   "CMakeFiles/BSP_LIB.dir/bsp/bsp_gpio.c.obj.d"
   "CMakeFiles/BSP_LIB.dir/bsp/bsp_i2c.c.obj"

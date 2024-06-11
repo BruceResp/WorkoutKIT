@@ -153,10 +153,24 @@ application/CMakeFiles/application.elf.dir/core/system/system.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/application.elf.dir/core/system/system.c.s"
 	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/core/system/system.c -o CMakeFiles/application.elf.dir/core/system/system.c.s
 
+application/CMakeFiles/application.elf.dir/core/flash/flash.c.obj: application/CMakeFiles/application.elf.dir/flags.make
+application/CMakeFiles/application.elf.dir/core/flash/flash.c.obj: D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/core/flash/flash.c
+application/CMakeFiles/application.elf.dir/core/flash/flash.c.obj: application/CMakeFiles/application.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object application/CMakeFiles/application.elf.dir/core/flash/flash.c.obj"
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/application.elf.dir/core/flash/flash.c.obj -MF CMakeFiles/application.elf.dir/core/flash/flash.c.obj.d -o CMakeFiles/application.elf.dir/core/flash/flash.c.obj -c D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/core/flash/flash.c
+
+application/CMakeFiles/application.elf.dir/core/flash/flash.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/application.elf.dir/core/flash/flash.c.i"
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/core/flash/flash.c > CMakeFiles/application.elf.dir/core/flash/flash.c.i
+
+application/CMakeFiles/application.elf.dir/core/flash/flash.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/application.elf.dir/core/flash/flash.c.s"
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/core/flash/flash.c -o CMakeFiles/application.elf.dir/core/flash/flash.c.s
+
 application/CMakeFiles/application.elf.dir/__/devices/core_cm3.c.obj: application/CMakeFiles/application.elf.dir/flags.make
 application/CMakeFiles/application.elf.dir/__/devices/core_cm3.c.obj: D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/devices/core_cm3.c
 application/CMakeFiles/application.elf.dir/__/devices/core_cm3.c.obj: application/CMakeFiles/application.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object application/CMakeFiles/application.elf.dir/__/devices/core_cm3.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object application/CMakeFiles/application.elf.dir/__/devices/core_cm3.c.obj"
 	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/application.elf.dir/__/devices/core_cm3.c.obj -MF CMakeFiles/application.elf.dir/__/devices/core_cm3.c.obj.d -o CMakeFiles/application.elf.dir/__/devices/core_cm3.c.obj -c D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/devices/core_cm3.c
 
 application/CMakeFiles/application.elf.dir/__/devices/core_cm3.c.i: cmake_force
@@ -170,7 +184,7 @@ application/CMakeFiles/application.elf.dir/__/devices/core_cm3.c.s: cmake_force
 application/CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.obj: application/CMakeFiles/application.elf.dir/flags.make
 application/CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.obj: D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/devices/system_stm32f10x.c
 application/CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.obj: application/CMakeFiles/application.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object application/CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object application/CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.obj"
 	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT application/CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.obj -MF CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.obj.d -o CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.obj -c D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/devices/system_stm32f10x.c
 
 application/CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.i: cmake_force
@@ -183,7 +197,7 @@ application/CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.s: cmak
 
 application/CMakeFiles/application.elf.dir/startup/startup_stm32f103xb.s.obj: application/CMakeFiles/application.elf.dir/flags.make
 application/CMakeFiles/application.elf.dir/startup/startup_stm32f103xb.s.obj: D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/startup/startup_stm32f103xb.s
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building ASM object application/CMakeFiles/application.elf.dir/startup/startup_stm32f103xb.s.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building ASM object application/CMakeFiles/application.elf.dir/startup/startup_stm32f103xb.s.obj"
 	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/application.elf.dir/startup/startup_stm32f103xb.s.obj -c D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/startup/startup_stm32f103xb.s
 
 application/CMakeFiles/application.elf.dir/startup/startup_stm32f103xb.s.i: cmake_force
@@ -202,6 +216,7 @@ application_elf_OBJECTS = \
 "CMakeFiles/application.elf.dir/core/gui/gui.c.obj" \
 "CMakeFiles/application.elf.dir/core/key/key.c.obj" \
 "CMakeFiles/application.elf.dir/core/system/system.c.obj" \
+"CMakeFiles/application.elf.dir/core/flash/flash.c.obj" \
 "CMakeFiles/application.elf.dir/__/devices/core_cm3.c.obj" \
 "CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.obj" \
 "CMakeFiles/application.elf.dir/startup/startup_stm32f103xb.s.obj"
@@ -215,13 +230,14 @@ D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/bin/application.elf: appl
 D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/bin/application.elf: application/CMakeFiles/application.elf.dir/core/gui/gui.c.obj
 D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/bin/application.elf: application/CMakeFiles/application.elf.dir/core/key/key.c.obj
 D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/bin/application.elf: application/CMakeFiles/application.elf.dir/core/system/system.c.obj
+D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/bin/application.elf: application/CMakeFiles/application.elf.dir/core/flash/flash.c.obj
 D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/bin/application.elf: application/CMakeFiles/application.elf.dir/__/devices/core_cm3.c.obj
 D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/bin/application.elf: application/CMakeFiles/application.elf.dir/__/devices/system_stm32f10x.c.obj
 D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/bin/application.elf: application/CMakeFiles/application.elf.dir/startup/startup_stm32f103xb.s.obj
 D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/bin/application.elf: application/CMakeFiles/application.elf.dir/build.make
 D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/bin/application.elf: application/libBSP_LIB.a
 D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/bin/application.elf: application/libSTD_LIB.a
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking C executable D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/bin/application.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking C executable D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/bin/application.elf"
 	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb   -std=gnu99 -Wall -fdata-sections -ffunction-sections -g3 -gdwarf-2 -O0  -mcpu=cortex-m3 -mthumb   -Wl,--gc-sections $(application_elf_OBJECTS) $(application_elf_EXTERNAL_OBJECTS) -o D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/bin/application.elf  libBSP_LIB.a libSTD_LIB.a -lc -lm -lnosys -TD:/Projects/STM32F103C8Tx_VSCODE_IDE/application/STM32F103C8Tx_FLASH.ld -Wl,-Map=application.map,--cref,--no-warn-mismatch -specs=nano.specs -specs=nosys.specs
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Generating D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/bin/application.hex, D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/bin/application.bin"
 	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build/application && arm-none-eabi-objcopy -Oihex D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/bin/application.elf D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/bin/application.hex

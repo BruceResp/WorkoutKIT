@@ -48,7 +48,7 @@
 #define OLED_SSD1306_SEND_CMD        ((uint8_t)0x00)
 #define OLED_SSD1306_SEND_DATA        ((uint8_t)0x40)
 
-/**********************KEYS RESOURCES******************************/
+/**********************KEYS HARDWARE RESOURCES***************************/
 #define KEY_Marix               
 
 #define KEY_UP_PIN                   GPIO_Pin_8
@@ -63,5 +63,20 @@
 #define KEY_COMFIRM_PIN             GPIO_Pin_5
 #define KEY_COMFIRM_PORT            GPIOB
 
+/**********************FLASH HARDWARE RESOURCES***************************/
+#define FLASH_SPI_SUPPORT
+#define FLASH_SPI                   SPI2
+
+#define FLASH_SPI_DI_PIN            GPIO_Pin_15
+#define FLASH_SPI_DI_PORT           GPIOB
+
+#define FLASH_SPI_DO_PIN            GPIO_Pin_14
+#define FLASH_SPI_DO_PORT           GPIOB
+
+#define FLASH_SPI_CLK_PIN           GPIO_Pin_13
+#define FLASH_SPI_CLK_PORT          GPIOB
+
+#define FLASH_SPI_CS_PIN            GPIO_Pin_12
+#define FLASH_SPI_CS_PORT           GPIOB
 
 #endif
