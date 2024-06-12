@@ -5,6 +5,8 @@
 #include "flash.h"
 #include "system.h"
 
+uint8_t MID;
+uint16_t DID;
 // void setUp(void) { }    统一放到uint_test文件夹
 // void tearDown(void) { }
 // int add(int a,int b){
@@ -15,7 +17,9 @@
 // 	temp = add(1,1);
 // 	TEST_ASSERT_EQUAL(2,temp);
 // }
-
+u8 addr = 0x000000;
+u8 data[4] = {0x01,0x02,0x03,0x04};
+u8 Rxdata[4] ={0x08,0x07,0x06,0x05};
 int main(void)
 {
 	
@@ -23,13 +27,18 @@ int main(void)
 	// RUN_TEST(testZeroAdd);
 	// UNITY_END();  //在方法里才需要加 return
   	Bsp_Init();
- 	GUI_SPI_Init(); //初始化测试下来要4s钟有点长
-	u8 addr[3] = {0x00,0x00,0x00};
-	u8 data[3] = {0x01,0x02,0x03};
-	u8 Rxdata[3];
-	FLASH_Write_Data(addr,data,3);
+ 	//GUI_SPI_Init(); //初始化测试下来要4s钟有点长
+
+	
+	FLASH_Write_Data(addr,data,4);
 		
-	FLASH_Read_Data(addr,Rxdata,3);
+	FLASH_Read_Data(addr,Rxdata,4);
+	Bsp_printf("zheshi %d ",Rxdata[0]);
+	Bsp_printf("%d",Rxdata[1]);
+	Bsp_printf("%d ",Rxdata[2]);
+	Bsp_printf("%d",Rxdata[3]);
+
+
 	//GUI_Show_Image(1,1);
 	// GUI_Draw_Point(3,3);
 	// GUI_Draw_Point(10,8);

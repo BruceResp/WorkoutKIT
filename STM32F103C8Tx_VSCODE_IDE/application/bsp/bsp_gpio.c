@@ -49,14 +49,17 @@ void Bsp_GPIO_Init(){
     #ifdef FLASH_SPI_SUPPORT
         GPIO_InitStruct_AF_PP.GPIO_Mode = GPIO_Mode_AF_PP;
         GPIO_InitStruct_AF_PP.GPIO_Speed = GPIO_Speed_50MHz;
-        GPIO_InitStruct_AF_PP.GPIO_Pin = FLASH_SPI_DI_PIN | FLASH_SPI_CLK_PIN | FLASH_SPI_CS_PIN;
+        GPIO_InitStruct_AF_PP.GPIO_Pin = FLASH_SPI_DI_PIN | FLASH_SPI_CLK_PIN ;
         
         GPIO_InitStruct_IN_UP.GPIO_Mode = GPIO_Mode_IPU;
         GPIO_InitStruct_IN_UP.GPIO_Speed = GPIO_Speed_50MHz;
         GPIO_InitStruct_IN_UP.GPIO_Pin = FLASH_SPI_DO_PIN;
 
+        GPIO_InitStruct_OUT_PP.GPIO_Mode = GPIO_Mode_Out_PP;
+        GPIO_InitStruct_OUT_PP.GPIO_Speed = GPIO_Speed_50MHz;
+        GPIO_InitStruct_OUT_PP.GPIO_Pin = FLASH_SPI_CS_PIN;
         
-
+        GPIO_Init(GPIOB, &GPIO_InitStruct_OUT_PP);
         GPIO_Init(GPIOB, &GPIO_InitStruct_AF_PP);
         GPIO_Init(GPIOB, &GPIO_InitStruct_IN_UP);
     #endif

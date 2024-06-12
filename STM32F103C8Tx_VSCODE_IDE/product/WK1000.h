@@ -79,4 +79,19 @@
 #define FLASH_SPI_CS_PIN            GPIO_Pin_12
 #define FLASH_SPI_CS_PORT           GPIOB
 
+// #define FLASH_SPI                   SPI1
+
+// #define FLASH_SPI_DI_PIN            GPIO_Pin_7
+// #define FLASH_SPI_DI_PORT           GPIOA
+
+// #define FLASH_SPI_DO_PIN            GPIO_Pin_6
+// #define FLASH_SPI_DO_PORT           GPIOA
+
+// #define FLASH_SPI_CLK_PIN           GPIO_Pin_5
+// #define FLASH_SPI_CLK_PORT          GPIOA
+
+// #define FLASH_SPI_CS_PIN            GPIO_Pin_4
+// #define FLASH_SPI_CS_PORT           GPIOA
+
+
 #endif
