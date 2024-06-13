@@ -5,6 +5,8 @@
 #include "flash.h"
 #include "system.h"
 
+// 全部完成后的优化目标 1 flash访问使用qual 的方式 加快访问速度
+
 uint8_t MID;
 uint16_t DID;
 // void setUp(void) { }    统一放到uint_test文件夹
