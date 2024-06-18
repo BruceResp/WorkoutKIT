@@ -4,7 +4,7 @@
 #include "bsp.h"
 
 
-
+// 所处页面Index
 typedef enum {
     SYSTEM_MAIN_PAGE                                   =0u,
 
@@ -37,6 +37,30 @@ typedef struct
 
 }SystemCtrl_t;
 
+typedef struct
+{
+    int current_x; //描述当前的横纵坐标
+    int current_y; 
+
+    int target_x; //描述目标的横纵坐标
+    int target_y; 
+}Sys_MainPage_module_t;    //主界面显示的字的属性
+
+typedef struct
+{
+    //Sys_MainPage_module_t font;
+    Sys_MainPage_module_t left_icon;
+    Sys_MainPage_module_t mid_icon;
+    Sys_MainPage_module_t right_icon;
+    
+    Sys_MainPage_module_t left_font;
+    Sys_MainPage_module_t mid_font;
+    Sys_MainPage_module_t right_font;
+}Sys_MainPage_t;
+
+extern Sys_MainPage_t Sys_MainPage;
+
+extern void System_Init(void);
 extern void System_Poll(void);
 extern uint8_t System_Page_Status_Read(void);
 extern void System_Page_Status_Write(uint8_t page_index);

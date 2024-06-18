@@ -26,7 +26,7 @@ extern void Bsp_I2C_Init(void);
 extern void Bsp_I2C_SET(const uint8_t CMD);
 extern void Bsp_I2C_Multi_SET(const uint8_t *CMD,uint8_t count);
 extern void Bsp_I2C_Write_Byte(const uint8_t dat);
-extern void Bsp_I2C_Write_Bytes(const uint32_t dat,uint8_t count);
+extern void Bsp_I2C_Write_Bytes(const uint8_t *dat,uint8_t count);
 
 
 extern void Bsp_SPI_DMA_Init(void);

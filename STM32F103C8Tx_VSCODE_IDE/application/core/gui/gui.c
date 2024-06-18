@@ -11,12 +11,16 @@
 
 #include "gui.h"
 #include "guifont.h"
+#include "guicon.h"
+#include "system.h"
 /*			内部调用		*/
 
 #define S6X8 0
 #define S8X16 1
 
 extern uint8_t GUI_DISPLAY_BUF[8][128];
+extern SystemCtrl_t SystemCtrl;
+float kp = 0.8;
 
 /********************************I2C****************************************/
 
@@ -53,12 +57,12 @@ void GUI_Display_OFF(void)
 *作    者: Danny 
 *----------------------------------------------------------------------------------------*/ 
 void GUI_Update_Screen(void){
-	uint32_t linshi = &GUI_DISPLAY_BUF[0];
+	
 	for (uint32_t j = 0; j < 8; j++)
 	{	
 		GUI_Set_Cursor(j,0);
-		Bsp_I2C_Write_Bytes(linshi+j*128,0); // 左移7为相当于 *2^7
-		 
+		Bsp_I2C_Write_Bytes(GUI_DISPLAY_BUF[0],0); // 左移7为相当于 *2^7
+		
 	}
 }
 
@@ -297,7 +301,7 @@ void GUI_Show_Image(int16_t X, int16_t Y,uint8_t Height,uint8_t Width, const uin
 	{	
 		for (uint8_t i = 0; i < Width ; i++)
 		{	
-			if ((X + i) > 127 && (X + i) < 0)
+			if ((X + i) > 127 || (X + i) < 0)
 			{
 				continue;
 			}
@@ -474,15 +478,18 @@ void GUI_Draw_Line(int X1, int Y1,int X2, int Y2){
 *----------------------------------------------------------------------------------------*/ 
 void GUI_SPI_Init(void)
 {
-	Bsp_DelayMS(10); //1000
+	Bsp_DelayMS(1000); //1000
 
 	Bsp_SPI_RES_LOW();
-	Bsp_DelayMS(10);  //100
+	Bsp_DelayMS(100);  //100
 	Bsp_SPI_RES_HIGH();
 	Bsp_SPI_Send_CMD(0xae);//关闭显示
 	Bsp_SPI_Send_CMD(0xd5);//设置时钟分频因子,震荡频率
-	Bsp_SPI_Send_CMD(0x80);//[3:0],分频因子;[7:4],震荡频率
+	Bsp_SPI_Send_CMD(0xf0);//[3:0],分频因子;[7:4],震荡频率
 	
+	Bsp_SPI_Send_CMD(0xd9);//设置时钟分频因子,震荡频率
+	Bsp_SPI_Send_CMD(0x11);//[3:0],分频因子;[7:4],震荡频率
+
 	Bsp_SPI_Send_CMD(0x81);//设置对比度
 	Bsp_SPI_Send_CMD(0x7f);//128
 	Bsp_SPI_Send_CMD(0x8d);//设置电荷泵开关
@@ -504,6 +511,7 @@ void GUI_SPI_Init(void)
 	Bsp_SPI_Send_CMD(0xaf);//开启显示
 
    Bsp_SPI_Send_CMD(0x56);
+   Bsp_DelayMS(100);
    Bsp_SPI_DMA_Init();//DMA初始化
 }
 
@@ -513,9 +521,9 @@ void GUI_SPI_Init(void)
 *参    数:''  
 *作    者: Danny 
 *----------------------------------------------------------------------------------------*/ 
-void GUI_SPI_Display_Char_ASCII(u8 Y,u8 X,char* ascii,u8 size)
+void GUI_SPI_Display_Char_ASCII(u8 Y,u8 X,char ascii,u8 size)
 {
-	u8 i=0,j=0,c=*ascii;
+	u8 i=0,j=0,c=ascii;
 	if (size==S6X8)
 	{
 		for (i=0;i<6;i++)
@@ -549,29 +557,68 @@ void GUI_SPI_Display_Char_ASCII(u8 Y,u8 X,char* ascii,u8 size)
 *作    者: Danny 
 *----------------------------------------------------------------------------------------*/ 
 void GUI_SPI_Display_Graph(int16_t X,int16_t Y,u8 height,u8 width,const u8 *Graph){
-	u8 across = ( height-1 ) / 8 + 1;		//得出占据行的最大可能值
-	u8 page = Y/8 ;
-	u8 shift = Y%8;
-	for (u8 j = 0; j < across; j++)
+	// u8 across = ( height-1 ) / 8 + 1;		//得出占据行的最大可能值
+	// u8 page = Y/8 ;
+	// u8 shift = Y%8;
+	// for (u8 j = 0; j < across; j++)
+	// {
+	// 	for (u8 i = 0; i < width; i++)
+	// 	{
+	// 		if ((X + i) > 127 && (X + i) < 0)
+	// 		{
+	// 			continue;
+	// 		}
+	// 		if (Y < 0 )
+	// 		{
+	// 			page -=1;
+	// 			shift +=8;
+	// 		}
+	// 		if ((page + j) >= 0 && (page + j) < 8)
+	// 		{
+	// 			GUI_DISPLAY_BUF[page+j][X+i] |= Graph[i+width*j] << shift;
+	// 		}
+	// 		if ((page + j + 1) >= 0 && (page + j + 1) < 8)
+	// 		{
+	// 			GUI_DISPLAY_BUF[page+j+1][X+i] |= Graph[i+width*j] >>(8 - shift) ;
+	// 		}
+	// 	}
+	// }
+
+	uint8_t i = 0, j = 0;
+	int16_t Page, Shift;
+	
+	/*将图像所在区域清空*/
+	//OLED_ClearArea(X, Y, Width, Height);
+	
+	/*遍历指定图像涉及的相关页*/
+	/*(Height - 1) / 8 + 1的目的是Height / 8并向上取整*/
+	for (j = 0; j < (height - 1) / 8 + 1; j ++)
 	{
-		for (u8 i = 0; i < width; i++)
+		/*遍历指定图像涉及的相关列*/
+		for (i = 0; i < width; i ++)
 		{
-			if ((X + i) > 127 && (X + i) < 0)
+			if (X + i >= 0 && X + i <= 127)		//超出屏幕的内容不显示
 			{
-				continue;
-			}
-			if (Y < 0 )
-			{
-				page -=1;
-				shift +=8;
-			}
-			if ((page + j) >= 0 && (page + j) < 8)
-			{
-				GUI_DISPLAY_BUF[page+j][X+i] |= Graph[i+width*j] << shift;
-			}
-			if ((page + j + 1) >= 0 && (page + j + 1) < 8)
-			{
-				GUI_DISPLAY_BUF[page+j+1][X+i] |= Graph[i+width*j] >>(8 - shift) ;
+				/*负数坐标在计算页地址和移位时需要加一个偏移*/
+				Page = Y / 8;
+				Shift = Y % 8;
+				if (Y < 0)
+				{
+					Page -= 1;
+					Shift += 8;
+				}
+				
+				if (Page + j >= 0 && Page + j <= 7)		//超出屏幕的内容不显示
+				{
+					/*显示图像在当前页的内容*/
+					GUI_DISPLAY_BUF[Page + j][X + i] |= Graph[j * width + i] << (Shift);
+				}
+				
+				if (Page + j + 1 >= 0 && Page + j + 1 <= 7)		//超出屏幕的内容不显示
+				{					
+					/*显示图像在下一页的内容*/
+					GUI_DISPLAY_BUF[Page + j + 1][X + i] |= Graph[j * width + i] >> (8 - Shift);
+				}
 			}
 		}
 	}
@@ -610,11 +657,112 @@ void GUI_SPI_CLEAR_SCREEN(){
 void GUI_Test(void){
 	
 	//Bsp_DelayS(5);
-	GUI_Show_Image(100,50,16,16,OLED_Test[0].CellMatrix);
-	GUI_Show_Image(1,1,16,16,OLED_Test[0].CellMatrix);
-	GUI_Show_Image(-5,-5,16,16,OLED_Test[0].CellMatrix);
+	//GUI_Show_Image(0,10,44,44,train_Icon);
+	GUI_SPI_Display_Graph(44,10,44,44,config_Icon);
+	//GUI_Show_Image(88,10,44,44,Set_Icon);
+
+
 	//GUI_SPI_Display_Graph(5,5,16,16,OLED_Test[0].CellMatrix);
 	//GUI_Display_OFF();
 	//Bsp_DelayS(5);
 	//GUI_Display_ON();
+}
+/*----------------------------------------------------------------------------------------- 
+*函数名称:'GUI_Show_Frame' 
+*函数功能:'' 
+*参    数:'' 
+*返 回 值:'' 
+*说    明: '' 
+*作    者: Danny 
+*----------------------------------------------------------------------------------------*/ 
+void GUI_Show_Frame(void){
+	
+	GUI_CLEAR_SCREEN();
+	
+	GUI_Show_Image(Sys_MainPage.right_icon.current_x,Sys_MainPage.right_icon.current_y,44,44,Set_Icon);
+	
+	GUI_Show_Image(Sys_MainPage.mid_icon.current_x,Sys_MainPage.mid_icon.current_y,44,44,train_Icon);
+	
+	GUI_Show_Image(Sys_MainPage.left_icon.current_x,Sys_MainPage.left_icon.current_y,44,44,config_Icon);
+	
+
+}
+
+void GUI_Animation_move(void){
+	
+	Sys_MainPage.mid_icon.current_x = kp*Sys_MainPage.mid_icon.current_x + (1-kp)*(Sys_MainPage.mid_icon.target_x);
+	Sys_MainPage.left_icon.current_x = kp*Sys_MainPage.left_icon.current_x + (1-kp)*(Sys_MainPage.left_icon.target_x);
+	Sys_MainPage.right_icon.current_x = kp*Sys_MainPage.right_icon.current_x + (1-kp)*(Sys_MainPage.right_icon.target_x);
+
+	// Sys_MainPage.mid_icon.current_y = kp*Sys_MainPage.mid_font.current_y + (1-kp)*Sys_MainPage.mid_icon.target_y;
+	// Sys_MainPage.left_icon.current_y = kp*Sys_MainPage.left_icon.current_y + (1-kp)*Sys_MainPage.left_icon.target_y;
+	// Sys_MainPage.right_icon.current_y = kp*Sys_MainPage.right_icon.current_y + (1-kp)*Sys_MainPage.right_icon.target_y;
+
+	Sys_MainPage.mid_icon.current_y = Sys_MainPage.mid_icon.target_y;
+	Sys_MainPage.left_icon.current_y = Sys_MainPage.left_icon.target_y;
+	Sys_MainPage.right_icon.current_y = Sys_MainPage.right_icon.target_y;
+	// GUI_Show_Frame();
+	if (Sys_MainPage.right_icon.current_x != Sys_MainPage.right_icon.target_x )
+	{
+		GUI_CLEAR_SCREEN();
+	}
+	
+	
+	
+	GUI_Show_Image(Sys_MainPage.right_icon.current_x,Sys_MainPage.right_icon.current_y,44,44,Set_Icon);
+	
+	GUI_Show_Image(Sys_MainPage.mid_icon.current_x,Sys_MainPage.mid_icon.current_y,44,44,train_Icon);
+	
+	GUI_Show_Image(Sys_MainPage.left_icon.current_x,Sys_MainPage.left_icon.current_y,44,44,config_Icon);
+	
+	Bsp_DelayMS(2);
+}
+
+
+/*----------------------------------------------------------------------------------------- 
+*函数名称:'' 
+*函数功能:'' 
+*参    数:'' 
+*返 回 值:'' 
+*说    明: '每次按键按完才能调用一次，不能频繁调用' 
+*作    者: Danny 
+*----------------------------------------------------------------------------------------*/ 
+void GUI_Shift_Menu(uint8_t pageIndex){
+	u8 base_x = 42,	Delta_x = 44;
+	u8 base_y = 18;
+
+	if (pageIndex == SYSTEM_MAIN_PAGE_START_TRAIN_READY)
+	{
+		Sys_MainPage.mid_icon.target_x =  base_x;
+        Sys_MainPage.left_icon.target_x = base_x - Delta_x ;
+        Sys_MainPage.right_icon.target_x = base_x + Delta_x ;
+
+        Sys_MainPage.mid_icon.target_y = base_y; 
+        Sys_MainPage.left_icon.target_y = base_y ;
+        Sys_MainPage.right_icon.target_y = base_y ;
+	}
+
+	if (pageIndex == SYSTEM_MAIN_PAGE_EDIT_TRAIN_MENU_READY) //->
+	{
+		Sys_MainPage.mid_icon.target_x =  base_x + Delta_x;
+        Sys_MainPage.left_icon.target_x = base_x - Delta_x + Delta_x;
+        Sys_MainPage.right_icon.target_x = base_x + Delta_x + Delta_x;
+
+        Sys_MainPage.mid_icon.target_y = base_y; 
+        Sys_MainPage.left_icon.target_y = base_y ;
+        Sys_MainPage.right_icon.target_y = base_y ;
+	}
+
+	if (pageIndex == SYSTEM_MAIN_PAGE_CONFIG_READY) //<-
+	{
+		Sys_MainPage.mid_icon.target_x =  base_x - Delta_x;
+        Sys_MainPage.left_icon.target_x = base_x - Delta_x - Delta_x ;
+        Sys_MainPage.right_icon.target_x = base_x + Delta_x - Delta_x;
+
+        Sys_MainPage.mid_icon.target_y = base_y; 
+        Sys_MainPage.left_icon.target_y = base_y ;
+        Sys_MainPage.right_icon.target_y = base_y ;
+	}
+	
+	
 }

@@ -29,8 +29,12 @@ extern void GUI_Test(void);
 
 // extern void GUI_Reset(void);
 extern void GUI_SPI_Init(void);
-extern void GUI_SPI_Display_Char_ASCII(u8 ye,u8 lie,char* ascii,u8 size);
+extern void GUI_SPI_Display_Char_ASCII(u8 ye,u8 lie,char ascii,u8 size);
 extern void GUI_SPI_Display_Graph(int16_t X,int16_t Y,u8 height,u8 width,const u8 *Graph);
 extern void GUI_SPI_Reverse_Y(uint8_t y,uint8_t height);
 extern void GUI_SPI_CLEAR_SCREEN(void);
+
+extern void GUI_Animation_move(void);
+extern void GUI_Shift_Menu(uint8_t pageIndex);
+
 #endif

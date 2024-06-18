@@ -6,6 +6,8 @@ struct keys {
 } Key[KEYS_NUM];
 
 KeyCtrl_t KeyCtrl;
+
+
 extern SystemCtrl_t SystemCtrl;
 /*----------------------------------------------------------------------------------------- 
 *函数名称:'Key_Trig_Handler' 
@@ -29,28 +31,27 @@ void Key_Trig_Handler(void){
 *----------------------------------------------------------------------------------------*/ 
 void Key_Mainpage_Process(void){
 
-    uint8_t Page_Index = System_Page_Status_Read();
+    int8_t Page_Index = System_Page_Status_Read();
 
     if (KEY_IS_UP_RELEASE())
     {
-        if (Page_Index < SYSTEM_MAIN_PAGE_CONFIG_READY )
-        {
-            Page_Index += 2;
-        }else
+        Page_Index += 2;
+        if (Page_Index > SYSTEM_MAIN_PAGE_CONFIG_READY ) //超出
         {
             Page_Index = 0;
         }
+        
     }
 
     if (KEY_IS_DOWN_RELEASE())
     {
-        if (Page_Index > SYSTEM_MAIN_PAGE_START_TRAIN_READY )
-        {
-            Page_Index -= 2;
-        }else
+        Page_Index -= 2;
+
+        if (Page_Index+2 <= SYSTEM_MAIN_PAGE_START_TRAIN_READY )
         {
             Page_Index = SYSTEM_MAIN_PAGE_CONFIG_READY;
         }
+        
     }
 
     if (KEY_IS_SET_PRESS())
@@ -60,10 +61,14 @@ void Key_Mainpage_Process(void){
             Page_Index += 1;        //系统轮询检测到为奇数 自动跳转
         }
     }
+    
+    System_Page_Status_Write((uint8_t)Page_Index);
 
-    System_Page_Status_Write(Page_Index);
+    GUI_Shift_Menu(Page_Index);
+    
     
 }
+
 /*----------------------------------------------------------------------------------------- 
 *函数名称:'Key_MenuSelect_Process()' 
 *函数功能:'' 
@@ -118,6 +123,7 @@ void Key_MenuEdit_Process(void){
         if (KEY_IS_UP_PRESS())
         {
             /* 菜单index+1 可以通过＋return来控制是否允许同时按响应*/
+
         }
         if (KEY_IS_DOWN_PRESS())
         {

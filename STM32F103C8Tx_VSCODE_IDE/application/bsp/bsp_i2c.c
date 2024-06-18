@@ -237,7 +237,7 @@ void Bsp_I2C_Write_Byte(const uint8_t dat){
 *说    明: '' 
 *作    者:Danny 
 *----------------------------------------------------------------------------------------*/ 
-void Bsp_I2C_Write_Bytes(const uint32_t dat,uint8_t count){
+void Bsp_I2C_Write_Bytes(const uint8_t *dat,uint8_t count){
 
     I2C_START();
 	I2C_Write_Addr(OLED_ADDRESS);

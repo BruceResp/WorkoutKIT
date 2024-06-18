@@ -24,7 +24,7 @@ void Bsp_SPI_Init(void) {
     SPI_InitStruct.SPI_CPOL = SPI_CPOL_Low;                    //空闲 低
     SPI_InitStruct.SPI_CPHA = SPI_CPHA_1Edge;
     SPI_InitStruct.SPI_NSS = SPI_NSS_Soft;
-    SPI_InitStruct.SPI_BaudRatePrescaler = SPI_BaudRatePrescaler_256;
+    SPI_InitStruct.SPI_BaudRatePrescaler = SPI_BaudRatePrescaler_2;
     SPI_InitStruct.SPI_FirstBit = SPI_FirstBit_MSB;            //大端
     SPI_InitStruct.SPI_CRCPolynomial = 7;
 
@@ -33,6 +33,7 @@ void Bsp_SPI_Init(void) {
     SPI1->CR2=1 << 1;                                          //允许DMA往缓冲区内发送
     
     SPI_Cmd(GUI_SPI,ENABLE);
+    Bsp_DelayMS(100);
 }
 
 /*----------------------------------------------------------------------------------------- 
@@ -57,6 +58,8 @@ void Bsp_SPI_Send_CMD(u8 TxData)                                   //发送命�
 	Bsp_SPI_DC_DAT();                                               //数据模式
 }
 
+
+
 /*----------------------------------------------------------------------------------------- 
 *函数名称:'Bsp_SPI_RES_LOW' 
 *函数功能:'SPI RESET引脚 拉低' 
@@ -64,7 +67,7 @@ void Bsp_SPI_Send_CMD(u8 TxData)                                   //发送命�
 *作    者: Danny 
 *----------------------------------------------------------------------------------------*/ 
 void Bsp_SPI_RES_LOW(void){
-   
+
     GPIO_ResetBits(GPIOA,GUI_RST_PIN);
 }
 

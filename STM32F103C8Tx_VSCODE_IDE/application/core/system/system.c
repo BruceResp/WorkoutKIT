@@ -1,6 +1,7 @@
 #include "system.h"
-
+#include "gui.h"
 SystemCtrl_t SystemCtrl;
+Sys_MainPage_t Sys_MainPage;
 
 /*----------------------------------------------------------------------------------------- 
 *函数名称:'System_Page_Status_Read' 
@@ -29,6 +30,20 @@ void System_Page_Status_Write(uint8_t page_index){
     SystemCtrl.page_index = page_index ;
 
 }
+/*----------------------------------------------------------------------------------------- 
+*函数名称:'' 
+*函数功能:'' 
+*参    数:'' 
+*返 回 值:'' 
+*说    明: '页面初始化 设置默认页面' 
+*作    者: Danny 
+*----------------------------------------------------------------------------------------*/ 
+void System_Init(void){
+    SystemCtrl.page_index = SYSTEM_MAIN_PAGE_START_TRAIN_READY;
+
+    GUI_CLEAR_SCREEN();
+    GUI_Shift_Menu(SystemCtrl.page_index);
+};
 
 /*----------------------------------------------------------------------------------------- 
 *函数名称:'System_Poll' 
@@ -44,7 +59,8 @@ void System_Poll(void){
     {
         case SYSTEM_MAIN_PAGE:
             if (SystemCtrl.page_index % 2 == 1){
-                SystemCtrl.status = SystemCtrl.page_index / 2 +1;
+                SystemCtrl.status = SystemCtrl.page_index / 2 +1;  //更新页面指针到下一页
+                                                                    //更新坐标
                 
             };
             break;
@@ -73,6 +89,7 @@ void System_Poll(void){
             break;
     }
     
-
+    GUI_Animation_move();
 
 }
+
