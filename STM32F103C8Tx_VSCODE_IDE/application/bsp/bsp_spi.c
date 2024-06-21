@@ -42,9 +42,9 @@ void Bsp_SPI_Init(void) {
 *说    明: '发送完指令以后自动设置成发送数据模式' 
 *作    者: Danny 
 *----------------------------------------------------------------------------------------*/ 
-void Bsp_SPI_Send_CMD(u8 TxData)                                   //发送命令
+void Bsp_SPI_Send_CMD(uint8_t TxData)                                   //发送命令
 {
-	u8 retry=0;
+	uint8_t retry=0;
 	Bsp_SPI_DC_CMD();                                              //命令模式
 	while (SPI_I2S_GetFlagStatus(SPI1, SPI_I2S_FLAG_TXE) == RESET) //检查指定的 SPI标志位设置与否:发送缓存空标志位
 	{

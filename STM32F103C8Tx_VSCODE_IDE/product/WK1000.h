@@ -1,13 +1,13 @@
 #ifndef _NODE_WK1000_
 #define _NODE_WK1000_
 
-
+#define Debug_mode
 
 /*------------------FUNCTION DEFINE AREAR-------------------------------*/
 #define GUI_SPI_MODE_SUPPORT 
 
 //#define GUI_I2C_MODE_SUPPORT
-// #define GUI_I2C_MODE_SUPPORT
+#define GUI_I2C_MODE_SUPPORT
 /*------------------PORT / PIN DEFINE AREAR-------------------------------*/
 /*                  SPI                 */
 #define GUI_SPI              SPI1

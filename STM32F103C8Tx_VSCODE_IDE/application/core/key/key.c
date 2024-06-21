@@ -47,14 +47,14 @@ void Key_Mainpage_Process(void){
     {
         Page_Index -= 2;
 
-        if (Page_Index+2 <= SYSTEM_MAIN_PAGE_START_TRAIN_READY )
+        if (Page_Index+2 <= SYSTEM_MAIN_PAGE_TARIN_MENU_SELECET_READY )
         {
             Page_Index = SYSTEM_MAIN_PAGE_CONFIG_READY;
         }
         
     }
 
-    if (KEY_IS_SET_PRESS())
+    if (KEY_IS_SET_RELEASE())
     {
         if (Page_Index % 2 == 0)    //选中图标 处于ready状态
         {

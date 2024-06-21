@@ -1,6 +1,5 @@
 #include "bsp.h"
 
-
 /*----------------------------------------------------------------------------------------- 
 *函数名称:'Flash_Init' 
 *函数功能:'flash 初始化' 
@@ -40,16 +39,62 @@ void Bsp_Flash_Init(void){
 *说    明: '' 
 *作    者: Danny 
 *----------------------------------------------------------------------------------------*/ 
-u8 Bsp_Flash_SPI_TransmitReceive(u8 TxData){
+uint8_t Bsp_Flash_SPI_TransmitReceive(uint8_t TxData){
     
-    //FLASH_SELECTED();
+    uint8_t instance =0;
+
+    //Bsp_Flash_SELECTED();
 	while (SPI_I2S_GetFlagStatus(FLASH_SPI, SPI_I2S_FLAG_TXE) != SET); //检查指定的 SPI标志位设置与否:发送缓存空标志位	
     
     FLASH_SPI->DR = TxData;
     
     while (SPI_I2S_GetFlagStatus(FLASH_SPI,SPI_I2S_FLAG_RXNE) != SET);
-
-    return SPI_I2S_ReceiveData(FLASH_SPI);
+    instance = SPI_I2S_ReceiveData(FLASH_SPI);
+    return instance;
     
+}
+
+
+/*----------------------------------------------------------------------------------------- 
+*函数名称:'FLASH_Write_Enable' 
+*函数功能:'FLASH 写 使能' 
+*参    数:'' 
+*返 回 值:'' 
+*说    明: '在写/擦除Flash之前必须使能' 
+*作    者: Danny 
+*----------------------------------------------------------------------------------------*/ 
+void Bsp_Flash_Write_Enable(void)
+{
+    Bsp_Flash_SELECTED();
+    Bsp_Flash_SPI_TransmitReceive(0x06);
+    Bsp_Flash_DISELECTED();  
+}
+
+/*----------------------------------------------------------------------------------------- 
+*函数名称:'' 
+*函数功能:'' 
+*参    数:'' 
+*返 回 值:'' 
+*说    明: '' 
+*作    者: Danny 
+*----------------------------------------------------------------------------------------*/ 
+void Bsp_Flash_Write_Volatile_StatReg_EN(void){
+    Bsp_Flash_SELECTED();
+    Bsp_Flash_SPI_TransmitReceive(0x50);
+    Bsp_Flash_DISELECTED();
+}
+
+/*----------------------------------------------------------------------------------------- 
+*函数名称:'FLASH_Write_Disable' 
+*函数功能:'FLASH 写 失能' 
+*参    数:'' 
+*返 回 值:'' 
+*说    明: '' 
+*作    者: Danny 
+*----------------------------------------------------------------------------------------*/ 
+void Bsp_Flash_Write_Disable(void){
+    Bsp_Flash_SELECTED();
+    Bsp_Flash_SPI_TransmitReceive(0x04);
+    Bsp_Flash_DISELECTED();
 }
 

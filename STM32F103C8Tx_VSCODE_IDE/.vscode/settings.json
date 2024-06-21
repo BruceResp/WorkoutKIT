@@ -17,7 +17,8 @@
         "cstdarg": "c",
         "wk1000.h": "c",
         "key.h": "c",
-        "system.h": "c"
+        "system.h": "c",
+        "flash.h": "c"
     },
     "cortex-debug.variableUseNaturalFormat": false
 }

@@ -205,7 +205,6 @@ void GUI_Init(void) {
 	//GUI_Update_Screen();				//更新显示，清屏，防止初始化后未显示内容时花屏
 }
 
-
 /*               外部调用               */
 /*-----------------------------------------------------------------------------------------
  *函数名称：GUI_Show_Char
@@ -281,7 +280,6 @@ void GUI_ShowString_FulCoord(uint8_t Line,uint8_t Column,char *string){
 		string++;
 	}
 }
-
 
 /*----------------------------------------------------------------------------------------- 
 *函数名称:'' 
@@ -690,34 +688,61 @@ void GUI_Show_Frame(void){
 
 void GUI_Animation_move(void){
 	
-	Sys_MainPage.mid_icon.current_x = kp*Sys_MainPage.mid_icon.current_x + (1-kp)*(Sys_MainPage.mid_icon.target_x);
-	Sys_MainPage.left_icon.current_x = kp*Sys_MainPage.left_icon.current_x + (1-kp)*(Sys_MainPage.left_icon.target_x);
-	Sys_MainPage.right_icon.current_x = kp*Sys_MainPage.right_icon.current_x + (1-kp)*(Sys_MainPage.right_icon.target_x);
+		Sys_MainPage.mid_icon.current_x = kp*Sys_MainPage.mid_icon.current_x + (1-kp)*(Sys_MainPage.mid_icon.target_x);
+		Sys_MainPage.left_icon.current_x = kp*Sys_MainPage.left_icon.current_x + (1-kp)*(Sys_MainPage.left_icon.target_x);
+		Sys_MainPage.right_icon.current_x = kp*Sys_MainPage.right_icon.current_x + (1-kp)*(Sys_MainPage.right_icon.target_x);
 
-	// Sys_MainPage.mid_icon.current_y = kp*Sys_MainPage.mid_font.current_y + (1-kp)*Sys_MainPage.mid_icon.target_y;
-	// Sys_MainPage.left_icon.current_y = kp*Sys_MainPage.left_icon.current_y + (1-kp)*Sys_MainPage.left_icon.target_y;
-	// Sys_MainPage.right_icon.current_y = kp*Sys_MainPage.right_icon.current_y + (1-kp)*Sys_MainPage.right_icon.target_y;
+		// Sys_MainPage.mid_icon.current_y = kp*Sys_MainPage.mid_font.current_y + (1-kp)*Sys_MainPage.mid_icon.target_y;
+		// Sys_MainPage.left_icon.current_y = kp*Sys_MainPage.left_icon.current_y + (1-kp)*Sys_MainPage.left_icon.target_y;
+		// Sys_MainPage.right_icon.current_y = kp*Sys_MainPage.right_icon.current_y + (1-kp)*Sys_MainPage.right_icon.target_y;
 
-	Sys_MainPage.mid_icon.current_y = Sys_MainPage.mid_icon.target_y;
-	Sys_MainPage.left_icon.current_y = Sys_MainPage.left_icon.target_y;
-	Sys_MainPage.right_icon.current_y = Sys_MainPage.right_icon.target_y;
-	// GUI_Show_Frame();
-	if (Sys_MainPage.right_icon.current_x != Sys_MainPage.right_icon.target_x )
-	{
-		GUI_CLEAR_SCREEN();
-	}
+		Sys_MainPage.mid_icon.current_y = Sys_MainPage.mid_icon.target_y;
+		Sys_MainPage.left_icon.current_y = Sys_MainPage.left_icon.target_y;
+		Sys_MainPage.right_icon.current_y = Sys_MainPage.right_icon.target_y;
+		// GUI_Show_Frame();
+		if (Sys_MainPage.right_icon.current_x != Sys_MainPage.right_icon.target_x )
+		{
+			GUI_CLEAR_SCREEN();
+		}
+
+		GUI_Show_Image(Sys_MainPage.right_icon.current_x,Sys_MainPage.right_icon.current_y,44,44,Set_Icon);
+		GUI_Show_Image(Sys_MainPage.mid_icon.current_x,Sys_MainPage.mid_icon.current_y,44,44,train_Icon);
+		GUI_Show_Image(Sys_MainPage.left_icon.current_x,Sys_MainPage.left_icon.current_y,44,44,config_Icon);
+		
+		Bsp_DelayMS(2);
+		return;
+	
+
+	// if (System_Status_Read() == SYSTEM_TARIN_MENU_SELECET_PAGE)	//菜单选择界面动画
+	// {
+	// 	Sys_MainPage.mid_icon.current_x = kp*Sys_MainPage.mid_icon.current_x + (1-kp)*(Sys_MainPage.mid_icon.target_x);
+	// 	Sys_MainPage.left_icon.current_x = kp*Sys_MainPage.left_icon.current_x + (1-kp)*(Sys_MainPage.left_icon.target_x);
+	// 	Sys_MainPage.right_icon.current_x = kp*Sys_MainPage.right_icon.current_x + (1-kp)*(Sys_MainPage.right_icon.target_x);
+
+	// 	// Sys_MainPage.mid_icon.current_y = kp*Sys_MainPage.mid_font.current_y + (1-kp)*Sys_MainPage.mid_icon.target_y;
+	// 	// Sys_MainPage.left_icon.current_y = kp*Sys_MainPage.left_icon.current_y + (1-kp)*Sys_MainPage.left_icon.target_y;
+	// 	// Sys_MainPage.right_icon.current_y = kp*Sys_MainPage.right_icon.current_y + (1-kp)*Sys_MainPage.right_icon.target_y;
+
+	// 	Sys_MainPage.mid_icon.current_y = Sys_MainPage.mid_icon.target_y;
+	// 	Sys_MainPage.left_icon.current_y = Sys_MainPage.left_icon.target_y;
+	// 	Sys_MainPage.right_icon.current_y = Sys_MainPage.right_icon.target_y;
+	// 	// GUI_Show_Frame();
+	// 	if (Sys_MainPage.right_icon.current_x != Sys_MainPage.right_icon.target_x )
+	// 	{
+	// 		GUI_CLEAR_SCREEN();
+	// 	}
+
+	// 	GUI_Show_Image(Sys_MainPage.right_icon.current_x,Sys_MainPage.right_icon.current_y,44,44,Set_Icon);
+	// 	GUI_Show_Image(Sys_MainPage.mid_icon.current_x,Sys_MainPage.mid_icon.current_y,44,44,train_Icon);
+	// 	GUI_Show_Image(Sys_MainPage.left_icon.current_x,Sys_MainPage.left_icon.current_y,44,44,config_Icon);
+		
+	// 	Bsp_DelayMS(2);
+	// 	return;
+	// }
 	
 	
 	
-	GUI_Show_Image(Sys_MainPage.right_icon.current_x,Sys_MainPage.right_icon.current_y,44,44,Set_Icon);
-	
-	GUI_Show_Image(Sys_MainPage.mid_icon.current_x,Sys_MainPage.mid_icon.current_y,44,44,train_Icon);
-	
-	GUI_Show_Image(Sys_MainPage.left_icon.current_x,Sys_MainPage.left_icon.current_y,44,44,config_Icon);
-	
-	Bsp_DelayMS(2);
 }
-
 
 /*----------------------------------------------------------------------------------------- 
 *函数名称:'' 
@@ -729,40 +754,71 @@ void GUI_Animation_move(void){
 *----------------------------------------------------------------------------------------*/ 
 void GUI_Shift_Menu(uint8_t pageIndex){
 	u8 base_x = 42,	Delta_x = 44;
-	u8 base_y = 18;
-
-	if (pageIndex == SYSTEM_MAIN_PAGE_START_TRAIN_READY)
+	u8 base_y = 18, Delta_y = 7;
+	if (pageIndex % 2 == 0)//处于ready状态
 	{
-		Sys_MainPage.mid_icon.target_x =  base_x;
-        Sys_MainPage.left_icon.target_x = base_x - Delta_x ;
-        Sys_MainPage.right_icon.target_x = base_x + Delta_x ;
+		switch (pageIndex)
+		{
+			case SYSTEM_MAIN_PAGE_TARIN_MENU_SELECET_READY:
+				Sys_MainPage.mid_icon.target_x =  base_x;
+				Sys_MainPage.left_icon.target_x = base_x - Delta_x ;
+				Sys_MainPage.right_icon.target_x = base_x + Delta_x ;
 
-        Sys_MainPage.mid_icon.target_y = base_y; 
-        Sys_MainPage.left_icon.target_y = base_y ;
-        Sys_MainPage.right_icon.target_y = base_y ;
+				Sys_MainPage.mid_icon.target_y = base_y; 
+				Sys_MainPage.left_icon.target_y = base_y ;
+				Sys_MainPage.right_icon.target_y = base_y ;
+				break;
+			case SYSTEM_MAIN_PAGE_EDIT_TRAIN_MENU_READY:
+				Sys_MainPage.mid_icon.target_x =  base_x + Delta_x;
+				Sys_MainPage.left_icon.target_x = base_x - Delta_x + Delta_x;
+				Sys_MainPage.right_icon.target_x = base_x + Delta_x + Delta_x;
+
+				Sys_MainPage.mid_icon.target_y = base_y; 
+				Sys_MainPage.left_icon.target_y = base_y ;
+				Sys_MainPage.right_icon.target_y = base_y ;break;
+			case SYSTEM_MAIN_PAGE_CONFIG_READY:
+				Sys_MainPage.mid_icon.target_x =  base_x - Delta_x;
+				Sys_MainPage.left_icon.target_x = base_x - Delta_x - Delta_x ;
+				Sys_MainPage.right_icon.target_x = base_x + Delta_x - Delta_x;
+
+				Sys_MainPage.mid_icon.target_y = base_y; 
+				Sys_MainPage.left_icon.target_y = base_y ;
+				Sys_MainPage.right_icon.target_y = base_y ;break;
+			default:
+				break;
+		}
 	}
+	else{
+		switch (pageIndex)
+		{
+			case SYSTEM_MAIN_PAGE_TARIN_MENU_SELECET_ALREADY:
+				Sys_MainPage.mid_icon.target_x =  base_x + Delta_x;
+				Sys_MainPage.left_icon.target_x = base_x - Delta_x -Delta_x;
+				Sys_MainPage.right_icon.target_x = base_x + Delta_x +Delta_x;
 
-	if (pageIndex == SYSTEM_MAIN_PAGE_EDIT_TRAIN_MENU_READY) //->
-	{
-		Sys_MainPage.mid_icon.target_x =  base_x + Delta_x;
-        Sys_MainPage.left_icon.target_x = base_x - Delta_x + Delta_x;
-        Sys_MainPage.right_icon.target_x = base_x + Delta_x + Delta_x;
-
-        Sys_MainPage.mid_icon.target_y = base_y; 
-        Sys_MainPage.left_icon.target_y = base_y ;
-        Sys_MainPage.right_icon.target_y = base_y ;
+				Sys_MainPage.mid_icon.target_y = base_y + Delta_y; 
+				// Sys_MainPage.left_icon.target_y = base_y ;
+				// Sys_MainPage.right_icon.target_y = base_y ;
+				break;
+			case SYSTEM_MAIN_PAGE_EDIT_TRAIN_MENU_ALREADY:
+				break;
+			case SYSTEM_MAIN_PAGE_CONFIG_ALREADY:
+				break;
+			default:
+				break;
+		}
 	}
-
-	if (pageIndex == SYSTEM_MAIN_PAGE_CONFIG_READY) //<-
-	{
-		Sys_MainPage.mid_icon.target_x =  base_x - Delta_x;
-        Sys_MainPage.left_icon.target_x = base_x - Delta_x - Delta_x ;
-        Sys_MainPage.right_icon.target_x = base_x + Delta_x - Delta_x;
-
-        Sys_MainPage.mid_icon.target_y = base_y; 
-        Sys_MainPage.left_icon.target_y = base_y ;
-        Sys_MainPage.right_icon.target_y = base_y ;
-	}
+	
+	
+		
+		
+	
+	
+	
+	
+		
+	
+	
 	
 	
 }

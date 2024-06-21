@@ -43,7 +43,7 @@
 #define FLASH_BLOCK_ERASE_64KB						0xD8
 #define FLASH_BLOCK_ERASE_32KB						0x52
 #define FLASH_SECTOR_ERASE_4KB						0x20
-#define FLASH_CHIP_ERASE							0xC7
+#define FLASH_CHIP_ERASE							0x60
 #define FLASH_ERASE_SUSPEND						    0x75
 #define FLASH_ERASE_RESUME							0x7A
 #define FLASH_POWER_DOWN							0xB9
@@ -60,14 +60,29 @@
 #define FLASH_FAST_READ_QUAD_OUTPUT				    0x6B
 #define FLASH_FAST_READ_QUAD_IO					    0xEB
 #define FLASH_OCTAL_WORD_READ_QUAD_IO				0xE3
+#define FLASH_ENABLE_RESET                          0x66
+#define FLASH_RESET_Device                          0x99
+
 
 #define FLASH_DUMMY_BYTE							0xFF
 
+#define FLASH_BLOCK_INDEX                           0x10        //描述了一个Block的起始地址倍频偏移   最大7f*它
+#define FLASH_SECTOR_INDEX                          0x08        //Sector的偏移量  最大F*它
+#define FLASH_PAGE_INDEX                            0x04        //Page 的起始地址偏移
 
-extern void FLASH_Read_Data(uint8_t addr, uint8_t *Rxdata, uint8_t Length);
-extern void Flash_Read_StatusReg(uint8_t stat_ins,uint8_t statMask);
-extern void FLASH_Sector_Erase(uint8_t addr);
+
+
+extern void FLASH_Read_Data(uint32_t addr, void *Rxdata, uint16_t Length);
+extern uint8_t FLASH_Read_StatusReg(uint8_t stat_ins,uint8_t statMask);
+extern void FLASH_Reset_device(void);
+extern void FLASH_Write_StatusReg(uint8_t Reg,uint8_t RegBitMask);
+extern void FLASH_Sector_Erase(uint32_t addr);
+extern void FLASH_Unlock_All(void);
+extern void FLASH_Chip_Erase(void);
 extern void FLASH_Read_ID(uint8_t *MID, uint16_t *DID);
-extern void FLASH_Write_Data(uint8_t addr, uint8_t *Data, uint8_t Length);
+extern void FLASH_Write_Data(uint32_t addr, void *Data, uint16_t Length);
+
+extern uint8_t FLASH_Read_Dataes(uint8_t Block_addr,uint8_t Sector_addr,uint8_t Page_addr,uint8_t Base_addr,void * DataArray, uint32_t size);
+extern uint8_t FLASH_Write_Dataes(uint8_t Block_addr,uint8_t Sector_addr,uint8_t Page_addr,uint8_t Base_addr,void * DataArray, uint32_t size);
 
 #endif

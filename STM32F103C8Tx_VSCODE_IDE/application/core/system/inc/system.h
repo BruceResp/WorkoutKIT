@@ -22,8 +22,8 @@ typedef enum {
 
 typedef enum {
     //SYSTEM_MAIN_PAGE_DO_NONE                            =0u,
-    SYSTEM_MAIN_PAGE_START_TRAIN_READY=0u,                   
-    SYSTEM_MAIN_PAGE_START_TRAIN_ALREADY,//1
+    SYSTEM_MAIN_PAGE_TARIN_MENU_SELECET_READY=0u,                   
+    SYSTEM_MAIN_PAGE_TARIN_MENU_SELECET_ALREADY,//1
     SYSTEM_MAIN_PAGE_EDIT_TRAIN_MENU_READY,//2
     SYSTEM_MAIN_PAGE_EDIT_TRAIN_MENU_ALREADY,//3
     SYSTEM_MAIN_PAGE_CONFIG_READY,//4
@@ -63,6 +63,7 @@ extern Sys_MainPage_t Sys_MainPage;
 extern void System_Init(void);
 extern void System_Poll(void);
 extern uint8_t System_Page_Status_Read(void);
+extern uint8_t System_Status_Read(void);
 extern void System_Page_Status_Write(uint8_t page_index);
 
 #endif
