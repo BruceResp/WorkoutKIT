@@ -2,6 +2,27 @@
 #define _FLASH_H_
 
 #include "stm32f10x.h"
+
+// typedef struct 
+// {
+//     uint32_t Block_Addr                        :8;
+//     uint32_t Sector_Addr                       :4;
+//     uint32_t Page_Addr                         :4;
+//     uint32_t Base_Addr                         :8;
+// }Flash_Addr_t;
+
+typedef union 
+{
+    uint32_t addr;
+    struct 
+    {
+        uint8_t Block_Addr                        ;
+        uint8_t Sector_Addr                      : 4;
+        uint8_t Page_Addr                        : 4;
+        uint8_t Base_Addr                         ;
+    };
+}Flash_Addr_t;
+
 //STATUS REG1
 #define FLASH_BUSY_MASK                             (1 << 0u)
 #define FLASH_WEL_MASK                              (1 << 1u)
@@ -72,17 +93,17 @@
 
 
 
-extern void FLASH_Read_Data(uint32_t addr, void *Rxdata, uint16_t Length);
+extern void FLASH_Read_Data(Flash_Addr_t addr, void *Rxdata, uint16_t Length);
 extern uint8_t FLASH_Read_StatusReg(uint8_t stat_ins,uint8_t statMask);
 extern void FLASH_Reset_device(void);
 extern void FLASH_Write_StatusReg(uint8_t Reg,uint8_t RegBitMask);
-extern void FLASH_Sector_Erase(uint32_t addr);
+extern void FLASH_Sector_Erase(Flash_Addr_t addr);
 extern void FLASH_Unlock_All(void);
 extern void FLASH_Chip_Erase(void);
 extern void FLASH_Read_ID(uint8_t *MID, uint16_t *DID);
-extern void FLASH_Write_Data(uint32_t addr, void *Data, uint16_t Length);
+extern void FLASH_Write_Data(Flash_Addr_t addr, void *Data, uint16_t Length);
 
-extern uint8_t FLASH_Read_Dataes(uint8_t Block_addr,uint8_t Sector_addr,uint8_t Page_addr,uint8_t Base_addr,void * DataArray, uint32_t size);
-extern uint8_t FLASH_Write_Dataes(uint8_t Block_addr,uint8_t Sector_addr,uint8_t Page_addr,uint8_t Base_addr,void * DataArray, uint32_t size);
+extern uint8_t FLASH_Read_Dataes(Flash_Addr_t StartAddr,void * DataArray, uint32_t size);
+extern uint8_t FLASH_Write_Dataes(Flash_Addr_t StartAddr,void * DataArray, uint32_t size);
 
 #endif

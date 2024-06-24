@@ -926,6 +926,30 @@ bsp/bsp_spi.c.s:
 	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/BSP_LIB.dir/build.make application/CMakeFiles/BSP_LIB.dir/bsp/bsp_spi.c.s
 .PHONY : bsp/bsp_spi.c.s
 
+bsp/bsp_systick.obj: bsp/bsp_systick.c.obj
+.PHONY : bsp/bsp_systick.obj
+
+# target to build an object file
+bsp/bsp_systick.c.obj:
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/BSP_LIB.dir/build.make application/CMakeFiles/BSP_LIB.dir/bsp/bsp_systick.c.obj
+.PHONY : bsp/bsp_systick.c.obj
+
+bsp/bsp_systick.i: bsp/bsp_systick.c.i
+.PHONY : bsp/bsp_systick.i
+
+# target to preprocess a source file
+bsp/bsp_systick.c.i:
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/BSP_LIB.dir/build.make application/CMakeFiles/BSP_LIB.dir/bsp/bsp_systick.c.i
+.PHONY : bsp/bsp_systick.c.i
+
+bsp/bsp_systick.s: bsp/bsp_systick.c.s
+.PHONY : bsp/bsp_systick.s
+
+# target to generate assembly for a file
+bsp/bsp_systick.c.s:
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/BSP_LIB.dir/build.make application/CMakeFiles/BSP_LIB.dir/bsp/bsp_systick.c.s
+.PHONY : bsp/bsp_systick.c.s
+
 c_unity/unity.obj: c_unity/unity.c.obj
 .PHONY : c_unity/unity.obj
 
@@ -1209,6 +1233,9 @@ help:
 	@echo "... bsp/bsp_spi.obj"
 	@echo "... bsp/bsp_spi.i"
 	@echo "... bsp/bsp_spi.s"
+	@echo "... bsp/bsp_systick.obj"
+	@echo "... bsp/bsp_systick.i"
+	@echo "... bsp/bsp_systick.s"
 	@echo "... c_unity/unity.obj"
 	@echo "... c_unity/unity.i"
 	@echo "... c_unity/unity.s"

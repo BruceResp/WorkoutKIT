@@ -38,7 +38,7 @@ void FLASH_Read_ID(uint8_t *MID, uint16_t *DID)
             Length:要读取的字节个数 (uint8_t 最多255个数据)
 *作    者: Danny
 *----------------------------------------------------------------------------------------*/
-void FLASH_Read_Data(uint32_t addr, void *Rxdata, uint16_t Length)
+void FLASH_Read_Data(Flash_Addr_t addr, void *Rxdata, uint16_t Length)
 {
     if (Length == 0)
     {
@@ -49,9 +49,9 @@ void FLASH_Read_Data(uint32_t addr, void *Rxdata, uint16_t Length)
 
     Bsp_Flash_SPI_TransmitReceive(FLASH_READ_DATA);
 
-    Bsp_Flash_SPI_TransmitReceive(addr>>16);
-    Bsp_Flash_SPI_TransmitReceive(addr>>8);
-    Bsp_Flash_SPI_TransmitReceive(addr);
+    Bsp_Flash_SPI_TransmitReceive(addr.addr >> 16);
+    Bsp_Flash_SPI_TransmitReceive(addr.addr >> 8);
+    Bsp_Flash_SPI_TransmitReceive(addr.addr);
 
     for (uint8_t i = 0; i < Length; i++)
     {
@@ -71,7 +71,7 @@ void FLASH_Read_Data(uint32_t addr, void *Rxdata, uint16_t Length)
             一次最多写1Page（256字节）
 *作    者: Danny
 *----------------------------------------------------------------------------------------*/
-void FLASH_Write_Data(uint32_t addr, void *Data, uint16_t Length)
+void FLASH_Write_Data(Flash_Addr_t addr, void *Data, uint16_t Length)
 {
     // 检查busy位
     Bsp_Flash_Write_Enable();
@@ -80,9 +80,9 @@ void FLASH_Write_Data(uint32_t addr, void *Data, uint16_t Length)
 
     Bsp_Flash_SPI_TransmitReceive(FLASH_PAGE_PROGRAM);
 
-    Bsp_Flash_SPI_TransmitReceive(addr>>16);
-    Bsp_Flash_SPI_TransmitReceive(addr>>8);
-    Bsp_Flash_SPI_TransmitReceive(addr);
+    Bsp_Flash_SPI_TransmitReceive(addr.addr >> 16);
+    Bsp_Flash_SPI_TransmitReceive(addr.addr >> 8);
+    Bsp_Flash_SPI_TransmitReceive(addr.addr);
 
     for (; 0 < Length;Length-- ){
         Bsp_Flash_SPI_TransmitReceive(*(uint8_t *)(Data) );
@@ -102,7 +102,7 @@ void FLASH_Write_Data(uint32_t addr, void *Data, uint16_t Length)
 *说    明: '在写扇区之前 如果flash该区域已经有数据 必须先擦除才能写 擦除4KB' 
 *作    者: Danny 
 *----------------------------------------------------------------------------------------*/ 
-void FLASH_Sector_Erase(uint32_t addr){
+void FLASH_Sector_Erase(Flash_Addr_t addr){
 
     Bsp_Flash_Write_Enable();
 
@@ -110,9 +110,9 @@ void FLASH_Sector_Erase(uint32_t addr){
 
     Bsp_Flash_SPI_TransmitReceive(FLASH_SECTOR_ERASE_4KB);
 
-    Bsp_Flash_SPI_TransmitReceive(addr>>16);
-    Bsp_Flash_SPI_TransmitReceive(addr>>8);
-    Bsp_Flash_SPI_TransmitReceive(addr);
+    Bsp_Flash_SPI_TransmitReceive(addr.addr >> 16);
+    Bsp_Flash_SPI_TransmitReceive(addr.addr >> 8);
+    Bsp_Flash_SPI_TransmitReceive(addr.addr);
 
     Bsp_Flash_DISELECTED(); 
     
@@ -328,13 +328,12 @@ void FLASH_Reset_device(void){
                             00
             size : 单位字节，描述存入数据组的大小
 *返 回 值:'' 
-*说    明: '' 
+*说    明: '下一步优化，拆分公共部分，节省代码空间降低耦合度' 
 *作    者: Danny 
 *----------------------------------------------------------------------------------------*/ 
-uint8_t FLASH_Write_Dataes(uint8_t Block_addr,uint8_t Sector_addr,uint8_t Page_addr,uint8_t Base_addr,void * DataArray, uint32_t size){
+uint8_t FLASH_Write_Dataes(Flash_Addr_t StartAddr,void * DataArray, uint32_t size){
 
-    uint32_t Start_Addr = Block_addr * FLASH_BLOCK_INDEX + Sector_addr * FLASH_SECTOR_INDEX + Page_addr * FLASH_PAGE_INDEX ;
-    uint8_t Pg1_Data_To_Write = 0xFF-Base_addr;
+    uint8_t Pg1_Data_To_Write = 0xFF-StartAddr.Base_Addr;
     uint16_t across_pages = (size - Pg1_Data_To_Write) / 256 ;                            //跨几页  Base_addr所在页不算进去 不管整除之后有没有余数，都+1，所以最后写入的一页有可能为空，这会导致如果最后一页为空的情况下写入会报code 1 错误，然而实际上是可以写的
 
     if ( (size - Pg1_Data_To_Write) % 256)
@@ -342,11 +341,11 @@ uint8_t FLASH_Write_Dataes(uint8_t Block_addr,uint8_t Sector_addr,uint8_t Page_a
         across_pages += 1;
     }
     
-    uint16_t Left_Pages = 0x7fff - Block_addr * 0x100 + Sector_addr * 0x10 + Page_addr * 0x1;    //剩余可编辑页面
+    uint16_t Left_Pages = 0x7fff - (StartAddr.addr >> 8);                                //剩余可编辑页面
     
-    if (Pg1_Data_To_Write < size)                                                              //检查是否跨页 当前条件跨页
+    if (Pg1_Data_To_Write < size)                                                        //检查是否跨页 当前条件跨页
     {
-        if (across_pages > Left_Pages)                                                       //输入数据所跨的页大于可编辑区域
+        if (across_pages > Left_Pages)                                                   //输入数据所跨的页大于可编辑区域
         {
             #ifdef Debug_mode
                 Bsp_printf("error code 1 : error in writing Flash \r\n");
@@ -354,29 +353,28 @@ uint8_t FLASH_Write_Dataes(uint8_t Block_addr,uint8_t Sector_addr,uint8_t Page_a
             return Flase;
         }
 
-        FLASH_Write_Data(Start_Addr,DataArray,Pg1_Data_To_Write);  //先把第一个没存满的页写完，字节数量就是当前页剩余的空间
-        DataArray += Pg1_Data_To_Write / sizeof(DataArray[0]);                            //加上要写入的字节个数                              //写数据的地址加1个单位
-        Start_Addr += Pg1_Data_To_Write;                           //加上剩余的地址等于下一页开始的地址
+        FLASH_Write_Data(StartAddr,DataArray,Pg1_Data_To_Write);                        //先把第一个没存满的页写完，字节数量就是当前页剩余的空间
+        DataArray += Pg1_Data_To_Write / sizeof(DataArray[0]);                          //加上要写入的字节个数                              //写数据的地址加1个单位
+        StartAddr.addr += Pg1_Data_To_Write;                                            //加上剩余的地址等于下一页开始的地址
         size -= Pg1_Data_To_Write +  (across_pages-1) * 256;
         for (;--across_pages >= 0;)
         {   
-            if (across_pages == 0)                                  //最后一页
+            if (across_pages == 0)                                                      //最后一页
             {   
-                FLASH_Write_Data(Start_Addr,DataArray,size);
+                FLASH_Write_Data(StartAddr,DataArray,size);
                 continue;
             }
 
-            FLASH_Write_Data(Start_Addr,DataArray,256);
-            DataArray += 256 / sizeof(DataArray[0]);                                         //写数据的地址加1个单位
+            FLASH_Write_Data(StartAddr,DataArray,256);
+            DataArray += 256 / sizeof(DataArray[0]);                                   //写数据的地址加1个单位
         }
         return True;
     }
     
-    FLASH_Write_Data(Start_Addr,DataArray,size);
+    FLASH_Write_Data(StartAddr,DataArray,size);
     return True;
     
 }
-
 
 /*----------------------------------------------------------------------------------------- 
 *函数名称:'FLASH_Read_Dataes' 
@@ -390,10 +388,10 @@ uint8_t FLASH_Write_Dataes(uint8_t Block_addr,uint8_t Sector_addr,uint8_t Page_a
 *说    明: '' 
 *作    者: Danny 
 *----------------------------------------------------------------------------------------*/ 
-uint8_t FLASH_Read_Dataes(uint8_t Block_addr,uint8_t Sector_addr,uint8_t Page_addr,uint8_t Base_addr,void * DataArray, uint32_t size){
+uint8_t FLASH_Read_Dataes(Flash_Addr_t StartAddr,void * DataArray, uint32_t size){
 
-    uint32_t Start_Addr = Block_addr * FLASH_BLOCK_INDEX + Sector_addr * FLASH_SECTOR_INDEX + Page_addr * FLASH_PAGE_INDEX + Base_addr;
-    uint8_t Pg1_Data_To_Write = 0xFF-Base_addr;
+    //uint32_t Start_Addr = Block_addr * FLASH_BLOCK_INDEX + Sector_addr * FLASH_SECTOR_INDEX + Page_addr * FLASH_PAGE_INDEX + Base_addr;
+    uint8_t Pg1_Data_To_Write = 0xFF-StartAddr.Base_Addr;
     uint16_t across_pages = (size - Pg1_Data_To_Write) / 256 ;                            //跨几页  Base_addr所在页不算进去 不管整除之后有没有余数，都+1，所以最后写入的一页有可能为空，这会导致如果最后一页为空的情况下写入会报code 1 错误，然而实际上是可以写的
 
     if ( (size - Pg1_Data_To_Write) % 256)
@@ -401,7 +399,7 @@ uint8_t FLASH_Read_Dataes(uint8_t Block_addr,uint8_t Sector_addr,uint8_t Page_ad
         across_pages += 1;
     }
     
-    uint16_t Left_Pages = 0x7fff - Block_addr * 0x100 + Sector_addr * 0x10 + Page_addr * 0x1;    //剩余可编辑页面
+    uint16_t Left_Pages = 0x7fff - (StartAddr.addr >> 8);    //剩余可编辑页面
     
     if (Pg1_Data_To_Write < size)                                                              //检查是否跨页 当前条件跨页
     {
@@ -413,25 +411,25 @@ uint8_t FLASH_Read_Dataes(uint8_t Block_addr,uint8_t Sector_addr,uint8_t Page_ad
             return Flase;
         }
 
-        FLASH_Read_Data(Start_Addr,DataArray,Pg1_Data_To_Write);  //先把第一个没存满的页写完，字节数量就是当前页剩余的空间
+        FLASH_Read_Data(StartAddr,DataArray,Pg1_Data_To_Write);  //先把第一个没存满的页写完，字节数量就是当前页剩余的空间
         DataArray += Pg1_Data_To_Write / sizeof(DataArray[0]);                            //加上要写入的字节个数                              //写数据的地址加1个单位
-        Start_Addr += Pg1_Data_To_Write;                           //加上剩余的地址等于下一页开始的地址
+        StartAddr.addr += Pg1_Data_To_Write;                           //加上剩余的地址等于下一页开始的地址
         size -= Pg1_Data_To_Write +  (across_pages-1) * 256;
         for (;--across_pages >= 0;)
         {   
             if (across_pages == 0)                                  //最后一页
             {   
-                FLASH_Read_Data(Start_Addr,DataArray,size);
+                FLASH_Read_Data(StartAddr,DataArray,size);
                 continue;
             }
 
-            FLASH_Read_Data(Start_Addr,DataArray,256);
+            FLASH_Read_Data(StartAddr,DataArray,256);
             DataArray += 256 / sizeof(DataArray[0]);                                         //写数据的地址加1个单位
         }
         return True;
     }
     
-    FLASH_Read_Data(Start_Addr,DataArray,size);
+    FLASH_Read_Data(StartAddr,DataArray,size);
     return True;
     
 }
@@ -492,3 +490,53 @@ uint8_t FLASH_Read_Dataes(uint8_t Block_addr,uint8_t Sector_addr,uint8_t Page_ad
 //         /* code */
 //     }
 // }
+
+
+
+//  old version 
+
+/* uint8_t FLASH_Write_Dataes(uint8_t Block_addr,uint8_t Sector_addr,uint8_t Page_addr,uint8_t Base_addr,void * DataArray, uint32_t size){
+
+    uint32_t Start_Addr = Block_addr * FLASH_BLOCK_INDEX + Sector_addr * FLASH_SECTOR_INDEX + Page_addr * FLASH_PAGE_INDEX ;
+    uint8_t Pg1_Data_To_Write = 0xFF-Base_addr;
+    uint16_t across_pages = (size - Pg1_Data_To_Write) / 256 ;                            //跨几页  Base_addr所在页不算进去 不管整除之后有没有余数，都+1，所以最后写入的一页有可能为空，这会导致如果最后一页为空的情况下写入会报code 1 错误，然而实际上是可以写的
+
+    if ( (size - Pg1_Data_To_Write) % 256)
+    {
+        across_pages += 1;
+    }
+    
+    uint16_t Left_Pages = 0x7fff - Block_addr * 0x100 + Sector_addr * 0x10 + Page_addr * 0x1;    //剩余可编辑页面
+    
+    if (Pg1_Data_To_Write < size)                                                              //检查是否跨页 当前条件跨页
+    {
+        if (across_pages > Left_Pages)                                                       //输入数据所跨的页大于可编辑区域
+        {
+            #ifdef Debug_mode
+                Bsp_printf("error code 1 : error in writing Flash \r\n");
+            #endif
+            return Flase;
+        }
+
+        FLASH_Write_Data(Start_Addr,DataArray,Pg1_Data_To_Write);  //先把第一个没存满的页写完，字节数量就是当前页剩余的空间
+        DataArray += Pg1_Data_To_Write / sizeof(DataArray[0]);                            //加上要写入的字节个数                              //写数据的地址加1个单位
+        Start_Addr += Pg1_Data_To_Write;                           //加上剩余的地址等于下一页开始的地址
+        size -= Pg1_Data_To_Write +  (across_pages-1) * 256;
+        for (;--across_pages >= 0;)
+        {   
+            if (across_pages == 0)                                  //最后一页
+            {   
+                FLASH_Write_Data(Start_Addr,DataArray,size);
+                continue;
+            }
+
+            FLASH_Write_Data(Start_Addr,DataArray,256);
+            DataArray += 256 / sizeof(DataArray[0]);                                         //写数据的地址加1个单位
+        }
+        return True;
+    }
+    
+    FLASH_Write_Data(Start_Addr,DataArray,size);
+    return True;
+    
+}*/

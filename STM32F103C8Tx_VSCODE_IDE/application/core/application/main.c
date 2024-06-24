@@ -31,8 +31,8 @@ int main(void)
  	GUI_SPI_Init(); //初始化测试下来要4s钟有点长
 	System_Init();
 	
-	u8 data[4] = {0x06,0x07,0x08,0x05};
-	u8 Rxdata[250] ;
+	// u8 data[4] = {0x06,0x07,0x08,0x05};
+	// u8 Rxdata[250] ;
 	// char buffer[10];
 	// char buf[10];
 	// FLASH_Read_Data(addr,Rxdata,1);
@@ -82,14 +82,14 @@ int main(void)
 		// GUI_SPI_Display_Char_ASCII(1,7,'8',0);
 		// FLASH_Sector_Erase(addr);
 		// FLASH_Chip_Erase();
-		FLASH_Sector_Erase(0x000000);
-		FLASH_Write_Data(0x000000,data,4);
-		FLASH_Read_Data(0x000000,Rxdata,250);
+		// FLASH_Sector_Erase(0x000000);
+		// FLASH_Write_Data(0x000000,data,4);
+		// FLASH_Read_Data(0x000000,Rxdata,250);
 		
-		GUI_Test();
+		//GUI_Test();
 		
-		// Key_Process();
-		// System_Poll();
+		Key_Process();
+		System_Poll();
 	}
 }
 
