@@ -9,6 +9,8 @@ KeyCtrl_t KeyCtrl;
 
 
 extern SystemCtrl_t SystemCtrl;
+
+
 /*----------------------------------------------------------------------------------------- 
 *函数名称:'Key_Trig_Handler' 
 *函数功能:'' 
@@ -19,6 +21,10 @@ extern SystemCtrl_t SystemCtrl;
 *----------------------------------------------------------------------------------------*/ 
 void Key_Trig_Handler(void){
 
+    if (KEY_IS_CONFIRM_PRESS()){
+        KeyCtrl.confirm_holding_timeout = HOLDING_3_SECOND;   //
+        KeyCtrl.confirm_hold_status = HOLD_START_3SEC;
+    }
 }
 
 /*----------------------------------------------------------------------------------------- 
@@ -29,77 +35,46 @@ void Key_Trig_Handler(void){
 *说    明: '' 
 *作    者: Danny 
 *----------------------------------------------------------------------------------------*/ 
-void Key_Mainpage_Process(void){
+/* // void Key_Mainpage_Process(void){
 
-    int8_t Page_Index = System_Page_Status_Read();
+//     int8_t Page_Index = System_Page_Status_Read();
 
-    if (KEY_IS_UP_RELEASE())
-    {
-        Page_Index += 2;
-        if (Page_Index > SYSTEM_MAIN_PAGE_CONFIG_READY ) //超出
-        {
-            Page_Index = 0;
-        }
+//     if (KEY_IS_UP_RELEASE())
+//     {
+//         Page_Index += 2;
+//         if (Page_Index > SYSTEM_MAIN_PAGE_CONFIG_READY ) //超出
+//         {
+//             Page_Index = 0;
+//         }
         
-    }
+//     }
 
-    if (KEY_IS_DOWN_RELEASE())
-    {
-        Page_Index -= 2;
+//     if (KEY_IS_DOWN_RELEASE())
+//     {
+//         Page_Index -= 2;
 
-        if (Page_Index+2 <= SYSTEM_MAIN_PAGE_TARIN_MENU_SELECET_READY )
-        {
-            Page_Index = SYSTEM_MAIN_PAGE_CONFIG_READY;
-        }
+//         if (Page_Index+2 <= SYSTEM_MAIN_PAGE_TARIN_MENU_SELECET_READY )
+//         {
+//             Page_Index = SYSTEM_MAIN_PAGE_CONFIG_READY;
+//         }
         
-    }
+//     }
 
-    if (KEY_IS_SET_RELEASE())
-    {
-        if (Page_Index % 2 == 0)    //选中图标 处于ready状态
-        {
-            Page_Index += 1;        //系统轮询检测到为奇数 自动跳转
-        }
-    }
+//     if (KEY_IS_SET_RELEASE())
+//     {
+//         if (Page_Index % 2 == 0)    //选中图标 处于ready状态
+//         {
+//             Page_Index += 1;        //系统轮询检测到为奇数 自动跳转
+//         }
+//     }
     
-    System_Page_Status_Write((uint8_t)Page_Index);
+//     System_Page_Status_Write((uint8_t)Page_Index);
 
-    GUI_Shift_Menu(Page_Index);
+//     //GUI_Shift_Menu(Page_Index);
     
     
-}
+// } */
 
-/*----------------------------------------------------------------------------------------- 
-*函数名称:'Key_MenuSelect_Process()' 
-*函数功能:'' 
-*参    数:'' 
-*返 回 值:'' 
-*说    明: '' 
-*作    者: Danny 
-*----------------------------------------------------------------------------------------*/ 
-void Key_MenuSelect_Process(void){
-    if (KEY_IS_COMFIRM_PRESS()) 
-    {
-        //创建新菜单
-
-    }
-    if (/* flash中存在菜单，加载到缓存变量中 */1)
-    {
-        /* 得到菜单`1大小 */
-        if (KEY_IS_UP_PRESS())
-        {
-            
-        }
-        if (KEY_IS_DOWN_PRESS())
-        {
-            /* code */
-        }
-        
-        
-    }
-    
-    
-}
 /*----------------------------------------------------------------------------------------- 
 *函数名称:'Key_release_Handler' 
 *函数功能:'' 
@@ -108,63 +83,65 @@ void Key_MenuSelect_Process(void){
 *说    明: '' 
 *作    者: Danny 
 *----------------------------------------------------------------------------------------*/ 
-
-/*----------------------------------------------------------------------------------------- 
-*函数名称:'Key_MenuEdit_Process' 
-*函数功能:'' 
-*参    数:'' 
-*返 回 值:'' 
-*说    明: '' 
-*作    者: Danny 
-*----------------------------------------------------------------------------------------*/ 
-void Key_MenuEdit_Process(void){
-    if (/* 存在菜单 */1)
+void Key_release_Handler(void){
+    if (KEY_IS_UP_RELEASE()){
+        System_GUIPagepointer_Add();
+    }
+    if (KEY_IS_DOWN_RELEASE()){
+        System_GUIPagepointer_Sub();
+    }
+    if (KEY_IS_SET_RELEASE())
     {
-        if (KEY_IS_UP_PRESS())
-        {
-            /* 菜单index+1 可以通过＋return来控制是否允许同时按响应*/
-
-        }
-        if (KEY_IS_DOWN_PRESS())
-        {
-            /* 菜单index-1 */
-        }
-        if (KEY_IS_SET_PRESS())
-        {
-            /* 进入选中的菜单内容（根据索引来加载菜单内容 菜单是一个数组） */
-        }
-        
+        KeyCtrl.set_hold_status = HOLD_NONE;
+    }
+    if (KEY_IS_CONFIRM_RELEASE())
+    {
+        KeyCtrl.set_hold_status = HOLD_NONE;
     }
     
-}
-
-/*----------------------------------------------------------------------------------------- 
-*函数名称:'Key_ConfigPage_Process' 
-*函数功能:'' 
-*参    数:'' 
-*返 回 值:'' 
-*说    明: '' 
-*作    者: Danny 
-*----------------------------------------------------------------------------------------*/ 
-void Key_ConfigPage_Process(void){
 
 }
 
-void Key_release_Handler(void){
+Key_status_t Key_Read_SetStatus(){
+    return KeyCtrl.set_hold_status;
+}
 
-    switch (SystemCtrl.status)
+void Key_Hold_Handler(void){
+    switch (KeyCtrl.confirm_hold_status)
     {
-        case SYSTEM_MAIN_PAGE: Key_Mainpage_Process(); break;
-        case SYSTEM_TARIN_MENU_SELECET_PAGE: Key_MenuSelect_Process(); break;
-        case SYSTEM_EDIT_MENU_PAGE : Key_MenuEdit_Process(); break;
-        case SYSTEM_CONFIG_PAGE: Key_ConfigPage_Process(); break;
+        case HOLD_ALREADY_3SEC:
+            //做额外操作
+            break;
+    
         default:
             break;
     }
     
+
 }
 
+/*----------------------------------------------------------------------------------------- 
+*函数名称:'Key_Timer' 
+*函数功能:'' 
+*参    数:'' 
+*返 回 值:'' 
+*说    明: '按键定时处理' 
+*作    者: Danny 
+*----------------------------------------------------------------------------------------*/ 
+void Key_Timer(void){
 
+    switch (KeyCtrl.confirm_hold_status)
+    {
+        case HOLD_NONE:break;
+        case HOLD_START_3SEC:
+        if ( --KeyCtrl.confirm_holding_timeout == 0)
+        {
+            KeyCtrl.confirm_hold_status +=  1;
+        }
+        
+            break;
+    }
+}
 
 /*----------------------------------------------------------------------------------------- 
 *函数名称:'Key_Process' 
@@ -183,7 +160,7 @@ void Key_Process(void){
         /***              去抖           ***/
         if(Bsp_KEY_Probe(i))
         {
-            if (Key[i].Tmr1ms <= KEY_DEBOUNCE_TIME)
+            if (Key[i].Tmr1ms <= KEY_DEBOUNCE_TIME)          //这种方式可以避免阻塞系统
             {
                 if ( ++Key[i].Tmr1ms > KEY_DEBOUNCE_TIME)
                 {
@@ -204,7 +181,7 @@ void Key_Process(void){
 
     if (KeyCtrl.cache != KeyCtrl.value)
     {
-        KeyCtrl.trg = KeyCtrl.cache & (~KeyCtrl.value);      //存储被按下的按键
+        KeyCtrl.trg = KeyCtrl.cache & (~KeyCtrl.value);      //只能检测新按下的  存储被按下的按键
         KeyCtrl.release = (~KeyCtrl.cache) & KeyCtrl.value;
         KeyCtrl.value = KeyCtrl.cache;
     }
@@ -240,4 +217,6 @@ void Key_Process(void){
         Key_release_Handler();
         KeyCtrl.release = 0;
     }
+
+    Key_Hold_Handler();
 }

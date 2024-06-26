@@ -49,8 +49,7 @@ int main(void)
 	// {
 	// 	GUI_SPI_Display_Char_ASCII(5,45-i*5,buf[i],0);
 	// }
-	
-	
+
 	// FLASH_Read_ID(&MID, &DID);
 
 	// for (int64_t i = 0; i < 10000; i++)

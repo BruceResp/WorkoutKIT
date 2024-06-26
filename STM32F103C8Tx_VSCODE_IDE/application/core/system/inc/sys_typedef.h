@@ -3,6 +3,10 @@
 #define _SYS_TYPEDEF_
 #include <stm32f10x.h>
 
+#define MENU_NUM_START_ADDRESS              0x010000
+#define MEN_LIST_START_ADDRESS              0x010001
+
+
 typedef struct train_action
 {
     u8     name_num;  //指向名称列表的具体数字 1
@@ -22,6 +26,7 @@ typedef struct MENU_List
     u8 Menu_num;                    //菜单个数  1 B
     Menu_t menu[];
 }MenuList_t;
+
 
 
 #endif

@@ -1,5 +1,5 @@
 #include "bsp.h"
-
+#include "systime.h"
 void Bsp_clcok_init(void){
     SysTick->LOAD = 72 * 1000;				//1 ms 定时
 	SysTick->VAL = 0x00;					//清空当前计数值
@@ -9,5 +9,5 @@ void Bsp_clcok_init(void){
 }
 
 void SysTick_Handler(void){
-    //Time_1ms_IT();备用
+    Time_1ms_IT();//备用
 }

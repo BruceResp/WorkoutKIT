@@ -35,6 +35,7 @@ include_directories(
   ./core/key/inc
   ./core/system/inc
   ./core/flash/inc
+  ./core/time/inc
 )
 
 set_property(SOURCE STARTUP PROPERTY LANGUAGE C)
@@ -47,6 +48,7 @@ set(PROJ_SRC
     ./core/key/key.c
     ./core/system/system.c
     ./core/flash/flash.c
+    ./core/time/time.c
     ../devices/core_cm3.c
     ../devices/system_stm32f10x.c
     

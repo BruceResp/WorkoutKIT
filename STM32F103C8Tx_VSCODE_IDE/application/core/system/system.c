@@ -1,51 +1,12 @@
 #include "system.h"
 #include "gui.h"
 #include "flash.h"
+#include "key.h"
 #include "sys_typedef.h"
+extern KeyCtrl_t KeyCtrl;
 SystemCtrl_t SystemCtrl;
 Sys_MainPage_t Sys_MainPage;
-
-/*----------------------------------------------------------------------------------------- 
-*函数名称:'System_Page_Status_Read' 
-*函数功能:'页面 状态 读取' 
-*参    数:'' 
-*返 回 值:'' 
-*说    明: '返回当前所处页面' 
-*作    者: Danny 
-*----------------------------------------------------------------------------------------*/ 
-uint8_t System_Page_Status_Read(void){
-
-    return (uint8_t)SystemCtrl.page_index;
-    
-}
-
-/*----------------------------------------------------------------------------------------- 
-*函数名称:'System_Page_Status_Write' 
-*函数功能:'' 
-*参    数:'' 
-*返 回 值:'' 
-*说    明: '' 
-*作    者: Danny 
-*----------------------------------------------------------------------------------------*/ 
-void System_Page_Status_Write(uint8_t page_index){
-
-    SystemCtrl.page_index = page_index ;
-
-}
-
-/*----------------------------------------------------------------------------------------- 
-*函数名称:'System_Page_Status_Write(void)' 
-*函数功能:'' 
-*参    数:'' 
-*返 回 值:'' 
-*说    明: '' 
-*作    者: Danny 
-*----------------------------------------------------------------------------------------*/ 
-uint8_t System_Status_Read(void){
-
-    return SystemCtrl.status;
-
-}
+Flash_Addr_t FlashAddr ;
 /*----------------------------------------------------------------------------------------- 
 *函数名称:'' 
 *函数功能:'' 
@@ -55,11 +16,72 @@ uint8_t System_Status_Read(void){
 *作    者: Danny 
 *----------------------------------------------------------------------------------------*/ 
 void System_Init(void){
-    SystemCtrl.page_index = SYSTEM_MAIN_PAGE_TARIN_MENU_SELECET_READY;
-
+    SystemCtrl.currentPage = SYSTEM_MAIN_PAGE;
+    SystemCtrl.targetPage = SYSTEM_MAIN_PAGE;
+    SystemCtrl.GUIpagePoint = 1; 
     GUI_CLEAR_SCREEN();
-    GUI_Shift_Menu(SystemCtrl.page_index);
+    GUI_Shift_Menu( SystemCtrl.currentPage,SystemCtrl.targetPage);
 };
+
+/*----------------------------------------------------------------------------------------- 
+*函数名称:'System_GUIPagepointer_Sub' 
+*函数功能:'' 
+*参    数:'' 
+*返 回 值:'' 
+*说    明: '' 
+*作    者: Danny 
+*----------------------------------------------------------------------------------------*/ 
+void System_GUIPagepointer_Sub(void){
+    SystemCtrl.GUIpagePoint--;
+}
+
+/*----------------------------------------------------------------------------------------- 
+*函数名称:'System_GUIPagepointer_Add' 
+*函数功能:'' 
+*参    数:'' 
+*返 回 值:'' 
+*说    明: '' 
+*作    者: Danny 
+*----------------------------------------------------------------------------------------*/ 
+void System_GUIPagepointer_Add(void){
+    SystemCtrl.GUIpagePoint++;
+}
+
+/*----------------------------------------------------------------------------------------- 
+*函数名称:'System_MainPage_Operation' 
+*函数功能:'' 
+*参    数:'' 
+*返 回 值:'' 
+*说    明: '' 
+*作    者: Danny 
+*----------------------------------------------------------------------------------------*/ 
+void System_MainPage_Operation(void){
+
+    if (SystemCtrl.GUIpagePoint > MainPage_EndIndex)
+    {
+        SystemCtrl.GUIpagePoint = MainPage_BeginIndex;
+    }
+    if (SystemCtrl.GUIpagePoint < MainPage_BeginIndex)
+    {
+        SystemCtrl.GUIpagePoint = MainPage_EndIndex;
+    }
+    
+    SystemCtrl.targetPage = SystemCtrl.GUIpagePoint * MainPage_MultiPower;
+    
+    if (KEY_IS_SET_RELEASE()){
+        SystemCtrl.currentPage = SystemCtrl.targetPage;
+    }
+
+    GUI_Shift_Menu(SystemCtrl.currentPage,SystemCtrl.targetPage);
+    
+}
+
+void System_TrainMenuSelPage_Operation(void){
+    MenuList_t *MenuList;
+    FlashAddr.addr = MENU_NUM_START_ADDRESS;
+    FLASH_Read_Dataes(FlashAddr,MenuList,1);
+    
+}
 
 /*----------------------------------------------------------------------------------------- 
 *函数名称:'System_Poll' 
@@ -71,14 +93,12 @@ void System_Init(void){
 *----------------------------------------------------------------------------------------*/ 
 void System_Poll(void){
 
-    switch (SystemCtrl.status)
+    switch (SystemCtrl.currentPage)
     {
         case SYSTEM_MAIN_PAGE:
-            if (SystemCtrl.page_index % 2 == 1){
-                SystemCtrl.status = SystemCtrl.page_index / 2 +1;  //更新页面指针到下一页
-            };
-            break;
-        case SYSTEM_TARIN_MENU_SELECET_PAGE:
+            System_MainPage_Operation();break;
+        case SYSTEM_TRAIN_MENU_SELECET_PAGE:
+            System_TrainMenuSelPage_Operation();
            // uint8_t menu_num = FLASH_Read_Menu_num();
             // if (menu_num != 0) //存在菜单
             // {
@@ -86,7 +106,7 @@ void System_Poll(void){
             // }
             // 菜单开始运行处理函数
             break;
-        case SYSTEM_EDIT_MENU_PAGE:
+        case SYSTEM_EDIT_MENU_SELECT_PAGE:
             if (/* 临时变量为空 */1)
             {
                 //read_flash 加载菜单 保存在临时变量中 每次从flash中读一次 

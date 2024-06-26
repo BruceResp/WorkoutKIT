@@ -104,10 +104,10 @@ void Bsp_DelayUS(uint32_t xus)
 	// SysTick->CTRL = 0x00000005;				//设置时钟源为HCLK，启动定时器
 	// while(!(SysTick->CTRL & 0x00010000));	//等待计数到0
 	// SysTick->CTRL = 0x00000004;				//关闭定时器
-    xus *= 2;
-    while (xus > 0)
+    __IO uint32_t us= xus * 2;
+    while (us > 0)
     {
-        xus--;
+        us--;
         __NOP();
         __NOP();
     }

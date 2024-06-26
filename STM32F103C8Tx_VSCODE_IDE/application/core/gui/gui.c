@@ -20,7 +20,7 @@
 
 extern uint8_t GUI_DISPLAY_BUF[8][128];
 extern SystemCtrl_t SystemCtrl;
-float kp = 0.8;
+float kp = 0.7;
 
 /********************************I2C****************************************/
 
@@ -752,14 +752,15 @@ void GUI_Animation_move(void){
 *说    明: '每次按键按完才能调用一次，不能频繁调用' 
 *作    者: Danny 
 *----------------------------------------------------------------------------------------*/ 
-void GUI_Shift_Menu(uint8_t pageIndex){
+void GUI_Shift_Menu(uint8_t currentPage,uint8_t targetPage){
 	u8 base_x = 42,	Delta_x = 44;
-	u8 base_y = 18, Delta_y = 7;
-	if (pageIndex % 2 == 0)//处于ready状态
+	u8 base_y = 18; //Delta_y = 7
+	if (currentPage == SYSTEM_MAIN_PAGE)//处于ready状态
 	{
-		switch (pageIndex)
+		switch (targetPage)
 		{
-			case SYSTEM_MAIN_PAGE_TARIN_MENU_SELECET_READY:
+			case SYSTEM_MAIN_PAGE:;
+			case SYSTEM_TRAIN_MENU_SELECET_PAGE:
 				Sys_MainPage.mid_icon.target_x =  base_x;
 				Sys_MainPage.left_icon.target_x = base_x - Delta_x ;
 				Sys_MainPage.right_icon.target_x = base_x + Delta_x ;
@@ -768,7 +769,7 @@ void GUI_Shift_Menu(uint8_t pageIndex){
 				Sys_MainPage.left_icon.target_y = base_y ;
 				Sys_MainPage.right_icon.target_y = base_y ;
 				break;
-			case SYSTEM_MAIN_PAGE_EDIT_TRAIN_MENU_READY:
+			case SYSTEM_EDIT_MENU_SELECT_PAGE:
 				Sys_MainPage.mid_icon.target_x =  base_x + Delta_x;
 				Sys_MainPage.left_icon.target_x = base_x - Delta_x + Delta_x;
 				Sys_MainPage.right_icon.target_x = base_x + Delta_x + Delta_x;
@@ -776,7 +777,7 @@ void GUI_Shift_Menu(uint8_t pageIndex){
 				Sys_MainPage.mid_icon.target_y = base_y; 
 				Sys_MainPage.left_icon.target_y = base_y ;
 				Sys_MainPage.right_icon.target_y = base_y ;break;
-			case SYSTEM_MAIN_PAGE_CONFIG_READY:
+			case SYSTEM_CONFIG_PAGE:
 				Sys_MainPage.mid_icon.target_x =  base_x - Delta_x;
 				Sys_MainPage.left_icon.target_x = base_x - Delta_x - Delta_x ;
 				Sys_MainPage.right_icon.target_x = base_x + Delta_x - Delta_x;
@@ -789,23 +790,23 @@ void GUI_Shift_Menu(uint8_t pageIndex){
 		}
 	}
 	else{
-		switch (pageIndex)
+		switch (targetPage)
 		{
-			case SYSTEM_MAIN_PAGE_TARIN_MENU_SELECET_ALREADY:
-				Sys_MainPage.mid_icon.target_x =  base_x + Delta_x;
-				Sys_MainPage.left_icon.target_x = base_x - Delta_x -Delta_x;
-				Sys_MainPage.right_icon.target_x = base_x + Delta_x +Delta_x;
+			// case SYSTEM_MAIN_PAGE_TARIN_MENU_SELECET_ALREADY:
+			// 	Sys_MainPage.mid_icon.target_x =  base_x + Delta_x;
+			// 	Sys_MainPage.left_icon.target_x = base_x - Delta_x -Delta_x;
+			// 	Sys_MainPage.right_icon.target_x = base_x + Delta_x +Delta_x;
 
-				Sys_MainPage.mid_icon.target_y = base_y + Delta_y; 
-				// Sys_MainPage.left_icon.target_y = base_y ;
-				// Sys_MainPage.right_icon.target_y = base_y ;
-				break;
-			case SYSTEM_MAIN_PAGE_EDIT_TRAIN_MENU_ALREADY:
-				break;
-			case SYSTEM_MAIN_PAGE_CONFIG_ALREADY:
-				break;
-			default:
-				break;
+			// 	Sys_MainPage.mid_icon.target_y = base_y + Delta_y; 
+			// 	// Sys_MainPage.left_icon.target_y = base_y ;
+			// 	// Sys_MainPage.right_icon.target_y = base_y ;
+			// 	break;
+			// case SYSTEM_MAIN_PAGE_EDIT_TRAIN_MENU_ALREADY:
+			// 	break;
+			// case SYSTEM_MAIN_PAGE_CONFIG_ALREADY:
+			// 	break;
+			// default:
+			// 	break;
 		}
 	}
 	

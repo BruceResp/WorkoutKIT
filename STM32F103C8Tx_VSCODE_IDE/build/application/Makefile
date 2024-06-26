@@ -1118,6 +1118,30 @@ core/system/system.c.s:
 	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/core/system/system.c.s
 .PHONY : core/system/system.c.s
 
+core/time/time.obj: core/time/time.c.obj
+.PHONY : core/time/time.obj
+
+# target to build an object file
+core/time/time.c.obj:
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/core/time/time.c.obj
+.PHONY : core/time/time.c.obj
+
+core/time/time.i: core/time/time.c.i
+.PHONY : core/time/time.i
+
+# target to preprocess a source file
+core/time/time.c.i:
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/core/time/time.c.i
+.PHONY : core/time/time.c.i
+
+core/time/time.s: core/time/time.c.s
+.PHONY : core/time/time.s
+
+# target to generate assembly for a file
+core/time/time.c.s:
+	cd D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/build && $(MAKE) $(MAKESILENT) -f application/CMakeFiles/application.elf.dir/build.make application/CMakeFiles/application.elf.dir/core/time/time.c.s
+.PHONY : core/time/time.c.s
+
 startup/startup_stm32f103xb.obj: startup/startup_stm32f103xb.s.obj
 .PHONY : startup/startup_stm32f103xb.obj
 
@@ -1257,6 +1281,9 @@ help:
 	@echo "... core/system/system.obj"
 	@echo "... core/system/system.i"
 	@echo "... core/system/system.s"
+	@echo "... core/time/time.obj"
+	@echo "... core/time/time.i"
+	@echo "... core/time/time.s"
 	@echo "... startup/startup_stm32f103xb.obj"
 .PHONY : help
 

@@ -19,7 +19,9 @@
         "key.h": "c",
         "system.h": "c",
         "flash.h": "c",
-        "sys_typedef.h": "c"
+        "sys_typedef.h": "c",
+        "time.h": "c",
+        "systime.h": "c"
     },
     "cortex-debug.variableUseNaturalFormat": false
 }

@@ -24,7 +24,7 @@ void Bsp_SPI_Init(void) {
     SPI_InitStruct.SPI_CPOL = SPI_CPOL_Low;                    //空闲 低
     SPI_InitStruct.SPI_CPHA = SPI_CPHA_1Edge;
     SPI_InitStruct.SPI_NSS = SPI_NSS_Soft;
-    SPI_InitStruct.SPI_BaudRatePrescaler = SPI_BaudRatePrescaler_2;
+    SPI_InitStruct.SPI_BaudRatePrescaler = SPI_BaudRatePrescaler_16;
     SPI_InitStruct.SPI_FirstBit = SPI_FirstBit_MSB;            //大端
     SPI_InitStruct.SPI_CRCPolynomial = 7;
 

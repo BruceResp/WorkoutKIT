@@ -15,7 +15,7 @@ uint8_t Bsp_KEY_Probe(uint8_t key){
         case KEY_UP: return (GPIO_ReadInputDataBit(KEY_UP_PORT,KEY_UP_PIN) == 0); break;   //这里用 == 0 而不直接读取值，有两个好处 向上层屏蔽了按下和没按下的底层逻辑，上层只需要知道 按下为1 未按下0，如果后续出现改动比如 电平0为释放 1为按下 不用对上层做对应的变化，符合分层 对上层屏蔽细节的作用，便于维护 与阅读 （告诉读者 当前针对 0）
         case KEY_DOWN:return (GPIO_ReadInputDataBit(KEY_DOWN_PORT,KEY_DOWN_PIN) == 0); break;
         case KEY_SET:return (GPIO_ReadInputDataBit(KEY_SET_PORT,KEY_SET_PIN) == 0);  break;
-        case KEY_COMFIRM: return (GPIO_ReadInputDataBit(KEY_COMFIRM_PORT,KEY_COMFIRM_PIN) == 0); break;
+        case KEY_CONFIRM: return (GPIO_ReadInputDataBit(KEY_COMFIRM_PORT,KEY_COMFIRM_PIN) == 0); break;
     }
     return 0;
 }

@@ -3,39 +3,35 @@
 
 #include "bsp.h"
 
-
-// 所处页面Index
 typedef enum {
-    SYSTEM_MAIN_PAGE                                   =0u,
+    SYSTEM_MAIN_PAGE                                       =0u,
+        SYSTEM_TRAIN_MENU_SELECET_PAGE                     =3u,
+            SYSTEM_START_TRAIN_PAGE,
+        SYSTEM_EDIT_MENU_SELECT_PAGE                       =6u,
+            SYSTEM_EDIT_MOVES_SELECT_PAGE,
+                SYSTEM_MOVES_COFIG_PAGE,
+        SYSTEM_CONFIG_PAGE                                 =9u, 
+}Sys_pagePointer_t;
 
-    SYSTEM_TARIN_MENU_SELECET_PAGE                     =1u,
-    SYSTEM_EDIT_MENU_PAGE,
-    SYSTEM_CONFIG_PAGE,
+// char *GUI_Display_Name[] ={
+//     "主菜单",
+//     "训练菜单选择",
+//         "开始训练",
+//     "选择菜单编辑",
+//         "动作选择编辑",
+//             "动作配置",
+//     "系统配置",
+// };
 
-    SYSTEM_SELECTED_MENU_CONTENT_PAGE,
-
-    SYSTEM_TRAIN_START_PAGE,
-    SYSTEM_MOVEMENTS_LIST_PAGE,
-    SYSTEM_MOVEMENT_CONFIG_PAGE,
-    
-}Sys_status_t;
-
-typedef enum {
-    //SYSTEM_MAIN_PAGE_DO_NONE                            =0u,
-    SYSTEM_MAIN_PAGE_TARIN_MENU_SELECET_READY=0u,                   
-    SYSTEM_MAIN_PAGE_TARIN_MENU_SELECET_ALREADY,//1
-    SYSTEM_MAIN_PAGE_EDIT_TRAIN_MENU_READY,//2
-    SYSTEM_MAIN_PAGE_EDIT_TRAIN_MENU_ALREADY,//3
-    SYSTEM_MAIN_PAGE_CONFIG_READY,//4
-    SYSTEM_MAIN_PAGE_CONFIG_ALREADY,//5
-}System_page_index_t;
 
 typedef struct 
 {
-    Sys_status_t status;
-    System_page_index_t page_index;  
+    Sys_pagePointer_t targetPage;
+    Sys_pagePointer_t currentPage;
 
+    uint8_t GUIpagePoint;               //config by up / down key
 }SystemCtrl_t;
+
 
 typedef struct
 {
@@ -58,12 +54,17 @@ typedef struct
     Sys_MainPage_module_t right_font;
 }Sys_MainPage_t;
 
+#define MainPage_EndIndex                  3
+#define MainPage_BeginIndex                1
+#define MainPage_MultiPower                3
+
+
 extern Sys_MainPage_t Sys_MainPage;
 
 extern void System_Init(void);
 extern void System_Poll(void);
-extern uint8_t System_Page_Status_Read(void);
-extern uint8_t System_Status_Read(void);
-extern void System_Page_Status_Write(uint8_t page_index);
+extern void System_GUIPagepointer_Sub(void);
+extern void System_GUIPagepointer_Add(void);
+
 
 #endif

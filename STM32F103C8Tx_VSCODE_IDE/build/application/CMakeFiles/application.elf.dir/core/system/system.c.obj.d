@@ -65,4 +65,5 @@ application/CMakeFiles/application.elf.dir/core/system/system.c.obj: \
  d\:\git_repository\stm32f103c8tx_vscode_ide\product\wk1000.h \
  d\:\git_repository\stm32f103c8tx_vscode_ide\application\core\gui\inc\gui.h \
  d\:\git_repository\stm32f103c8tx_vscode_ide\application\core\flash\inc\flash.h \
+ d\:\git_repository\stm32f103c8tx_vscode_ide\application\core\key\inc\key.h \
  d\:\git_repository\stm32f103c8tx_vscode_ide\application\core\system\inc\sys_typedef.h
