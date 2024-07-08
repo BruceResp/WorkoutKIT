@@ -10,7 +10,6 @@ KeyCtrl_t KeyCtrl;
 
 extern SystemCtrl_t SystemCtrl;
 
-
 /*----------------------------------------------------------------------------------------- 
 *函数名称:'Key_Trig_Handler' 
 *函数功能:'' 
@@ -25,55 +24,14 @@ void Key_Trig_Handler(void){
         KeyCtrl.confirm_holding_timeout = HOLDING_3_SECOND;   //
         KeyCtrl.confirm_hold_status = HOLD_START_3SEC;
     }
+    if (KEY_IS_SET_PRESS())
+    {
+        KeyCtrl.set_hold_status = HOLD_START_2SEC;
+        KeyCtrl.confirm_holding_timeout = HOLDING_2_SECOND;
+    }
+    
+
 }
-
-/*----------------------------------------------------------------------------------------- 
-*函数名称:'Key_Mainpage_Process' 
-*函数功能:'' 
-*参    数:'' 
-*返 回 值:'' 
-*说    明: '' 
-*作    者: Danny 
-*----------------------------------------------------------------------------------------*/ 
-/* // void Key_Mainpage_Process(void){
-
-//     int8_t Page_Index = System_Page_Status_Read();
-
-//     if (KEY_IS_UP_RELEASE())
-//     {
-//         Page_Index += 2;
-//         if (Page_Index > SYSTEM_MAIN_PAGE_CONFIG_READY ) //超出
-//         {
-//             Page_Index = 0;
-//         }
-        
-//     }
-
-//     if (KEY_IS_DOWN_RELEASE())
-//     {
-//         Page_Index -= 2;
-
-//         if (Page_Index+2 <= SYSTEM_MAIN_PAGE_TARIN_MENU_SELECET_READY )
-//         {
-//             Page_Index = SYSTEM_MAIN_PAGE_CONFIG_READY;
-//         }
-        
-//     }
-
-//     if (KEY_IS_SET_RELEASE())
-//     {
-//         if (Page_Index % 2 == 0)    //选中图标 处于ready状态
-//         {
-//             Page_Index += 1;        //系统轮询检测到为奇数 自动跳转
-//         }
-//     }
-    
-//     System_Page_Status_Write((uint8_t)Page_Index);
-
-//     //GUI_Shift_Menu(Page_Index);
-    
-    
-// } */
 
 /*----------------------------------------------------------------------------------------- 
 *函数名称:'Key_release_Handler' 
@@ -85,14 +43,16 @@ void Key_Trig_Handler(void){
 *----------------------------------------------------------------------------------------*/ 
 void Key_release_Handler(void){
     if (KEY_IS_UP_RELEASE()){
-        System_GUIPagepointer_Add();
+        System_GUIPagepointer_Sub();
     }
     if (KEY_IS_DOWN_RELEASE()){
-        System_GUIPagepointer_Sub();
+        System_GUIPagepointer_Add();
     }
     if (KEY_IS_SET_RELEASE())
     {
+        System_Turn_Page();
         KeyCtrl.set_hold_status = HOLD_NONE;
+        
     }
     if (KEY_IS_CONFIRM_RELEASE())
     {
@@ -100,10 +60,6 @@ void Key_release_Handler(void){
     }
     
 
-}
-
-Key_status_t Key_Read_SetStatus(){
-    return KeyCtrl.set_hold_status;
 }
 
 void Key_Hold_Handler(void){

@@ -2,7 +2,9 @@
 #include "bsp.h"
 #include "sys_typedef.h"
 
-MenuList_t Menu_list;
+uint16_t CELL_MANAGE = 0x0000;      //0 :NULL  1：EXITS
+Menu_t **MenuList;
+// MenuList_t Menu_list;
 u8 Menu_List_Addr = 0x000000;   //存储菜单的FLASH地址
 /*----------------------------------------------------------------------------------------- 
 *函数名称:'FLASH_Read_ID' 
@@ -38,7 +40,38 @@ void FLASH_Read_ID(uint8_t *MID, uint16_t *DID)
             Length:要读取的字节个数 (uint8_t 最多255个数据)
 *作    者: Danny
 *----------------------------------------------------------------------------------------*/
-void FLASH_Read_Data(Flash_Addr_t addr, void *Rxdata, uint16_t Length)
+uint8_t FLASH_Read_Single_Data(uint32_t addr)
+{    
+    Bsp_Flash_SELECTED();
+
+    Bsp_Flash_SPI_TransmitReceive(FLASH_READ_DATA);
+    
+    Bsp_Flash_SPI_TransmitReceive(addr >> 16);
+    Bsp_Flash_SPI_TransmitReceive(addr >> 8);
+    Bsp_Flash_SPI_TransmitReceive(addr);
+
+    uint8_t Rxdata = Bsp_Flash_SPI_TransmitReceive(FLASH_DUMMY_BYTE); // 传输一个无效字符来接收有效的数据
+
+    Bsp_Flash_DISELECTED();  
+
+    return Rxdata;
+}
+
+
+/*-----------------------------------------------------------------------------------------
+*函数名称:'FLASH_Read_Data'
+*函数功能:'Flash 读 数据'
+*参    数:''
+*返 回 值:''
+*说    明: '
+            addr[0]: BLOCK: 00-7F'
+            addr[1]: Sector: 0-F  F个 Sector组成一个Block
+            addr[2]: 1个sector 内部 0 / 00-f / ff(Page)
+            F个page组成一个sector，
+            Length:要读取的字节个数 (uint8_t 最多255个数据)
+*作    者: Danny
+*----------------------------------------------------------------------------------------*/
+void FLASH_Read_Data(uint32_t addr, void *Rxdata, uint16_t Length)
 {
     if (Length == 0)
     {
@@ -49,9 +82,9 @@ void FLASH_Read_Data(Flash_Addr_t addr, void *Rxdata, uint16_t Length)
 
     Bsp_Flash_SPI_TransmitReceive(FLASH_READ_DATA);
 
-    Bsp_Flash_SPI_TransmitReceive(addr.addr >> 16);
-    Bsp_Flash_SPI_TransmitReceive(addr.addr >> 8);
-    Bsp_Flash_SPI_TransmitReceive(addr.addr);
+    Bsp_Flash_SPI_TransmitReceive(addr >> 16);
+    Bsp_Flash_SPI_TransmitReceive(addr >> 8);
+    Bsp_Flash_SPI_TransmitReceive(addr);
 
     for (uint8_t i = 0; i < Length; i++)
     {
@@ -102,7 +135,7 @@ void FLASH_Write_Data(Flash_Addr_t addr, void *Data, uint16_t Length)
 *说    明: '在写扇区之前 如果flash该区域已经有数据 必须先擦除才能写 擦除4KB' 
 *作    者: Danny 
 *----------------------------------------------------------------------------------------*/ 
-void FLASH_Sector_Erase(Flash_Addr_t addr){
+void FLASH_Sector_Erase(uint32_t addr){
 
     Bsp_Flash_Write_Enable();
 
@@ -110,9 +143,9 @@ void FLASH_Sector_Erase(Flash_Addr_t addr){
 
     Bsp_Flash_SPI_TransmitReceive(FLASH_SECTOR_ERASE_4KB);
 
-    Bsp_Flash_SPI_TransmitReceive(addr.addr >> 16);
-    Bsp_Flash_SPI_TransmitReceive(addr.addr >> 8);
-    Bsp_Flash_SPI_TransmitReceive(addr.addr);
+    Bsp_Flash_SPI_TransmitReceive(addr >> 16);
+    Bsp_Flash_SPI_TransmitReceive(addr >> 8);
+    Bsp_Flash_SPI_TransmitReceive(addr);
 
     Bsp_Flash_DISELECTED(); 
     
@@ -411,7 +444,7 @@ uint8_t FLASH_Read_Dataes(Flash_Addr_t StartAddr,void * DataArray, uint32_t size
             return Flase;
         }
 
-        FLASH_Read_Data(StartAddr,DataArray,Pg1_Data_To_Write);  //先把第一个没存满的页写完，字节数量就是当前页剩余的空间
+        FLASH_Read_Data(StartAddr.addr,DataArray,Pg1_Data_To_Write);  //先把第一个没存满的页写完，字节数量就是当前页剩余的空间
         DataArray += Pg1_Data_To_Write / sizeof(DataArray[0]);                            //加上要写入的字节个数                              //写数据的地址加1个单位
         StartAddr.addr += Pg1_Data_To_Write;                           //加上剩余的地址等于下一页开始的地址
         size -= Pg1_Data_To_Write +  (across_pages-1) * 256;
@@ -419,20 +452,178 @@ uint8_t FLASH_Read_Dataes(Flash_Addr_t StartAddr,void * DataArray, uint32_t size
         {   
             if (across_pages == 0)                                  //最后一页
             {   
-                FLASH_Read_Data(StartAddr,DataArray,size);
+                FLASH_Read_Data(StartAddr.addr,DataArray,size);
                 continue;
             }
 
-            FLASH_Read_Data(StartAddr,DataArray,256);
+            FLASH_Read_Data(StartAddr.addr,DataArray,256);
             DataArray += 256 / sizeof(DataArray[0]);                                         //写数据的地址加1个单位
         }
         return True;
     }
     
-    FLASH_Read_Data(StartAddr,DataArray,size);
+    FLASH_Read_Data(StartAddr.addr,DataArray,size);
     return True;
     
 }
+
+/*----------------------------------------------------------------------------------------- 
+*函数名称:'FLASH_Read_Dataes' 
+*函数功能:'' 
+*参    数:'Block_addr:扇区地址 从 0 到 127（ 0x7f ）128个  一个64KB
+            Sector_addr:     从 0 到 15 （0xf） 15个  一个4KB   (可以缺)
+            Page_addr:'      从 0 开始 15  （0xf）15个 一个 256B (可以缺)
+                            00
+            size : 单位字节，描述存入数据组的大小
+*返 回 值:'' 
+*说    明: '' 
+*作    者: Danny 
+*----------------------------------------------------------------------------------------*/ 
+uint8_t FLASH_Read_Datas(Flash_Addr_t *StartAddr,void * DataArray, uint32_t size){
+
+    //uint32_t Start_Addr = Block_addr * FLASH_BLOCK_INDEX + Sector_addr * FLASH_SECTOR_INDEX + Page_addr * FLASH_PAGE_INDEX + Base_addr;
+    uint8_t Pg1_Data_To_Write = 0xFF-StartAddr->Base_Addr;
+    uint16_t across_pages = (size - Pg1_Data_To_Write) / 256 ;                            //跨几页  Base_addr所在页不算进去 不管整除之后有没有余数，都+1，所以最后写入的一页有可能为空，这会导致如果最后一页为空的情况下写入会报code 1 错误，然而实际上是可以写的
+
+    if ( (size - Pg1_Data_To_Write) % 256)
+    {
+        across_pages += 1;
+    }
+    
+    uint16_t Left_Pages = 0x7fff - (StartAddr->addr >> 8);    //剩余可编辑页面
+    
+    if (Pg1_Data_To_Write < size)                                                              //检查是否跨页 当前条件跨页
+    {
+        if (across_pages > Left_Pages)                                                       //输入数据所跨的页大于可编辑区域
+        {
+            #ifdef Debug_mode
+                Bsp_printf("error code 1 : error in writing Flash \r\n");
+            #endif
+            return Flase;
+        }
+
+        FLASH_Read_Data(StartAddr->addr,DataArray,Pg1_Data_To_Write);  //先把第一个没存满的页写完，字节数量就是当前页剩余的空间
+        DataArray += Pg1_Data_To_Write / sizeof(DataArray[0]);                            //加上要写入的字节个数                              //写数据的地址加1个单位
+        StartAddr->addr += Pg1_Data_To_Write;                           //加上剩余的地址等于下一页开始的地址
+        size -= Pg1_Data_To_Write +  (across_pages-1) * 256;
+        for (;--across_pages >= 0;)
+        {   
+            if (across_pages == 0)                                  //最后一页
+            {   
+                FLASH_Read_Data(StartAddr->addr,DataArray,size);
+                continue;
+            }
+
+            FLASH_Read_Data(StartAddr->addr,DataArray,256);
+            DataArray += 256 / sizeof(DataArray[0]);                                         //写数据的地址加1个单位
+        }
+        return True;
+    }
+    
+    FLASH_Read_Data(StartAddr->addr,DataArray,size);
+    return True;
+    
+}
+
+
+/*                                应用层                                         */
+/*  两种方案，一种连续存储,一种单元存储，考虑了下，空间不是很紧张，用单元存储效率会更高些
+    ---------------------------------------------
+    |   0xF00  |   .....  |   .....  |   0xFFF  |   Page15 
+    |   .....  |   .....  |   .....  |   .....  |   ..... 
+    |   .....  |   .....  |   .....  |   .....  |   ..... 
+    |   .....  |   .....  |   .....  |   .....  |   .....  
+    |   0x000  |   .....  |   .....  |   0x0FF  |   Page0   256字节大小
+    ---------------------------------------------
+    第一个扇区存储
+    一页存储一个Menu，总共就占用16个页，存储50个动作也只占152字节，空间远远富裕后续可以考虑拓展
+    用一个16位大小变量CELL_MANAGE来保存哪些单元为空，哪些单元存在数据，
+    增：根据CELL_MANAGE找出空余单元，存储
+    删：根据INDEX 找到对应的CELL_MANAGE是否显示要删除的单元为空，不为空，清空
+    改：找到对应的单元，先清再改
+    查：找到对应的单元读取
+
+*/
+
+/*----------------------------------------------------------------------------------------- 
+*函数名称:'FLASH_Config_Init' 
+*函数功能:'' 
+*参    数:'' 
+*返 回 值:'' 
+*说    明: '分配临时的Menu列表空间,应该在需要读取FLASH 之前使用这个函数' 
+*作    者: Danny 
+*----------------------------------------------------------------------------------------*/ 
+Menu_t ** FLASH_Config_Init(){
+    Menu_t **MenuList = (Menu_t**)malloc(16*sizeof(Menu_t*));
+    uint8_t moveNum = 0;
+    uint32_t startAddr ;
+    for (uint8_t i = 0; i < 16; i++)
+    {
+        startAddr =  FLASH_MENU0_ADDRESS ;
+        moveNum = FLASH_Read_Single_Data(startAddr);                            //获取Actions数量
+        Menu_t * Menu = (Menu_t*)malloc(2+moveNum * sizeof(MoveProperty_t));
+        MenuList[i] = Menu;
+        free(Menu);
+    }
+    return MenuList;
+    
+}
+
+void FLASH_Update_MenuList(){
+    uint32_t startAddr = FLASH_MENU0_ADDRESS;
+    FLASH_Sector_Erase(startAddr);
+    Flash_Addr_t ADDR ;
+    ADDR.addr = startAddr;
+    for (uint8_t i = 0; i < 16; i++)
+    {
+        FLASH_Write_Dataes(ADDR,MenuList[i],(MenuList[i]->Actions_num+2));
+    }
+    
+}
+
+uint8_t FLASH_Read_MenuNum(void){
+    return FLASH_Read_Single_Data(0x000000);
+}
+/*----------------------------------------------------------------------------------------- 
+*函数名称:'' 
+*函数功能:'' 
+*参    数:'Index:指明哪一页' 
+*返 回 值:'' 
+*说    明: '' 
+*作    者: Danny 
+*----------------------------------------------------------------------------------------*/ 
+// void FLASH_Delate_Menu(uint8_t Index){
+//     Menu_t Menu[16];//暂存
+//     uint32_t startAddr ;//= FLASH_MENU0_ADDRESS | (Index << 16);//找出指定要删除的地址
+//     //---------------------------------------------------
+
+//     /*--------------------------------------------------*/
+//     Flash_Addr_t *Flash_Addr =  (Flash_Addr_t *)malloc(sizeof(Flash_Addr_t));
+
+//     for (uint32_t i = 0; i < 16; i++)
+//     {
+//         if (i == Index)
+//         {
+//             /* code */
+//         }
+//         startAddr =  FLASH_MENU0_ADDRESS | (i << 16);
+//         FLASH_Read_Datas(Flash_Addr,&Menu[i],255);
+        
+//     }
+    
+//     FLASH_Sector_Erase(FLASH_MENU0_ADDRESS);
+// }
+
+
+
+
+
+
+
+
+
+
+
 
 // /*----------------------------------------------------------------------------------------- 
 // *函数名称:'FLASH_Read_Menu_num' 

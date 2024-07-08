@@ -35,21 +35,24 @@ application/CMakeFiles/application.elf.dir/core/flash/flash.c.obj: \
  d\:\git_repository\stm32f103c8tx_vscode_ide\drivers\inc\stm32f10x_usart.h \
  d\:\git_repository\stm32f103c8tx_vscode_ide\drivers\inc\stm32f10x_wwdg.h \
  d\:\git_repository\stm32f103c8tx_vscode_ide\drivers\inc\misc.h \
- d\:\git_repository\stm32f103c8tx_vscode_ide\application\bsp\inc\bsp.h \
- d\:\git_repository\stm32f103c8tx_vscode_ide\devices\inc\system_stm32f10x.h \
- d\:\tool\complier_toolchain\gcc-arm-none-eabi-10-2020-q4-major-win32\gcc-arm-none-eabi-10-2020-q4-major\arm-none-eabi\include\stdio.h \
+ d\:\tool\complier_toolchain\gcc-arm-none-eabi-10-2020-q4-major-win32\gcc-arm-none-eabi-10-2020-q4-major\arm-none-eabi\include\stdlib.h \
+ d\:\tool\complier_toolchain\gcc-arm-none-eabi-10-2020-q4-major-win32\gcc-arm-none-eabi-10-2020-q4-major\arm-none-eabi\include\machine\ieeefp.h \
  d\:\tool\complier_toolchain\gcc-arm-none-eabi-10-2020-q4-major-win32\gcc-arm-none-eabi-10-2020-q4-major\arm-none-eabi\include\_ansi.h \
  d\:\tool\complier_toolchain\gcc-arm-none-eabi-10-2020-q4-major-win32\gcc-arm-none-eabi-10-2020-q4-major\arm-none-eabi\include\newlib.h \
  d\:\tool\complier_toolchain\gcc-arm-none-eabi-10-2020-q4-major-win32\gcc-arm-none-eabi-10-2020-q4-major\arm-none-eabi\include\sys\config.h \
- d\:\tool\complier_toolchain\gcc-arm-none-eabi-10-2020-q4-major-win32\gcc-arm-none-eabi-10-2020-q4-major\arm-none-eabi\include\machine\ieeefp.h \
- d\:\tool\complier_toolchain\gcc-arm-none-eabi-10-2020-q4-major-win32\gcc-arm-none-eabi-10-2020-q4-major\arm-none-eabi\include\sys\cdefs.h \
  d\:\tool\complier_toolchain\gcc-arm-none-eabi-10-2020-q4-major-win32\gcc-arm-none-eabi-10-2020-q4-major\lib\gcc\arm-none-eabi\10.2.1\include\stddef.h \
- d\:\tool\complier_toolchain\gcc-arm-none-eabi-10-2020-q4-major-win32\gcc-arm-none-eabi-10-2020-q4-major\lib\gcc\arm-none-eabi\10.2.1\include\stdarg.h \
  d\:\tool\complier_toolchain\gcc-arm-none-eabi-10-2020-q4-major-win32\gcc-arm-none-eabi-10-2020-q4-major\arm-none-eabi\include\sys\reent.h \
  d\:\tool\complier_toolchain\gcc-arm-none-eabi-10-2020-q4-major-win32\gcc-arm-none-eabi-10-2020-q4-major\arm-none-eabi\include\_ansi.h \
  d\:\tool\complier_toolchain\gcc-arm-none-eabi-10-2020-q4-major-win32\gcc-arm-none-eabi-10-2020-q4-major\arm-none-eabi\include\sys\_types.h \
  d\:\tool\complier_toolchain\gcc-arm-none-eabi-10-2020-q4-major-win32\gcc-arm-none-eabi-10-2020-q4-major\arm-none-eabi\include\machine\_types.h \
  d\:\tool\complier_toolchain\gcc-arm-none-eabi-10-2020-q4-major-win32\gcc-arm-none-eabi-10-2020-q4-major\arm-none-eabi\include\sys\lock.h \
+ d\:\tool\complier_toolchain\gcc-arm-none-eabi-10-2020-q4-major-win32\gcc-arm-none-eabi-10-2020-q4-major\arm-none-eabi\include\sys\cdefs.h \
+ d\:\tool\complier_toolchain\gcc-arm-none-eabi-10-2020-q4-major-win32\gcc-arm-none-eabi-10-2020-q4-major\arm-none-eabi\include\machine\stdlib.h \
+ d\:\tool\complier_toolchain\gcc-arm-none-eabi-10-2020-q4-major-win32\gcc-arm-none-eabi-10-2020-q4-major\arm-none-eabi\include\alloca.h \
+ d\:\git_repository\stm32f103c8tx_vscode_ide\application\bsp\inc\bsp.h \
+ d\:\git_repository\stm32f103c8tx_vscode_ide\devices\inc\system_stm32f10x.h \
+ d\:\tool\complier_toolchain\gcc-arm-none-eabi-10-2020-q4-major-win32\gcc-arm-none-eabi-10-2020-q4-major\arm-none-eabi\include\stdio.h \
+ d\:\tool\complier_toolchain\gcc-arm-none-eabi-10-2020-q4-major-win32\gcc-arm-none-eabi-10-2020-q4-major\lib\gcc\arm-none-eabi\10.2.1\include\stdarg.h \
  d\:\tool\complier_toolchain\gcc-arm-none-eabi-10-2020-q4-major-win32\gcc-arm-none-eabi-10-2020-q4-major\arm-none-eabi\include\sys\types.h \
  d\:\tool\complier_toolchain\gcc-arm-none-eabi-10-2020-q4-major-win32\gcc-arm-none-eabi-10-2020-q4-major\arm-none-eabi\include\machine\endian.h \
  d\:\tool\complier_toolchain\gcc-arm-none-eabi-10-2020-q4-major-win32\gcc-arm-none-eabi-10-2020-q4-major\arm-none-eabi\include\machine\_endian.h \

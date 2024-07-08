@@ -36,6 +36,7 @@ include_directories(
   ./core/system/inc
   ./core/flash/inc
   ./core/time/inc
+  ./core/toolkit/inc
 )
 
 set_property(SOURCE STARTUP PROPERTY LANGUAGE C)
@@ -49,6 +50,7 @@ set(PROJ_SRC
     ./core/system/system.c
     ./core/flash/flash.c
     ./core/time/time.c
+    ./core/toolkit/list.c
     ../devices/core_cm3.c
     ../devices/system_stm32f10x.c
     
@@ -56,7 +58,7 @@ set(PROJ_SRC
 #标准库文件
 file(GLOB_RECURSE SOURCES ../drivers/*.c)
 add_library(STD_LIB STATIC ${SOURCES})
-target_include_directories(STD_LIB PUBLIC ../drivers/inc)
+#target_include_directories(STD_LIB PUBLIC ../drivers/inc)
 target_compile_definitions(STD_LIB INTERFACE "")
 
 #bsp库文件

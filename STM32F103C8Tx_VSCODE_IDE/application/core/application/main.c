@@ -4,21 +4,27 @@
 #include "unity.h"
 #include "flash.h"
 #include "system.h"
+#include "stdio.h"
 
-// 全部完成后的优化目标 1 flash访问使用qual 的方式 加快访问速度
 
-uint8_t MID;
-uint16_t DID;
-// void setUp(void) { }    统一放到uint_test文件夹
-// void tearDown(void) { }
-// int add(int a,int b){
-// 	return a + b;
-// }
-// void testZeroAdd(void){
-// 	int temp;
-// 	temp = add(1,1);
-// 	TEST_ASSERT_EQUAL(2,temp);
-// }
+// // 全部完成后的优化目标 1 flash访问使用qual 的方式 加快访问速度
+// #pragma import(__use_no_semihosting)     //为确保没有从C库链接使用半主机的函数 
+// uint8_t MID;
+// uint16_t DID;
+// /* 告知连接器不从C库链接使用半主机的函数 */
+// // 标准库需要的支持函数                 
+// struct __FILE 
+// { 
+//     int handle; 
+// }; 
+ 
+// // 定义_sys_exit()以避免使用半主机模式    
+// void _sys_exit(int x) 
+// { 
+//     x = x; 
+// } 
+ 
+// FILE __stdout;
 
 int main(void)
 {
@@ -60,7 +66,7 @@ int main(void)
 	// u32 i =0,sum=0;
 	while (1)
 	{	
-		// GUI_Test();
+		//GUI_Test();
 		// i++;
 		// u32 j = 10;
 		// u8 a = 1;
@@ -84,9 +90,8 @@ int main(void)
 		// FLASH_Sector_Erase(0x000000);
 		// FLASH_Write_Data(0x000000,data,4);
 		// FLASH_Read_Data(0x000000,Rxdata,250);
-		
 		//GUI_Test();
-		
+
 		Key_Process();
 		System_Poll();
 	}

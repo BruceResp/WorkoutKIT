@@ -19,6 +19,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/application.elf.dir/core/system/system.c.obj.d"
   "CMakeFiles/application.elf.dir/core/time/time.c.obj"
   "CMakeFiles/application.elf.dir/core/time/time.c.obj.d"
+  "CMakeFiles/application.elf.dir/core/toolkit/list.c.obj"
+  "CMakeFiles/application.elf.dir/core/toolkit/list.c.obj.d"
   "CMakeFiles/application.elf.dir/startup/startup_stm32f103xb.s.obj"
   "D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/bin/application.elf"
   "D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/bin/application.elf.manifest"

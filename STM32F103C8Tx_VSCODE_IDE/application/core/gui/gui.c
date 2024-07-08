@@ -13,14 +13,17 @@
 #include "guifont.h"
 #include "guicon.h"
 #include "system.h"
+#include "math.h"
 /*			内部调用		*/
 
 #define S6X8 0
 #define S8X16 1
+extern Sys_Rowitem_t Sys_Rowitem;
 
 extern uint8_t GUI_DISPLAY_BUF[8][128];
 extern SystemCtrl_t SystemCtrl;
-float kp = 0.7;
+
+float kp = 0.80f;			//动画
 
 /********************************I2C****************************************/
 
@@ -659,7 +662,11 @@ void GUI_Test(void){
 	GUI_SPI_Display_Graph(44,10,44,44,config_Icon);
 	//GUI_Show_Image(88,10,44,44,Set_Icon);
 
-
+	GUI_Show_Image(0,0,16,16,OLED_Test[0].CellMatrix);
+		GUI_Show_Image(0,0+16,16,16,OLED_Test[1].CellMatrix);
+		GUI_Show_Image(0,0+32,16,16,OLED_Test[2].CellMatrix);
+		GUI_Show_Image(0,0+48,16,16,OLED_Test[3].CellMatrix);
+		
 	//GUI_SPI_Display_Graph(5,5,16,16,OLED_Test[0].CellMatrix);
 	//GUI_Display_OFF();
 	//Bsp_DelayS(5);
@@ -686,8 +693,48 @@ void GUI_Show_Frame(void){
 
 }
 
+float GUI_easeOutCubic(float time,float timeScale){
+	time = (time / timeScale) - 1;
+	return powf(time,3);
+}
+
+
+void GUI_Animation_move2(void){
+	static uint32_t tick = 0 ;
+	if (round(Sys_MainPage.mid_icon.current_x) != round(Sys_MainPage.mid_icon.target_x) )
+	{
+		tick++;
+		GUI_CLEAR_SCREEN();
+		// midicon = (Sys_MainPage.mid_icon.target_x-Sys_MainPage.mid_icon.current_x);			//为什么这样的就会出现撕裂，乘到下面就没有事
+		// lefticon = (Sys_MainPage.left_icon.target_x-Sys_MainPage.left_icon.current_x);
+		// righticon = (Sys_MainPage.right_icon.target_x-Sys_MainPage.right_icon.current_x);
+	}else{
+		tick = 0;
+	}
+	Sys_MainPage.mid_icon.current_x = Sys_MainPage.mid_icon.current_x + (Sys_MainPage.mid_icon.target_x-Sys_MainPage.mid_icon.current_x)*(GUI_easeOutCubic(tick,100)+1);
+	Sys_MainPage.left_icon.current_x = Sys_MainPage.left_icon.current_x + (Sys_MainPage.left_icon.target_x-Sys_MainPage.left_icon.current_x)*(GUI_easeOutCubic(tick,100)+1);
+	Sys_MainPage.right_icon.current_x = Sys_MainPage.right_icon.current_x + (Sys_MainPage.right_icon.target_x-Sys_MainPage.right_icon.current_x)*(GUI_easeOutCubic(tick,100)+1);
+	
+	// Sys_MainPage.mid_icon.current_y = kp*Sys_MainPage.mid_font.current_y + (1-kp)*Sys_MainPage.mid_icon.target_y;
+	// Sys_MainPage.left_icon.current_y = kp*Sys_MainPage.left_icon.current_y + (1-kp)*Sys_MainPage.left_icon.target_y;
+	// Sys_MainPage.right_icon.current_y = kp*Sys_MainPage.right_icon.current_y + (1-kp)*Sys_MainPage.right_icon.target_y;
+
+	Sys_MainPage.mid_icon.current_y = Sys_MainPage.mid_icon.target_y;
+	Sys_MainPage.left_icon.current_y = Sys_MainPage.left_icon.target_y;
+	Sys_MainPage.right_icon.current_y = Sys_MainPage.right_icon.target_y;
+	// GUI_Show_Frame();
+
+	GUI_Show_Image(Sys_MainPage.right_icon.current_x,Sys_MainPage.right_icon.current_y,44,44,Set_Icon);
+	GUI_Show_Image(Sys_MainPage.mid_icon.current_x,Sys_MainPage.mid_icon.current_y,44,44,train_Icon);
+	GUI_Show_Image(Sys_MainPage.left_icon.current_x,Sys_MainPage.left_icon.current_y,44,44,config_Icon);
+	
+	return;
+}
+
 void GUI_Animation_move(void){
 	
+	if (SystemCtrl.currentPage == SYSTEM_MAIN_PAGE )
+	{
 		Sys_MainPage.mid_icon.current_x = kp*Sys_MainPage.mid_icon.current_x + (1-kp)*(Sys_MainPage.mid_icon.target_x);
 		Sys_MainPage.left_icon.current_x = kp*Sys_MainPage.left_icon.current_x + (1-kp)*(Sys_MainPage.left_icon.target_x);
 		Sys_MainPage.right_icon.current_x = kp*Sys_MainPage.right_icon.current_x + (1-kp)*(Sys_MainPage.right_icon.target_x);
@@ -700,7 +747,7 @@ void GUI_Animation_move(void){
 		Sys_MainPage.left_icon.current_y = Sys_MainPage.left_icon.target_y;
 		Sys_MainPage.right_icon.current_y = Sys_MainPage.right_icon.target_y;
 		// GUI_Show_Frame();
-		if (Sys_MainPage.right_icon.current_x != Sys_MainPage.right_icon.target_x )
+		if (round(Sys_MainPage.right_icon.current_x) != round(Sys_MainPage.right_icon.target_x) )
 		{
 			GUI_CLEAR_SCREEN();
 		}
@@ -709,10 +756,33 @@ void GUI_Animation_move(void){
 		GUI_Show_Image(Sys_MainPage.mid_icon.current_x,Sys_MainPage.mid_icon.current_y,44,44,train_Icon);
 		GUI_Show_Image(Sys_MainPage.left_icon.current_x,Sys_MainPage.left_icon.current_y,44,44,config_Icon);
 		
-		Bsp_DelayMS(2);
+		//Bsp_DelayMS(2);
 		return;
-	
-
+	}
+	if (SystemCtrl.currentPage == SYSTEM_TRAIN_MENU_SELECET_PAGE)
+	{
+		
+		SystemCtrl.Sys_InverseBox.current_y =kp*SystemCtrl.Sys_InverseBox.current_y + (1-kp)*(SystemCtrl.Sys_InverseBox.target_y);
+        Sys_Rowitem.current_y = kp*Sys_Rowitem.current_y + (1-kp)*(Sys_Rowitem.target_y);
+		
+		// SystemCtrl.Sys_InverseBox.current_y = Sys_MainPage.left_icon.target_y;
+		// Sys_MainPage.right_icon.current_y = Sys_MainPage.right_icon.target_y;
+		if ((round(Sys_Rowitem.current_y) != Sys_Rowitem.target_y) || (round(SystemCtrl.Sys_InverseBox.current_y) != round(SystemCtrl.Sys_InverseBox.target_y)))
+		{
+			GUI_CLEAR_SCREEN();
+		}
+		
+		if ((round(Sys_Rowitem.current_y) != Sys_Rowitem.target_y) || (round(SystemCtrl.Sys_InverseBox.current_y) != round(SystemCtrl.Sys_InverseBox.target_y)))
+		{
+			GUI_Show_Image(0,Sys_Rowitem.current_y,16,16,OLED_Test[0].CellMatrix);
+			GUI_Show_Image(0,Sys_Rowitem.current_y+16,16,16,OLED_Test[1].CellMatrix);
+			GUI_Show_Image(0,Sys_Rowitem.current_y+32,16,16,OLED_Test[2].CellMatrix);
+			GUI_Show_Image(0,Sys_Rowitem.current_y+48,16,16,OLED_Test[3].CellMatrix);
+		
+			GUI_Reverse_Y(SystemCtrl.Sys_InverseBox.current_y,16);
+		}	
+	}
+/* 
 	// if (System_Status_Read() == SYSTEM_TARIN_MENU_SELECET_PAGE)	//菜单选择界面动画
 	// {
 	// 	Sys_MainPage.mid_icon.current_x = kp*Sys_MainPage.mid_icon.current_x + (1-kp)*(Sys_MainPage.mid_icon.target_x);
@@ -739,9 +809,7 @@ void GUI_Animation_move(void){
 	// 	Bsp_DelayMS(2);
 	// 	return;
 	// }
-	
-	
-	
+	 */
 }
 
 /*----------------------------------------------------------------------------------------- 
@@ -788,38 +856,47 @@ void GUI_Shift_Menu(uint8_t currentPage,uint8_t targetPage){
 			default:
 				break;
 		}
-	}
-	else{
+	}else if (currentPage == SYSTEM_TRAIN_MENU_SELECET_PAGE)
+	{
 		switch (targetPage)
 		{
-			// case SYSTEM_MAIN_PAGE_TARIN_MENU_SELECET_ALREADY:
-			// 	Sys_MainPage.mid_icon.target_x =  base_x + Delta_x;
-			// 	Sys_MainPage.left_icon.target_x = base_x - Delta_x -Delta_x;
-			// 	Sys_MainPage.right_icon.target_x = base_x + Delta_x +Delta_x;
-
-			// 	Sys_MainPage.mid_icon.target_y = base_y + Delta_y; 
-			// 	// Sys_MainPage.left_icon.target_y = base_y ;
-			// 	// Sys_MainPage.right_icon.target_y = base_y ;
-			// 	break;
-			// case SYSTEM_MAIN_PAGE_EDIT_TRAIN_MENU_ALREADY:
-			// 	break;
-			// case SYSTEM_MAIN_PAGE_CONFIG_ALREADY:
-			// 	break;
-			// default:
-			// 	break;
+			case SYSTEM_TRAIN_MENU_SELECET_PAGE:
+			case SYSTEM_START_TRAIN_PAGE:
+				SystemCtrl.Sys_InverseBox.target_y = SystemCtrl.GUIpagePoint *16;
+				break;
+		}
+	}else if (currentPage == SYSTEM_EDIT_MENU_SELECT_PAGE)
+	{
+		switch (targetPage)
+		{
+			case SYSTEM_EDIT_MOVES_SELECT_PAGE:
+				/* code */
+				break;
+			
+			default:
+				break;
 		}
 	}
 	
 	
-		
-		
-	
-	
-	
-	
-		
-	
-	
-	
+	// else if(currentPage == SYSTEM_TRAIN_MENU_SELECET_PAGE){
+	// 	switch (targetPage)
+	// 	{
+	// 		// case SYSTEM_MAIN_PAGE_TARIN_MENU_SELECET_ALREADY:
+	// 		// 	Sys_MainPage.mid_icon.target_x =  base_x + Delta_x;
+	// 		// 	Sys_MainPage.left_icon.target_x = base_x - Delta_x -Delta_x;
+	// 		// 	Sys_MainPage.right_icon.target_x = base_x + Delta_x +Delta_x;
+
+	// 		// 	Sys_MainPage.mid_icon.target_y = base_y + Delta_y; 
+	// 		// 	// Sys_MainPage.left_icon.target_y = base_y ;
+	// 		// 	// Sys_MainPage.right_icon.target_y = base_y ;
+	// 		// 	break;
+	// 		// case SYSTEM_MAIN_PAGE_EDIT_TRAIN_MENU_ALREADY:
+	// 		// 	break;
+	// 		// case SYSTEM_MAIN_PAGE_CONFIG_ALREADY:
+	// 		// 	break;
+	// 		default:
+	// 		break;
+	// 	}	
 	
 }

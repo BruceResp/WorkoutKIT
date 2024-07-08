@@ -35,6 +35,7 @@ extern void GUI_SPI_Reverse_Y(uint8_t y,uint8_t height);
 extern void GUI_SPI_CLEAR_SCREEN(void);
 
 extern void GUI_Animation_move(void);
+extern void GUI_Animation_move2(void);
 extern void GUI_Shift_Menu(uint8_t currentPage,uint8_t targetPage);
 
 #endif

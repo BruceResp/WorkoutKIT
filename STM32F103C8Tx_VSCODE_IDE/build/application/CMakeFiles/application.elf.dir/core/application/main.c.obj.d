@@ -76,4 +76,7 @@ application/CMakeFiles/application.elf.dir/core/application/main.c.obj: \
  d\:\tool\complier_toolchain\gcc-arm-none-eabi-10-2020-q4-major-win32\gcc-arm-none-eabi-10-2020-q4-major\arm-none-eabi\include\limits.h \
  d\:\tool\complier_toolchain\gcc-arm-none-eabi-10-2020-q4-major-win32\gcc-arm-none-eabi-10-2020-q4-major\arm-none-eabi\include\sys\syslimits.h \
  d\:\git_repository\stm32f103c8tx_vscode_ide\application\core\flash\inc\flash.h \
+ d\:\tool\complier_toolchain\gcc-arm-none-eabi-10-2020-q4-major-win32\gcc-arm-none-eabi-10-2020-q4-major\arm-none-eabi\include\stdlib.h \
+ d\:\tool\complier_toolchain\gcc-arm-none-eabi-10-2020-q4-major-win32\gcc-arm-none-eabi-10-2020-q4-major\arm-none-eabi\include\machine\stdlib.h \
+ d\:\tool\complier_toolchain\gcc-arm-none-eabi-10-2020-q4-major-win32\gcc-arm-none-eabi-10-2020-q4-major\arm-none-eabi\include\alloca.h \
  d\:\git_repository\stm32f103c8tx_vscode_ide\application\core\system\inc\system.h

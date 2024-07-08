@@ -11,8 +11,16 @@ enum {
     KEYS_NUM,
 };
 
+enum{
+    KEY_IS_PRESSED,
+    KEY_IS_HOLDING,
+    KEY_IS_RELEASED,
+};
+
 typedef enum{
     HOLD_NONE,
+    HOLD_START_2SEC,
+    HOLD_ALREADY_2SEC,
     HOLD_START_3SEC,
     HOLD_ALREADY_3SEC,
 }Key_status_t;
@@ -35,7 +43,9 @@ typedef struct KeyCtrl_t{
     uint8_t confirm_hold_status;
 } KeyCtrl_t;      //四个键的状态
 
+#define HOLDING_2_SECOND                    2000u
 #define HOLDING_3_SECOND                    3000u
+#define HOLDING_5_SECOND                    5000u
 #define KEY_DEBOUNCE_TIME                   20u
 
 #define KEY_UP_MASK                         (1 << KEY_UP)

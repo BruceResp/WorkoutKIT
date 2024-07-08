@@ -23,23 +23,36 @@ typedef enum {
 //     "系统配置",
 // };
 
+typedef struct 
+{
+    float current_x;
+    float current_y;
+
+    float target_x;
+    float target_y;
+}Sys_Rowitem_t;
 
 typedef struct 
 {
     Sys_pagePointer_t targetPage;
     Sys_pagePointer_t currentPage;
 
-    uint8_t GUIpagePoint;               //config by up / down key
+    Sys_Rowitem_t Sys_InverseBox;
+
+    int8_t GUIpagePoint;               //config by up / down key
+    int8_t MenuPoint;
+    int8_t is_turn_Page;
+
 }SystemCtrl_t;
 
 
 typedef struct
 {
-    int current_x; //描述当前的横纵坐标
-    int current_y; 
+    float current_x; //描述当前的横纵坐标
+    float current_y; 
 
-    int target_x; //描述目标的横纵坐标
-    int target_y; 
+    float target_x; //描述目标的横纵坐标
+    float target_y; 
 }Sys_MainPage_module_t;    //主界面显示的字的属性
 
 typedef struct
@@ -54,6 +67,8 @@ typedef struct
     Sys_MainPage_module_t right_font;
 }Sys_MainPage_t;
 
+
+
 #define MainPage_EndIndex                  3
 #define MainPage_BeginIndex                1
 #define MainPage_MultiPower                3
@@ -61,10 +76,11 @@ typedef struct
 
 extern Sys_MainPage_t Sys_MainPage;
 
+
 extern void System_Init(void);
 extern void System_Poll(void);
 extern void System_GUIPagepointer_Sub(void);
 extern void System_GUIPagepointer_Add(void);
-
+extern void System_Turn_Page(void);
 
 #endif

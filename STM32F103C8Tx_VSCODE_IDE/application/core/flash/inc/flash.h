@@ -2,6 +2,38 @@
 #define _FLASH_H_
 
 #include "stm32f10x.h"
+#include <stdlib.h>
+/*
+    | 菜单个数 |                1字节
+        | 菜单1 |               最小两字节（动作为0）,最大不可估计
+            | 菜单1名称 |
+            | 动作个数 |
+            | 动作1 |
+            .......
+            | 动作n |
+        | 菜单2 |
+            | 菜单2名称 |
+            | 动作个数 |
+            | 动作1 |
+            .......
+            | 动作n |
+        | 菜单3 |
+            | 菜单3名称 |
+            | 动作个数 |
+            | 动作1 |
+            .......
+            | 动作n |
+
+        ...........
+
+        | 菜单n |
+            | 菜单n名称 |
+            | 动作个数 |
+            | 动作1 |
+            .......
+            | 动作n |            
+*/
+
 
 // typedef struct 
 // {
@@ -92,18 +124,37 @@ typedef union
 #define FLASH_PAGE_INDEX                            0x04        //Page 的起始地址偏移
 
 
+#define FLASH_MENU0_ADDRESS                          0x010000    //Menu0地址
+#define FLASH_MENU1_ADDRESS                          0x010100    //Menu0地址
 
-extern void FLASH_Read_Data(Flash_Addr_t addr, void *Rxdata, uint16_t Length);
+typedef struct train_action
+{
+    u8     name_num;  //指向名称列表的具体数字 1
+    u8     num;         //1
+    u8     time;        //1
+}MoveProperty_t;
+
+typedef struct MENU
+{
+    u8 Actions_num;             //将要存储的个数
+    u8 Menu_name;               //菜单名称列表
+    MoveProperty_t Actions[];      //3*N   N最多设置15个   可以设置最后一个数组为分割的黑色数据
+}Menu_t; 
+
+
+
+extern uint8_t FLASH_Read_Single_Data(uint32_t addr);
+extern void FLASH_Read_Data(uint32_t addr, void *Rxdata, uint16_t Length);
 extern uint8_t FLASH_Read_StatusReg(uint8_t stat_ins,uint8_t statMask);
 extern void FLASH_Reset_device(void);
 extern void FLASH_Write_StatusReg(uint8_t Reg,uint8_t RegBitMask);
-extern void FLASH_Sector_Erase(Flash_Addr_t addr);
+extern void FLASH_Sector_Erase(uint32_t addr);
 extern void FLASH_Unlock_All(void);
 extern void FLASH_Chip_Erase(void);
 extern void FLASH_Read_ID(uint8_t *MID, uint16_t *DID);
 extern void FLASH_Write_Data(Flash_Addr_t addr, void *Data, uint16_t Length);
-
+extern uint8_t FLASH_Read_Datas(Flash_Addr_t *StartAddr,void * DataArray, uint32_t size);
 extern uint8_t FLASH_Read_Dataes(Flash_Addr_t StartAddr,void * DataArray, uint32_t size);
 extern uint8_t FLASH_Write_Dataes(Flash_Addr_t StartAddr,void * DataArray, uint32_t size);
-
+extern uint8_t FLASH_Read_MenuNum(void);
 #endif

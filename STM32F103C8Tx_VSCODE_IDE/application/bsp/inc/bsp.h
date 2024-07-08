@@ -12,9 +12,8 @@
 
 #define Bsp_Flash_SELECTED()          GPIO_ResetBits(FLASH_SPI_CS_PORT,FLASH_SPI_CS_PIN)
 #define Bsp_Flash_DISELECTED()        GPIO_SetBits(FLASH_SPI_CS_PORT,FLASH_SPI_CS_PIN)
+extern int _write(int handle, char *data, int size );
 
-extern int Bsp_fputc(int Character);
-extern void Bsp_printf(const char *format,...);
 
 extern void Bsp_GPIO_Init(void);
 extern void Bsp_Init(void);

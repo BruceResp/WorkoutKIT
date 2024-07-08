@@ -21,7 +21,12 @@
         "flash.h": "c",
         "sys_typedef.h": "c",
         "time.h": "c",
-        "systime.h": "c"
+        "systime.h": "c",
+        "list.h": "c",
+        "stdlib.h": "c",
+        "newlib.h": "c",
+        "_newlib_version.h": "c",
+        "stdarg.h": "c"
     },
     "cortex-debug.variableUseNaturalFormat": false
 }
