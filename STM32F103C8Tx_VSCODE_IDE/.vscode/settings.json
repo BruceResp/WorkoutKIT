@@ -26,7 +26,8 @@
         "stdlib.h": "c",
         "newlib.h": "c",
         "_newlib_version.h": "c",
-        "stdarg.h": "c"
+        "stdarg.h": "c",
+        "guicon.h": "c"
     },
     "cortex-debug.variableUseNaturalFormat": false
 }

@@ -7,7 +7,6 @@ struct keys {
 
 KeyCtrl_t KeyCtrl;
 
-
 extern SystemCtrl_t SystemCtrl;
 
 /*----------------------------------------------------------------------------------------- 
@@ -43,19 +42,19 @@ void Key_Trig_Handler(void){
 *----------------------------------------------------------------------------------------*/ 
 void Key_release_Handler(void){
     if (KEY_IS_UP_RELEASE()){
-        System_GUIPagepointer_Sub();
+        System_GUIFocus_Coord_Sub();
     }
     if (KEY_IS_DOWN_RELEASE()){
-        System_GUIPagepointer_Add();
+        System_GUIFocus_Coord_Add();
     }
     if (KEY_IS_SET_RELEASE())
     {
-        System_Turn_Page();
+        System_Turn_Page(True);
         KeyCtrl.set_hold_status = HOLD_NONE;
-        
     }
     if (KEY_IS_CONFIRM_RELEASE())
     {
+        System_Turn_Page(Flase);
         KeyCtrl.set_hold_status = HOLD_NONE;
     }
     

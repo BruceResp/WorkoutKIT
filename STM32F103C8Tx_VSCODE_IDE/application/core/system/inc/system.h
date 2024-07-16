@@ -11,7 +11,7 @@ typedef enum {
             SYSTEM_EDIT_MOVES_SELECT_PAGE,
                 SYSTEM_MOVES_COFIG_PAGE,
         SYSTEM_CONFIG_PAGE                                 =9u, 
-}Sys_pagePointer_t;
+}Sys_PageStatus_List_t;
 
 // char *GUI_Display_Name[] ={
 //     "主菜单",
@@ -34,39 +34,14 @@ typedef struct
 
 typedef struct 
 {
-    Sys_pagePointer_t targetPage;
-    Sys_pagePointer_t currentPage;
+    Sys_PageStatus_List_t targetpage;
+    Sys_PageStatus_List_t currentpage;
+    int8_t is_turn_page;                  //翻页 正 : 向后索引，负 :向前索引
 
-    Sys_Rowitem_t Sys_InverseBox;
-
-    int8_t GUIpagePoint;               //config by up / down key
-    int8_t MenuPoint;
-    int8_t is_turn_Page;
+    int8_t gui_focus_coord;               //选中焦点坐标
+    int8_t datasource_index;              //数据源索引值
 
 }SystemCtrl_t;
-
-
-typedef struct
-{
-    float current_x; //描述当前的横纵坐标
-    float current_y; 
-
-    float target_x; //描述目标的横纵坐标
-    float target_y; 
-}Sys_MainPage_module_t;    //主界面显示的字的属性
-
-typedef struct
-{
-    //Sys_MainPage_module_t font;
-    Sys_MainPage_module_t left_icon;
-    Sys_MainPage_module_t mid_icon;
-    Sys_MainPage_module_t right_icon;
-    
-    Sys_MainPage_module_t left_font;
-    Sys_MainPage_module_t mid_font;
-    Sys_MainPage_module_t right_font;
-}Sys_MainPage_t;
-
 
 
 #define MainPage_EndIndex                  3
@@ -74,13 +49,12 @@ typedef struct
 #define MainPage_MultiPower                3
 
 
-extern Sys_MainPage_t Sys_MainPage;
 
 
 extern void System_Init(void);
 extern void System_Poll(void);
-extern void System_GUIPagepointer_Sub(void);
-extern void System_GUIPagepointer_Add(void);
-extern void System_Turn_Page(void);
+extern void System_GUIFocus_Coord_Sub(void);
+extern void System_GUIFocus_Coord_Add(void);
+extern void System_Turn_Page(int8_t turnToNext);
 
 #endif

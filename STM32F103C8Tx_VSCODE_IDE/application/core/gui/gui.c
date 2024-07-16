@@ -14,15 +14,19 @@
 #include "guicon.h"
 #include "system.h"
 #include "math.h"
+#include <stdio.h>
+#include <stdarg.h>
+#include <string.h>
 /*			内部调用		*/
 
 #define S6X8 0
 #define S8X16 1
-extern Sys_Rowitem_t Sys_Rowitem;
 
 extern uint8_t GUI_DISPLAY_BUF[8][128];
-extern SystemCtrl_t SystemCtrl;
 
+extern SystemCtrl_t SystemCtrl;
+GUI_MainPage_t GUI_MainPage;
+GUI_TrainMenuSelectPage_t GUI_TrainMenuSelectPage ;
 float kp = 0.80f;			//动画
 
 /********************************I2C****************************************/
@@ -93,7 +97,6 @@ void GUI_Draw_Point(int x,int y){
 void GUI_CLEAR_SCREEN(){
 	uint8_t i,j;
 	for(j=0;j<8;j++){
-		//GUI_Set_Cursor(j,0);
 		for(i = 0;i<=128;i++){
 			GUI_DISPLAY_BUF[j][i] = 0x00;	//将显存数组数据全部清零
 		}
@@ -124,7 +127,7 @@ void GUI_Set_Cursor(uint8_t Y,uint8_t X){
 *----------------------------------------------------------------------------------------*/ 
 void GUI_Init(void) {
 	
- 	Bsp_DelayMS(200);
+	//Bsp_DelayMS(200);
 	/**************初始化SSD1306*****************/
 	Bsp_I2C_SET(0xAE); //--turn off oled panel
 	Bsp_I2C_SET(0x00); //---set low column address
@@ -327,6 +330,17 @@ void GUI_Show_Image(int16_t X, int16_t Y,uint8_t Height,uint8_t Width, const uin
 
 }
 
+
+void GUI_Dispaly_Chinese_matric(int16_t X, int16_t Y,uint8_t Height,uint8_t SingleWordWidth,uint8_t WordNum, const Chinese_Cell *Image){
+
+	for (size_t i = 0; i < WordNum; i++)
+	{
+		GUI_Show_Image(X,Y,Height,SingleWordWidth,Image[i].CellMatrix);
+		//Image++;
+		X = X + SingleWordWidth; 
+	}
+	
+}
 /*----------------------------------------------------------------------------------------- 
 *函数名称:'GUI_Reverse_Y' 
 *函数功能:'反转 行' 
@@ -479,10 +493,10 @@ void GUI_Draw_Line(int X1, int Y1,int X2, int Y2){
 *----------------------------------------------------------------------------------------*/ 
 void GUI_SPI_Init(void)
 {
-	Bsp_DelayMS(1000); //1000
+	//Bsp_DelayMS(1000); //1000
 
 	Bsp_SPI_RES_LOW();
-	Bsp_DelayMS(100);  //100
+	//Bsp_DelayMS(100);  //100
 	Bsp_SPI_RES_HIGH();
 	Bsp_SPI_Send_CMD(0xae);//关闭显示
 	Bsp_SPI_Send_CMD(0xd5);//设置时钟分频因子,震荡频率
@@ -511,9 +525,9 @@ void GUI_SPI_Init(void)
 	Bsp_SPI_Send_CMD(0xa6);//设置显示方式;bit0:1,反相显示;0,正常显示	
 	Bsp_SPI_Send_CMD(0xaf);//开启显示
 
-   Bsp_SPI_Send_CMD(0x56);
-   Bsp_DelayMS(100);
-   Bsp_SPI_DMA_Init();//DMA初始化
+	Bsp_SPI_Send_CMD(0x56);
+	//Bsp_DelayMS(100);
+	Bsp_SPI_DMA_Init();//DMA初始化
 }
 
 /*----------------------------------------------------------------------------------------- 
@@ -636,7 +650,19 @@ void GUI_SPI_Reverse_Y(uint8_t y,uint8_t height){
 	}
 }
 
+void GUI_MenuselectPage_Init(void){
 
+	GUI_TrainMenuSelectPage.chosen_obj.current_x = 0;
+    GUI_TrainMenuSelectPage.chosen_obj.current_y = -16;
+    GUI_TrainMenuSelectPage.chosen_obj.target_x = 0;
+    GUI_TrainMenuSelectPage.chosen_obj.target_y = 0;
+    GUI_TrainMenuSelectPage.datalist_crood.current_x = 0;
+    GUI_TrainMenuSelectPage.datalist_crood.current_y = 0;
+    GUI_TrainMenuSelectPage.datalist_crood.target_x = 0;
+    GUI_TrainMenuSelectPage.datalist_crood.target_y = 0;
+	GUI_CLEAR_SCREEN();
+
+}
 /*----------------------------------------------------------------------------------------- 
 *函数名称:'GUI_SPI_CLEAR_SCREEN' 
 *函数功能:'清理 屏幕' 
@@ -655,21 +681,94 @@ void GUI_SPI_CLEAR_SCREEN(){
 	}
 }
 
+void GUI_Map_Chinese_Char_By_Index(char *String,uint8_t *Index){
+	
+	for (size_t j = 0; strcmp(OLED_Test[j].Index,"") != 0; j++)
+	{
+		if (strcmp(String,OLED_Test[j].Index) == 0 )
+		{
+			GUI_Show_Image(0+16*(*Index),0,16,16,OLED_Test[j].CellMatrix);
+			break;
+		}
+		
+	}
+}
+/*----------------------------------------------------------------------------------------- 
+*函数名称:'UTF_8_Chinese_Char_Recognize' 
+*函数功能:'' 
+*参    数:'String: 字符串 
+			Index: 指向字符串的位置' 
+*返 回 值:'' 
+*说    明: '识别 UTF-8中文字符，主要区分占三个字节 和 四个字节的中文字符，并传出标准四个字节的字符串' 
+*作    者: Danny 
+*----------------------------------------------------------------------------------------*/ 
+char *UTF_8_Chinese_Char_Recognize(char *String,uint8_t *Index){
+	static char SingleChar[4];
+	if (String[0] == '\0')
+	{
+		return Flase;
+	}
+	
+	SingleChar[0] = String[*Index] ;
+	SingleChar[1] = String[++*Index];
+	SingleChar[2] = String[++*Index];
+	switch (String[*Index-2] & 0xF0)
+	{
+		case 0xE0:
+			SingleChar[3] = 0;
+			break;
+		case 0xF0:
+			SingleChar[3] = String[++*Index];
+			break;
+		default:
+			#ifdef Debug_mode
+				printf("error code 25 : error font format ");
+			#endif
+			break;
+	}
+	++*Index;
+	return SingleChar;
+}
+
+/*----------------------------------------------------------------------------------------- 
+*函数名称:'GUI_Printf_Chinese_String' 
+*函数功能:'输出 中文 字符串' 
+*参    数:'String ： 字符串' 
+*返 回 值:'' 
+*说    明: '' 
+*作    者: Danny 
+*----------------------------------------------------------------------------------------*/ 
+void GUI_Printf_Chinese_String(char *String){
+	// char Char[4];  数组名是常量指针不能修改
+	char *SingleChar;   			
+
+	uint8_t Index = 0 ,Count = 0;									//Count 用于计算字符串的横坐标位置
+	
+	while (String[Index] != '\0')
+	{	
+		SingleChar = UTF_8_Chinese_Char_Recognize(String,&Index);
+		GUI_Map_Chinese_Char_By_Index(SingleChar,&Count);
+		Count++;
+	}
+}
+
 void GUI_Test(void){
 	
 	//Bsp_DelayS(5);
 	//GUI_Show_Image(0,10,44,44,train_Icon);
-	GUI_SPI_Display_Graph(44,10,44,44,config_Icon);
+	// GUI_SPI_Display_Graph(44,10,44,44,config_Icon);
 	//GUI_Show_Image(88,10,44,44,Set_Icon);
 
-	GUI_Show_Image(0,0,16,16,OLED_Test[0].CellMatrix);
-		GUI_Show_Image(0,0+16,16,16,OLED_Test[1].CellMatrix);
-		GUI_Show_Image(0,0+32,16,16,OLED_Test[2].CellMatrix);
-		GUI_Show_Image(0,0+48,16,16,OLED_Test[3].CellMatrix);
-		
-	//GUI_SPI_Display_Graph(5,5,16,16,OLED_Test[0].CellMatrix);
-	//GUI_Display_OFF();
+	// GUI_Show_Image(0,0,16,16,OLED_Test[0].CellMatrix);
+	// 	GUI_Show_Image(0,0+16,16,16,OLED_Test[1].CellMatrix);
+	// 	GUI_Show_Image(0,0+32,16,16,OLED_Test[2].CellMatrix);
+	// 	GUI_Show_Image(0,0+48,16,16,OLED_Test[3].CellMatrix);
+	Transfer_Encoding(Chinese_Map[0].Chinese_char);
+			//GUI_Dispaly_Chinese_matric(0,0,16,16,4,OLED_Test);	
 	//Bsp_DelayS(5);
+	GUI_CLEAR_SCREEN();
+	//GUI_Display_OFF();
+	
 	//GUI_Display_ON();
 }
 /*----------------------------------------------------------------------------------------- 
@@ -684,11 +783,11 @@ void GUI_Show_Frame(void){
 	
 	GUI_CLEAR_SCREEN();
 	
-	GUI_Show_Image(Sys_MainPage.right_icon.current_x,Sys_MainPage.right_icon.current_y,44,44,Set_Icon);
+	GUI_Show_Image(GUI_MainPage.right_icon.current_x,GUI_MainPage.right_icon.current_y,44,44,Set_Icon);
 	
-	GUI_Show_Image(Sys_MainPage.mid_icon.current_x,Sys_MainPage.mid_icon.current_y,44,44,train_Icon);
+	GUI_Show_Image(GUI_MainPage.mid_icon.current_x,GUI_MainPage.mid_icon.current_y,44,44,train_Icon);
 	
-	GUI_Show_Image(Sys_MainPage.left_icon.current_x,Sys_MainPage.left_icon.current_y,44,44,config_Icon);
+	GUI_Show_Image(GUI_MainPage.left_icon.current_x,GUI_MainPage.left_icon.current_y,44,44,config_Icon);
 	
 
 }
@@ -701,110 +800,115 @@ float GUI_easeOutCubic(float time,float timeScale){
 
 void GUI_Animation_move2(void){
 	static uint32_t tick = 0 ;
-	if (round(Sys_MainPage.mid_icon.current_x) != round(Sys_MainPage.mid_icon.target_x) )
+	if (round(GUI_MainPage.mid_icon.current_x) != round(GUI_MainPage.mid_icon.target_x) )
 	{
 		tick++;
 		GUI_CLEAR_SCREEN();
-		// midicon = (Sys_MainPage.mid_icon.target_x-Sys_MainPage.mid_icon.current_x);			//为什么这样的就会出现撕裂，乘到下面就没有事
-		// lefticon = (Sys_MainPage.left_icon.target_x-Sys_MainPage.left_icon.current_x);
-		// righticon = (Sys_MainPage.right_icon.target_x-Sys_MainPage.right_icon.current_x);
+		// midicon = (GUI_MainPage.mid_icon.target_x-GUI_MainPage.mid_icon.current_x);			//为什么这样的就会出现撕裂，乘到下面就没有事
+		// lefticon = (GUI_MainPage.left_icon.target_x-GUI_MainPage.left_icon.current_x);
+		// righticon = (GUI_MainPage.right_icon.target_x-GUI_MainPage.right_icon.current_x);
 	}else{
 		tick = 0;
 	}
-	Sys_MainPage.mid_icon.current_x = Sys_MainPage.mid_icon.current_x + (Sys_MainPage.mid_icon.target_x-Sys_MainPage.mid_icon.current_x)*(GUI_easeOutCubic(tick,100)+1);
-	Sys_MainPage.left_icon.current_x = Sys_MainPage.left_icon.current_x + (Sys_MainPage.left_icon.target_x-Sys_MainPage.left_icon.current_x)*(GUI_easeOutCubic(tick,100)+1);
-	Sys_MainPage.right_icon.current_x = Sys_MainPage.right_icon.current_x + (Sys_MainPage.right_icon.target_x-Sys_MainPage.right_icon.current_x)*(GUI_easeOutCubic(tick,100)+1);
+	GUI_MainPage.mid_icon.current_x = GUI_MainPage.mid_icon.current_x + (GUI_MainPage.mid_icon.target_x-GUI_MainPage.mid_icon.current_x)*(GUI_easeOutCubic(tick,100)+1);
+	GUI_MainPage.left_icon.current_x = GUI_MainPage.left_icon.current_x + (GUI_MainPage.left_icon.target_x-GUI_MainPage.left_icon.current_x)*(GUI_easeOutCubic(tick,100)+1);
+	GUI_MainPage.right_icon.current_x = GUI_MainPage.right_icon.current_x + (GUI_MainPage.right_icon.target_x-GUI_MainPage.right_icon.current_x)*(GUI_easeOutCubic(tick,100)+1);
 	
-	// Sys_MainPage.mid_icon.current_y = kp*Sys_MainPage.mid_font.current_y + (1-kp)*Sys_MainPage.mid_icon.target_y;
-	// Sys_MainPage.left_icon.current_y = kp*Sys_MainPage.left_icon.current_y + (1-kp)*Sys_MainPage.left_icon.target_y;
-	// Sys_MainPage.right_icon.current_y = kp*Sys_MainPage.right_icon.current_y + (1-kp)*Sys_MainPage.right_icon.target_y;
+	// GUI_MainPage.mid_icon.current_y = kp*GUI_MainPage.mid_font.current_y + (1-kp)*GUI_MainPage.mid_icon.target_y;
+	// GUI_MainPage.left_icon.current_y = kp*GUI_MainPage.left_icon.current_y + (1-kp)*GUI_MainPage.left_icon.target_y;
+	// GUI_MainPage.right_icon.current_y = kp*GUI_MainPage.right_icon.current_y + (1-kp)*GUI_MainPage.right_icon.target_y;
 
-	Sys_MainPage.mid_icon.current_y = Sys_MainPage.mid_icon.target_y;
-	Sys_MainPage.left_icon.current_y = Sys_MainPage.left_icon.target_y;
-	Sys_MainPage.right_icon.current_y = Sys_MainPage.right_icon.target_y;
+	GUI_MainPage.mid_icon.current_y = GUI_MainPage.mid_icon.target_y;
+	GUI_MainPage.left_icon.current_y = GUI_MainPage.left_icon.target_y;
+	GUI_MainPage.right_icon.current_y = GUI_MainPage.right_icon.target_y;
 	// GUI_Show_Frame();
 
-	GUI_Show_Image(Sys_MainPage.right_icon.current_x,Sys_MainPage.right_icon.current_y,44,44,Set_Icon);
-	GUI_Show_Image(Sys_MainPage.mid_icon.current_x,Sys_MainPage.mid_icon.current_y,44,44,train_Icon);
-	GUI_Show_Image(Sys_MainPage.left_icon.current_x,Sys_MainPage.left_icon.current_y,44,44,config_Icon);
+	GUI_Show_Image(GUI_MainPage.right_icon.current_x,GUI_MainPage.right_icon.current_y,44,44,Set_Icon);
+	GUI_Show_Image(GUI_MainPage.mid_icon.current_x,GUI_MainPage.mid_icon.current_y,44,44,train_Icon);
+	GUI_Show_Image(GUI_MainPage.left_icon.current_x,GUI_MainPage.left_icon.current_y,44,44,config_Icon);
 	
 	return;
 }
 
-void GUI_Animation_move(void){
+void GUI_Animation_move(uint8_t currentpage){
 	
-	if (SystemCtrl.currentPage == SYSTEM_MAIN_PAGE )
+	if (currentpage == SYSTEM_MAIN_PAGE )
 	{
-		Sys_MainPage.mid_icon.current_x = kp*Sys_MainPage.mid_icon.current_x + (1-kp)*(Sys_MainPage.mid_icon.target_x);
-		Sys_MainPage.left_icon.current_x = kp*Sys_MainPage.left_icon.current_x + (1-kp)*(Sys_MainPage.left_icon.target_x);
-		Sys_MainPage.right_icon.current_x = kp*Sys_MainPage.right_icon.current_x + (1-kp)*(Sys_MainPage.right_icon.target_x);
+		GUI_MainPage.mid_icon.current_x = kp*GUI_MainPage.mid_icon.current_x + (1-kp)*(GUI_MainPage.mid_icon.target_x);
+		GUI_MainPage.left_icon.current_x = kp*GUI_MainPage.left_icon.current_x + (1-kp)*(GUI_MainPage.left_icon.target_x);
+		GUI_MainPage.right_icon.current_x = kp*GUI_MainPage.right_icon.current_x + (1-kp)*(GUI_MainPage.right_icon.target_x);
 
-		// Sys_MainPage.mid_icon.current_y = kp*Sys_MainPage.mid_font.current_y + (1-kp)*Sys_MainPage.mid_icon.target_y;
-		// Sys_MainPage.left_icon.current_y = kp*Sys_MainPage.left_icon.current_y + (1-kp)*Sys_MainPage.left_icon.target_y;
-		// Sys_MainPage.right_icon.current_y = kp*Sys_MainPage.right_icon.current_y + (1-kp)*Sys_MainPage.right_icon.target_y;
+		// GUI_MainPage.mid_icon.current_y = kp*GUI_MainPage.mid_font.current_y + (1-kp)*GUI_MainPage.mid_icon.target_y;
+		// GUI_MainPage.left_icon.current_y = kp*GUI_MainPage.left_icon.current_y + (1-kp)*GUI_MainPage.left_icon.target_y;
+		// GUI_MainPage.right_icon.current_y = kp*GUI_MainPage.right_icon.current_y + (1-kp)*GUI_MainPage.right_icon.target_y;
 
-		Sys_MainPage.mid_icon.current_y = Sys_MainPage.mid_icon.target_y;
-		Sys_MainPage.left_icon.current_y = Sys_MainPage.left_icon.target_y;
-		Sys_MainPage.right_icon.current_y = Sys_MainPage.right_icon.target_y;
+		GUI_MainPage.mid_icon.current_y = GUI_MainPage.mid_icon.target_y;
+		GUI_MainPage.left_icon.current_y = GUI_MainPage.left_icon.target_y;
+		GUI_MainPage.right_icon.current_y = GUI_MainPage.right_icon.target_y;
 		// GUI_Show_Frame();
-		if (round(Sys_MainPage.right_icon.current_x) != round(Sys_MainPage.right_icon.target_x) )
+		if (round(GUI_MainPage.right_icon.current_x) != round(GUI_MainPage.right_icon.target_x) )
 		{
 			GUI_CLEAR_SCREEN();
 		}
 
-		GUI_Show_Image(Sys_MainPage.right_icon.current_x,Sys_MainPage.right_icon.current_y,44,44,Set_Icon);
-		GUI_Show_Image(Sys_MainPage.mid_icon.current_x,Sys_MainPage.mid_icon.current_y,44,44,train_Icon);
-		GUI_Show_Image(Sys_MainPage.left_icon.current_x,Sys_MainPage.left_icon.current_y,44,44,config_Icon);
+		GUI_Show_Image(GUI_MainPage.right_icon.current_x,GUI_MainPage.right_icon.current_y,44,44,Set_Icon);
+		GUI_Show_Image(GUI_MainPage.mid_icon.current_x,GUI_MainPage.mid_icon.current_y,44,44,train_Icon);
+		GUI_Show_Image(GUI_MainPage.left_icon.current_x,GUI_MainPage.left_icon.current_y,44,44,config_Icon);
 		
 		//Bsp_DelayMS(2);
 		return;
 	}
-	if (SystemCtrl.currentPage == SYSTEM_TRAIN_MENU_SELECET_PAGE)
+	if (currentpage == SYSTEM_TRAIN_MENU_SELECET_PAGE)
 	{
 		
-		SystemCtrl.Sys_InverseBox.current_y =kp*SystemCtrl.Sys_InverseBox.current_y + (1-kp)*(SystemCtrl.Sys_InverseBox.target_y);
-        Sys_Rowitem.current_y = kp*Sys_Rowitem.current_y + (1-kp)*(Sys_Rowitem.target_y);
+		GUI_TrainMenuSelectPage.chosen_obj.current_y =kp*GUI_TrainMenuSelectPage.chosen_obj.current_y + (1-kp)*(GUI_TrainMenuSelectPage.chosen_obj.target_y);
+        GUI_TrainMenuSelectPage.datalist_crood.current_y = kp*GUI_TrainMenuSelectPage.datalist_crood.current_y + (1-kp)*(GUI_TrainMenuSelectPage.datalist_crood.target_y);
 		
-		// SystemCtrl.Sys_InverseBox.current_y = Sys_MainPage.left_icon.target_y;
-		// Sys_MainPage.right_icon.current_y = Sys_MainPage.right_icon.target_y;
-		if ((round(Sys_Rowitem.current_y) != Sys_Rowitem.target_y) || (round(SystemCtrl.Sys_InverseBox.current_y) != round(SystemCtrl.Sys_InverseBox.target_y)))
+		// GUI_TrainMenuSelectPage.chosen_obj.current_y = GUI_MainPage.left_icon.target_y;
+		// GUI_MainPage.right_icon.current_y = GUI_MainPage.right_icon.target_y;
+		if ((round(GUI_TrainMenuSelectPage.datalist_crood.current_y) != GUI_TrainMenuSelectPage.datalist_crood.target_y) || (round(GUI_TrainMenuSelectPage.chosen_obj.current_y) != round(GUI_TrainMenuSelectPage.chosen_obj.target_y)))
 		{
 			GUI_CLEAR_SCREEN();
 		}
 		
-		if ((round(Sys_Rowitem.current_y) != Sys_Rowitem.target_y) || (round(SystemCtrl.Sys_InverseBox.current_y) != round(SystemCtrl.Sys_InverseBox.target_y)))
+		if ((round(GUI_TrainMenuSelectPage.datalist_crood.current_y) != GUI_TrainMenuSelectPage.datalist_crood.target_y) || (round(GUI_TrainMenuSelectPage.chosen_obj.current_y) != round(GUI_TrainMenuSelectPage.chosen_obj.target_y)))
 		{
-			GUI_Show_Image(0,Sys_Rowitem.current_y,16,16,OLED_Test[0].CellMatrix);
-			GUI_Show_Image(0,Sys_Rowitem.current_y+16,16,16,OLED_Test[1].CellMatrix);
-			GUI_Show_Image(0,Sys_Rowitem.current_y+32,16,16,OLED_Test[2].CellMatrix);
-			GUI_Show_Image(0,Sys_Rowitem.current_y+48,16,16,OLED_Test[3].CellMatrix);
+			GUI_Dispaly_Chinese_matric(0,GUI_TrainMenuSelectPage.datalist_crood.current_y,16,16,4,OLED_Test);	
+			GUI_Dispaly_Chinese_matric(0,GUI_TrainMenuSelectPage.datalist_crood.current_y+16,16,16,4,OLED_Test);	
+			GUI_Dispaly_Chinese_matric(0,GUI_TrainMenuSelectPage.datalist_crood.current_y+32,16,16,4,OLED_Test);	
+			GUI_Dispaly_Chinese_matric(0,GUI_TrainMenuSelectPage.datalist_crood.current_y+48,16,16,4,OLED_Test);	
+			
+			// GUI_Show_Image(0,GUI_TrainMenuSelectPage.datalist_crood.current_y,16,16,OLED_Test[0].CellMatrix);
+			// GUI_Show_Image(0,GUI_TrainMenuSelectPage.datalist_crood.current_y+16,16,16,OLED_Test[1].CellMatrix);
+			// GUI_Show_Image(0,GUI_TrainMenuSelectPage.datalist_crood.current_y+32,16,16,OLED_Test[2].CellMatrix);
+			// GUI_Show_Image(0,GUI_TrainMenuSelectPage.datalist_crood.current_y+48,16,16,OLED_Test[3].CellMatrix);
 		
-			GUI_Reverse_Y(SystemCtrl.Sys_InverseBox.current_y,16);
+			GUI_Reverse_Y(GUI_TrainMenuSelectPage.chosen_obj.current_y,16);
 		}	
 	}
 /* 
 	// if (System_Status_Read() == SYSTEM_TARIN_MENU_SELECET_PAGE)	//菜单选择界面动画
 	// {
-	// 	Sys_MainPage.mid_icon.current_x = kp*Sys_MainPage.mid_icon.current_x + (1-kp)*(Sys_MainPage.mid_icon.target_x);
-	// 	Sys_MainPage.left_icon.current_x = kp*Sys_MainPage.left_icon.current_x + (1-kp)*(Sys_MainPage.left_icon.target_x);
-	// 	Sys_MainPage.right_icon.current_x = kp*Sys_MainPage.right_icon.current_x + (1-kp)*(Sys_MainPage.right_icon.target_x);
+	// 	GUI_MainPage.mid_icon.current_x = kp*GUI_MainPage.mid_icon.current_x + (1-kp)*(GUI_MainPage.mid_icon.target_x);
+	// 	GUI_MainPage.left_icon.current_x = kp*GUI_MainPage.left_icon.current_x + (1-kp)*(GUI_MainPage.left_icon.target_x);
+	// 	GUI_MainPage.right_icon.current_x = kp*GUI_MainPage.right_icon.current_x + (1-kp)*(GUI_MainPage.right_icon.target_x);
 
-	// 	// Sys_MainPage.mid_icon.current_y = kp*Sys_MainPage.mid_font.current_y + (1-kp)*Sys_MainPage.mid_icon.target_y;
-	// 	// Sys_MainPage.left_icon.current_y = kp*Sys_MainPage.left_icon.current_y + (1-kp)*Sys_MainPage.left_icon.target_y;
-	// 	// Sys_MainPage.right_icon.current_y = kp*Sys_MainPage.right_icon.current_y + (1-kp)*Sys_MainPage.right_icon.target_y;
+	// 	// GUI_MainPage.mid_icon.current_y = kp*GUI_MainPage.mid_font.current_y + (1-kp)*GUI_MainPage.mid_icon.target_y;
+	// 	// GUI_MainPage.left_icon.current_y = kp*GUI_MainPage.left_icon.current_y + (1-kp)*GUI_MainPage.left_icon.target_y;
+	// 	// GUI_MainPage.right_icon.current_y = kp*GUI_MainPage.right_icon.current_y + (1-kp)*GUI_MainPage.right_icon.target_y;
 
-	// 	Sys_MainPage.mid_icon.current_y = Sys_MainPage.mid_icon.target_y;
-	// 	Sys_MainPage.left_icon.current_y = Sys_MainPage.left_icon.target_y;
-	// 	Sys_MainPage.right_icon.current_y = Sys_MainPage.right_icon.target_y;
+	// 	GUI_MainPage.mid_icon.current_y = GUI_MainPage.mid_icon.target_y;
+	// 	GUI_MainPage.left_icon.current_y = GUI_MainPage.left_icon.target_y;
+	// 	GUI_MainPage.right_icon.current_y = GUI_MainPage.right_icon.target_y;
 	// 	// GUI_Show_Frame();
-	// 	if (Sys_MainPage.right_icon.current_x != Sys_MainPage.right_icon.target_x )
+	// 	if (GUI_MainPage.right_icon.current_x != GUI_MainPage.right_icon.target_x )
 	// 	{
 	// 		GUI_CLEAR_SCREEN();
 	// 	}
 
-	// 	GUI_Show_Image(Sys_MainPage.right_icon.current_x,Sys_MainPage.right_icon.current_y,44,44,Set_Icon);
-	// 	GUI_Show_Image(Sys_MainPage.mid_icon.current_x,Sys_MainPage.mid_icon.current_y,44,44,train_Icon);
-	// 	GUI_Show_Image(Sys_MainPage.left_icon.current_x,Sys_MainPage.left_icon.current_y,44,44,config_Icon);
+	// 	GUI_Show_Image(GUI_MainPage.right_icon.current_x,GUI_MainPage.right_icon.current_y,44,44,Set_Icon);
+	// 	GUI_Show_Image(GUI_MainPage.mid_icon.current_x,GUI_MainPage.mid_icon.current_y,44,44,train_Icon);
+	// 	GUI_Show_Image(GUI_MainPage.left_icon.current_x,GUI_MainPage.left_icon.current_y,44,44,config_Icon);
 		
 	// 	Bsp_DelayMS(2);
 	// 	return;
@@ -812,6 +916,14 @@ void GUI_Animation_move(void){
 	 */
 }
 
+
+void GUI_List_shift(uint8_t shiftup){							// 1 上移动
+	if (shiftup){
+		GUI_TrainMenuSelectPage.datalist_crood.target_y -= 16;
+	}else{
+		GUI_TrainMenuSelectPage.datalist_crood.target_y += 16;
+	}
+}
 /*----------------------------------------------------------------------------------------- 
 *函数名称:'' 
 *函数功能:'' 
@@ -820,54 +932,54 @@ void GUI_Animation_move(void){
 *说    明: '每次按键按完才能调用一次，不能频繁调用' 
 *作    者: Danny 
 *----------------------------------------------------------------------------------------*/ 
-void GUI_Shift_Menu(uint8_t currentPage,uint8_t targetPage){
+void GUI_Shift_Menu(uint8_t currentpage,uint8_t targetpage){      //用结构体传参
 	u8 base_x = 42,	Delta_x = 44;
 	u8 base_y = 18; //Delta_y = 7
-	if (currentPage == SYSTEM_MAIN_PAGE)//处于ready状态
+	if (currentpage == SYSTEM_MAIN_PAGE)//处于ready状态
 	{
-		switch (targetPage)
+		switch (targetpage)
 		{
 			case SYSTEM_MAIN_PAGE:;
 			case SYSTEM_TRAIN_MENU_SELECET_PAGE:
-				Sys_MainPage.mid_icon.target_x =  base_x;
-				Sys_MainPage.left_icon.target_x = base_x - Delta_x ;
-				Sys_MainPage.right_icon.target_x = base_x + Delta_x ;
+				GUI_MainPage.mid_icon.target_x =  base_x;
+				GUI_MainPage.left_icon.target_x = base_x - Delta_x ;
+				GUI_MainPage.right_icon.target_x = base_x + Delta_x ;
 
-				Sys_MainPage.mid_icon.target_y = base_y; 
-				Sys_MainPage.left_icon.target_y = base_y ;
-				Sys_MainPage.right_icon.target_y = base_y ;
+				GUI_MainPage.mid_icon.target_y = base_y; 
+				GUI_MainPage.left_icon.target_y = base_y ;
+				GUI_MainPage.right_icon.target_y = base_y ;
 				break;
 			case SYSTEM_EDIT_MENU_SELECT_PAGE:
-				Sys_MainPage.mid_icon.target_x =  base_x + Delta_x;
-				Sys_MainPage.left_icon.target_x = base_x - Delta_x + Delta_x;
-				Sys_MainPage.right_icon.target_x = base_x + Delta_x + Delta_x;
+				GUI_MainPage.mid_icon.target_x =  base_x + Delta_x;
+				GUI_MainPage.left_icon.target_x = base_x - Delta_x + Delta_x;
+				GUI_MainPage.right_icon.target_x = base_x + Delta_x + Delta_x;
 
-				Sys_MainPage.mid_icon.target_y = base_y; 
-				Sys_MainPage.left_icon.target_y = base_y ;
-				Sys_MainPage.right_icon.target_y = base_y ;break;
+				GUI_MainPage.mid_icon.target_y = base_y; 
+				GUI_MainPage.left_icon.target_y = base_y ;
+				GUI_MainPage.right_icon.target_y = base_y ;break;
 			case SYSTEM_CONFIG_PAGE:
-				Sys_MainPage.mid_icon.target_x =  base_x - Delta_x;
-				Sys_MainPage.left_icon.target_x = base_x - Delta_x - Delta_x ;
-				Sys_MainPage.right_icon.target_x = base_x + Delta_x - Delta_x;
+				GUI_MainPage.mid_icon.target_x =  base_x - Delta_x;
+				GUI_MainPage.left_icon.target_x = base_x - Delta_x - Delta_x ;
+				GUI_MainPage.right_icon.target_x = base_x + Delta_x - Delta_x;
 
-				Sys_MainPage.mid_icon.target_y = base_y; 
-				Sys_MainPage.left_icon.target_y = base_y ;
-				Sys_MainPage.right_icon.target_y = base_y ;break;
+				GUI_MainPage.mid_icon.target_y = base_y; 
+				GUI_MainPage.left_icon.target_y = base_y ;
+				GUI_MainPage.right_icon.target_y = base_y ;break;
 			default:
 				break;
 		}
-	}else if (currentPage == SYSTEM_TRAIN_MENU_SELECET_PAGE)
+	}else if (currentpage == SYSTEM_TRAIN_MENU_SELECET_PAGE)
 	{
-		switch (targetPage)
+		switch (targetpage)
 		{
 			case SYSTEM_TRAIN_MENU_SELECET_PAGE:
 			case SYSTEM_START_TRAIN_PAGE:
-				SystemCtrl.Sys_InverseBox.target_y = SystemCtrl.GUIpagePoint *16;
+				GUI_TrainMenuSelectPage.chosen_obj.target_y = SystemCtrl.gui_focus_coord *16;
 				break;
 		}
-	}else if (currentPage == SYSTEM_EDIT_MENU_SELECT_PAGE)
+	}else if (currentpage == SYSTEM_EDIT_MENU_SELECT_PAGE)
 	{
-		switch (targetPage)
+		switch (targetpage)
 		{
 			case SYSTEM_EDIT_MOVES_SELECT_PAGE:
 				/* code */
@@ -879,17 +991,17 @@ void GUI_Shift_Menu(uint8_t currentPage,uint8_t targetPage){
 	}
 	
 	
-	// else if(currentPage == SYSTEM_TRAIN_MENU_SELECET_PAGE){
-	// 	switch (targetPage)
+	// else if(currentpage == SYSTEM_TRAIN_MENU_SELECET_PAGE){
+	// 	switch (targetpage)
 	// 	{
 	// 		// case SYSTEM_MAIN_PAGE_TARIN_MENU_SELECET_ALREADY:
-	// 		// 	Sys_MainPage.mid_icon.target_x =  base_x + Delta_x;
-	// 		// 	Sys_MainPage.left_icon.target_x = base_x - Delta_x -Delta_x;
-	// 		// 	Sys_MainPage.right_icon.target_x = base_x + Delta_x +Delta_x;
+	// 		// 	GUI_MainPage.mid_icon.target_x =  base_x + Delta_x;
+	// 		// 	GUI_MainPage.left_icon.target_x = base_x - Delta_x -Delta_x;
+	// 		// 	GUI_MainPage.right_icon.target_x = base_x + Delta_x +Delta_x;
 
-	// 		// 	Sys_MainPage.mid_icon.target_y = base_y + Delta_y; 
-	// 		// 	// Sys_MainPage.left_icon.target_y = base_y ;
-	// 		// 	// Sys_MainPage.right_icon.target_y = base_y ;
+	// 		// 	GUI_MainPage.mid_icon.target_y = base_y + Delta_y; 
+	// 		// 	// GUI_MainPage.left_icon.target_y = base_y ;
+	// 		// 	// GUI_MainPage.right_icon.target_y = base_y ;
 	// 		// 	break;
 	// 		// case SYSTEM_MAIN_PAGE_EDIT_TRAIN_MENU_ALREADY:
 	// 		// 	break;

@@ -4,10 +4,9 @@
 #include "key.h"
 #include "sys_typedef.h"
 #include <stdlib.h>
-extern KeyCtrl_t KeyCtrl;
+
+extern GUI_TrainMenuSelectPage_t GUI_TrainMenuSelectPage;
 SystemCtrl_t SystemCtrl;
-Sys_MainPage_t Sys_MainPage;
-Sys_Rowitem_t Sys_Rowitem;
 Flash_Addr_t FlashAddr ;
 
 #define GUI_ROWS_UP_LIMIT        3
@@ -23,11 +22,11 @@ Flash_Addr_t FlashAddr ;
 *作    者: Danny 
 *----------------------------------------------------------------------------------------*/ 
 void System_Init(void){
-    SystemCtrl.currentPage = SYSTEM_MAIN_PAGE;
-    SystemCtrl.targetPage = SYSTEM_MAIN_PAGE;
-    SystemCtrl.GUIpagePoint = 1; 
+    SystemCtrl.currentpage = SYSTEM_MAIN_PAGE;
+    SystemCtrl.targetpage = SYSTEM_MAIN_PAGE;
+    SystemCtrl.gui_focus_coord = 1; 
     GUI_CLEAR_SCREEN();
-    GUI_Shift_Menu( SystemCtrl.currentPage,SystemCtrl.targetPage);
+    GUI_Shift_Menu( SystemCtrl.currentpage,SystemCtrl.targetpage);
 };
 
 /*----------------------------------------------------------------------------------------- 
@@ -38,17 +37,12 @@ void System_Init(void){
 *说    明: '在结束主菜单工作以后调用，初始化 动画的坐标等信息' 
 *作    者: Danny 
 *----------------------------------------------------------------------------------------*/ 
-void System_MenuselectPage_Init(void){
-
-    SystemCtrl.Sys_InverseBox.current_x = 0;
-    SystemCtrl.Sys_InverseBox.current_y = -16;
-    SystemCtrl.Sys_InverseBox.target_x = 0;
-    SystemCtrl.Sys_InverseBox.target_y = 0;
-    Sys_Rowitem.current_x = 0;
-    Sys_Rowitem.current_y = 0;
-    Sys_Rowitem.target_x = 0;
-    Sys_Rowitem.target_y = 0;
-	GUI_CLEAR_SCREEN();
+void System_MenuselectPage_Init(void (*gui_init)(void)){
+    
+    SystemCtrl.currentpage = SystemCtrl.targetpage;
+    SystemCtrl.gui_focus_coord = 0;
+    SystemCtrl.datasource_index = 0;
+    gui_init();
 
 }
 
@@ -60,8 +54,8 @@ void System_MenuselectPage_Init(void){
 *说    明: '供外部调用' 
 *作    者: Danny 
 *----------------------------------------------------------------------------------------*/ 
-void System_GUIPagepointer_Sub(void){
-    SystemCtrl.GUIpagePoint--;
+void System_GUIFocus_Coord_Sub(void){
+    SystemCtrl.gui_focus_coord--;
 }
 
 /*----------------------------------------------------------------------------------------- 
@@ -72,8 +66,8 @@ void System_GUIPagepointer_Sub(void){
 *说    明: '供外部调用' 
 *作    者: Danny 
 *----------------------------------------------------------------------------------------*/ 
-void System_GUIPagepointer_Add(void){
-    SystemCtrl.GUIpagePoint++;
+void System_GUIFocus_Coord_Add(void){
+    SystemCtrl.gui_focus_coord++;
 }
 
 /*----------------------------------------------------------------------------------------- 
@@ -85,8 +79,13 @@ void System_GUIPagepointer_Add(void){
             供外部调用' 
 *作    者: Danny 
 *----------------------------------------------------------------------------------------*/ 
-void System_Turn_Page(void){
-    SystemCtrl.is_turn_Page++;
+void System_Turn_Page(int8_t turnToNext){
+    if (turnToNext)     //True ++
+    {
+        SystemCtrl.is_turn_page++;
+        return;
+    }
+    SystemCtrl.is_turn_page--;
 }
 
 /*----------------------------------------------------------------------------------------- 
@@ -98,8 +97,9 @@ void System_Turn_Page(void){
 *作    者: Danny 
 *----------------------------------------------------------------------------------------*/ 
 void System_Clear_turnPage(){
-    SystemCtrl.is_turn_Page = 0;
+    SystemCtrl.is_turn_page = 0;
 }
+
 /*----------------------------------------------------------------------------------------- 
 *函数名称:'System_MainPage_Operation' 
 *函数功能:'' 
@@ -109,23 +109,80 @@ void System_Clear_turnPage(){
 *作    者: Danny 
 *----------------------------------------------------------------------------------------*/ 
 void System_MainPage_Operation(void){
-    if(SystemCtrl.GUIpagePoint > MainPage_EndIndex)
+    if(SystemCtrl.gui_focus_coord > MainPage_EndIndex)
     {
-        SystemCtrl.GUIpagePoint = MainPage_BeginIndex;
+        SystemCtrl.gui_focus_coord = MainPage_BeginIndex;
     }
-    if(SystemCtrl.GUIpagePoint < MainPage_BeginIndex)
+    if(SystemCtrl.gui_focus_coord < MainPage_BeginIndex)
     {
-        SystemCtrl.GUIpagePoint = MainPage_EndIndex;
+        SystemCtrl.gui_focus_coord = MainPage_EndIndex;
     }
     
-    SystemCtrl.targetPage = SystemCtrl.GUIpagePoint * MainPage_MultiPower;
+    SystemCtrl.targetpage = SystemCtrl.gui_focus_coord * MainPage_MultiPower;
     
-    if(SystemCtrl.is_turn_Page == 1){
-        SystemCtrl.currentPage = SystemCtrl.targetPage;
-        SystemCtrl.GUIpagePoint = 0;
-        SystemCtrl.MenuPoint = 0;
+    if(SystemCtrl.is_turn_page == 1){
+        System_MenuselectPage_Init(GUI_MenuselectPage_Init);
         System_Clear_turnPage();
-        System_MenuselectPage_Init();
+    }
+    
+}
+
+/*----------------------------------------------------------------------------------------- 
+*函数名称:'System_Datasource_Index_Overflow_Detect' 
+*函数功能:'' 
+*参    数:'' 
+*返 回 值:'' 
+*说    明: '控制索引不越界' 
+*作    者: Danny 
+*----------------------------------------------------------------------------------------*/ 
+void System_Datasource_Index_Overflow_Detect(SystemCtrl_t* SystemCtrlPoint,uint8_t menuNum,uint8_t uplimit){
+    switch (uplimit)
+    {
+        case 1:
+            if (SystemCtrlPoint->datasource_index >= menuNum){
+                SystemCtrlPoint->datasource_index = menuNum - 1;
+            }
+            break;
+        case 0:
+            if(SystemCtrlPoint->datasource_index < GUI_ROWS_DOWN_LIMIT){
+                SystemCtrlPoint->datasource_index = GUI_ROWS_DOWN_LIMIT;
+            }
+            break;
+        default:
+            #ifdef Debug_mode
+                if ((uplimit != 1) && (uplimit != 0) )
+                {
+                    printf("\r\n error code 20: System_Datasource_Index_Overflow_Detect() fail to execute ,uplimit isn't clear \r\n");
+                }
+            #endif
+            break;
+    }
+}
+
+void System_GUI_Focus_Coord_Overflow_Detect(SystemCtrl_t* SystemCtrlPoint,int8_t old_gui_focus_coord, uint8_t menuNum,uint8_t uplimit){
+    switch (uplimit)
+    {
+        case 0:
+            if (old_gui_focus_coord >= GUI_ROWS_THIRD){
+                if (SystemCtrlPoint->datasource_index == (menuNum - 1))
+                {
+                    SystemCtrlPoint->gui_focus_coord = GUI_ROWS_UP_LIMIT;
+                }else{
+                    SystemCtrlPoint->gui_focus_coord = GUI_ROWS_THIRD;
+                }       
+            }
+            break;
+        case 1:
+            if (SystemCtrlPoint->gui_focus_coord < GUI_ROWS_DOWN_LIMIT ){
+                SystemCtrlPoint->gui_focus_coord = GUI_ROWS_DOWN_LIMIT;
+            }
+        default:
+            #ifdef Debug_mode
+                if ((uplimit != 1) && (uplimit != 0) ){
+                    printf("\r\n error code 21: System_Menu_shift_OP() fail to execute \r\n");
+                }
+            #endif
+            break;
     }
 }
 
@@ -137,56 +194,101 @@ void System_MainPage_Operation(void){
 *说    明: '' 
 *作    者: Danny 
 *----------------------------------------------------------------------------------------*/ 
-void System_Menu_shift_OP(SystemCtrl_t* SystemCtrlPoint,uint8_t menuNum){
-    static int8_t oldGUIpagePoint; 
+void System_Menu_shift_OP(SystemCtrl_t* SystemCtrlPoint,void (* GUI_shift)(uint8_t),uint8_t menuNum){
+    static int8_t old_gui_focus_coord; 
+    int8_t coord_diff = SystemCtrlPoint->gui_focus_coord - old_gui_focus_coord ;
+
     if (menuNum == 0){
         return;
     }
-
-    if (SystemCtrlPoint->GUIpagePoint - oldGUIpagePoint == 1 && (menuNum > 4)){
-        
-        SystemCtrlPoint->MenuPoint++;
-        if (SystemCtrlPoint->MenuPoint >= menuNum)
-        {
-            SystemCtrlPoint->MenuPoint = menuNum - 1;                                               //如果超过菜单尾部  菜单尾部是menuNum - 1
-        }
-        if (oldGUIpagePoint >= GUI_ROWS_THIRD){
-            if (SystemCtrlPoint->MenuPoint == (menuNum - 1))
+    switch (coord_diff)
+    {
+        case 1:
+            if (menuNum > 4)
             {
-                SystemCtrlPoint->GUIpagePoint = GUI_ROWS_UP_LIMIT;
-            }       
-        }
-        if ((oldGUIpagePoint == GUI_ROWS_THIRD) && (SystemCtrlPoint->MenuPoint <= (menuNum - 2)))  //menupoint是指向下一条
-        {
-            Sys_Rowitem.target_y -= 16;
-            SystemCtrlPoint->GUIpagePoint = GUI_ROWS_THIRD;
-        }
-        
-    }else if (SystemCtrlPoint->GUIpagePoint - oldGUIpagePoint == 1 && (menuNum <= 4))
-    {
-        SystemCtrlPoint->MenuPoint++;
-        if (SystemCtrlPoint->MenuPoint >= menuNum)
-        {
-            SystemCtrlPoint->GUIpagePoint = (menuNum - 1) ;
-            SystemCtrlPoint->MenuPoint = (menuNum - 1) ;
-        }
-        
-    }else if (SystemCtrlPoint->GUIpagePoint-oldGUIpagePoint == -1)
-    {
-        SystemCtrlPoint->MenuPoint--;
-        if (SystemCtrlPoint->MenuPoint < GUI_ROWS_DOWN_LIMIT){
-            SystemCtrlPoint->MenuPoint = GUI_ROWS_DOWN_LIMIT;
-        }
-        if (SystemCtrlPoint->GUIpagePoint < GUI_ROWS_DOWN_LIMIT ){
-            SystemCtrlPoint->GUIpagePoint = GUI_ROWS_DOWN_LIMIT;
-        }
-        if (SystemCtrlPoint->GUIpagePoint == GUI_ROWS_DOWN_LIMIT && (SystemCtrlPoint->MenuPoint > 0))
-        {
-            Sys_Rowitem.target_y += 16;
-        }
+                SystemCtrlPoint->datasource_index++;
+
+                System_Datasource_Index_Overflow_Detect(SystemCtrlPoint,menuNum,1);
+                System_GUI_Focus_Coord_Overflow_Detect(SystemCtrlPoint,old_gui_focus_coord,menuNum,0);
+
+                if ((old_gui_focus_coord == GUI_ROWS_THIRD) && (SystemCtrlPoint->datasource_index <= (menuNum - 2))){    //datasource_index是指向下一条
+                    GUI_shift(1);
+                }
+            }else{
+                SystemCtrlPoint->datasource_index++;
+                if (SystemCtrlPoint->datasource_index >= menuNum){
+                    SystemCtrlPoint->gui_focus_coord = (menuNum - 1) ;
+                    SystemCtrlPoint->datasource_index = (menuNum - 1) ;
+                }
+            }
+            break;
+        case -1:
+
+            //System_Datasource_Index_Overflow_Detect(SystemCtrlPoint,menuNum,0);
+            System_GUI_Focus_Coord_Overflow_Detect(SystemCtrlPoint,old_gui_focus_coord,menuNum,1);
+
+            if (old_gui_focus_coord == GUI_ROWS_DOWN_LIMIT && (SystemCtrlPoint->datasource_index > 0)){
+                GUI_shift(0);
+            };
+            SystemCtrlPoint->datasource_index--;
+            System_Datasource_Index_Overflow_Detect(SystemCtrlPoint,menuNum,0);
+
+            break;
+
+        default:
+            #ifdef Debug_mode
+                if ((coord_diff != 1) && (coord_diff != -1) ){
+                    printf("\r\n error code 22: System_Menu_shift_OP() fail to execute \r\n");
+                }
+            #endif
+            break;
     }
 
-    oldGUIpagePoint = SystemCtrlPoint->GUIpagePoint;
+/* 
+    if (SystemCtrlPoint->gui_focus_coord - old_gui_focus_coord == 1 && (menuNum > 4)){
+        
+        SystemCtrlPoint->datasource_index++;
+        if (SystemCtrlPoint->datasource_index >= menuNum)
+        {
+            SystemCtrlPoint->datasource_index = menuNum - 1;                                               //如果超过菜单尾部  菜单尾部是menuNum - 1
+        }
+        if (old_gui_focus_coord >= GUI_ROWS_THIRD){
+            if (SystemCtrlPoint->datasource_index == (menuNum - 1))
+            {
+                SystemCtrlPoint->gui_focus_coord = GUI_ROWS_UP_LIMIT;
+            }       
+        }
+        if ((old_gui_focus_coord == GUI_ROWS_THIRD) && (SystemCtrlPoint->datasource_index <= (menuNum - 2)))  //datasource_index是指向下一条
+        {
+            GUI_TrainMenuSelectPage.datalist_crood.target_y -= 16;
+            SystemCtrlPoint->gui_focus_coord = GUI_ROWS_THIRD;
+        }
+        
+    }else if (SystemCtrlPoint->gui_focus_coord - old_gui_focus_coord == 1 && (menuNum <= 4))
+    {
+        SystemCtrlPoint->datasource_index++;
+        if (SystemCtrlPoint->datasource_index >= menuNum)
+        {
+            SystemCtrlPoint->gui_focus_coord = (menuNum - 1) ;
+            SystemCtrlPoint->datasource_index = (menuNum - 1) ;
+        }
+        
+    }else if (SystemCtrlPoint->gui_focus_coord-old_gui_focus_coord == -1)
+    {
+        SystemCtrlPoint->datasource_index--;
+        if (SystemCtrlPoint->datasource_index < GUI_ROWS_DOWN_LIMIT){
+            SystemCtrlPoint->datasource_index = GUI_ROWS_DOWN_LIMIT;
+        }
+        if (SystemCtrlPoint->gui_focus_coord < GUI_ROWS_DOWN_LIMIT ){
+            SystemCtrlPoint->gui_focus_coord = GUI_ROWS_DOWN_LIMIT;
+        }
+        if (SystemCtrlPoint->gui_focus_coord == GUI_ROWS_DOWN_LIMIT && (SystemCtrlPoint->datasource_index > 0))
+        {
+            GUI_TrainMenuSelectPage.datalist_crood.target_y += 16;
+        }
+    }
+ */
+    old_gui_focus_coord = SystemCtrlPoint->gui_focus_coord;
 }
 
 /*----------------------------------------------------------------------------------------- 
@@ -202,13 +304,21 @@ void System_TrainMenuSelPage_Operation(void){
     //uint8_t menuNum = FLASH_Read_MenuNum();
     uint8_t menuNum = 8;                                 //单纯的个数，从1开始
 
-    System_Menu_shift_OP(&SystemCtrl,menuNum);           //直接传是作为变量传递的，是一个副本
+    System_Menu_shift_OP(&SystemCtrl,GUI_List_shift,menuNum);           //直接传是作为变量传递的，是一个副本
     
-    if(SystemCtrl.is_turn_Page == 1){
-        SystemCtrl.targetPage = SystemCtrl.currentPage +1;
-        SystemCtrl.currentPage = SystemCtrl.targetPage;
+    if(SystemCtrl.is_turn_page == 1){
+        SystemCtrl.targetpage = SystemCtrl.currentpage +1;
+        SystemCtrl.currentpage = SystemCtrl.targetpage;
+        System_Clear_turnPage();
+    }else if (SystemCtrl.is_turn_page == -1)
+    {
+        SystemCtrl.targetpage = SystemCtrl.currentpage * 0;
+        SystemCtrl.currentpage = SystemCtrl.targetpage;
+        SystemCtrl.gui_focus_coord = 1;
+        GUI_CLEAR_SCREEN();
         System_Clear_turnPage();
     }
+    
     
     
 }
@@ -223,7 +333,7 @@ void System_TrainMenuSelPage_Operation(void){
 *----------------------------------------------------------------------------------------*/ 
 void System_Poll(void){
 
-    switch (SystemCtrl.currentPage)
+    switch (SystemCtrl.currentpage)
     {
         case SYSTEM_MAIN_PAGE:
             System_MainPage_Operation();
@@ -255,8 +365,9 @@ void System_Poll(void){
             break;
     }
     
-    GUI_Shift_Menu(SystemCtrl.currentPage,SystemCtrl.targetPage);
-    GUI_Animation_move();
+    GUI_Shift_Menu(SystemCtrl.currentpage,SystemCtrl.targetpage);
+
+    GUI_Animation_move(SystemCtrl.currentpage);
 
 }
 

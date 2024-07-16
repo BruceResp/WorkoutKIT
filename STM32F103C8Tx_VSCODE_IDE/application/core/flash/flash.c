@@ -563,6 +563,7 @@ Menu_t ** FLASH_Config_Init(){
         moveNum = FLASH_Read_Single_Data(startAddr);                            //获取Actions数量
         Menu_t * Menu = (Menu_t*)malloc(2+moveNum * sizeof(MoveProperty_t));
         MenuList[i] = Menu;
+        startAddr += 0x000100;  //增加一页
         free(Menu);
     }
     return MenuList;

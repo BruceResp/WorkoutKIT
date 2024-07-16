@@ -318,7 +318,10 @@ application/CMakeFiles/application.elf.dir/core/gui/gui.c.obj: D:/Git_Repository
   D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/newlib.h \
   D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h \
   D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdio.h \
+  D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/string.h \
+  D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/strings.h \
   D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_intsup.h \
+  D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_locale.h \
   D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_pthreadtypes.h \
   D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_sigset.h \
   D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_stdint.h \
@@ -333,6 +336,7 @@ application/CMakeFiles/application.elf.dir/core/gui/gui.c.obj: D:/Git_Repository
   D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/sched.h \
   D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/select.h \
   D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/stdio.h \
+  D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/string.h \
   D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/timespec.h \
   D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/types.h \
   D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdarg.h \
@@ -752,6 +756,14 @@ D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/core/gui/gui.c:
 D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/core/gui/inc/guicon.h:
 
 D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/core/gui/inc/guifont.h:
+
+D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/string.h:
+
+D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/strings.h:
+
+D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_locale.h:
+
+D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/string.h:
 
 D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/core/system/system.c:
 

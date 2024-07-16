@@ -66,7 +66,7 @@ int main(void)
 	// u32 i =0,sum=0;
 	while (1)
 	{	
-		//GUI_Test();
+		GUI_Test();
 		// i++;
 		// u32 j = 10;
 		// u8 a = 1;
@@ -92,8 +92,8 @@ int main(void)
 		// FLASH_Read_Data(0x000000,Rxdata,250);
 		//GUI_Test();
 
-		Key_Process();
-		System_Poll();
+		// Key_Process();
+		// System_Poll();
 	}
 }
 

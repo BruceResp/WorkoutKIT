@@ -52,7 +52,7 @@ void Bsp_SPI_Send_CMD(uint8_t TxData)                                   //发送
 		if(retry>200) return ;
 	}
 	
-	Bsp_DelayMS(100);
+	//Bsp_DelayMS(100);
 	SPI_I2S_SendData(SPI1, TxData);                                 //通过外设 SPIx 发送一个数据
 	retry=0;
 	Bsp_SPI_DC_DAT();                                               //数据模式
