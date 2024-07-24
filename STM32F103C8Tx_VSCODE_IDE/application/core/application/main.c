@@ -34,8 +34,8 @@ int main(void)
 	// RUN_TEST(testZeroAdd);
 	// UNITY_END();  //在方法里才需要加 return
 	Bsp_Init();
- 	GUI_SPI_Init(); //初始化测试下来要4s钟有点长
-	System_Init();
+ 	//GUI_SPI_Init(); //初始化测试下来要4s钟有点长
+	//System_Init();
 	
 	// u8 data[4] = {0x06,0x07,0x08,0x05};
 	// u8 Rxdata[250] ;
@@ -66,7 +66,8 @@ int main(void)
 	// u32 i =0,sum=0;
 	while (1)
 	{	
-		GUI_Test();
+		//printf("___");
+		//GUI_Test();
 		// i++;
 		// u32 j = 10;
 		// u8 a = 1;

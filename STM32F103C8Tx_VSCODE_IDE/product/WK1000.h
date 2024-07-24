@@ -4,10 +4,9 @@
 #define Debug_mode
 
 /*------------------FUNCTION DEFINE AREAR-------------------------------*/
-#define GUI_SPI_MODE_SUPPORT 
+// #define GUI_SPI_MODE_SUPPORT 
 
-//#define GUI_I2C_MODE_SUPPORT
-#define GUI_I2C_MODE_SUPPORT
+// #define GUI_I2C_MODE_SUPPORT
 /*------------------PORT / PIN DEFINE AREAR-------------------------------*/
 /*                  SPI                 */
 #define GUI_SPI              SPI1
@@ -49,7 +48,7 @@
 #define OLED_SSD1306_SEND_DATA        ((uint8_t)0x40)
 
 /**********************KEYS HARDWARE RESOURCES***************************/
-#define KEY_Marix               
+// #define KEY_Marix               
 
 #define KEY_UP_PIN                   GPIO_Pin_8
 #define KEY_UP_PORT                  GPIOA
@@ -93,5 +92,8 @@
 // #define FLASH_SPI_CS_PIN            GPIO_Pin_4
 // #define FLASH_SPI_CS_PORT           GPIOA
 
+/**********************USART***************************/
+#define BSP_USART_SUPPORT
 
+#define BSP_USART                                 USART1
 #endif

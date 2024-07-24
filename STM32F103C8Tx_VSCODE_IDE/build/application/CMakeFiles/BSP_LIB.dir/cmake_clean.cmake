@@ -15,6 +15,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/BSP_LIB.dir/bsp/bsp_spi.c.obj.d"
   "CMakeFiles/BSP_LIB.dir/bsp/bsp_systick.c.obj"
   "CMakeFiles/BSP_LIB.dir/bsp/bsp_systick.c.obj.d"
+  "CMakeFiles/BSP_LIB.dir/bsp/bsp_usart.c.obj"
+  "CMakeFiles/BSP_LIB.dir/bsp/bsp_usart.c.obj.d"
   "libBSP_LIB.a"
   "libBSP_LIB.pdb"
 )

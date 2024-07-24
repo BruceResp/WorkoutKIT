@@ -48,4 +48,5 @@ extern void Bsp_Flash_Write_Enable(void);
 extern void Bsp_Flash_Write_Volatile_StatReg_EN(void);
 extern void Bsp_Flash_Write_Disable(void);
 
+extern void Bsp_USART_Init(void);
 #endif

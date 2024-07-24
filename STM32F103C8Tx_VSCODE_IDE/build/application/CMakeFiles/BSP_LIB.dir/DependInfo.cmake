@@ -16,6 +16,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/bsp/bsp_key.c" "application/CMakeFiles/BSP_LIB.dir/bsp/bsp_key.c.obj" "gcc" "application/CMakeFiles/BSP_LIB.dir/bsp/bsp_key.c.obj.d"
   "D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/bsp/bsp_spi.c" "application/CMakeFiles/BSP_LIB.dir/bsp/bsp_spi.c.obj" "gcc" "application/CMakeFiles/BSP_LIB.dir/bsp/bsp_spi.c.obj.d"
   "D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/bsp/bsp_systick.c" "application/CMakeFiles/BSP_LIB.dir/bsp/bsp_systick.c.obj" "gcc" "application/CMakeFiles/BSP_LIB.dir/bsp/bsp_systick.c.obj.d"
+  "D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/bsp/bsp_usart.c" "application/CMakeFiles/BSP_LIB.dir/bsp/bsp_usart.c.obj" "gcc" "application/CMakeFiles/BSP_LIB.dir/bsp/bsp_usart.c.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

@@ -80,6 +80,7 @@ void System_GUIFocus_Coord_Add(void){
 *作    者: Danny 
 *----------------------------------------------------------------------------------------*/ 
 void System_Turn_Page(int8_t turnToNext){
+
     if (turnToNext)     //True ++
     {
         SystemCtrl.is_turn_page++;
@@ -212,7 +213,7 @@ void System_Menu_shift_OP(SystemCtrl_t* SystemCtrlPoint,void (* GUI_shift)(uint8
                 System_GUI_Focus_Coord_Overflow_Detect(SystemCtrlPoint,old_gui_focus_coord,menuNum,0);
 
                 if ((old_gui_focus_coord == GUI_ROWS_THIRD) && (SystemCtrlPoint->datasource_index <= (menuNum - 2))){    //datasource_index是指向下一条
-                    GUI_shift(1);
+                    GUI_shift(1);                                                                                        //页面下移
                 }
             }else{
                 SystemCtrlPoint->datasource_index++;
@@ -223,12 +224,11 @@ void System_Menu_shift_OP(SystemCtrl_t* SystemCtrlPoint,void (* GUI_shift)(uint8
             }
             break;
         case -1:
-
             //System_Datasource_Index_Overflow_Detect(SystemCtrlPoint,menuNum,0);
             System_GUI_Focus_Coord_Overflow_Detect(SystemCtrlPoint,old_gui_focus_coord,menuNum,1);
 
             if (old_gui_focus_coord == GUI_ROWS_DOWN_LIMIT && (SystemCtrlPoint->datasource_index > 0)){
-                GUI_shift(0);
+                GUI_shift(0);                                                                                           //页面上移 
             };
             SystemCtrlPoint->datasource_index--;
             System_Datasource_Index_Overflow_Detect(SystemCtrlPoint,menuNum,0);
@@ -307,20 +307,17 @@ void System_TrainMenuSelPage_Operation(void){
     System_Menu_shift_OP(&SystemCtrl,GUI_List_shift,menuNum);           //直接传是作为变量传递的，是一个副本
     
     if(SystemCtrl.is_turn_page == 1){
-        SystemCtrl.targetpage = SystemCtrl.currentpage +1;
+        SystemCtrl.targetpage = SystemCtrl.currentpage + 1;
         SystemCtrl.currentpage = SystemCtrl.targetpage;
-        System_Clear_turnPage();
     }else if (SystemCtrl.is_turn_page == -1)
     {
         SystemCtrl.targetpage = SystemCtrl.currentpage * 0;
         SystemCtrl.currentpage = SystemCtrl.targetpage;
         SystemCtrl.gui_focus_coord = 1;
         GUI_CLEAR_SCREEN();
-        System_Clear_turnPage();
     }
-    
-    
-    
+    System_Clear_turnPage();
+
 }
 
 /*----------------------------------------------------------------------------------------- 
