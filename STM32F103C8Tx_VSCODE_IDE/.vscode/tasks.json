@@ -48,7 +48,7 @@
         {
             "type": "cppbuild",
             "label": "C/C++: arm-none-eabi-gcc.exe 生成活动文件",
-            "command": "D:\\TOOL\\Complier_Toolchain\\gcc-arm-none-eabi-10-2020-q4-major-win32\\gcc-arm-none-eabi-10-2020-q4-major\\bin\\arm-none-eabi-gcc.exe",
+            "command": "D:/Tools/Complier_Toolchain/gcc-arm-none-eabi-10.3-2021.10/bin/arm-none-eabi-gcc.exe",
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",

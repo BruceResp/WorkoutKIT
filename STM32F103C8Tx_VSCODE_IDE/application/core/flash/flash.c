@@ -364,7 +364,7 @@ void FLASH_Reset_device(void){
 *说    明: '下一步优化，拆分公共部分，节省代码空间降低耦合度' 
 *作    者: Danny 
 *----------------------------------------------------------------------------------------*/ 
-uint8_t FLASH_Write_Dataes(Flash_Addr_t StartAddr,void * DataArray, uint32_t size){
+uint8_t FLASH_Write_Dataes(Flash_Addr_t StartAddr,void *DataArray, uint32_t size){
 
     uint8_t Pg1_Data_To_Write = 0xFF-StartAddr.Base_Addr;
     uint16_t across_pages = (size - Pg1_Data_To_Write) / 256 ;                            //跨几页  Base_addr所在页不算进去 不管整除之后有没有余数，都+1，所以最后写入的一页有可能为空，这会导致如果最后一页为空的情况下写入会报code 1 错误，然而实际上是可以写的

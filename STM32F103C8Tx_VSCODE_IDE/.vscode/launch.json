@@ -10,12 +10,13 @@
             "showDevDebugOutput": "raw",
             "servertype": "pyocd",
             "targetId": "STM32F103C8",
-            "svdFile": "D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/STM32F103.svd",
-            "serverpath": "D:/Python/Python310/Scripts/pyocd.exe",
+            "svdFile": "${workspaceRoot}/STM32F103C8Tx_VSCODE_IDE/STM32F103.svd",
+            "serverpath": "D:/Tools/Python/Python310/Scripts/pyocd.exe",
             "preLaunchTask": "build_bat",
-            "armToolchainPath": "D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin",
-            "gdbPath": "D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gdb.exe",
+            "armToolchainPath": "D:/Tools/Complier_Toolchain/gcc-arm-none-eabi-10.3-2021.10/bin",
+            //"gdbPath": "D:/Tools/Complier_Toolchain/gcc-arm-none-eabi-10.3-2021.10/bin/arm-none-eabi-gdb.exe",
             "cpu": "cortex-m3",
+            //"debugServer": 4711,
             "swoConfig": {
                 "enabled": true,
                 "cpuFrequency": 72000000,
@@ -40,13 +41,13 @@
             "type": "cortex-debug",
             "svdFile": "${workspaceRoot}/STM32F103C8Tx_VSCODE_IDE/STM32F103.svd",
             "runToEntryPoint": "main",
-            
+            //"gdbPath": "D:/Tools/Complier_Toolchain/gcc-arm-none-eabi-10.3-2021.10/bin/arm-none-eabi-gdb.exe",
             "servertype": "openocd",
             "configFiles": [
                 "${workspaceRoot}/stlink-v2.cfg",
                 "${workspaceRoot}/stm32f1x.cfg"
             ],
-            "armToolchainPath": "D:/TOOL/Complier_Toolchain/gcc-arm-none-eabi-10-2020-q4-major-win32/gcc-arm-none-eabi-10-2020-q4-major/bin",
+            "armToolchainPath": "D:/Tools/Complier_Toolchain/gcc-arm-none-eabi-10.3-2021.10/bin",
             "swoConfig": {
                 "enabled": true,
                 "cpuFrequency": 72000000,

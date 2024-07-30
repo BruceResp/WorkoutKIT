@@ -22,9 +22,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/application.elf.dir/core/toolkit/list.c.obj"
   "CMakeFiles/application.elf.dir/core/toolkit/list.c.obj.d"
   "CMakeFiles/application.elf.dir/startup/startup_stm32f103xb.s.obj"
-  "D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/bin/application.elf"
-  "D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/bin/application.elf.manifest"
-  "D:/Git_Repository/STM32F103C8Tx_VSCODE_IDE/application/bin/application.elf.pdb"
+  "E:/Projects/Own/WorkoutKIT/STM32F103C8Tx_VSCODE_IDE/application/bin/application.elf"
+  "E:/Projects/Own/WorkoutKIT/STM32F103C8Tx_VSCODE_IDE/application/bin/application.elf.manifest"
+  "E:/Projects/Own/WorkoutKIT/STM32F103C8Tx_VSCODE_IDE/application/bin/application.elf.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

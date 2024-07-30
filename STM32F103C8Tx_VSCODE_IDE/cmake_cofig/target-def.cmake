@@ -7,7 +7,7 @@ set(CPU "-mcpu=cortex-m3")
 set(FPU "")
 set(FLOAT_ABI "")
 #这个很重要
-set(LINKER_SCRIPT D:/Projects/STM32F103C8Tx_VSCODE_IDE/application/STM32F103C8Tx_FLASH.ld)
+set(LINKER_SCRIPT E:/Projects/Own/WorkoutKIT/STM32F103C8Tx_VSCODE_IDE/application/STM32F103C8Tx_FLASH.ld)
 set(STARTUP ./startup/startup_stm32f103xb.s)
 option(USE_LL_LIB "Enable LL library" OFF)
 option(USE_HAL_LIB "Enable HAL library" OFF)

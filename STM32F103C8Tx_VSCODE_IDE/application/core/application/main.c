@@ -28,11 +28,7 @@
 
 int main(void)
 {
-	// uint8_t MID;
-	// uint16_t DID;
-	// UNITY_BEGIN();
-	// RUN_TEST(testZeroAdd);
-	// UNITY_END();  //在方法里才需要加 return
+
 	Bsp_Init();
  	//GUI_SPI_Init(); //初始化测试下来要4s钟有点长
 	//System_Init();
